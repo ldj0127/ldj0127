@@ -228,7 +228,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/ldj0127/ldj0127.github.io" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -285,7 +285,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/ldj0127/ldj0127.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -374,7 +374,7 @@
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
                 <script>
                     var typed = new Typed("#typed", {
-                        strings: ['从来没有真正的绝境, 只有心灵的迷途', 'Never really desperate, only the lost of the soul'],
+                        strings: ['从来没有真正的绝境, 只有心灵的迷途', ''],
                         startDelay: 300,
                         typeSpeed: 100,
                         loop: true,
@@ -402,30 +402,33 @@
                 </a>
 
                 
-                <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light btn" target="_blank">
+                <a href="https://github.com/ldj0127/ldj0127.github.io" class="waves-effect waves-light btn" target="_blank">
                     <i class="fab fa-github-alt"></i>Github
                 </a>
                 
             </div>
             <div class="cover-social-link">
+    <a href="https://github.com/ldj0127/ldj0127.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
 
 
 
+    <a href="mailto:2499952614@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
 
 
 
-
-
-
-
-
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2499952614" target="_blank" rel="noopener" class="tooltipped" data-tooltip="QQ联系我: 2499952614" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
 
 
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
+        <i class="fa fa-rss"></i>
     </a>
-
 </div>
         </div>
     </div>
@@ -517,7 +520,7 @@ $(function () {
     new APlayer({
         container: document.getElementById('aplayer'),
         fixed: 'false' === 'true',
-        autoplay: 'false' === 'true',
+        autoplay: 'true' === 'true',
         theme: '#42b983',
         loop: 'all',
         order: 'list',
@@ -525,12 +528,47 @@ $(function () {
         volume: Number('0.7'),
         listFolded: 'false' === 'true',
         listMaxHeight: '',
-        audio: JSON.parse('[{"name":"五月雨变奏电音","artist":"AnimeVibe","url":"http://xxx.com/music1.mp3","cover":"http://xxx.com/music-cover1.png"},{"name":"Take me hand","artist":"DAISHI DANCE,Cecile Corbel","url":"/medias/music/music2.mp3","cover":"/medias/music/cover2.png"},{"name":"Shape of You","artist":"J.Fla","url":"http://xxx.com/music3.mp3","cover":"http://xxx.com/music-cover3.png"}]')
+        audio: JSON.parse('[{"name":"五月雨变奏电音","artist":"AnimeVibe","url":"http://music.163.com/song/media/outer/url?id=1358003419.mp3","cover":"https://p1.music.126.net/yz4FLvyxCRAazNHPn4XSzA==/109951164039119701.jpg?param=130y130"},{"name":"Take me hand","artist":"DAISHI DANCE,Cecile Corbel","url":"http://music.163.com/song/media/outer/url?id=26092806.mp3","cover":"https://p2.music.126.net/AoVFMKkLVMOmTMo_A6x02g==/109951163403515653.jpg?param=130y130"},{"name":"云烟成雨","artist":"房东的猫","url":"http://music.163.com/song/media/outer/url?id=513360721.mp3","cover":"https://p1.music.126.net/DSTg1dR7yKsyGq4IK3NL8A==/109951163046050093.jpg?param=130y130"},{"name":"城南花已开","artist":"三亩地","url":"http://music.163.com/song/media/outer/url?id=468176711.mp3","cover":"https://p1.music.126.net/i-7ktILRPImJ0NwiH8DABg==/109951162885959979.jpg?param=130y130"}]')
     });
 });
 </script>
                     
 
+                    
+                        <link rel="stylesheet" href="/libs/dplayer/DPlayer.min.css">
+<div class="video-player">
+    
+    <div class="title center-align">
+        <i class="fas fa-video-camera"></i>&nbsp;&nbsp;精彩视频
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="dplayer" class="dplayer-video"
+                    ></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/dplayer/DPlayer.min.js"></script>
+<script>
+    $(function () {
+        new DPlayer({
+            container: document.getElementById('dplayer'),
+            autoplay: 'false' === 'true',
+            theme: '#42b983',
+            loop: 'false' === 'true',
+            lang: 'zh-CN' === 'zh-CN' ? 'zh-cn' : 'en',
+            preload: 'auto',
+            volume: Number('0.7'),
+            video: {
+                url: 'https://v.qq.com/x/page/z0830byw7lr.html?vuid24=czmdhAfGx9%2Bdh6ewYyTDnQ%3D%3D&ptag=2_7.6.0.20170_copy',
+                pic: '',
+                thumbnails: ''
+            }
+        });
+    });
+</script>
                     
 
                     <div id="recommend-sections" class="recommend">
@@ -636,8 +674,8 @@ $(function () {
                     var years = days * 365;
                     var today = new Date();
                     var startYear = "2019";
-                    var startMonth = "6";
-                    var startDate = "28";
+                    var startMonth = "10";
+                    var startDate = "22";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -674,24 +712,27 @@ $(function () {
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/ldj0127/ldj0127.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
 
 
 
+    <a href="mailto:2499952614@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
 
 
 
-
-
-
-
-
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2499952614" target="_blank" rel="noopener" class="tooltipped" data-tooltip="QQ联系我: 2499952614" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
 
 
 
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
+        <i class="fa fa-rss"></i>
     </a>
-
 </div>
     </div>
 </footer>
