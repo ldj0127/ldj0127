@@ -506,7 +506,7 @@ $(function () {
         volume: Number('0.7'),
         listFolded: 'false' === 'true',
         listMaxHeight: '',
-        audio: JSON.parse('[{"name":"五月雨变奏电音","artist":"AnimeVibe","url":"http://music.163.com/song/media/outer/url?id=1358003419.mp3","cover":"https://p1.music.126.net/yz4FLvyxCRAazNHPn4XSzA==/109951164039119701.jpg?param=130y130"},{"name":"Take me hand","artist":"DAISHI DANCE,Cecile Corbel","url":"http://music.163.com/song/media/outer/url?id=26092806.mp3","cover":"https://p2.music.126.net/AoVFMKkLVMOmTMo_A6x02g==/109951163403515653.jpg?param=130y130"},{"name":"云烟成雨","artist":"房东的猫","url":"http://music.163.com/song/media/outer/url?id=513360721.mp3","cover":"https://p1.music.126.net/DSTg1dR7yKsyGq4IK3NL8A==/109951163046050093.jpg?param=130y130"},{"name":"城南花已开","artist":"三亩地","url":"http://music.163.com/song/media/outer/url?id=468176711.mp3","cover":"https://p1.music.126.net/i-7ktILRPImJ0NwiH8DABg==/109951162885959979.jpg?param=130y130"}]')
+        audio: JSON.parse('[{"name":"五月雨变奏电音","artist":"AnimeVibe","url":"http://music.163.com/song/media/outer/url?id=1358003419.mp3","cover":"https://p1.music.126.net/yz4FLvyxCRAazNHPn4XSzA==/109951164039119701.jpg?param=130y130"},{"name":"Take me hand","artist":"DAISHI DANCE,Cecile Corbel","url":"http://music.163.com/song/media/outer/url?id=26092806.mp3","cover":"https://p2.music.126.net/AoVFMKkLVMOmTMo_A6x02g==/109951163403515653.jpg?param=130y130"},{"name":"城南花已开","artist":"三亩地","url":"http://music.163.com/song/media/outer/url?id=468176711.mp3","cover":"https://p1.music.126.net/i-7ktILRPImJ0NwiH8DABg==/109951162885959979.jpg?param=130y130"},{"name":"Yasuo","artist":"MMZ-BOY","url":"http://music.163.com/song/media/outer/url?id=502678329.mp3","cover":"https://p1.music.126.net/tJh9sAyBSsTwcv4QuuVzhA==/109951163015084243.jpg?param=130y130"},{"name":"The Nights","artist":"Avicii","url":"http://music.163.com/song/media/outer/url?id=29771146.mp3","cover":"https://p1.music.126.net/6FE-03uc2xJJWcE-aKIejw==/3246857838267604.jpg?param=130y130"},{"name":"RISE","artist":"The Glitch Mob/Mako/The Word Alive","url":"http://music.163.com/song/media/outer/url?id=1313107065.mp3","cover":"https://p2.music.126.net/XLulJwVbfowNQhATCt809g==/109951163573081067.jpg?param=130y130"},{"name":"Illusionary Daytime","artist":"Shirfine","url":"http://music.163.com/song/media/outer/url?id=28907016.mp3","cover":"https://p2.music.126.net/8xNVCemkSNQptEyNw1PHKg==/8914840278033758.jpg?param=130y130"},{"name":"いつも何度でも","artist":"宗次郎","url":"http://music.163.com/song/media/outer/url?id=480353.mp3","cover":"https://p2.music.126.net/ygxAeYxxXPONww041tylMw==/5996736418028563.jpg?param=130y130"},{"name":"The truth that you leave","artist":"Pianoboy高至豪","url":"http://music.163.com/song/media/outer/url?id=139774.mp3","cover":"https://p2.music.126.net/9idkdzbel_-lYBP7Dv_dVQ==/102254581395289.jpg?param=130y130"},{"name":"ブルーバード","artist":"いきものがかり","url":"http://music.163.com/song/media/outer/url?id=718765.mp3","cover":"https://p1.music.126.net/MxMt67BMwy505AHiTvnMqg==/2384840720672469.jpg?param=130y130"}]')
     });
 });
 </script>
@@ -533,9 +533,9 @@ $(function () {
     $(function () {
         new DPlayer({
             container: document.getElementById('dplayer'),
-            autoplay: 'true' === 'true',
+            autoplay: 'false' === 'true',
             theme: '#42b983',
-            loop: 'false' === 'true',
+            loop: 'true' === 'true',
             lang: 'zh-CN' === 'zh-CN' ? 'zh-cn' : 'en',
             preload: 'auto',
             volume: Number('0.7'),
@@ -616,8 +616,7 @@ $(function () {
             Copyright&nbsp;&copy;
             <span id="year">年份</span>
             <a href="http://yoursite.com" target="_blank">Da jie</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/ldj0127/ldj0127.github.io" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
