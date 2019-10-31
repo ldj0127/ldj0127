@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2019-10-25T06:02:25.465Z</updated>
+  <updated>2019-10-31T11:11:29.318Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -17,26 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://dajienihao.cn/2019/10/25/xin-wen-dang/"/>
-    <id>http://dajienihao.cn/2019/10/25/xin-wen-dang/</id>
-    <published>2019-10-25T06:02:25.464Z</published>
-    <updated>2019-10-25T06:02:25.465Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://dajienihao.cn/2019/10/22/hello-world/"/>
-    <id>http://dajienihao.cn/2019/10/22/hello-world/</id>
-    <published>2019-10-22T02:02:49.197Z</published>
-    <updated>2019-10-22T02:02:49.197Z</updated>
+    <title>java反射基础</title>
+    <link href="http://dajienihao.cn/2019/10/31/di-yi-pian-bo-ke-jin-gong-shi-shui/"/>
+    <id>http://dajienihao.cn/2019/10/31/di-yi-pian-bo-ke-jin-gong-shi-shui/</id>
+    <published>2019-10-31T09:03:27.000Z</published>
+    <updated>2019-10-31T11:11:29.318Z</updated>
     
     <summary type="html">
     
@@ -44,13 +29,19 @@
       
         
         
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          &lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;h3 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot; class=&quot;headerlink&quot; title=&quot;1.
         
       
     
     </summary>
     
     
+      <category term="反射" scheme="http://dajienihao.cn/categories/%E5%8F%8D%E5%B0%84/"/>
+    
+    
+      <category term="java" scheme="http://dajienihao.cn/tags/java/"/>
+    
+      <category term="后端" scheme="http://dajienihao.cn/tags/%E5%90%8E%E7%AB%AF/"/>
     
   </entry>
   

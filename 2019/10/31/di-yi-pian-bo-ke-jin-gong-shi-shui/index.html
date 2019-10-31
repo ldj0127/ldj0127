@@ -9,8 +9,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, L">
-    <meta name="description" content="Hello World | L">
+    <meta name="keywords" content="java反射基础, L">
+    <meta name="description" content="一、概述1. 简介Java反射(Reflection)机制就是在运行状态中，对于任意一个类，都能够知道这个类的属性和方法。对于任意一个对象能够调用它的任意一个属性和方法。这种动态获取的信息和动态调用对象的方法的功能称为Java语言的反射机制">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | L</title>
+    <title>java反射基础 | L</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -287,13 +287,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        java反射基础
                     </div>
                 </div>
             </div>
@@ -403,12 +403,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                                <span class="chip bg-color">后端</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%8F%8D%E5%B0%84/" class="post-category">
+                                反射
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -416,7 +433,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-25
+                    2019-10-31
                 </div>
                 
                 
@@ -425,14 +442,14 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        0
+                        2.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        9 分
                     </div>
                     
                 
@@ -448,7 +465,246 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><p>Java反射(Reflection)机制就是在运行状态中，对于任意一个类，都能够知道这个类的属性和方法。对于任意一个对象能够调用它的任意一个属性和方法。这种动态获取的信息和动态调用对象的方法的功能称为Java语言的反射机制。Java程序中一般的对象的类型都是在编译期就确定下来的，而Java反射机制可以动态地创建对象并调用其属性，这样的对象的类型在编译期是未知的。所以我们可以通过反射机制直接创建对象，即使这个对象的类型在编译期是未知的。</p>
+<p>反射的核心是JVM在运行时才动态加载类或调用方法/访问属性，它不需要事先（写代码的时候或编译期）知道运行对象是谁。反射机制就是通过java.lang.Class类来实现的，在Java中，Object 类是所有类的根类，而Class类就是描述Java类的类。</p>
+<blockquote>
+<p>注：因为Class类也是类，所以Object也包括Class类。</p>
+</blockquote>
+<h3 id="2-主要功能"><a href="#2-主要功能" class="headerlink" title="2. 主要功能"></a>2. 主要功能</h3><p>Java反射框架主要提供以下功能：</p>
+<ul>
+<li>在运行时判断任意一个对象所属的类；</li>
+<li>在运行时构造任意一个类的对象；</li>
+<li>在运行时判断任意一个类所具有的成员变量和方法（通过反射甚至可以调用private方法）；</li>
+<li>在运行时调用任意一个对象的方法；</li>
+<li>修改构造函数、方法、属性的可见性。</li>
+</ul>
+<h3 id="3-主要用途"><a href="#3-主要用途" class="headerlink" title="3. 主要用途"></a>3. 主要用途</h3><p><strong>反射最重要的用途就是开发各种通用框架</strong>。很多框架（比如Spring）都是配置化的（比如通过XML文件配置JavaBean,Action之类的），为了保证框架的通用性，它们可能需要根据配置文件加载不同的对象或类，调用不同的方法，这个时候就必须用到反射——运行时动态加载需要加载的对象。对与框架开发人员来说，反射虽小但作用非常大，它是各种容器实现的核心。</p>
+<h2 id="二、反射的作用"><a href="#二、反射的作用" class="headerlink" title="二、反射的作用"></a>二、反射的作用</h2><h3 id="1-获取class对象"><a href="#1-获取class对象" class="headerlink" title="1. 获取class对象"></a>1. 获取class对象</h3><p>反射的各种功能都需要通过Class对象来实现，因此，需要知道如何获取Class对象，主要有以下几种方式。</p>
+<h4 id="使用-Class-forName-的静态方法"><a href="#使用-Class-forName-的静态方法" class="headerlink" title="使用 Class.forName() 的静态方法"></a>使用 Class.forName() 的静态方法</h4><p>Class.forName(String className)方法可以通过类或接口的名称（一个字符串或完全限定名）来获取对应的Class对象。</p>
+<pre><code>Class&lt;?&gt; cls = Class.forName(&quot;com.blinkfox.Zealot&quot;);</code></pre><h4 id="直接获取某个类的class-最安全-性能最好"><a href="#直接获取某个类的class-最安全-性能最好" class="headerlink" title="直接获取某个类的class(最安全/性能最好)"></a>直接获取某个类的class(最安全/性能最好)</h4><pre><code>Class&lt;String&gt; cls = String.class;</code></pre><h4 id="调用某个对象的-getClass-方法"><a href="#调用某个对象的-getClass-方法" class="headerlink" title="调用某个对象的 getClass() 方法"></a>调用某个对象的 getClass() 方法</h4><pre><code>public native boolean isInstance(Object obj);</code></pre><h3 id="2-判断是否为某个类的实例"><a href="#2-判断是否为某个类的实例" class="headerlink" title="2. 判断是否为某个类的实例"></a>2. 判断是否为某个类的实例</h3><p>一般地，我们用instanceof关键字来判断是否为某个类的实例。同时我们也可以借助反射中Class对象的isInstance()方法来判断是否为某个类的实例，它是一个Native方法：</p>
+<pre><code>public native boolean isInstance(Object obj);</code></pre><h3 id="3-创建实例"><a href="#3-创建实例" class="headerlink" title="3. 创建实例"></a>3. 创建实例</h3><p>通过反射来生成对象主要有两种方式。</p>
+<h4 id="使用Class对象的newInstance-方法"><a href="#使用Class对象的newInstance-方法" class="headerlink" title="使用Class对象的newInstance()方法"></a>使用Class对象的newInstance()方法</h4><pre><code>Class&lt;?&gt; c = String.class;
+Object str = c.newInstance();</code></pre><h4 id="通过Class对象获取指定的Constructor对象，再调用Constructor对象的newInstance-方法"><a href="#通过Class对象获取指定的Constructor对象，再调用Constructor对象的newInstance-方法" class="headerlink" title="通过Class对象获取指定的Constructor对象，再调用Constructor对象的newInstance()方法"></a>通过Class对象获取指定的Constructor对象，再调用Constructor对象的newInstance()方法</h4><pre><code>// 获取String所对应的Class对象
+Class&lt;?&gt; c = String.class;
+// 获取String类带一个String参数的构造器
+Constructor constructor = c.getConstructor(String.class);
+// 根据构造器创建实例
+Object obj = constructor.newInstance(&quot;23333&quot;);
+System.out.println(obj);</code></pre><blockquote>
+<p>注：这种方法可以用指定的构造器构造类的实例。</p>
+</blockquote>
+<h3 id="4-获取方法"><a href="#4-获取方法" class="headerlink" title="4. 获取方法"></a>4. 获取方法</h3><p>获取某个Class对象的方法集合，主要有以下几个方法：</p>
+<ul>
+<li>getDeclaredMethods()方法返回类或接口声明的所有方法，包括公共、保护、默认（包）访问和私有方法，但不包括继承的方法。</li>
+</ul>
+<pre><code>public Method[] getDeclaredMethods() throws SecurityException</code></pre><ul>
+<li>getMethods()方法返回某个类的所有公用（public）方法，包括其继承类的公用方法。</li>
+</ul>
+<pre><code>public Method[] getMethods() throws SecurityException</code></pre><ul>
+<li>getMethod()方法返回一个特定的方法，其中第一个参数为方法名称，后面的参数为方法的参数对应Class的对象。</li>
+</ul>
+<pre><code>public Method getMethod(String name, Class&lt;?&gt;... parameterTypes)</code></pre><p>代码示例：</p>
+<pre><code>import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+public class Test {
+
+public static void test() throws IllegalAccessException,
+InstantiationException, NoSuchMethodException, InvocationTargetException {
+Class&lt;?&gt; c = MethodClass.class;
+Object object = c.newInstance();
+Method[] methods = c.getMethods();
+Method[] declaredMethods = c.getDeclaredMethods();
+//获取MethodClass类的add方法
+Method method = c.getMethod(&quot;add&quot;, int.class, int.class);
+
+//getMethods()方法获取的所有方法
+System.out.println(&quot;getMethods获取的方法：&quot;);
+for(Method m: methods) {
+System.out.println(m);
+}
+
+//getDeclaredMethods()方法获取的所有方法
+System.out.println(&quot;getDeclaredMethods获取的方法：&quot;);
+for(Method m: declaredMethods) {
+System.out.println(m);
+}
+}
+}
+
+class MethodClass {
+
+public final int fuck = 3;
+
+public int add(int a, int b) {
+return a + b;
+}
+
+public int sub(int a, int b) {
+return a - b;
+}
+
+}</code></pre><blockquote>
+<p>注：通过getMethods()获取的方法可以获取到父类的方法,比如java.lang.Object下定义的各个方法。</p>
+</blockquote>
+<h3 id="5-获取构造方法"><a href="#5-获取构造方法" class="headerlink" title="5. 获取构造方法"></a>5. 获取构造方法</h3><p>获取类构造器的用法与上述获取方法的用法类似。主要是通过Class类的getConstructor方法得到Constructor类的一个实例，而Constructor类有一个newInstance方法可以创建一个对象实例:</p>
+<pre><code>public T newInstance(Object ... initargs)</code></pre><h3 id="6-获取类的成员变量信息"><a href="#6-获取类的成员变量信息" class="headerlink" title="6. 获取类的成员变量信息"></a>6. 获取类的成员变量信息</h3><p>获取的方法同Method相似，主要是这几个方法，在此不再赘述：</p>
+<ul>
+<li>Field getField(String name): 访问公有的成员变量。</li>
+</ul>
+<ul>
+<li>Field[] getDeclaredFields()：所有已声明的成员变量。但不能得到其父类的成员变量。</li>
+</ul>
+<ul>
+<li><p>Field[] getFields()和Field[] getDeclaredFields()用法同上。</p>
+<h3 id="7-调用方法"><a href="#7-调用方法" class="headerlink" title="7. 调用方法"></a>7. 调用方法</h3><p>当我们从类中获取了一个方法后，我们就可以用invoke()方法来调用这个方法。invoke方法的原型为:</p>
+<p>  public Object invoke(Object obj, Object… args) throws IllegalAccessException, IllegalArgumentException,<br>   InvocationTargetException</p>
+</li>
+</ul>
+<p>代码示例：</p>
+<pre><code>public class Test {
+
+public static void main(String[] args) throws IllegalAccessException,
+InstantiationException, NoSuchMethodException, InvocationTargetException {
+Class&lt;?&gt; klass = MethodClass.class;
+//创建 MethodClass 的实例
+Object obj = klass.newInstance();
+//获取 MethodClass 类的add方法
+Method method = klass.getMethod(&quot;add&quot;, int.class, int.class);
+//调用 method 对应的方法 =&gt; add(1,4)
+Object result = method.invoke(obj, 1, 4);
+System.out.println(result);
+}
+}
+
+class MethodClass {
+
+public final int fuck = 3;
+
+public int add(int a, int b) {
+return a + b;
+}
+
+public int sub(int a, int b) {
+return a - b;
+}
+
+}</code></pre><h3 id="8-利用反射创建数组"><a href="#8-利用反射创建数组" class="headerlink" title="8. 利用反射创建数组"></a>8. 利用反射创建数组</h3><p>数组在Java里是比较特殊的一种类型，它可以赋值给一个Object Reference。下面我们看一看利用反射创建数组的例子：</p>
+<pre><code>public static void testArray() throws ClassNotFoundException {
+// 使用`java.lang.reflect.Array`反射创建长度为25的字符串数组.
+Class&lt;?&gt; cls = Class.forName(&quot;java.lang.String&quot;);
+Object array = Array.newInstance(cls, 25);
+// 往数组里添加内容
+Array.set(array,0, &quot;hello&quot;);
+Array.set(array,1, &quot;Java&quot;);
+Array.set(array,2, &quot;Go&quot;);
+Array.set(array,3, &quot;Scala&quot;);
+Array.set(array,4, &quot;Clojure&quot;);
+// 获取某一项的内容
+System.out.println(Array.get(array, 3));
+}</code></pre><h2 id="三、使用反射获取信息"><a href="#三、使用反射获取信息" class="headerlink" title="三、使用反射获取信息"></a>三、使用反射获取信息</h2><p>Class类提供了大量的实例方法来获取该Class对象所对应的详细信息，Class类大致包含如下方法，其中每个方法都包含多个重载版本，因此我们只是做简单的介绍，详细请参考JDK文档。</p>
+<h3 id="1-获取类内信息"><a href="#1-获取类内信息" class="headerlink" title="1. 获取类内信息"></a>1. 获取类内信息</h3><ul>
+<li>构造器: Constructor<T> getConstructor(Class&lt;?&gt;… parameterTypes)</li>
+<li>包含的方法: Method getMethod(String name, Class&lt;?&gt;… parameterTypes)</li>
+<li>包含的属性: Field getField(String name)</li>
+<li>内部类: Class&lt;?&gt;[] getDeclaredClasses()</li>
+<li>外部类: Class&lt;?&gt; getDeclaringClass()</li>
+<li>所实现的接口: Class&lt;?&gt;[] getInterfaces()</li>
+<li>修饰符: int getModifiers()</li>
+<li>所在包: Package getPackage()</li>
+<li>类名: String getName()</li>
+<li>简称: String getSimpleName()</li>
+</ul>
+<h3 id="2-判断类本身信息的方法"><a href="#2-判断类本身信息的方法" class="headerlink" title="2. 判断类本身信息的方法"></a>2. 判断类本身信息的方法</h3><ul>
+<li>是否注解类型: boolean isAnnotation()</li>
+<li>是否使用了该Annotation修饰: boolean isAnnotationPresent(Class&lt;? extends Annotation&gt; annotationClass)</li>
+<li>是否匿名类: boolean isAnonymousClass()</li>
+<li>是否数组: boolean isArray()</li>
+<li>是否枚举: boolean isEnum()</li>
+<li>是否原始类型: boolean isPrimitive()</li>
+<li>是否接口: boolean isInterface()</li>
+<li>obj是否是该Class的实例: boolean isInstance(Object obj)</li>
+</ul>
+<h3 id="3-使用反射火器泛型信息"><a href="#3-使用反射火器泛型信息" class="headerlink" title="3. 使用反射火器泛型信息"></a>3. 使用反射火器泛型信息</h3><p>为了通过反射操作泛型以迎合实际开发的需要, Java新增了java.lang.reflect.ParameterizedType、java.lang.reflect.GenericArrayType、java.lang.reflect.TypeVariable、java.lang.reflect.WildcardType几种类型来代表不能归一到Class类型但是又和原始类型同样重要的类型。</p>
+<ul>
+<li>ParameterizedType: 一种参数化类型, 比如Collection</li>
+<li>GenericArrayType: 一种元素类型是参数化类型或者类型变量的数组类型</li>
+<li>TypeVariable: 各种类型变量的公共接口</li>
+<li>WildcardType: 一种通配符类型表达式, 如?、? extends Number、? super Integer</li>
+</ul>
+<p>代码示例：</p>
+<pre><code>public class Client {
+
+private Map&lt;String, Object&gt; objectMap;
+
+public void test(Map&lt;String, User&gt; map, String string) {
+}
+
+public Map&lt;User, Bean&gt; test() {
+return null;
+}
+
+/**
+ * 测试属性类型
+ *
+ * @throws NoSuchFieldException
+ */
+@Test
+public void testFieldType() throws NoSuchFieldException {
+Field field = Client.class.getDeclaredField(&quot;objectMap&quot;);
+Type gType = field.getGenericType();
+// 打印type与generic type的区别
+System.out.println(field.getType());
+System.out.println(gType);
+System.out.println(&quot;**************&quot;);
+if (gType instanceof ParameterizedType) {
+ParameterizedType pType = (ParameterizedType) gType;
+Type[] types = pType.getActualTypeArguments();
+for (Type type : types) {
+System.out.println(type.toString());
+}
+}
+}
+
+/**
+ * 测试参数类型
+ *
+ * @throws NoSuchMethodException
+ */
+@Test
+public void testParamType() throws NoSuchMethodException {
+Method testMethod = Client.class.getMethod(&quot;test&quot;, Map.class, String.class);
+Type[] parameterTypes = testMethod.getGenericParameterTypes();
+for (Type type : parameterTypes) {
+System.out.println(&quot;type -&gt; &quot; + type);
+if (type instanceof ParameterizedType) {
+Type[] actualTypes = ((ParameterizedType) type).getActualTypeArguments();
+for (Type actualType : actualTypes) {
+System.out.println(&quot;\tactual type -&gt; &quot; + actualType);
+}
+}
+}
+}
+
+/**
+ * 测试返回值类型
+ *
+ * @throws NoSuchMethodException
+ */
+@Test
+public void testReturnType() throws NoSuchMethodException {
+Method testMethod = Client.class.getMethod(&quot;test&quot;);
+Type returnType = testMethod.getGenericReturnType();
+System.out.println(&quot;return type -&gt; &quot; + returnType);
+
+if (returnType instanceof ParameterizedType) {
+Type[] actualTypes = ((ParameterizedType) returnType).getActualTypeArguments();
+for (Type actualType : actualTypes) {
+System.out.println(&quot;\tactual type -&gt; &quot; + actualType);
+}
+}
+}
+}</code></pre>
             </div>
             <hr/>
 
@@ -473,7 +729,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://dajienihao.cn/2019/10/25/xin-wen-dang/">http://dajienihao.cn/2019/10/25/xin-wen-dang/</a>
+                    <a href="http://dajienihao.cn/2019/10/31/di-yi-pian-bo-ke-jin-gong-shi-shui/">http://dajienihao.cn/2019/10/31/di-yi-pian-bo-ke-jin-gong-shi-shui/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -510,7 +766,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                                    <span class="chip bg-color">后端</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -680,34 +944,50 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2019/10/25/xin-wen-dang/">
+                <a href="/2019/10/31/di-yi-pian-bo-ke-jin-gong-shi-shui/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="java反射基础">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">java反射基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            一、概述1. 简介Java反射(Reflection)机制就是在运行状态中，对于任意一个类，都能够知道这个类的属性和方法。对于任意一个对象能够调用它的任意一个属性和方法。这种动态获取的信息和动态调用对象的方法的功能称为Java语言的反射机制
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-31
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Da jie
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8F%8D%E5%B0%84/" class="post-category">
+                                    反射
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                        <span class="chip bg-color">后端</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -715,35 +995,52 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/22/hello-world/">
+                <a href="/2019/10/31/di-yi-pian-bo-ke-jin-gong-shi-shui/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="java反射基础">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">java反射基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            一、概述1. 简介Java反射(Reflection)机制就是在运行状态中，对于任意一个类，都能够知道这个类的属性和方法。对于任意一个对象能够调用它的任意一个属性和方法。这种动态获取的信息和动态调用对象的方法的功能称为Java语言的反射机制
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-31
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Da jie
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8F%8D%E5%B0%84/" class="post-category">
+                                    反射
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                        <span class="chip bg-color">后端</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -928,7 +1225,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">73</span>&nbsp;字
+                class="white-color">2.3k</span>&nbsp;字
             
             
             
@@ -1092,7 +1389,11 @@ $(function () {
     
 	
 	
+	
+	
 	<script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title = "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
+	
+	
 	
     
 
