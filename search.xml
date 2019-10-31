@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>java反射基础</title>
-    <url>/2019/10/31/di-yi-pian-bo-ke-jin-gong-shi-shui/</url>
+    <url>/2019/10/31/java-ji-chu-fan-she/</url>
     <content><![CDATA[<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><p>Java反射(Reflection)机制就是在运行状态中，对于任意一个类，都能够知道这个类的属性和方法。对于任意一个对象能够调用它的任意一个属性和方法。这种动态获取的信息和动态调用对象的方法的功能称为Java语言的反射机制。Java程序中一般的对象的类型都是在编译期就确定下来的，而Java反射机制可以动态地创建对象并调用其属性，这样的对象的类型在编译期是未知的。所以我们可以通过反射机制直接创建对象，即使这个对象的类型在编译期是未知的。</p>
 <p>反射的核心是JVM在运行时才动态加载类或调用方法/访问属性，它不需要事先（写代码的时候或编译期）知道运行对象是谁。反射机制就是通过java.lang.Class类来实现的，在Java中，Object 类是所有类的根类，而Class类就是描述Java类的类。</p>
 <blockquote>
@@ -163,7 +163,7 @@ System.out.println(Array.get(array, 3));
 <li>是否接口: boolean isInterface()</li>
 <li>obj是否是该Class的实例: boolean isInstance(Object obj)</li>
 </ul>
-<h3 id="3-使用反射火器泛型信息"><a href="#3-使用反射火器泛型信息" class="headerlink" title="3. 使用反射火器泛型信息"></a>3. 使用反射火器泛型信息</h3><p>为了通过反射操作泛型以迎合实际开发的需要, Java新增了java.lang.reflect.ParameterizedType、java.lang.reflect.GenericArrayType、java.lang.reflect.TypeVariable、java.lang.reflect.WildcardType几种类型来代表不能归一到Class类型但是又和原始类型同样重要的类型。</p>
+<h3 id="3-使用反射获取泛型信息"><a href="#3-使用反射获取泛型信息" class="headerlink" title="3. 使用反射获取泛型信息"></a>3. 使用反射获取泛型信息</h3><p>为了通过反射操作泛型以迎合实际开发的需要, Java新增了java.lang.reflect.ParameterizedType、java.lang.reflect.GenericArrayType、java.lang.reflect.TypeVariable、java.lang.reflect.WildcardType几种类型来代表不能归一到Class类型但是又和原始类型同样重要的类型。</p>
 <ul>
 <li>ParameterizedType: 一种参数化类型, 比如Collection</li>
 <li>GenericArrayType: 一种元素类型是参数化类型或者类型变量的数组类型</li>
