@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2019-11-02T03:56:53.617Z</updated>
+  <updated>2019-11-23T02:39:15.341Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>eclipse导入普通javaweb项目报错问题</title>
+    <link href="http://dajienihao.cn/2019/11/23/eclipse-dao-ru-pu-tong-javaweb-xiang-mu-bao-cuo-wen-ti/"/>
+    <id>http://dajienihao.cn/2019/11/23/eclipse-dao-ru-pu-tong-javaweb-xiang-mu-bao-cuo-wen-ti/</id>
+    <published>2019-11-23T01:04:41.000Z</published>
+    <updated>2019-11-23T02:39:15.341Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Eclipse导入javaweb项目代码报错解决方案&quot;&gt;&lt;a href=&quot;#Eclipse导入javaweb项目代码报错解决方案&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="编程工具" scheme="http://dajienihao.cn/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="java" scheme="http://dajienihao.cn/tags/java/"/>
+    
+      <category term="后端" scheme="http://dajienihao.cn/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+      <category term="eclipse" scheme="http://dajienihao.cn/tags/eclipse/"/>
+    
+  </entry>
   
   <entry>
     <title>java反射基础</title>
