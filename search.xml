@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>mysql数据库及表的基本操作</title>
+      <link href="/2019/12/11/mysql-shu-ju-ku-ji-biao-de-ji-ben-cao-zuo/"/>
+      <url>/2019/12/11/mysql-shu-ju-ku-ji-biao-de-ji-ben-cao-zuo/</url>
+      
+        <content type="html"><![CDATA[<h2 id="mysql简单操作"><a href="#mysql简单操作" class="headerlink" title="mysql简单操作"></a>mysql简单操作</h2><h3 id="mysql服务的启动与暂停"><a href="#mysql服务的启动与暂停" class="headerlink" title="mysql服务的启动与暂停"></a>mysql服务的启动与暂停</h3><pre><code>net start mysqlnet stop mysql</code></pre><h3 id="mysql登录"><a href="#mysql登录" class="headerlink" title="mysql登录"></a>mysql登录</h3><pre><code>-u用户名 -p密码</code></pre><h3 id="创建和查看数据库"><a href="#创建和查看数据库" class="headerlink" title="创建和查看数据库"></a>创建和查看数据库</h3><pre><code>create database 数据库名称show crate database 数据库名称</code></pre><h3 id="修改数据库编码"><a href="#修改数据库编码" class="headerlink" title="修改数据库编码"></a>修改数据库编码</h3><pre><code>alter database 数据库名称 default character set 编码方式 collate 编码方式_bin</code></pre><h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><pre><code>drop database 数据库名称</code></pre><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><pre><code>create table 表名（字段1，数据类型[完整性约束条件]字段2，数据类型[完整性约束条件].......）</code></pre><h3 id="查看库中表"><a href="#查看库中表" class="headerlink" title="查看库中表"></a>查看库中表</h3><pre><code>show tables</code></pre><h3 id="查看数据表"><a href="#查看数据表" class="headerlink" title="查看数据表"></a>查看数据表</h3><pre><code>1.show create table 表名（后加\G可以使结果整齐美观）2.desc 表名</code></pre><h3 id="修改表名"><a href="#修改表名" class="headerlink" title="修改表名"></a>修改表名</h3><pre><code>alter table 表名 rename [to] 新表名</code></pre><h3 id="修改字段"><a href="#修改字段" class="headerlink" title="修改字段"></a>修改字段</h3><pre><code>alter table 表名 change 旧字段名 新字段名 数据类型</code></pre><h3 id="修改字段的数据类型"><a href="#修改字段的数据类型" class="headerlink" title="修改字段的数据类型"></a>修改字段的数据类型</h3><pre><code>alter table 表名 modify 字段名 数据类型</code></pre><h3 id="添加字段"><a href="#添加字段" class="headerlink" title="添加字段"></a>添加字段</h3><pre><code>alter table 表名 add 新字段名 数据类型[约束条件][first|after 已存在字段名]</code></pre><h3 id="删除字段"><a href="#删除字段" class="headerlink" title="删除字段"></a>删除字段</h3><pre><code>alter table 表名 drop 字段名</code></pre><h3 id="修改字段的排列位置"><a href="#修改字段的排列位置" class="headerlink" title="修改字段的排列位置"></a>修改字段的排列位置</h3><pre><code>alter table 表名 modify 字段名1 数据类型 first|after 字段名2</code></pre><h3 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h3><pre><code>drop table 表名   </code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MVC设计模式</title>
       <link href="/2019/12/08/mvc-she-ji-mo-shi/"/>
       <url>/2019/12/08/mvc-she-ji-mo-shi/</url>

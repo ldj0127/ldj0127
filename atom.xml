@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2019-12-08T13:24:55.340Z</updated>
+  <updated>2019-12-11T11:48:26.566Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql数据库及表的基本操作</title>
+    <link href="http://dajienihao.cn/2019/12/11/mysql-shu-ju-ku-ji-biao-de-ji-ben-cao-zuo/"/>
+    <id>http://dajienihao.cn/2019/12/11/mysql-shu-ju-ku-ji-biao-de-ji-ben-cao-zuo/</id>
+    <published>2019-12-11T12:24:45.000Z</published>
+    <updated>2019-12-11T11:48:26.566Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;mysql简单操作&quot;&gt;&lt;a href=&quot;#mysql简单操作&quot; class=&quot;headerlink&quot; title=&quot;mysql简单操作&quot;&gt;&lt;/a&gt;mysql简单操作&lt;/h2&gt;&lt;h3 id=&quot;mysql服务的启动与暂停&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="mysql" scheme="http://dajienihao.cn/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://dajienihao.cn/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>MVC设计模式</title>
