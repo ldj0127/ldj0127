@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2019-12-11T11:48:26.566Z</updated>
+  <updated>2019-12-14T03:15:32.664Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql数据类型详解</title>
+    <link href="http://dajienihao.cn/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/"/>
+    <id>http://dajienihao.cn/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/</id>
+    <published>2019-12-14T03:24:45.000Z</published>
+    <updated>2019-12-14T03:15:32.664Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;#数据类型&lt;br&gt;使用mysql数据库存储数据时，不同的类型决定了不同mysql不同的存储方式不同。为此mysql数据库提供了多种数据类型，其中包括整数类型、浮点数类型、定点数类型、日期和时间类型和二进制类型。下面将对此进行详解。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="mysql" scheme="http://dajienihao.cn/categories/mysql/"/>
+    
+    
+      <category term="mysql数据类型" scheme="http://dajienihao.cn/tags/mysql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>mysql数据库及表的基本操作</title>

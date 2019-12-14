@@ -9,8 +9,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MVC设计模式, L">
-    <meta name="description" content="什么是MVCMVC全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里">
+    <meta name="keywords" content="mysql数据类型详解, L">
+    <meta name="description" content="#数据类型使用mysql数据库存储数据时，不同的类型决定了不同mysql不同的存储方式不同。为此mysql数据库提供了多种数据类型，其中包括整数类型、浮点数类型、定点数类型、日期和时间类型和二进制类型。下面将对此进行详解。
+1.整数类型在M">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>MVC设计模式 | L</title>
+    <title>mysql数据类型详解 | L</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -287,13 +288,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://qiniuyun.dajienihao.cn/image/jpg/background/mysql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        MVC设计模式
+                        mysql数据类型详解
                     </div>
                 </div>
             </div>
@@ -405,8 +406,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                                <span class="chip bg-color">设计模式</span>
+                            <a href="/tags/mysql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+                                <span class="chip bg-color">mysql数据类型</span>
                             </a>
                         
                     </div>
@@ -417,8 +418,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/MVC/" class="post-category">
-                                MVC
+                            <a href="/categories/mysql/" class="post-category">
+                                mysql
                             </a>
                         
                     </div>
@@ -429,7 +430,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-08
+                    2019-12-14
                 </div>
                 
                 
@@ -438,14 +439,14 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.5k
+                        541
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        1 分
                     </div>
                     
                 
@@ -461,30 +462,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="什么是MVC"><a href="#什么是MVC" class="headerlink" title="什么是MVC"></a>什么是MVC</h2><p><strong>MVC</strong>全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。MVC被独特的发展起来用于映射传统的输入、处理和输出功能在一个逻辑的图形化用户界面的结构中。</p>
-<ul>
-<li><p>Model（模型） 模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。</p>
-</li>
-<li><p>View（视图） - 视图代表模型包含的数据的可视化。</p>
-</li>
-<li><p>Controller（控制器） - 控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。</p>
-</li>
-</ul>
-<p><img src="http://qiniuyun.dajienihao.cn/image/1208/mvc%E6%B5%81%E7%A8%8B.png" alt=""></p>
-<h2 id="MVC的优缺点"><a href="#MVC的优缺点" class="headerlink" title="MVC的优缺点"></a>MVC的优缺点</h2><p>毕竟没有什么设计模式是完美的，优点和缺点总是各有千秋。</p>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><h4 id="1-低耦合"><a href="#1-低耦合" class="headerlink" title="1.低耦合"></a>1.低耦合</h4><p>通过将视图层和业务层分离，允许更改视图层代码而不必重新编译模型和控制器代码，同样，一个应用的业务流程或者业务规则的改变，只需要改动MVC的模型层（及控制器）即可。因为模型与控制器和视图相分离，所以很容易改变应用程序的数据层和业务规则。</p>
-<p>模型层是自包含的，并且与控制器和视图层相分离，所以很容易改变应用程序的数据层和业务规则。如果想把数据库从 MySQL 移植到 Oracle，或者改变基于 RDBMS 的数据源到 LDAP，只需改变模型层即可。一旦正确的实现了模型层，不管数据来自数据库或是 LDAP服务器，视图层都将会正确的显示它们。由于运用 MVC 的应用程序的三个部件是相互独立，改变其中一个部件并不会影响其它两个，所以依据这种设计思想能构造出良好的松耦合的构件。</p>
-<h4 id="2-重用性高"><a href="#2-重用性高" class="headerlink" title="2.重用性高"></a>2.重用性高</h4><p>随着技术的不断进步，当前需要使用越来越多的方式来访问应用程序了。MVC模式允许使用各种不同样式的视图来访问同一个服务端的代码，这得益于多个视图（如WEB（HTTP）浏览器或者无线浏览器（WAP））能共享一个模型。</p>
-<p>比如，用户可以通过电脑或通过手机来订购某样产品，虽然订购的方式不一样，但处理订购产品的方式（流程）是一样的。由于模型返回的数据没有进行格式化，所以同样的构件能被不同的界面（视图）使用。例如，很多数据可能用 HTML 来表示，但是也有可能用 WAP 来表示，而这些表示的变化所需要的是仅仅是改变视图层的实现方式，而控制层和模型层无需做任何改变。</p>
-<p>由于已经将数据和业务规则从表示层分开，所以可以最大化的进行代码重用了。另外，模型层也有状态管理和数据持久性处理的功能，所以，基于会话的购物车和电子商务过程，也能被Flash网站或者无线联网的应用程序所重用。</p>
-<h4 id="3-生命周期成本低"><a href="#3-生命周期成本低" class="headerlink" title="3.生命周期成本低"></a>3.生命周期成本低</h4><p>MVC模式使开发和维护用户接口的技术含量降低。</p>
-<h4 id="4-部署快"><a href="#4-部署快" class="headerlink" title="4.部署快"></a>4.部署快</h4><p>使用MVC模式进行软件开发，使得软件开发时间得到相当大的缩减，它使后台程序员集中精力于业务逻辑，界面程序员集中精力于表现形式上。</p>
-<h4 id="5-可维护性高"><a href="#5-可维护性高" class="headerlink" title="5.可维护性高"></a>5.可维护性高</h4><p>分离视图层和业务逻辑层使得WEB应用更易于维护和修改。</p>
-<h4 id="6-有利软件工程化管理"><a href="#6-有利软件工程化管理" class="headerlink" title="6.有利软件工程化管理"></a>6.有利软件工程化管理</h4><p>由于不同的组件（层）各司其职，每一层不同的应用会具有某些相同的特征，这样就有利于通过工程化、工具化的方式管理程序代码。控制器同时还提供了一个好处，就是可以使用控制器来联接不同的模型和视图，来实现用户的需求，这样控制器可以为构造应用程序提供强有力的手段。给定一些可重用的模型和视图，控制器可以根据用户的需求选择模型进行处理，然后选择视图将处理结果显示给用户。</p>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><h4 id="1-没有明确的定义"><a href="#1-没有明确的定义" class="headerlink" title="1.没有明确的定义"></a>1.没有明确的定义</h4><p>完全理解MVC模式并不是很容易。使用MVC模式需要精心的计划，由于它的内部原理比较复杂，所以需要花费一些时间去思考软件的架构。同时由于模型和视图要严格的分离，这样也给调试应用程序带来了一定的困难。每个构件在使用之前都需要经过彻底的测试。</p>
-<h4 id="2-不适合小、中型应用程序"><a href="#2-不适合小、中型应用程序" class="headerlink" title="2.不适合小、中型应用程序"></a>2.不适合小、中型应用程序</h4><p>花费大量时间将MVC模式应用到规模并不是很大的应用程序通常会得不偿失。</p>
-<h4 id="3-增加系统结构和实现的复杂性"><a href="#3-增加系统结构和实现的复杂性" class="headerlink" title="3.增加系统结构和实现的复杂性"></a>3.增加系统结构和实现的复杂性</h4><p>对于简单的界面来说，非要严格遵循MVC模式，使模型、视图与控制器分离，会增加结构的复杂性，并可能产生过多的更新操作，降低运行效率。</p>
-<p>####4.视图对模型数据的低效率访问 ####<br>依据模型操作接口的不同，视图可能需要多次调用才能获得足够的显示数据。对未变化数据的不必要的频繁访问，也将损害操作性能。</p>
+                <p>#数据类型<br>使用mysql数据库存储数据时，不同的类型决定了不同mysql不同的存储方式不同。为此mysql数据库提供了多种数据类型，其中包括整数类型、浮点数类型、定点数类型、日期和时间类型和二进制类型。下面将对此进行详解。</p>
+<h2 id="1-整数类型"><a href="#1-整数类型" class="headerlink" title="1.整数类型"></a>1.整数类型</h2><p>在Mysql数据库中，经常需要存储整数数值。根据数值取值范围的不同，Mysql中的整数类型可分为五种，分别是TINYINT、SMALLINT、MEDIUMINT、INT和BIGINT。<br><img src="http://qiniuyun.dajienihao.cn/image/1211/image.png" alt=""><br>从表中可以看出，不同的整数类型占用的字节数和取值范围都不同。需要注意的是，不同整数类型的取值范围是可以根据字节数算出来的。</p>
+<h2 id="2-浮点数类型和定点数类型"><a href="#2-浮点数类型和定点数类型" class="headerlink" title="2.浮点数类型和定点数类型"></a>2.浮点数类型和定点数类型</h2><p>在mysql数据库中小数都是使用浮点数和定点数来表示的。浮点数的类型可以分为单精度浮点数类型（FLOAT）和双精度浮点数类型（DOUBLE）。而定点数类型只有DECMIMAL（M，D）<br><img src="http://qiniuyun.dajienihao.cn/image/1214/%E6%B5%AE%E7%82%B9%E5%9E%8B%E5%92%8C%E5%AE%9A%E7%82%B9%E5%9E%8B.jpg241642558434741.png" alt=""></p>
+<p>从表中可以看出DECIMAL类型的取值范围与DOUBLE类型的取值范围相同，需要注意的是DECIMAL的有效取值范围是由M和D决定的。其中，M表示的是数据的长度，D表示小数点后的长度。比如将DECIMAL（6，2）的数据3.14159插入数据库中，现实的结果为3.14。</p>
+<h2 id="3-日期与时间类型"><a href="#3-日期与时间类型" class="headerlink" title="3.日期与时间类型"></a>3.日期与时间类型</h2><p>为了方便在数据库中存储时间和日期，mysql提供了表示日期和时间的数据类型。分别是YEAR、DATE、TIME、DATETIME和TIMESTAMP。<br><img src="http://qiniuyun.dajienihao.cn/20191121112931554.jpg" alt=""><br>从表中可以看出每种日期和时间类型的取值范围都是不同的。需要注意的是如果插入的数值不合法，系统会自动将对应的零值插入数据库中。</p>
+<h2 id="4-字符串和二进制类型"><a href="#4-字符串和二进制类型" class="headerlink" title="4.字符串和二进制类型"></a>4.字符串和二进制类型</h2><p>为了存储字符串、图片和声音等数据，mysql提供了字符串类型和二进制类型。<br><img src="http://qiniuyun.dajienihao.cn/image/1214/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%B1%BB%E5%9E%8B.jpg" alt=""><br>表中列举的字符串和二进制类型，不同的数据类型具有不同的特点。</p>
 
             </div>
             <hr/>
@@ -510,7 +493,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://dajienihao.cn/2019/12/08/mvc-she-ji-mo-shi/">http://dajienihao.cn/2019/12/08/mvc-she-ji-mo-shi/</a>
+                    <a href="http://dajienihao.cn/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/">http://dajienihao.cn/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -548,8 +531,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                                    <span class="chip bg-color">设计模式</span>
+                                <a href="/tags/mysql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+                                    <span class="chip bg-color">mysql数据类型</span>
                                 </a>
                             
                         </div>
@@ -716,9 +699,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/">
+                    <div class="card-image">
+                        
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/mysql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3.jpg" class="responsive-img" alt="mysql数据类型详解">
+                        
+                        <span class="card-title">mysql数据类型详解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            #数据类型使用mysql数据库存储数据时，不同的类型决定了不同mysql不同的存储方式不同。为此mysql数据库提供了多种数据类型，其中包括整数类型、浮点数类型、定点数类型、日期和时间类型和二进制类型。下面将对此进行详解。
+1.整数类型在M
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/mysql/" class="post-category">
+                                    mysql
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/mysql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+                        <span class="chip bg-color">mysql数据类型</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2019/12/11/mysql-shu-ju-ku-ji-biao-de-ji-ben-cao-zuo/">
                     <div class="card-image">
@@ -737,9 +771,9 @@ show crate database 数
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -757,64 +791,6 @@ show crate database 数
                     
                     <a href="/tags/mysql/">
                         <span class="chip bg-color">mysql</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/11/23/eclipse-dao-ru-pu-tong-javaweb-xiang-mu-bao-cuo-wen-ti/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="eclipse导入普通javaweb项目报错问题">
-                        
-                        <span class="card-title">eclipse导入普通javaweb项目报错问题</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Eclipse导入javaweb项目代码报错解决方案相信大家在前期学习javaweb的时候导入项目都会碰到一个问题，那就是导入Javaweb项目时代码没有报错但项目图标就是有红叉。
-以下是我导入项目发生的错误，我带大家看一下导入项目时会出现
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    编程工具
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                        <span class="chip bg-color">后端</span>
-                    </a>
-                    
-                    <a href="/tags/eclipse/">
-                        <span class="chip bg-color">eclipse</span>
                     </a>
                     
                 </div>
