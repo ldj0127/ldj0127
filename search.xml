@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>mysql表的约束</title>
+    <url>/2019/12/18/biao-de-yue-shu/</url>
+    <content><![CDATA[<h2 id="表的约束"><a href="#表的约束" class="headerlink" title="表的约束"></a>表的约束</h2><p>为了防止数据表中插入错误的数据，在mysql中定义了一些维护数据库完整性的规则，即表的约束。<br><img src="http://qiniuyun.dajienihao.cn/image/1218/%E8%A1%A8%E7%9A%84%E7%BA%A6%E6%9D%9F.jpg" alt=""></p>
+<h3 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h3><h4 id="单字段主键"><a href="#单字段主键" class="headerlink" title="单字段主键"></a>单字段主键</h4><p>单字段主键指的是由一个字段构成的主键，其基本语法格式如下所示:<br><code>字段名 数据类型 primary key；</code></p>
+<pre><code> mysql-&gt;create table example(
+      -&gt;id int primary key,
+      -&gt;name varchar(20),
+      -&gt;grade float);</code></pre><h4 id="多字段主键"><a href="#多字段主键" class="headerlink" title="多字段主键"></a>多字段主键</h4><p>多字段主键指的是多个字段组合而成的主键，其基本的语法格式如下所示:<br><code>primary key（字段名1,字段2名,...,字段名n）；</code></p>
+<pre><code>     mysql-&gt;create table example1(
+         -&gt;stu_id int,
+         -&gt;course_id int,
+         -&gt;grade float,
+         -&gt;primary key(stu_id,course_id));</code></pre><blockquote>
+<p>注意：每个数据表中最多只能有一个主键约束，定义为primary key的字段不能有重复值且不能为null值;</p>
+</blockquote>
+<h3 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h3><p>由于外键约束涉及多表操作，这里就不进行说明了。</p>
+<h3 id="非空约束"><a href="#非空约束" class="headerlink" title="非空约束"></a>非空约束</h3><p>非空约束值得是字段的值不能为null，在MySQL中，非空约束是通过notnull定义的，其基本语法格式如下：<br><code>字段名 数据类型 not null；</code></p>
+<pre><code>    mysql-&gt;create table example2(
+         -&gt;id int primary key,
+         -&gt;name varchar(20) not null,
+         -&gt;grade float);</code></pre><h3 id="唯一约束"><a href="#唯一约束" class="headerlink" title="唯一约束"></a>唯一约束</h3><p>唯一约束用于保证数据表中字段的唯一性，即表中字段的值不能重复出现。唯一约束是通过    unique定义的，其基本语法的格式如下所示：<br><code>字段名 数据类型 unique；</code></p>
+<pre><code>mysql&gt;create table example3(
+    -&gt;id int primary key,
+    -&gt;stu_id int unique,
+    -&gt;name varchar(20)not null);</code></pre><h3 id="自增约束"><a href="#自增约束" class="headerlink" title="自增约束"></a>自增约束</h3><p>在数据表中，若想为表中插入新的记录自动生成唯一的ID,可以使用auto_increment约束来实现。auto_increment约束的字段可以是任何整数类型。默认情况下，该字段的值是从1开始自增的。使用auto_increment设置表字段值自动增加的基本语法格式如下所示：<br><code>字段名 数据类型 auto_increment；</code></p>
+<pre><code>    mysql&gt;create table example5(
+        -&gt;id int primary key auto_increment,
+        -&gt;stu_id int unique,
+        -&gt;grade float);</code></pre><h3 id="默认约束"><a href="#默认约束" class="headerlink" title="默认约束"></a>默认约束</h3><p>默认约束用于非数据表中字段指定默认值，即当在表中插入一条新记录是，如果么哦呦给这个字段赋值，那么，数据库系统会自动给这个字段插入默认值。默认值是通过default关键字定义的，其基本的语法格式如下所示：<br><code>字段名 数据类型 default 默认值；</code></p>
+<pre><code>    mysql&gt;create table example4(
+        -&gt;id int primary key,
+        -&gt;stu_id int unique,
+        -&gt;grade float default 0);</code></pre>]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>表的约束</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mysql数据类型详解</title>
     <url>/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/</url>
     <content><![CDATA[<p>#数据类型<br>使用mysql数据库存储数据时，不同的类型决定了不同mysql不同的存储方式不同。为此mysql数据库提供了多种数据类型，其中包括整数类型、浮点数类型、定点数类型、日期和时间类型和二进制类型。下面将对此进行详解。</p>
@@ -14,7 +56,8 @@
         <category>mysql</category>
       </categories>
       <tags>
-        <tag>mysql数据类型</tag>
+        <tag>mysql</tag>
+        <tag>数据类型</tag>
       </tags>
   </entry>
   <entry>

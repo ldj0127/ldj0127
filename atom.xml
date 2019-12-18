@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2019-12-14T03:15:32.664Z</updated>
+  <updated>2019-12-18T06:51:43.530Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>mysql表的约束</title>
+    <link href="http://dajienihao.cn/2019/12/18/biao-de-yue-shu/"/>
+    <id>http://dajienihao.cn/2019/12/18/biao-de-yue-shu/</id>
+    <published>2019-12-18T03:24:45.000Z</published>
+    <updated>2019-12-18T06:51:43.530Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;表的约束&quot;&gt;&lt;a href=&quot;#表的约束&quot; class=&quot;headerlink&quot; title=&quot;表的约束&quot;&gt;&lt;/a&gt;表的约束&lt;/h2&gt;&lt;p&gt;为了防止数据表中插入错误的数据，在mysql中定义了一些维护数据库完整性的规则，即表的约束。&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="mysql" scheme="http://dajienihao.cn/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://dajienihao.cn/tags/mysql/"/>
+    
+      <category term="表的约束" scheme="http://dajienihao.cn/tags/%E8%A1%A8%E7%9A%84%E7%BA%A6%E6%9D%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>mysql数据类型详解</title>
     <link href="http://dajienihao.cn/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/"/>
     <id>http://dajienihao.cn/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/</id>
     <published>2019-12-14T03:24:45.000Z</published>
-    <updated>2019-12-14T03:15:32.664Z</updated>
+    <updated>2019-12-18T06:47:47.844Z</updated>
     
     <summary type="html">
     
@@ -40,7 +69,9 @@
       <category term="mysql" scheme="http://dajienihao.cn/categories/mysql/"/>
     
     
-      <category term="mysql数据类型" scheme="http://dajienihao.cn/tags/mysql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+      <category term="mysql" scheme="http://dajienihao.cn/tags/mysql/"/>
+    
+      <category term="数据类型" scheme="http://dajienihao.cn/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
     
   </entry>
   
@@ -49,7 +80,7 @@
     <link href="http://dajienihao.cn/2019/12/11/mysql-shu-ju-ku-ji-biao-de-ji-ben-cao-zuo/"/>
     <id>http://dajienihao.cn/2019/12/11/mysql-shu-ju-ku-ji-biao-de-ji-ben-cao-zuo/</id>
     <published>2019-12-11T12:24:45.000Z</published>
-    <updated>2019-12-11T11:48:26.566Z</updated>
+    <updated>2019-12-18T06:48:28.336Z</updated>
     
     <summary type="html">
     

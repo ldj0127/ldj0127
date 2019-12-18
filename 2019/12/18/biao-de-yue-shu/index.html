@@ -9,9 +9,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="eclipse导入普通javaweb项目报错问题, L">
-    <meta name="description" content="Eclipse导入javaweb项目代码报错解决方案相信大家在前期学习javaweb的时候导入项目都会碰到一个问题，那就是导入Javaweb项目时代码没有报错但项目图标就是有红叉。
-以下是我导入项目发生的错误，我带大家看一下导入项目时会出现">
+    <meta name="keywords" content="mysql表的约束, L">
+    <meta name="description" content="表的约束为了防止数据表中插入错误的数据，在mysql中定义了一些维护数据库完整性的规则，即表的约束。
+主键约束单字段主键单字段主键指的是由一个字段构成的主键，其基本语法格式如下所示:字段名 数据类型 primary key；
+ mysql-">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>eclipse导入普通javaweb项目报错问题 | L</title>
+    <title>mysql表的约束 | L</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,13 +289,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://qiniuyun.dajienihao.cn/image/jpg/background/123945-1496983185ad61.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        eclipse导入普通javaweb项目报错问题
+                        mysql表的约束
                     </div>
                 </div>
             </div>
@@ -406,16 +407,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
+                            <a href="/tags/mysql/">
+                                <span class="chip bg-color">mysql</span>
                             </a>
                         
-                            <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                                <span class="chip bg-color">后端</span>
-                            </a>
-                        
-                            <a href="/tags/eclipse/">
-                                <span class="chip bg-color">eclipse</span>
+                            <a href="/tags/%E8%A1%A8%E7%9A%84%E7%BA%A6%E6%9D%9F/">
+                                <span class="chip bg-color">表的约束</span>
                             </a>
                         
                     </div>
@@ -426,8 +423,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/" class="post-category">
-                                编程工具
+                            <a href="/categories/mysql/" class="post-category">
+                                mysql
                             </a>
                         
                     </div>
@@ -438,7 +435,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-23
+                    2019-12-18
                 </div>
                 
                 
@@ -447,14 +444,14 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        283
+                        638
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -470,14 +467,37 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Eclipse导入javaweb项目代码报错解决方案"><a href="#Eclipse导入javaweb项目代码报错解决方案" class="headerlink" title="Eclipse导入javaweb项目代码报错解决方案"></a>Eclipse导入javaweb项目代码报错解决方案</h2><p>相信大家在前期学习javaweb的时候导入项目都会碰到一个问题，那就是导入Javaweb项目时代码没有报错但项目图标就是有红叉。</p>
-<p>以下是我导入项目发生的错误，我带大家看一下<br><img src="http://qiniuyun.dajienihao.cn/1122%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99.png" alt=""><br>导入项目时会出现这样的错误，jsp页面全部报错！下面我把我如何解决的方法告诉大家：</p>
-<h3 id="1-首先，点开你导入项目的项目名，右键选择Build-Path-gt-Configure-Build-Path"><a href="#1-首先，点开你导入项目的项目名，右键选择Build-Path-gt-Configure-Build-Path" class="headerlink" title="1.首先，点开你导入项目的项目名，右键选择Build Path--------&gt;Configure Build Path"></a><strong>1.首先，点开你导入项目的项目名，右键选择<code>Build Path--------&gt;Configure Build Path</code></strong></h3><p><img src="http://qiniuyun.dajienihao.cn/1122lib.png" alt=""></p>
-<h4 id="1-选中有红叉的jre点击remove"><a href="#1-选中有红叉的jre点击remove" class="headerlink" title="1.选中有红叉的jre点击remove"></a>1.选中有红叉的jre点击remove</h4><h4 id="2-然后点击Add-Library"><a href="#2-然后点击Add-Library" class="headerlink" title="2.然后点击Add Library"></a>2.然后点击Add Library</h4><h4 id="3-选择JRE-System-Library-点击next"><a href="#3-选择JRE-System-Library-点击next" class="headerlink" title="3.选择JRE System Library 点击next"></a>3.选择JRE System Library 点击next</h4><p><img src="http://qiniuyun.dajienihao.cn/1122addlib.png" alt=""></p>
-<h4 id="4-点击Installed选择你的你本机的jre在点击Apply即可"><a href="#4-点击Installed选择你的你本机的jre在点击Apply即可" class="headerlink" title="4.点击Installed选择你的你本机的jre在点击Apply即可"></a>4.点击Installed选择你的你本机的jre在点击Apply即可</h4><p><img src="http://qiniuyun.dajienihao.cn/addjre.png" alt=""></p>
-<h3 id="2-在再左边找到Project-Facets"><a href="#2-在再左边找到Project-Facets" class="headerlink" title="2.在再左边找到Project Facets"></a><strong>2.在再左边找到Project Facets</strong></h3><h4 id="1-点击java栏右边下拉框-选择你的版本（我这里是1-8版本所以我选择1-8版本）"><a href="#1-点击java栏右边下拉框-选择你的版本（我这里是1-8版本所以我选择1-8版本）" class="headerlink" title="1.点击java栏右边下拉框 选择你的版本（我这里是1.8版本所以我选择1.8版本）"></a>1.点击java栏右边下拉框 选择你的版本（我这里是1.8版本所以我选择1.8版本）</h4><p><img src="http://qiniuyun.dajienihao.cn/add1.8.png" alt=""></p>
-<h4 id="2-再点击Run-Times选择你的Tomcat版本-如果没有的的话new一个然后Apply就发现-报错已经全部消失了"><a href="#2-再点击Run-Times选择你的Tomcat版本-如果没有的的话new一个然后Apply就发现-报错已经全部消失了" class="headerlink" title="2.再点击Run Times选择你的Tomcat版本 如果没有的的话new一个然后Apply就发现 报错已经全部消失了"></a>2.再点击Run Times选择你的Tomcat版本 如果没有的的话new一个然后Apply就发现 报错已经全部消失了</h4><p><img src="http://qiniuyun.dajienihao.cn/finsh.png" alt=""></p>
-<h3 id="3-到这里就已经成功了嗷，如果还有问题的话可以私聊我"><a href="#3-到这里就已经成功了嗷，如果还有问题的话可以私聊我" class="headerlink" title="3.到这里就已经成功了嗷，如果还有问题的话可以私聊我"></a>3.到这里就已经成功了嗷，如果还有问题的话可以私聊我</h3>
+                <h2 id="表的约束"><a href="#表的约束" class="headerlink" title="表的约束"></a>表的约束</h2><p>为了防止数据表中插入错误的数据，在mysql中定义了一些维护数据库完整性的规则，即表的约束。<br><img src="http://qiniuyun.dajienihao.cn/image/1218/%E8%A1%A8%E7%9A%84%E7%BA%A6%E6%9D%9F.jpg" alt=""></p>
+<h3 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h3><h4 id="单字段主键"><a href="#单字段主键" class="headerlink" title="单字段主键"></a>单字段主键</h4><p>单字段主键指的是由一个字段构成的主键，其基本语法格式如下所示:<br><code>字段名 数据类型 primary key；</code></p>
+<pre><code> mysql-&gt;create table example(
+      -&gt;id int primary key,
+      -&gt;name varchar(20),
+      -&gt;grade float);</code></pre><h4 id="多字段主键"><a href="#多字段主键" class="headerlink" title="多字段主键"></a>多字段主键</h4><p>多字段主键指的是多个字段组合而成的主键，其基本的语法格式如下所示:<br><code>primary key（字段名1,字段2名,...,字段名n）；</code></p>
+<pre><code>     mysql-&gt;create table example1(
+         -&gt;stu_id int,
+         -&gt;course_id int,
+         -&gt;grade float,
+         -&gt;primary key(stu_id,course_id));</code></pre><blockquote>
+<p>注意：每个数据表中最多只能有一个主键约束，定义为primary key的字段不能有重复值且不能为null值;</p>
+</blockquote>
+<h3 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h3><p>由于外键约束涉及多表操作，这里就不进行说明了。</p>
+<h3 id="非空约束"><a href="#非空约束" class="headerlink" title="非空约束"></a>非空约束</h3><p>非空约束值得是字段的值不能为null，在MySQL中，非空约束是通过notnull定义的，其基本语法格式如下：<br><code>字段名 数据类型 not null；</code></p>
+<pre><code>    mysql-&gt;create table example2(
+         -&gt;id int primary key,
+         -&gt;name varchar(20) not null,
+         -&gt;grade float);</code></pre><h3 id="唯一约束"><a href="#唯一约束" class="headerlink" title="唯一约束"></a>唯一约束</h3><p>唯一约束用于保证数据表中字段的唯一性，即表中字段的值不能重复出现。唯一约束是通过    unique定义的，其基本语法的格式如下所示：<br><code>字段名 数据类型 unique；</code></p>
+<pre><code>mysql&gt;create table example3(
+    -&gt;id int primary key,
+    -&gt;stu_id int unique,
+    -&gt;name varchar(20)not null);</code></pre><h3 id="自增约束"><a href="#自增约束" class="headerlink" title="自增约束"></a>自增约束</h3><p>在数据表中，若想为表中插入新的记录自动生成唯一的ID,可以使用auto_increment约束来实现。auto_increment约束的字段可以是任何整数类型。默认情况下，该字段的值是从1开始自增的。使用auto_increment设置表字段值自动增加的基本语法格式如下所示：<br><code>字段名 数据类型 auto_increment；</code></p>
+<pre><code>    mysql&gt;create table example5(
+        -&gt;id int primary key auto_increment,
+        -&gt;stu_id int unique,
+        -&gt;grade float);</code></pre><h3 id="默认约束"><a href="#默认约束" class="headerlink" title="默认约束"></a>默认约束</h3><p>默认约束用于非数据表中字段指定默认值，即当在表中插入一条新记录是，如果么哦呦给这个字段赋值，那么，数据库系统会自动给这个字段插入默认值。默认值是通过default关键字定义的，其基本的语法格式如下所示：<br><code>字段名 数据类型 default 默认值；</code></p>
+<pre><code>    mysql&gt;create table example4(
+        -&gt;id int primary key,
+        -&gt;stu_id int unique,
+        -&gt;grade float default 0);</code></pre>
             </div>
             <hr/>
 
@@ -502,7 +522,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://dajienihao.cn/2019/11/23/eclipse-dao-ru-pu-tong-javaweb-xiang-mu-bao-cuo-wen-ti/">http://dajienihao.cn/2019/11/23/eclipse-dao-ru-pu-tong-javaweb-xiang-mu-bao-cuo-wen-ti/</a>
+                    <a href="http://dajienihao.cn/2019/12/18/biao-de-yue-shu/">http://dajienihao.cn/2019/12/18/biao-de-yue-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -540,16 +560,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
+                                <a href="/tags/mysql/">
+                                    <span class="chip bg-color">mysql</span>
                                 </a>
                             
-                                <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                                    <span class="chip bg-color">后端</span>
-                                </a>
-                            
-                                <a href="/tags/eclipse/">
-                                    <span class="chip bg-color">eclipse</span>
+                                <a href="/tags/%E8%A1%A8%E7%9A%84%E7%BA%A6%E6%9D%9F/">
+                                    <span class="chip bg-color">表的约束</span>
                                 </a>
                             
                         </div>
@@ -716,46 +732,53 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/12/08/mvc-she-ji-mo-shi/">
+                <a href="/2019/12/18/biao-de-yue-shu/">
                     <div class="card-image">
                         
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/123945-1496983185ad61.jpg" class="responsive-img" alt="mysql表的约束">
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="MVC设计模式">
-                        
-                        <span class="card-title">MVC设计模式</span>
+                        <span class="card-title">mysql表的约束</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            什么是MVCMVC全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里
+                            表的约束为了防止数据表中插入错误的数据，在mysql中定义了一些维护数据库完整性的规则，即表的约束。
+主键约束单字段主键单字段主键指的是由一个字段构成的主键，其基本语法格式如下所示:字段名 数据类型 primary key；
+ mysql-
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/MVC/" class="post-category">
-                                    MVC
+                            <a href="/categories/mysql/" class="post-category">
+                                    mysql
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">设计模式</span>
+                    <a href="/tags/mysql/">
+                        <span class="chip bg-color">mysql</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%A1%A8%E7%9A%84%E7%BA%A6%E6%9D%9F/">
+                        <span class="chip bg-color">表的约束</span>
                     </a>
                     
                 </div>
@@ -769,31 +792,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/31/java-ji-chu-fan-she/">
+                <a href="/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/">
                     <div class="card-image">
                         
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/mysql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3.jpg" class="responsive-img" alt="mysql数据类型详解">
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="java反射基础">
-                        
-                        <span class="card-title">java反射基础</span>
+                        <span class="card-title">mysql数据类型详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、概述1. 简介Java反射(Reflection)机制就是在运行状态中，对于任意一个类，都能够知道这个类的属性和方法。对于任意一个对象能够调用它的任意一个属性和方法。这种动态获取的信息和动态调用对象的方法的功能称为Java语言的反射机制
+                            #数据类型使用mysql数据库存储数据时，不同的类型决定了不同mysql不同的存储方式不同。为此mysql数据库提供了多种数据类型，其中包括整数类型、浮点数类型、定点数类型、日期和时间类型和二进制类型。下面将对此进行详解。
+1.整数类型在M
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8F%8D%E5%B0%84/" class="post-category">
-                                    反射
+                            <a href="/categories/mysql/" class="post-category">
+                                    mysql
                                 </a>
                             
                             
@@ -803,12 +826,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/mysql/">
+                        <span class="chip bg-color">mysql</span>
                     </a>
                     
-                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                        <span class="chip bg-color">后端</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+                        <span class="chip bg-color">数据类型</span>
                     </a>
                     
                 </div>
