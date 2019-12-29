@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>mysql表的约束</title>
+    <title>安卓自定义view五子棋项目</title>
     <url>/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/</url>
     <content><![CDATA[<p>当初学编程的，都想做一个游戏，俄罗斯方块？贪吃蛇？不不不，今天我所讲的是五子棋双人对战，对比那些来说，应该算比较简单的了。<br>相信很多人都有看过，不过视频中，我发现有些代码是不需要的，而且还存在一些bug，针对视频所存在的bug我都做了调整，经测试，目前无bug。<br>创建一个类，然后继承View，需要实现构造方法，我们选择两个参数的构造方法就行了<br>下面贴出代码：</p>
 <pre><code>public panel(Context context, AttributeSet attrs) {
