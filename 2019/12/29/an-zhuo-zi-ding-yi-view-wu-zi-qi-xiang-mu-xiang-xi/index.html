@@ -9,8 +9,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MVC设计模式, L">
-    <meta name="description" content="什么是MVCMVC全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里">
+    <meta name="keywords" content="mysql表的约束, L">
+    <meta name="description" content="当初学编程的，都想做一个游戏，俄罗斯方块？贪吃蛇？不不不，今天我所讲的是五子棋双人对战，对比那些来说，应该算比较简单的了。相信很多人都有看过，不过视频中，我发现有些代码是不需要的，而且还存在一些bug，针对视频所存在的bug我都做了调整，经">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>MVC设计模式 | L</title>
+    <title>mysql表的约束 | L</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -287,13 +287,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://qiniuyun.dajienihao.cn/image/jpg/background/163806-1570264686e1ed.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        MVC设计模式
+                        mysql表的约束
                     </div>
                 </div>
             </div>
@@ -405,8 +405,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                                <span class="chip bg-color">设计模式</span>
+                            <a href="/tags/%E5%AE%89%E5%8D%93/">
+                                <span class="chip bg-color">安卓</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/">
+                                <span class="chip bg-color">自定义view</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">
+                                <span class="chip bg-color">项目实战</span>
                             </a>
                         
                     </div>
@@ -417,8 +425,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/MVC/" class="post-category">
-                                MVC
+                            <a href="/categories/%E5%AE%89%E5%8D%93/" class="post-category">
+                                安卓
                             </a>
                         
                     </div>
@@ -429,7 +437,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-08
+                    2019-12-29
                 </div>
                 
                 
@@ -438,14 +446,14 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.5k
+                        2.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        11 分
                     </div>
                     
                 
@@ -461,30 +469,312 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="什么是MVC"><a href="#什么是MVC" class="headerlink" title="什么是MVC"></a>什么是MVC</h2><p><strong>MVC</strong>全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。MVC被独特的发展起来用于映射传统的输入、处理和输出功能在一个逻辑的图形化用户界面的结构中。</p>
-<ul>
-<li><p>Model（模型） 模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。</p>
-</li>
-<li><p>View（视图） - 视图代表模型包含的数据的可视化。</p>
-</li>
-<li><p>Controller（控制器） - 控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。</p>
-</li>
-</ul>
-<p><img src="http://qiniuyun.dajienihao.cn/image/1208/mvc%E6%B5%81%E7%A8%8B.png" alt=""></p>
-<h2 id="MVC的优缺点"><a href="#MVC的优缺点" class="headerlink" title="MVC的优缺点"></a>MVC的优缺点</h2><p>毕竟没有什么设计模式是完美的，优点和缺点总是各有千秋。</p>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><h4 id="1-低耦合"><a href="#1-低耦合" class="headerlink" title="1.低耦合"></a>1.低耦合</h4><p>通过将视图层和业务层分离，允许更改视图层代码而不必重新编译模型和控制器代码，同样，一个应用的业务流程或者业务规则的改变，只需要改动MVC的模型层（及控制器）即可。因为模型与控制器和视图相分离，所以很容易改变应用程序的数据层和业务规则。</p>
-<p>模型层是自包含的，并且与控制器和视图层相分离，所以很容易改变应用程序的数据层和业务规则。如果想把数据库从 MySQL 移植到 Oracle，或者改变基于 RDBMS 的数据源到 LDAP，只需改变模型层即可。一旦正确的实现了模型层，不管数据来自数据库或是 LDAP服务器，视图层都将会正确的显示它们。由于运用 MVC 的应用程序的三个部件是相互独立，改变其中一个部件并不会影响其它两个，所以依据这种设计思想能构造出良好的松耦合的构件。</p>
-<h4 id="2-重用性高"><a href="#2-重用性高" class="headerlink" title="2.重用性高"></a>2.重用性高</h4><p>随着技术的不断进步，当前需要使用越来越多的方式来访问应用程序了。MVC模式允许使用各种不同样式的视图来访问同一个服务端的代码，这得益于多个视图（如WEB（HTTP）浏览器或者无线浏览器（WAP））能共享一个模型。</p>
-<p>比如，用户可以通过电脑或通过手机来订购某样产品，虽然订购的方式不一样，但处理订购产品的方式（流程）是一样的。由于模型返回的数据没有进行格式化，所以同样的构件能被不同的界面（视图）使用。例如，很多数据可能用 HTML 来表示，但是也有可能用 WAP 来表示，而这些表示的变化所需要的是仅仅是改变视图层的实现方式，而控制层和模型层无需做任何改变。</p>
-<p>由于已经将数据和业务规则从表示层分开，所以可以最大化的进行代码重用了。另外，模型层也有状态管理和数据持久性处理的功能，所以，基于会话的购物车和电子商务过程，也能被Flash网站或者无线联网的应用程序所重用。</p>
-<h4 id="3-生命周期成本低"><a href="#3-生命周期成本低" class="headerlink" title="3.生命周期成本低"></a>3.生命周期成本低</h4><p>MVC模式使开发和维护用户接口的技术含量降低。</p>
-<h4 id="4-部署快"><a href="#4-部署快" class="headerlink" title="4.部署快"></a>4.部署快</h4><p>使用MVC模式进行软件开发，使得软件开发时间得到相当大的缩减，它使后台程序员集中精力于业务逻辑，界面程序员集中精力于表现形式上。</p>
-<h4 id="5-可维护性高"><a href="#5-可维护性高" class="headerlink" title="5.可维护性高"></a>5.可维护性高</h4><p>分离视图层和业务逻辑层使得WEB应用更易于维护和修改。</p>
-<h4 id="6-有利软件工程化管理"><a href="#6-有利软件工程化管理" class="headerlink" title="6.有利软件工程化管理"></a>6.有利软件工程化管理</h4><p>由于不同的组件（层）各司其职，每一层不同的应用会具有某些相同的特征，这样就有利于通过工程化、工具化的方式管理程序代码。控制器同时还提供了一个好处，就是可以使用控制器来联接不同的模型和视图，来实现用户的需求，这样控制器可以为构造应用程序提供强有力的手段。给定一些可重用的模型和视图，控制器可以根据用户的需求选择模型进行处理，然后选择视图将处理结果显示给用户。</p>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><h4 id="1-没有明确的定义"><a href="#1-没有明确的定义" class="headerlink" title="1.没有明确的定义"></a>1.没有明确的定义</h4><p>完全理解MVC模式并不是很容易。使用MVC模式需要精心的计划，由于它的内部原理比较复杂，所以需要花费一些时间去思考软件的架构。同时由于模型和视图要严格的分离，这样也给调试应用程序带来了一定的困难。每个构件在使用之前都需要经过彻底的测试。</p>
-<h4 id="2-不适合小、中型应用程序"><a href="#2-不适合小、中型应用程序" class="headerlink" title="2.不适合小、中型应用程序"></a>2.不适合小、中型应用程序</h4><p>花费大量时间将MVC模式应用到规模并不是很大的应用程序通常会得不偿失。</p>
-<h4 id="3-增加系统结构和实现的复杂性"><a href="#3-增加系统结构和实现的复杂性" class="headerlink" title="3.增加系统结构和实现的复杂性"></a>3.增加系统结构和实现的复杂性</h4><p>对于简单的界面来说，非要严格遵循MVC模式，使模型、视图与控制器分离，会增加结构的复杂性，并可能产生过多的更新操作，降低运行效率。</p>
-<p>####4.视图对模型数据的低效率访问 ####<br>依据模型操作接口的不同，视图可能需要多次调用才能获得足够的显示数据。对未变化数据的不必要的频繁访问，也将损害操作性能。</p>
+                <p>当初学编程的，都想做一个游戏，俄罗斯方块？贪吃蛇？不不不，今天我所讲的是五子棋双人对战，对比那些来说，应该算比较简单的了。<br>相信很多人都有看过，不过视频中，我发现有些代码是不需要的，而且还存在一些bug，针对视频所存在的bug我都做了调整，经测试，目前无bug。<br>创建一个类，然后继承View，需要实现构造方法，我们选择两个参数的构造方法就行了<br>下面贴出代码：</p>
+<pre><code>public panel(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();//初始化方法
+    }</code></pre><p>所需定义的内容：</p>
+<pre><code>private int mPanelWidth;
+private float mLineHeight;//棋盘行距
+private int MAX_LINE = 10;//棋盘行数
+private Paint mPaint = new Paint();//绘制对象
+private Bitmap mWhitePiece;//白色棋子
+private Bitmap mBlackPiece;//黑色棋子
+private boolean mIsWhite = true;//白棋先手，当前轮到白棋出子
+private List&lt;Point&gt; mWhiteArray = new ArrayList&lt;&gt;();//放白色棋子落子的坐标
+private List&lt;Point&gt; mBlackArray = new ArrayList&lt;&gt;();//放黑色棋子落子的坐标
+private float ratioPieceOfLineHeight = 3 * 1.0f / 4;//棋子占据的比例
+private boolean mIsGameOver;//判断游戏结束
+private boolean mIsWhiteWinner;//true白子胜利，false黑子胜利
+private int MAX_COUNT_IN_LINE = 5;//五子棋数</code></pre><p>  对画笔的初始化：</p>
+<pre><code> private void init() {//初始化方法
+        mPaint.setColor(Color.rgb(0, 0, 0));//设置颜色
+        mPaint.setAntiAlias(true);//抗锯齿
+        mPaint.setDither(true);//设置防抖动
+        mPaint.setStyle(Paint.Style.STROKE);//绘制棋盘线条，画笔为描边样式
+        mWhitePiece = BitmapFactory.decodeResource(getResources(), R.drawable.stone_w2);//设置白色棋子图片
+        mBlackPiece = BitmapFactory.decodeResource(getResources(), R.drawable.stone_b1);//设置黑色棋子图片
+    }</code></pre><p> 对于自定义view有一定基础的小伙伴都知道，自定义一般都要实现2个方法，1：onSizeChanged（视图大小的改变）；2：onMeasure（告诉父view，子视图占用多大的空间）<br>下面上代码，我都有详细注解，就不一个一个解释了：<br>onMeasure：</p>
+<pre><code>    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {//设置棋盘大小
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);//获取宽度
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);//根据测量值提取模式
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);//获取高度
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);//根据测量值提取模式
+        int width = Math.min(widthSize, heightSize);//取最小值获取设置正方形棋盘
+        if (widthMode == MeasureSpec.UNSPECIFIED)//当模式为未指定模式时就为棋盘长宽就为高度
+            width = heightSize;
+        else if (heightMode == MeasureSpec.UNSPECIFIED)//当模式为未指定模式时就为棋盘长宽就为宽度
+            width = widthSize;
+        setMeasuredDimension(width, width);//取宽高的最小值绘制棋盘
+    }</code></pre><p> onSizeChanged：</p>
+<pre><code> protected void onSizeChanged(int w, int h, int oldw, int oldh) {//当宽高发生改变进行回调
+        super.onSizeChanged(w, h, oldw, oldh);
+        mPanelWidth = w;
+        mLineHeight = mPanelWidth * 1.0f / MAX_LINE;//棋盘行距
+        int pieceWidth = (int) (mLineHeight * ratioPieceOfLineHeight);//棋子比列
+        mWhitePiece = Bitmap.createScaledBitmap(mWhitePiece, pieceWidth, pieceWidth, false);//设置棋子大小
+        mBlackPiece = Bitmap.createScaledBitmap(mBlackPiece, pieceWidth, pieceWidth, false);//设置棋子大小
+    }</code></pre><p> 好了，下面我们进图画图操作，需要的操作是，先画棋盘，在画棋子，然后判断游戏结束。</p>
+<pre><code>  protected void onDraw(Canvas canvas) {//绘制方法
+        super.onDraw(canvas);
+        drawBoard(canvas);//绘制棋盘
+        drawPiece(canvas);//绘制棋子
+        checkGameOver();//检查游戏是否结束
+    }</code></pre><p> 绘制棋盘：</p>
+<pre><code>  private void drawBoard(Canvas canvas) {//绘制棋盘方法
+        int w = mPanelWidth;//棋盘宽度
+        float lineHeight = mLineHeight;//棋盘行距
+        for (int i = 0; i &lt; MAX_LINE; i++) {
+            int startX = (int) (lineHeight / 2);//起点坐标
+            int endX = (int) (w - lineHeight / 2);//终点坐标
+            int y = (int) ((0.5 + i) * lineHeight);//y轴起点坐标
+            canvas.drawLine(startX, y, endX, y, mPaint);//绘制x轴线条
+            canvas.drawLine(y, startX, y, endX, mPaint);//绘制y轴线条
+        }
+    }</code></pre><p>绘制棋子：</p>
+<pre><code>private void drawPiece(Canvas canvas) {//绘制棋子方法
+        for (int i = 0; i &lt; mWhiteArray.size(); i++) {
+            Point whitePoint = mWhiteArray.get(i);//拿到棋子
+            canvas.drawBitmap(mWhitePiece,
+                    (whitePoint.x + (1 - ratioPieceOfLineHeight) / 2) * mLineHeight,
+                    (whitePoint.y + (1 - ratioPieceOfLineHeight) / 2) * mLineHeight, null);//棋子坐标计算
+        }
+        for (int i = 0; i &lt; mBlackArray.size(); i++) {
+            Point blackPoint = mBlackArray.get(i);//拿到棋子
+            canvas.drawBitmap(mBlackPiece,
+                    (blackPoint.x + (1 - ratioPieceOfLineHeight) / 2) * mLineHeight,
+                    (blackPoint.y + (1 - ratioPieceOfLineHeight) / 2) * mLineHeight, null);//棋子坐标计算
+        }
+    }</code></pre><p>判断游戏是否结束:</p>
+<pre><code>private void checkGameOver() {//判断游戏是否结束及和棋
+        boolean whiteWin = checkFiveInLine(mWhiteArray);//白子成功五子连珠
+        boolean blackWin = checkFiveInLine(mBlackArray);//黑子成功五子连珠
+        int max = MAX_LINE * MAX_LINE;//最大落子数的和
+        if (whiteWin || blackWin) {//有人胜利
+            mIsGameOver = true;//游戏结束
+            mIsWhiteWinner = whiteWin;
+            String text = mIsWhiteWinner ? &quot;白棋胜利&quot; : &quot;黑棋胜利&quot;;//白子赢了提示白棋胜利，否者黑棋胜利
+            if (mIsGameOver) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setIcon(R.drawable.dy);
+                builder.setTitle(&quot;游戏结束，&quot; + text);
+                builder.setMessage(&quot;请选项下面选项！！！！&quot;);
+                builder.setNegativeButton(&quot;退出游戏&quot;, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        System.exit(0);
+                    }
+                });
+                builder.setNeutralButton(&quot;查看棋盘！&quot;, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                builder.setPositiveButton(&quot;再来一局&quot;, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        reStart();
+                    }
+                });
+                builder.setCancelable(false);
+                builder.show();
+            }
+        } else if ((mBlackArray.size() + mWhiteArray.size()) == max) {//当白棋子数和黑棋字数相加等于最大数时无人胜利，双方和棋
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setIcon(R.drawable.dy);
+            builder.setTitle(&quot;棋逢对手,将遇良才！&quot;);
+            builder.setMessage(&quot;二位和棋，是否再战一句！！！&quot;);
+            builder.setNegativeButton(&quot;退出游戏&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    System.exit(0);
+                }
+            });
+            builder.setNeutralButton(&quot;查看棋盘！&quot;, new DialogInterface.OnClickListener() {
+
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+                }
+            });
+            builder.setPositiveButton(&quot;再来一局&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    reStart();
+                }
+            });
+            builder.setCancelable(false);
+            builder.show();
+        }
+    }</code></pre><p>游戏结束的判断的依据：</p>
+<pre><code>private boolean checkFiveInLine(List&lt;Point&gt; points) {//判断是否五子连珠
+        for (Point p : points) {
+            int x = p.x;
+            int y = p.y;
+            boolean win = checkHorizontal(x, y, points);//判断xy位置的棋子是否有左右相邻的五个一致
+            if (win)
+                return true;
+            win = checkVertiacal(x, y, points);//判断xy位置的棋子是否有上下相邻的五个一致
+            if (win)
+                return true;
+            win = checkLeftDiagonal(x, y, points);//判断xy位置的棋子是否有左斜相邻的五个一致
+            if (win)
+                return true;
+            win = checkRightDiagonal(x, y, points);//判断xy位置的棋子是否有右斜相邻的五个一致
+            if (win)
+                return true;
+        }
+        return false;
+    }</code></pre><p>判断是否有横向五子连珠：</p>
+<pre><code>private boolean checkHorizontal(int x, int y, List&lt;Point&gt; points) {//判断x，y位置的棋子是否有横向相邻的五个一致
+        int count = 1;//当前子
+        for (int i = 1; i &lt; MAX_COUNT_IN_LINE; i++) {//从当前子往左数最大4个，如果有相同子count加1
+            if (points.contains(new Point(x - i, y))) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        if (count == MAX_COUNT_IN_LINE)//如果count为5表示成功连珠
+            return true;
+
+
+        for (int i = 1; i &lt; MAX_COUNT_IN_LINE; i++) {//从当前子往右数最大4个，如果有相同子count加1
+            if (points.contains(new Point(x + i, y))) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        if (count == MAX_COUNT_IN_LINE)//如果count为5表示成功连珠
+            return true;
+        return false;
+    }</code></pre><p>其他方向的代码和上面一样只是循环中x，y的值改一下，就不放具体代码了，具体提示一下竖向判断的(x,y-1),(x,y+1）左斜是(x - i, y + i),(x + i, y - i) 右斜是(x - i, y - i),(x + i, y + i)<br>重新开始游戏:</p>
+<pre><code>public void reStart() {//重新开始游戏
+        mWhiteArray.clear();
+        mBlackArray.clear();
+        mIsGameOver = false;
+        mIsWhiteWinner = false;
+        mIsWhite=true;
+        invalidate();
+    }</code></pre><p>悔棋：</p>
+<pre><code>public void withDraw() {//悔棋
+        if (mIsGameOver) {
+            Toast.makeText(getContext(), &quot;游戏已经结束，不能悔棋&quot;, Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (mBlackArray.size() &gt; 0 || mWhiteArray.size() &gt; 0) {
+            if (mIsWhite) {
+                mBlackArray.remove(mBlackArray.size() - 1);
+                mIsWhite = !mIsWhite;
+            } else {
+                mWhiteArray.remove(mWhiteArray.size() - 1);
+                mIsWhite = !mIsWhite;
+            }
+            invalidate();
+        }
+    }</code></pre><p>这里我没有考虑到禁手的问题，感觉如果考虑到禁手的话，算法比较复杂，人机对战。这里呢此类的代码就完成了<br>下面将布局代码发出来</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    tools:context=&quot;.MainActivity&quot;
+    android:background=&quot;@drawable/bg&quot;&gt;
+    &lt;TextView
+        android:id=&quot;@+id/textview&quot;
+        android:textColor=&quot;#000000&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:textSize=&quot;30dp&quot;
+        android:layout_centerHorizontal=&quot;true&quot;
+        android:layout_above=&quot;@id/wuziqi&quot;
+        /&gt;
+    &lt;com.example.myapplication.panel
+        android:id=&quot;@+id/wuziqi&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        android:layout_centerInParent=&quot;true&quot; /&gt;
+    &lt;LinearLayout
+        android:layout_below=&quot;@id/wuziqi&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_marginLeft=&quot;60dp&quot;
+        android:layout_marginRight=&quot;60dp&quot;
+        android:layout_height=&quot;wrap_content&quot;&gt;
+
+        &lt;Button
+            android:id=&quot;@+id/restart&quot;
+            android:text=&quot;重新开始&quot;
+            android:onClick=&quot;reStart&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;/&gt;
+        &lt;TextView
+            android:layout_weight=&quot;1&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;&quot;/&gt;
+        &lt;Button
+            android:id=&quot;@+id/withdraw&quot;
+            android:text=&quot;悔棋&quot;
+            android:onClick=&quot;withdraw&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;/&gt;
+    &lt;/LinearLayout&gt;
+&lt;/RelativeLayout&gt;</code></pre><p>mainactivity.java文件的代码也发出来</p>
+<pre><code>public class MainActivity extends AppCompatActivity {
+    panel panel;
+    TextView textView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        panel=findViewById(R.id.wuziqi);
+    }
+
+    public void reStart(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.dy);
+        builder.setTitle(&quot;重新开始&quot;);
+        builder.setMessage(&quot;重新开始游戏需要双方棋手同意请选择！！！&quot;);
+        builder.setNegativeButton(&quot;取消&quot;, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setPositiveButton(&quot;重新开始&quot;, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                panel.reStart();
+            }
+        });
+        builder.setCancelable(false);
+        builder.show();
+    }
+
+    public void withdraw(View view) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.dy);
+        builder.setTitle(&quot;悔棋&quot;);
+        builder.setMessage(&quot;悔棋需要双方棋手同意请选择！！！&quot;);
+        builder.setNegativeButton(&quot;取消&quot;, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setPositiveButton(&quot;确定悔棋&quot;, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                panel.withDraw();
+            }
+        });
+        builder.setCancelable(false);
+        builder.show();
+    }
+}</code></pre><p>好了到这里安卓五子棋的项目就完成了，自定义view的难度在于给viwe的大小及测量，完成这些的话其实自定义view并没有这么难。</p>
 
             </div>
             <hr/>
@@ -510,7 +800,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://dajienihao.cn/2019/12/08/mvc-she-ji-mo-shi/">http://dajienihao.cn/2019/12/08/mvc-she-ji-mo-shi/</a>
+                    <a href="http://dajienihao.cn/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/">http://dajienihao.cn/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -548,8 +838,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                                    <span class="chip bg-color">设计模式</span>
+                                <a href="/tags/%E5%AE%89%E5%8D%93/">
+                                    <span class="chip bg-color">安卓</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/">
+                                    <span class="chip bg-color">自定义view</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">
+                                    <span class="chip bg-color">项目实战</span>
                                 </a>
                             
                         </div>
@@ -716,30 +1014,86 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/12/11/mysql-shu-ju-ku-ji-biao-de-ji-ben-cao-zuo/">
+                <a href="/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/224644-1574347604d36e.jpg" class="responsive-img" alt="mysql数据库及表的基本操作">
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/163806-1570264686e1ed.jpg" class="responsive-img" alt="mysql表的约束">
                         
-                        <span class="card-title">mysql数据库及表的基本操作</span>
+                        <span class="card-title">mysql表的约束</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mysql简单操作mysql服务的启动与暂停net start mysql
-net stop mysqlmysql登录-u用户名 -p密码创建和查看数据库create database 数据库名称
-show crate database 数
+                            当初学编程的，都想做一个游戏，俄罗斯方块？贪吃蛇？不不不，今天我所讲的是五子棋双人对战，对比那些来说，应该算比较简单的了。相信很多人都有看过，不过视频中，我发现有些代码是不需要的，而且还存在一些bug，针对视频所存在的bug我都做了调整，经
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-11
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AE%89%E5%8D%93/" class="post-category">
+                                    安卓
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AE%89%E5%8D%93/">
+                        <span class="chip bg-color">安卓</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/">
+                        <span class="chip bg-color">自定义view</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">
+                        <span class="chip bg-color">项目实战</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/12/21/mysql-de-suo-yin/">
+                    <div class="card-image">
+                        
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/005346-1570294426c666.jpg" class="responsive-img" alt="mysql的索引">
+                        
+                        <span class="card-title">mysql的索引</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            索引在数据库操作中，经常需要查询特定的数据，例如，当执行select * from student where id=10000语句时，MySQL数据库必须从第一条记录开始遍历，直到找出id为10000的数据，这样的效率显然非常低。为此，M
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -759,62 +1113,8 @@ show crate database 数
                         <span class="chip bg-color">mysql</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/11/23/eclipse-dao-ru-pu-tong-javaweb-xiang-mu-bao-cuo-wen-ti/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="eclipse导入普通javaweb项目报错问题">
-                        
-                        <span class="card-title">eclipse导入普通javaweb项目报错问题</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Eclipse导入javaweb项目代码报错解决方案相信大家在前期学习javaweb的时候导入项目都会碰到一个问题，那就是导入Javaweb项目时代码没有报错但项目图标就是有红叉。
-以下是我导入项目发生的错误，我带大家看一下导入项目时会出现
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    编程工具
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                        <span class="chip bg-color">后端</span>
-                    </a>
-                    
-                    <a href="/tags/eclipse/">
-                        <span class="chip bg-color">eclipse</span>
+                    <a href="/tags/%E7%B4%A2%E5%BC%95/">
+                        <span class="chip bg-color">索引</span>
                     </a>
                     
                 </div>

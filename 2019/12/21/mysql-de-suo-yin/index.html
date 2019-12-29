@@ -9,8 +9,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MVC设计模式, L">
-    <meta name="description" content="什么是MVCMVC全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里">
+    <meta name="keywords" content="mysql的索引, L">
+    <meta name="description" content="索引在数据库操作中，经常需要查询特定的数据，例如，当执行select * from student where id=10000语句时，MySQL数据库必须从第一条记录开始遍历，直到找出id为10000的数据，这样的效率显然非常低。为此，M">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>MVC设计模式 | L</title>
+    <title>mysql的索引 | L</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -287,13 +287,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://qiniuyun.dajienihao.cn/image/jpg/background/005346-1570294426c666.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        MVC设计模式
+                        mysql的索引
                     </div>
                 </div>
             </div>
@@ -405,8 +405,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                                <span class="chip bg-color">设计模式</span>
+                            <a href="/tags/mysql/">
+                                <span class="chip bg-color">mysql</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%B4%A2%E5%BC%95/">
+                                <span class="chip bg-color">索引</span>
                             </a>
                         
                     </div>
@@ -417,8 +421,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/MVC/" class="post-category">
-                                MVC
+                            <a href="/categories/mysql/" class="post-category">
+                                mysql
                             </a>
                         
                     </div>
@@ -429,7 +433,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-08
+                    2019-12-21
                 </div>
                 
                 
@@ -438,14 +442,14 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.5k
+                        1.8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        7 分
                     </div>
                     
                 
@@ -461,31 +465,88 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="什么是MVC"><a href="#什么是MVC" class="headerlink" title="什么是MVC"></a>什么是MVC</h2><p><strong>MVC</strong>全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。MVC被独特的发展起来用于映射传统的输入、处理和输出功能在一个逻辑的图形化用户界面的结构中。</p>
-<ul>
-<li><p>Model（模型） 模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。</p>
-</li>
-<li><p>View（视图） - 视图代表模型包含的数据的可视化。</p>
-</li>
-<li><p>Controller（控制器） - 控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。</p>
-</li>
-</ul>
-<p><img src="http://qiniuyun.dajienihao.cn/image/1208/mvc%E6%B5%81%E7%A8%8B.png" alt=""></p>
-<h2 id="MVC的优缺点"><a href="#MVC的优缺点" class="headerlink" title="MVC的优缺点"></a>MVC的优缺点</h2><p>毕竟没有什么设计模式是完美的，优点和缺点总是各有千秋。</p>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><h4 id="1-低耦合"><a href="#1-低耦合" class="headerlink" title="1.低耦合"></a>1.低耦合</h4><p>通过将视图层和业务层分离，允许更改视图层代码而不必重新编译模型和控制器代码，同样，一个应用的业务流程或者业务规则的改变，只需要改动MVC的模型层（及控制器）即可。因为模型与控制器和视图相分离，所以很容易改变应用程序的数据层和业务规则。</p>
-<p>模型层是自包含的，并且与控制器和视图层相分离，所以很容易改变应用程序的数据层和业务规则。如果想把数据库从 MySQL 移植到 Oracle，或者改变基于 RDBMS 的数据源到 LDAP，只需改变模型层即可。一旦正确的实现了模型层，不管数据来自数据库或是 LDAP服务器，视图层都将会正确的显示它们。由于运用 MVC 的应用程序的三个部件是相互独立，改变其中一个部件并不会影响其它两个，所以依据这种设计思想能构造出良好的松耦合的构件。</p>
-<h4 id="2-重用性高"><a href="#2-重用性高" class="headerlink" title="2.重用性高"></a>2.重用性高</h4><p>随着技术的不断进步，当前需要使用越来越多的方式来访问应用程序了。MVC模式允许使用各种不同样式的视图来访问同一个服务端的代码，这得益于多个视图（如WEB（HTTP）浏览器或者无线浏览器（WAP））能共享一个模型。</p>
-<p>比如，用户可以通过电脑或通过手机来订购某样产品，虽然订购的方式不一样，但处理订购产品的方式（流程）是一样的。由于模型返回的数据没有进行格式化，所以同样的构件能被不同的界面（视图）使用。例如，很多数据可能用 HTML 来表示，但是也有可能用 WAP 来表示，而这些表示的变化所需要的是仅仅是改变视图层的实现方式，而控制层和模型层无需做任何改变。</p>
-<p>由于已经将数据和业务规则从表示层分开，所以可以最大化的进行代码重用了。另外，模型层也有状态管理和数据持久性处理的功能，所以，基于会话的购物车和电子商务过程，也能被Flash网站或者无线联网的应用程序所重用。</p>
-<h4 id="3-生命周期成本低"><a href="#3-生命周期成本低" class="headerlink" title="3.生命周期成本低"></a>3.生命周期成本低</h4><p>MVC模式使开发和维护用户接口的技术含量降低。</p>
-<h4 id="4-部署快"><a href="#4-部署快" class="headerlink" title="4.部署快"></a>4.部署快</h4><p>使用MVC模式进行软件开发，使得软件开发时间得到相当大的缩减，它使后台程序员集中精力于业务逻辑，界面程序员集中精力于表现形式上。</p>
-<h4 id="5-可维护性高"><a href="#5-可维护性高" class="headerlink" title="5.可维护性高"></a>5.可维护性高</h4><p>分离视图层和业务逻辑层使得WEB应用更易于维护和修改。</p>
-<h4 id="6-有利软件工程化管理"><a href="#6-有利软件工程化管理" class="headerlink" title="6.有利软件工程化管理"></a>6.有利软件工程化管理</h4><p>由于不同的组件（层）各司其职，每一层不同的应用会具有某些相同的特征，这样就有利于通过工程化、工具化的方式管理程序代码。控制器同时还提供了一个好处，就是可以使用控制器来联接不同的模型和视图，来实现用户的需求，这样控制器可以为构造应用程序提供强有力的手段。给定一些可重用的模型和视图，控制器可以根据用户的需求选择模型进行处理，然后选择视图将处理结果显示给用户。</p>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><h4 id="1-没有明确的定义"><a href="#1-没有明确的定义" class="headerlink" title="1.没有明确的定义"></a>1.没有明确的定义</h4><p>完全理解MVC模式并不是很容易。使用MVC模式需要精心的计划，由于它的内部原理比较复杂，所以需要花费一些时间去思考软件的架构。同时由于模型和视图要严格的分离，这样也给调试应用程序带来了一定的困难。每个构件在使用之前都需要经过彻底的测试。</p>
-<h4 id="2-不适合小、中型应用程序"><a href="#2-不适合小、中型应用程序" class="headerlink" title="2.不适合小、中型应用程序"></a>2.不适合小、中型应用程序</h4><p>花费大量时间将MVC模式应用到规模并不是很大的应用程序通常会得不偿失。</p>
-<h4 id="3-增加系统结构和实现的复杂性"><a href="#3-增加系统结构和实现的复杂性" class="headerlink" title="3.增加系统结构和实现的复杂性"></a>3.增加系统结构和实现的复杂性</h4><p>对于简单的界面来说，非要严格遵循MVC模式，使模型、视图与控制器分离，会增加结构的复杂性，并可能产生过多的更新操作，降低运行效率。</p>
-<p>####4.视图对模型数据的低效率访问 ####<br>依据模型操作接口的不同，视图可能需要多次调用才能获得足够的显示数据。对未变化数据的不必要的频繁访问，也将损害操作性能。</p>
-
+                <h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>在数据库操作中，经常需要查询特定的数据，例如，当执行<code>select * from student where id=10000</code>语句时，MySQL数据库必须从第一条记录开始遍历，直到找出id为10000的数据，这样的效率显然非常低。为此，MySQL允许建立索引来加快数据表的查询和排序。</p>
+<h2 id="1-索引的概念"><a href="#1-索引的概念" class="headerlink" title="1.索引的概念"></a>1.索引的概念</h2><p>数据库的索引好比新华字典的音序表，它是对数据库表中一列或多列的值进行排序后的一种结构，其作用就是提高表中数据的查询进度。MySQL的索引分为很多种，具体如下：</p>
+<h3 id="1-1普通索引"><a href="#1-1普通索引" class="headerlink" title="1.1普通索引"></a>1.1普通索引</h3><p>普通索引是由<code>key或index</code>定义的索引，他是mysql中的基本索引类型，可以创建在任何数据类型中，其值是否唯一和非空由字段本身的约束条件决定。例如，在grade表的stu_id字段上建立一个普通索引，查询记录时，就可以根据该索引进行查询了。</p>
+<h3 id="1-2唯一性索引"><a href="#1-2唯一性索引" class="headerlink" title="1.2唯一性索引"></a>1.2唯一性索引</h3><p>唯一性索引是由<code>UNIQUE</code>定义的索引，该索引所在的字段必须是唯一的。例如，在grade表的id字段建立唯一性索引，那么，id字段的值就必须是唯一的。</p>
+<h3 id="1-3全文索引"><a href="#1-3全文索引" class="headerlink" title="1.3全文索引"></a>1.3全文索引</h3><p>全文索引是由<code>FULLTEXT</code>定义的索引，他只能创建在<code>char、varchar或text</code>类型上的字段上，而且只有<code>MYISAM</code>存储引擎支持全文索引。</p>
+<h3 id="1-4单列索引"><a href="#1-4单列索引" class="headerlink" title="1.4单列索引"></a>1.4单列索引</h3><p>单列索引指得是在表中单个字段上创建索引，它可以是普通索引、唯一索引或全文索引，只要保证该索引对应表中的一个字段即可。</p>
+<h3 id="1-5空间索引"><a href="#1-5空间索引" class="headerlink" title="1.5空间索引"></a>1.5空间索引</h3><p>空间索引是由<code>SPATIAL</code>定义的索引，他只能创建在空间数据类型的字段上，MySQL的空间数据类型有四种，分别是<code>GEOMETRY、POINT、LINESTRING和POLYGON</code>。需要注意的是，创建空间索引的字段，必须将其声明为<code>NOT NULL</code>，并且空间索引只能在<code>MYISAM</code>的表创建。</p>
+<blockquote>
+<p>需要注意的是，虽然索引可以提高数据的查询速度，但索引会占据一定的磁盘空间，并且在创建和维护索引时，其消耗的时间是随着数据量的增加而增加的。因此使用索引时，应该综合考虑索引的优点和缺点。</p>
+</blockquote>
+<h2 id="2-创建索引"><a href="#2-创建索引" class="headerlink" title="2.创建索引"></a>2.创建索引</h2><p>要想使用索引提高数据表的查询速度，首先要创建一个索引。创建索引的方法有三种，具体如下。</p>
+<h3 id="2-1创建表的时候创建索引"><a href="#2-1创建表的时候创建索引" class="headerlink" title="2.1创建表的时候创建索引"></a>2.1创建表的时候创建索引</h3><p>创建表的时候可以直接创建索引，这中方式最简单、方便，其基本的语法格式如下所示：</p>
+<pre><code>create table 表名(字段名 数据类型 [完整约束条件]，
+                  字段名 数据类型 [完整约束条件]，
+                  ...
+                      字段名 数据类型 
+                      [UNIQUE|FULLTEXT|SPATIAL] INDEX｜KEY 
+                          [别名](字段名1 [(长度)] [ASC]|[DESC])，
+）；</code></pre><p>关于上述语法的相关解释具体如下。</p>
+<ol>
+<li>UNIQUE：可选参数，表示唯一索引。</li>
+<li>FULLTEXT：可选参数，表示全文索引。</li>
+<li>SPATIAL：可选参数，表示空间索引。</li>
+<li>INDEX和KEY：用来表示字段的索引，二选一即可。</li>
+<li>别名：可选参数，表示创建的索引名称。</li>
+<li>字段名1：指定索引对应字段的名称。</li>
+<li>长度：可选参数，用于表示索引的长度。</li>
+<li>ASC和DESC：可选参数，其中ASC表示升序排列，DESC表示降序排列。</li>
+</ol>
+<p>为了帮助读者更好地了解如何在创建表的时候创建索引，接下来，通过具体的案例，分别对MySQL的六种索引类型进行详解，具体如下：</p>
+<h4 id="2-1-1-创建普通索引"><a href="#2-1-1-创建普通索引" class="headerlink" title="2.1.1 创建普通索引"></a>2.1.1 创建普通索引</h4><pre><code>create table t1(id int，
+                name varchar(20),
+                score float,
+                INDEX (name)
+);</code></pre><h4 id="2-1-2-创建唯一性索引"><a href="#2-1-2-创建唯一性索引" class="headerlink" title="2.1.2 创建唯一性索引"></a>2.1.2 创建唯一性索引</h4><pre><code>create table t2(id int not null,
+                name varchar(20) not null,
+                score float,
+                unique index unique_id(id Asc)
+);</code></pre><h4 id="2-1-3-创建全文索引"><a href="#2-1-3-创建全文索引" class="headerlink" title="2.1.3 创建全文索引"></a>2.1.3 创建全文索引</h4><pre><code>create table t3(id int not null,
+                name varchar(20) not null,
+                score float,
+                fulltext index fulltext_name(name)
+)engine=myisam;</code></pre><h4 id="2-1-4-创建单列索引"><a href="#2-1-4-创建单列索引" class="headerlink" title="2.1.4 创建单列索引"></a>2.1.4 创建单列索引</h4><pre><code>create table t4(id int not null,
+                name varchar(20) not null,
+                score float,
+                index single_name(name(20))
+);</code></pre><h4 id="2-1-5-创建多列索引"><a href="#2-1-5-创建多列索引" class="headerlink" title="2.1.5 创建多列索引"></a>2.1.5 创建多列索引</h4><pre><code>create table t5(id int not null,
+                name varchar(20) not null,
+                score float,
+                index multi(name(20),id)
+);</code></pre><h4 id="2-1-6-创建空间索引"><a href="#2-1-6-创建空间索引" class="headerlink" title="2.1.6 创建空间索引"></a>2.1.6 创建空间索引</h4><pre><code>create table t6(id int,
+                space GEOMETRY not null,
+                SPATIAL index sp(space）
+)engine=myisam；</code></pre><h3 id="2-2-创建使用create-index语句在已存在的表上创建索引"><a href="#2-2-创建使用create-index语句在已存在的表上创建索引" class="headerlink" title="2.2 创建使用create index语句在已存在的表上创建索引"></a>2.2 创建使用create index语句在已存在的表上创建索引</h3><p>若想在一个已经存在的表上创建索引，可以使用<code>create index语句，create index</code>语句创建索引的具体语法格式如下所示：</p>
+<pre><code>create [UNIQUE|FULLTEXT|SPATIAL] index 索引名
+on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中<code>UNIUE、FULLTEXT和SPATIAL</code>都是可选参数，分别用于表示唯一性索引、全文索引和空间索引；index用于指明字段为索引。<br>为了便于学习如何使用<code>create index</code>语句在已经存在的表创建索引，接下来创建一个book表，该表中没有任何的索引，创建book表的sql语句如下所示：</p>
+<pre><code>create table book(
+                bookid int not null,
+                bookname varchar(255) not null,
+                authors varchar(255) not null,
+                info varchar(255) null,
+                comment varchar(255) null,
+                publicyear year not null
+);</code></pre><h4 id="2-2-1-创建普通索引"><a href="#2-2-1-创建普通索引" class="headerlink" title="2.2.1 创建普通索引"></a>2.2.1 创建普通索引</h4><p><code>create index index_id on book (bookid);</code></p>
+<h4 id="2-2-2-创建唯一性索引"><a href="#2-2-2-创建唯一性索引" class="headerlink" title="2.2.2 创建唯一性索引"></a>2.2.2 创建唯一性索引</h4><p><code>create unique index uniqueidx on book (bookid);</code></p>
+<h4 id="2-2-3-创建单列索引"><a href="#2-2-3-创建单列索引" class="headerlink" title="2.2.3 创建单列索引"></a>2.2.3 创建单列索引</h4><p><code>create index singleidx on book(comment);</code></p>
+<h4 id="2-2-4-创建多列索引"><a href="#2-2-4-创建多列索引" class="headerlink" title="2.2.4 创建多列索引"></a>2.2.4 创建多列索引</h4><p><code>create index mulitidx on book(authors(20),info(20));</code></p>
+<h4 id="2-2-5-创建全文索引"><a href="#2-2-5-创建全文索引" class="headerlink" title="2.2.5 创建全文索引"></a>2.2.5 创建全文索引</h4><p><code>create fulltext index fulltextidx on book(info);</code></p>
+<h4 id="2-2-6-创建空间索引"><a href="#2-2-6-创建空间索引" class="headerlink" title="2.2.6 创建空间索引"></a>2.2.6 创建空间索引</h4><p><code>create SPATIAL index spatidx on t7(g);</code></p>
+<h3 id="2-3-使用alter-table-语句在已经存在的表上创建索引"><a href="#2-3-使用alter-table-语句在已经存在的表上创建索引" class="headerlink" title="2.3 使用alter table 语句在已经存在的表上创建索引"></a>2.3 使用alter table 语句在已经存在的表上创建索引</h3><p>在已经存在的表上创建索引，除了可以使用<code>create index</code>语句外，还可以使用<code>alter table</code>语句。使用<code>alter table</code>语句创建索引的语法格式如下所示：</p>
+<pre><code>alter table 表名 add [UNIQUE|FULLTEXT|SPATIAL] index
+                索引名 （字段名 [(长度)] [ASC|DESC])</code></pre><p>在上述语法中<code>UNIUE、FULLTEXT和SPATIAL</code>都是可选参数，分别用于表示唯一性索引、全文索引和空间索引；add表示像表中添加字段。<br>接下类同样以book表为例，对不同类型的索引进行详解。</p>
+<h4 id="2-3-1-创建普通索引"><a href="#2-3-1-创建普通索引" class="headerlink" title="2.3.1 创建普通索引"></a>2.3.1 创建普通索引</h4><p><code>alter table book add index index_id(bookid);</code></p>
+<h4 id="2-3-2-创建唯一性索引"><a href="#2-3-2-创建唯一性索引" class="headerlink" title="2.3.2 创建唯一性索引"></a>2.3.2 创建唯一性索引</h4><p><code>alter table book add unique uniqueidx(bookid);</code></p>
+<h4 id="2-3-3-创建单列索引"><a href="#2-3-3-创建单列索引" class="headerlink" title="2.3.3 创建单列索引"></a>2.3.3 创建单列索引</h4><p><code>alter table book add index singleidx (comment(50));</code></p>
+<h4 id="2-3-4-创建多列索引"><a href="#2-3-4-创建多列索引" class="headerlink" title="2.3.4 创建多列索引"></a>2.3.4 创建多列索引</h4><p><code>alter table book add index multidx(autros(50),info(50));</code></p>
+<h4 id="2-3-5-创建全文索引"><a href="#2-3-5-创建全文索引" class="headerlink" title="2.3.5 创建全文索引"></a>2.3.5 创建全文索引</h4><p><code>alter table book add fulltext index fulltextidx(info);</code></p>
+<h4 id="2-3-6-创建空间索引"><a href="#2-3-6-创建空间索引" class="headerlink" title="2.3.6 创建空间索引"></a>2.3.6 创建空间索引</h4><p><code>alter table t8 add spatial index spatidx(space);</code></p>
+<h2 id="3-删除索引"><a href="#3-删除索引" class="headerlink" title="3.删除索引"></a>3.删除索引</h2><p>由于索引会占用一定的磁盘空间，因此，为了避免影响数据库性能，应该及时删除不在使用的索引。删除索引的方式有两种，具体如下:</p>
+<h3 id="3-1使用alter-table删除索引"><a href="#3-1使用alter-table删除索引" class="headerlink" title="3.1使用alter table删除索引"></a>3.1使用alter table删除索引</h3><p>使用<code>alter table``删除索引的基本语法格式如下所示：</code>alter table 表名 drop index 索引名```</p>
+<pre><code>alter table book index fulltextidx；</code></pre><h3 id="3-2使用drop-index删除索引"><a href="#3-2使用drop-index删除索引" class="headerlink" title="3.2使用drop index删除索引"></a>3.2使用drop index删除索引</h3><p>使用<code>drop index</code> 删除索引的基本语法格式如下：<br><code>drop index 索引名 on 表名；</code></p>
+<pre><code>drop index spatidx on t8;</code></pre>
             </div>
             <hr/>
 
@@ -510,7 +571,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://dajienihao.cn/2019/12/08/mvc-she-ji-mo-shi/">http://dajienihao.cn/2019/12/08/mvc-she-ji-mo-shi/</a>
+                    <a href="http://dajienihao.cn/2019/12/21/mysql-de-suo-yin/">http://dajienihao.cn/2019/12/21/mysql-de-suo-yin/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -548,8 +609,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                                    <span class="chip bg-color">设计模式</span>
+                                <a href="/tags/mysql/">
+                                    <span class="chip bg-color">mysql</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%B4%A2%E5%BC%95/">
+                                    <span class="chip bg-color">索引</span>
                                 </a>
                             
                         </div>
@@ -720,26 +785,82 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/11/mysql-shu-ju-ku-ji-biao-de-ji-ben-cao-zuo/">
+                <a href="/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/224644-1574347604d36e.jpg" class="responsive-img" alt="mysql数据库及表的基本操作">
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/163806-1570264686e1ed.jpg" class="responsive-img" alt="mysql表的约束">
                         
-                        <span class="card-title">mysql数据库及表的基本操作</span>
+                        <span class="card-title">mysql表的约束</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mysql简单操作mysql服务的启动与暂停net start mysql
-net stop mysqlmysql登录-u用户名 -p密码创建和查看数据库create database 数据库名称
-show crate database 数
+                            当初学编程的，都想做一个游戏，俄罗斯方块？贪吃蛇？不不不，今天我所讲的是五子棋双人对战，对比那些来说，应该算比较简单的了。相信很多人都有看过，不过视频中，我发现有些代码是不需要的，而且还存在一些bug，针对视频所存在的bug我都做了调整，经
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-29
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AE%89%E5%8D%93/" class="post-category">
+                                    安卓
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AE%89%E5%8D%93/">
+                        <span class="chip bg-color">安卓</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/">
+                        <span class="chip bg-color">自定义view</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">
+                        <span class="chip bg-color">项目实战</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/12/18/biao-de-yue-shu/">
+                    <div class="card-image">
+                        
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/123945-1496983185ad61.jpg" class="responsive-img" alt="mysql表的约束">
+                        
+                        <span class="card-title">mysql表的约束</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            表的约束为了防止数据表中插入错误的数据，在mysql中定义了一些维护数据库完整性的规则，即表的约束。
+主键约束单字段主键单字段主键指的是由一个字段构成的主键，其基本语法格式如下所示:字段名 数据类型 primary key；
+ mysql-
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -759,62 +880,8 @@ show crate database 数
                         <span class="chip bg-color">mysql</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/11/23/eclipse-dao-ru-pu-tong-javaweb-xiang-mu-bao-cuo-wen-ti/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="eclipse导入普通javaweb项目报错问题">
-                        
-                        <span class="card-title">eclipse导入普通javaweb项目报错问题</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Eclipse导入javaweb项目代码报错解决方案相信大家在前期学习javaweb的时候导入项目都会碰到一个问题，那就是导入Javaweb项目时代码没有报错但项目图标就是有红叉。
-以下是我导入项目发生的错误，我带大家看一下导入项目时会出现
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-23
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    编程工具
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                        <span class="chip bg-color">后端</span>
-                    </a>
-                    
-                    <a href="/tags/eclipse/">
-                        <span class="chip bg-color">eclipse</span>
+                    <a href="/tags/%E8%A1%A8%E7%9A%84%E7%BA%A6%E6%9D%9F/">
+                        <span class="chip bg-color">表的约束</span>
                     </a>
                     
                 </div>

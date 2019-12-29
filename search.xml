@@ -2,6 +2,418 @@
 <search>
   <entry>
     <title>mysql表的约束</title>
+    <url>/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/</url>
+    <content><![CDATA[<p>当初学编程的，都想做一个游戏，俄罗斯方块？贪吃蛇？不不不，今天我所讲的是五子棋双人对战，对比那些来说，应该算比较简单的了。<br>相信很多人都有看过，不过视频中，我发现有些代码是不需要的，而且还存在一些bug，针对视频所存在的bug我都做了调整，经测试，目前无bug。<br>创建一个类，然后继承View，需要实现构造方法，我们选择两个参数的构造方法就行了<br>下面贴出代码：</p>
+<pre><code>public panel(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();//初始化方法
+    }</code></pre><p>所需定义的内容：</p>
+<pre><code>private int mPanelWidth;
+private float mLineHeight;//棋盘行距
+private int MAX_LINE = 10;//棋盘行数
+private Paint mPaint = new Paint();//绘制对象
+private Bitmap mWhitePiece;//白色棋子
+private Bitmap mBlackPiece;//黑色棋子
+private boolean mIsWhite = true;//白棋先手，当前轮到白棋出子
+private List&lt;Point&gt; mWhiteArray = new ArrayList&lt;&gt;();//放白色棋子落子的坐标
+private List&lt;Point&gt; mBlackArray = new ArrayList&lt;&gt;();//放黑色棋子落子的坐标
+private float ratioPieceOfLineHeight = 3 * 1.0f / 4;//棋子占据的比例
+private boolean mIsGameOver;//判断游戏结束
+private boolean mIsWhiteWinner;//true白子胜利，false黑子胜利
+private int MAX_COUNT_IN_LINE = 5;//五子棋数</code></pre><p>  对画笔的初始化：</p>
+<pre><code> private void init() {//初始化方法
+        mPaint.setColor(Color.rgb(0, 0, 0));//设置颜色
+        mPaint.setAntiAlias(true);//抗锯齿
+        mPaint.setDither(true);//设置防抖动
+        mPaint.setStyle(Paint.Style.STROKE);//绘制棋盘线条，画笔为描边样式
+        mWhitePiece = BitmapFactory.decodeResource(getResources(), R.drawable.stone_w2);//设置白色棋子图片
+        mBlackPiece = BitmapFactory.decodeResource(getResources(), R.drawable.stone_b1);//设置黑色棋子图片
+    }</code></pre><p> 对于自定义view有一定基础的小伙伴都知道，自定义一般都要实现2个方法，1：onSizeChanged（视图大小的改变）；2：onMeasure（告诉父view，子视图占用多大的空间）<br>下面上代码，我都有详细注解，就不一个一个解释了：<br>onMeasure：</p>
+<pre><code>    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {//设置棋盘大小
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);//获取宽度
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);//根据测量值提取模式
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);//获取高度
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);//根据测量值提取模式
+        int width = Math.min(widthSize, heightSize);//取最小值获取设置正方形棋盘
+        if (widthMode == MeasureSpec.UNSPECIFIED)//当模式为未指定模式时就为棋盘长宽就为高度
+            width = heightSize;
+        else if (heightMode == MeasureSpec.UNSPECIFIED)//当模式为未指定模式时就为棋盘长宽就为宽度
+            width = widthSize;
+        setMeasuredDimension(width, width);//取宽高的最小值绘制棋盘
+    }</code></pre><p> onSizeChanged：</p>
+<pre><code> protected void onSizeChanged(int w, int h, int oldw, int oldh) {//当宽高发生改变进行回调
+        super.onSizeChanged(w, h, oldw, oldh);
+        mPanelWidth = w;
+        mLineHeight = mPanelWidth * 1.0f / MAX_LINE;//棋盘行距
+        int pieceWidth = (int) (mLineHeight * ratioPieceOfLineHeight);//棋子比列
+        mWhitePiece = Bitmap.createScaledBitmap(mWhitePiece, pieceWidth, pieceWidth, false);//设置棋子大小
+        mBlackPiece = Bitmap.createScaledBitmap(mBlackPiece, pieceWidth, pieceWidth, false);//设置棋子大小
+    }</code></pre><p> 好了，下面我们进图画图操作，需要的操作是，先画棋盘，在画棋子，然后判断游戏结束。</p>
+<pre><code>  protected void onDraw(Canvas canvas) {//绘制方法
+        super.onDraw(canvas);
+        drawBoard(canvas);//绘制棋盘
+        drawPiece(canvas);//绘制棋子
+        checkGameOver();//检查游戏是否结束
+    }</code></pre><p> 绘制棋盘：</p>
+<pre><code>  private void drawBoard(Canvas canvas) {//绘制棋盘方法
+        int w = mPanelWidth;//棋盘宽度
+        float lineHeight = mLineHeight;//棋盘行距
+        for (int i = 0; i &lt; MAX_LINE; i++) {
+            int startX = (int) (lineHeight / 2);//起点坐标
+            int endX = (int) (w - lineHeight / 2);//终点坐标
+            int y = (int) ((0.5 + i) * lineHeight);//y轴起点坐标
+            canvas.drawLine(startX, y, endX, y, mPaint);//绘制x轴线条
+            canvas.drawLine(y, startX, y, endX, mPaint);//绘制y轴线条
+        }
+    }</code></pre><p>绘制棋子：</p>
+<pre><code>private void drawPiece(Canvas canvas) {//绘制棋子方法
+        for (int i = 0; i &lt; mWhiteArray.size(); i++) {
+            Point whitePoint = mWhiteArray.get(i);//拿到棋子
+            canvas.drawBitmap(mWhitePiece,
+                    (whitePoint.x + (1 - ratioPieceOfLineHeight) / 2) * mLineHeight,
+                    (whitePoint.y + (1 - ratioPieceOfLineHeight) / 2) * mLineHeight, null);//棋子坐标计算
+        }
+        for (int i = 0; i &lt; mBlackArray.size(); i++) {
+            Point blackPoint = mBlackArray.get(i);//拿到棋子
+            canvas.drawBitmap(mBlackPiece,
+                    (blackPoint.x + (1 - ratioPieceOfLineHeight) / 2) * mLineHeight,
+                    (blackPoint.y + (1 - ratioPieceOfLineHeight) / 2) * mLineHeight, null);//棋子坐标计算
+        }
+    }</code></pre><p>判断游戏是否结束:</p>
+<pre><code>private void checkGameOver() {//判断游戏是否结束及和棋
+        boolean whiteWin = checkFiveInLine(mWhiteArray);//白子成功五子连珠
+        boolean blackWin = checkFiveInLine(mBlackArray);//黑子成功五子连珠
+        int max = MAX_LINE * MAX_LINE;//最大落子数的和
+        if (whiteWin || blackWin) {//有人胜利
+            mIsGameOver = true;//游戏结束
+            mIsWhiteWinner = whiteWin;
+            String text = mIsWhiteWinner ? &quot;白棋胜利&quot; : &quot;黑棋胜利&quot;;//白子赢了提示白棋胜利，否者黑棋胜利
+            if (mIsGameOver) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setIcon(R.drawable.dy);
+                builder.setTitle(&quot;游戏结束，&quot; + text);
+                builder.setMessage(&quot;请选项下面选项！！！！&quot;);
+                builder.setNegativeButton(&quot;退出游戏&quot;, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        System.exit(0);
+                    }
+                });
+                builder.setNeutralButton(&quot;查看棋盘！&quot;, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                builder.setPositiveButton(&quot;再来一局&quot;, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        reStart();
+                    }
+                });
+                builder.setCancelable(false);
+                builder.show();
+            }
+        } else if ((mBlackArray.size() + mWhiteArray.size()) == max) {//当白棋子数和黑棋字数相加等于最大数时无人胜利，双方和棋
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setIcon(R.drawable.dy);
+            builder.setTitle(&quot;棋逢对手,将遇良才！&quot;);
+            builder.setMessage(&quot;二位和棋，是否再战一句！！！&quot;);
+            builder.setNegativeButton(&quot;退出游戏&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    System.exit(0);
+                }
+            });
+            builder.setNeutralButton(&quot;查看棋盘！&quot;, new DialogInterface.OnClickListener() {
+
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+                }
+            });
+            builder.setPositiveButton(&quot;再来一局&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    reStart();
+                }
+            });
+            builder.setCancelable(false);
+            builder.show();
+        }
+    }</code></pre><p>游戏结束的判断的依据：</p>
+<pre><code>private boolean checkFiveInLine(List&lt;Point&gt; points) {//判断是否五子连珠
+        for (Point p : points) {
+            int x = p.x;
+            int y = p.y;
+            boolean win = checkHorizontal(x, y, points);//判断xy位置的棋子是否有左右相邻的五个一致
+            if (win)
+                return true;
+            win = checkVertiacal(x, y, points);//判断xy位置的棋子是否有上下相邻的五个一致
+            if (win)
+                return true;
+            win = checkLeftDiagonal(x, y, points);//判断xy位置的棋子是否有左斜相邻的五个一致
+            if (win)
+                return true;
+            win = checkRightDiagonal(x, y, points);//判断xy位置的棋子是否有右斜相邻的五个一致
+            if (win)
+                return true;
+        }
+        return false;
+    }</code></pre><p>判断是否有横向五子连珠：</p>
+<pre><code>private boolean checkHorizontal(int x, int y, List&lt;Point&gt; points) {//判断x，y位置的棋子是否有横向相邻的五个一致
+        int count = 1;//当前子
+        for (int i = 1; i &lt; MAX_COUNT_IN_LINE; i++) {//从当前子往左数最大4个，如果有相同子count加1
+            if (points.contains(new Point(x - i, y))) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        if (count == MAX_COUNT_IN_LINE)//如果count为5表示成功连珠
+            return true;
+
+
+        for (int i = 1; i &lt; MAX_COUNT_IN_LINE; i++) {//从当前子往右数最大4个，如果有相同子count加1
+            if (points.contains(new Point(x + i, y))) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        if (count == MAX_COUNT_IN_LINE)//如果count为5表示成功连珠
+            return true;
+        return false;
+    }</code></pre><p>其他方向的代码和上面一样只是循环中x，y的值改一下，就不放具体代码了，具体提示一下竖向判断的(x,y-1),(x,y+1）左斜是(x - i, y + i),(x + i, y - i) 右斜是(x - i, y - i),(x + i, y + i)<br>重新开始游戏:</p>
+<pre><code>public void reStart() {//重新开始游戏
+        mWhiteArray.clear();
+        mBlackArray.clear();
+        mIsGameOver = false;
+        mIsWhiteWinner = false;
+        mIsWhite=true;
+        invalidate();
+    }</code></pre><p>悔棋：</p>
+<pre><code>public void withDraw() {//悔棋
+        if (mIsGameOver) {
+            Toast.makeText(getContext(), &quot;游戏已经结束，不能悔棋&quot;, Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (mBlackArray.size() &gt; 0 || mWhiteArray.size() &gt; 0) {
+            if (mIsWhite) {
+                mBlackArray.remove(mBlackArray.size() - 1);
+                mIsWhite = !mIsWhite;
+            } else {
+                mWhiteArray.remove(mWhiteArray.size() - 1);
+                mIsWhite = !mIsWhite;
+            }
+            invalidate();
+        }
+    }</code></pre><p>这里我没有考虑到禁手的问题，感觉如果考虑到禁手的话，算法比较复杂，人机对战。这里呢此类的代码就完成了<br>下面将布局代码发出来</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    tools:context=&quot;.MainActivity&quot;
+    android:background=&quot;@drawable/bg&quot;&gt;
+    &lt;TextView
+        android:id=&quot;@+id/textview&quot;
+        android:textColor=&quot;#000000&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:textSize=&quot;30dp&quot;
+        android:layout_centerHorizontal=&quot;true&quot;
+        android:layout_above=&quot;@id/wuziqi&quot;
+        /&gt;
+    &lt;com.example.myapplication.panel
+        android:id=&quot;@+id/wuziqi&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        android:layout_centerInParent=&quot;true&quot; /&gt;
+    &lt;LinearLayout
+        android:layout_below=&quot;@id/wuziqi&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_marginLeft=&quot;60dp&quot;
+        android:layout_marginRight=&quot;60dp&quot;
+        android:layout_height=&quot;wrap_content&quot;&gt;
+
+        &lt;Button
+            android:id=&quot;@+id/restart&quot;
+            android:text=&quot;重新开始&quot;
+            android:onClick=&quot;reStart&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;/&gt;
+        &lt;TextView
+            android:layout_weight=&quot;1&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;&quot;/&gt;
+        &lt;Button
+            android:id=&quot;@+id/withdraw&quot;
+            android:text=&quot;悔棋&quot;
+            android:onClick=&quot;withdraw&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;/&gt;
+    &lt;/LinearLayout&gt;
+&lt;/RelativeLayout&gt;</code></pre><p>mainactivity.java文件的代码也发出来</p>
+<pre><code>public class MainActivity extends AppCompatActivity {
+    panel panel;
+    TextView textView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        panel=findViewById(R.id.wuziqi);
+    }
+
+    public void reStart(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.dy);
+        builder.setTitle(&quot;重新开始&quot;);
+        builder.setMessage(&quot;重新开始游戏需要双方棋手同意请选择！！！&quot;);
+        builder.setNegativeButton(&quot;取消&quot;, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setPositiveButton(&quot;重新开始&quot;, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                panel.reStart();
+            }
+        });
+        builder.setCancelable(false);
+        builder.show();
+    }
+
+    public void withdraw(View view) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.dy);
+        builder.setTitle(&quot;悔棋&quot;);
+        builder.setMessage(&quot;悔棋需要双方棋手同意请选择！！！&quot;);
+        builder.setNegativeButton(&quot;取消&quot;, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setPositiveButton(&quot;确定悔棋&quot;, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                panel.withDraw();
+            }
+        });
+        builder.setCancelable(false);
+        builder.show();
+    }
+}</code></pre><p>好了到这里安卓五子棋的项目就完成了，自定义view的难度在于给viwe的大小及测量，完成这些的话其实自定义view并没有这么难。</p>
+]]></content>
+      <categories>
+        <category>安卓</category>
+      </categories>
+      <tags>
+        <tag>安卓</tag>
+        <tag>自定义view</tag>
+        <tag>项目实战</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql的索引</title>
+    <url>/2019/12/21/mysql-de-suo-yin/</url>
+    <content><![CDATA[<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>在数据库操作中，经常需要查询特定的数据，例如，当执行<code>select * from student where id=10000</code>语句时，MySQL数据库必须从第一条记录开始遍历，直到找出id为10000的数据，这样的效率显然非常低。为此，MySQL允许建立索引来加快数据表的查询和排序。</p>
+<h2 id="1-索引的概念"><a href="#1-索引的概念" class="headerlink" title="1.索引的概念"></a>1.索引的概念</h2><p>数据库的索引好比新华字典的音序表，它是对数据库表中一列或多列的值进行排序后的一种结构，其作用就是提高表中数据的查询进度。MySQL的索引分为很多种，具体如下：</p>
+<h3 id="1-1普通索引"><a href="#1-1普通索引" class="headerlink" title="1.1普通索引"></a>1.1普通索引</h3><p>普通索引是由<code>key或index</code>定义的索引，他是mysql中的基本索引类型，可以创建在任何数据类型中，其值是否唯一和非空由字段本身的约束条件决定。例如，在grade表的stu_id字段上建立一个普通索引，查询记录时，就可以根据该索引进行查询了。</p>
+<h3 id="1-2唯一性索引"><a href="#1-2唯一性索引" class="headerlink" title="1.2唯一性索引"></a>1.2唯一性索引</h3><p>唯一性索引是由<code>UNIQUE</code>定义的索引，该索引所在的字段必须是唯一的。例如，在grade表的id字段建立唯一性索引，那么，id字段的值就必须是唯一的。</p>
+<h3 id="1-3全文索引"><a href="#1-3全文索引" class="headerlink" title="1.3全文索引"></a>1.3全文索引</h3><p>全文索引是由<code>FULLTEXT</code>定义的索引，他只能创建在<code>char、varchar或text</code>类型上的字段上，而且只有<code>MYISAM</code>存储引擎支持全文索引。</p>
+<h3 id="1-4单列索引"><a href="#1-4单列索引" class="headerlink" title="1.4单列索引"></a>1.4单列索引</h3><p>单列索引指得是在表中单个字段上创建索引，它可以是普通索引、唯一索引或全文索引，只要保证该索引对应表中的一个字段即可。</p>
+<h3 id="1-5空间索引"><a href="#1-5空间索引" class="headerlink" title="1.5空间索引"></a>1.5空间索引</h3><p>空间索引是由<code>SPATIAL</code>定义的索引，他只能创建在空间数据类型的字段上，MySQL的空间数据类型有四种，分别是<code>GEOMETRY、POINT、LINESTRING和POLYGON</code>。需要注意的是，创建空间索引的字段，必须将其声明为<code>NOT NULL</code>，并且空间索引只能在<code>MYISAM</code>的表创建。</p>
+<blockquote>
+<p>需要注意的是，虽然索引可以提高数据的查询速度，但索引会占据一定的磁盘空间，并且在创建和维护索引时，其消耗的时间是随着数据量的增加而增加的。因此使用索引时，应该综合考虑索引的优点和缺点。</p>
+</blockquote>
+<h2 id="2-创建索引"><a href="#2-创建索引" class="headerlink" title="2.创建索引"></a>2.创建索引</h2><p>要想使用索引提高数据表的查询速度，首先要创建一个索引。创建索引的方法有三种，具体如下。</p>
+<h3 id="2-1创建表的时候创建索引"><a href="#2-1创建表的时候创建索引" class="headerlink" title="2.1创建表的时候创建索引"></a>2.1创建表的时候创建索引</h3><p>创建表的时候可以直接创建索引，这中方式最简单、方便，其基本的语法格式如下所示：</p>
+<pre><code>create table 表名(字段名 数据类型 [完整约束条件]，
+                  字段名 数据类型 [完整约束条件]，
+                  ...
+                      字段名 数据类型 
+                      [UNIQUE|FULLTEXT|SPATIAL] INDEX｜KEY 
+                          [别名](字段名1 [(长度)] [ASC]|[DESC])，
+）；</code></pre><p>关于上述语法的相关解释具体如下。</p>
+<ol>
+<li>UNIQUE：可选参数，表示唯一索引。</li>
+<li>FULLTEXT：可选参数，表示全文索引。</li>
+<li>SPATIAL：可选参数，表示空间索引。</li>
+<li>INDEX和KEY：用来表示字段的索引，二选一即可。</li>
+<li>别名：可选参数，表示创建的索引名称。</li>
+<li>字段名1：指定索引对应字段的名称。</li>
+<li>长度：可选参数，用于表示索引的长度。</li>
+<li>ASC和DESC：可选参数，其中ASC表示升序排列，DESC表示降序排列。</li>
+</ol>
+<p>为了帮助读者更好地了解如何在创建表的时候创建索引，接下来，通过具体的案例，分别对MySQL的六种索引类型进行详解，具体如下：</p>
+<h4 id="2-1-1-创建普通索引"><a href="#2-1-1-创建普通索引" class="headerlink" title="2.1.1 创建普通索引"></a>2.1.1 创建普通索引</h4><pre><code>create table t1(id int，
+                name varchar(20),
+                score float,
+                INDEX (name)
+);</code></pre><h4 id="2-1-2-创建唯一性索引"><a href="#2-1-2-创建唯一性索引" class="headerlink" title="2.1.2 创建唯一性索引"></a>2.1.2 创建唯一性索引</h4><pre><code>create table t2(id int not null,
+                name varchar(20) not null,
+                score float,
+                unique index unique_id(id Asc)
+);</code></pre><h4 id="2-1-3-创建全文索引"><a href="#2-1-3-创建全文索引" class="headerlink" title="2.1.3 创建全文索引"></a>2.1.3 创建全文索引</h4><pre><code>create table t3(id int not null,
+                name varchar(20) not null,
+                score float,
+                fulltext index fulltext_name(name)
+)engine=myisam;</code></pre><h4 id="2-1-4-创建单列索引"><a href="#2-1-4-创建单列索引" class="headerlink" title="2.1.4 创建单列索引"></a>2.1.4 创建单列索引</h4><pre><code>create table t4(id int not null,
+                name varchar(20) not null,
+                score float,
+                index single_name(name(20))
+);</code></pre><h4 id="2-1-5-创建多列索引"><a href="#2-1-5-创建多列索引" class="headerlink" title="2.1.5 创建多列索引"></a>2.1.5 创建多列索引</h4><pre><code>create table t5(id int not null,
+                name varchar(20) not null,
+                score float,
+                index multi(name(20),id)
+);</code></pre><h4 id="2-1-6-创建空间索引"><a href="#2-1-6-创建空间索引" class="headerlink" title="2.1.6 创建空间索引"></a>2.1.6 创建空间索引</h4><pre><code>create table t6(id int,
+                space GEOMETRY not null,
+                SPATIAL index sp(space）
+)engine=myisam；</code></pre><h3 id="2-2-创建使用create-index语句在已存在的表上创建索引"><a href="#2-2-创建使用create-index语句在已存在的表上创建索引" class="headerlink" title="2.2 创建使用create index语句在已存在的表上创建索引"></a>2.2 创建使用create index语句在已存在的表上创建索引</h3><p>若想在一个已经存在的表上创建索引，可以使用<code>create index语句，create index</code>语句创建索引的具体语法格式如下所示：</p>
+<pre><code>create [UNIQUE|FULLTEXT|SPATIAL] index 索引名
+on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中<code>UNIUE、FULLTEXT和SPATIAL</code>都是可选参数，分别用于表示唯一性索引、全文索引和空间索引；index用于指明字段为索引。<br>为了便于学习如何使用<code>create index</code>语句在已经存在的表创建索引，接下来创建一个book表，该表中没有任何的索引，创建book表的sql语句如下所示：</p>
+<pre><code>create table book(
+                bookid int not null,
+                bookname varchar(255) not null,
+                authors varchar(255) not null,
+                info varchar(255) null,
+                comment varchar(255) null,
+                publicyear year not null
+);</code></pre><h4 id="2-2-1-创建普通索引"><a href="#2-2-1-创建普通索引" class="headerlink" title="2.2.1 创建普通索引"></a>2.2.1 创建普通索引</h4><p><code>create index index_id on book (bookid);</code></p>
+<h4 id="2-2-2-创建唯一性索引"><a href="#2-2-2-创建唯一性索引" class="headerlink" title="2.2.2 创建唯一性索引"></a>2.2.2 创建唯一性索引</h4><p><code>create unique index uniqueidx on book (bookid);</code></p>
+<h4 id="2-2-3-创建单列索引"><a href="#2-2-3-创建单列索引" class="headerlink" title="2.2.3 创建单列索引"></a>2.2.3 创建单列索引</h4><p><code>create index singleidx on book(comment);</code></p>
+<h4 id="2-2-4-创建多列索引"><a href="#2-2-4-创建多列索引" class="headerlink" title="2.2.4 创建多列索引"></a>2.2.4 创建多列索引</h4><p><code>create index mulitidx on book(authors(20),info(20));</code></p>
+<h4 id="2-2-5-创建全文索引"><a href="#2-2-5-创建全文索引" class="headerlink" title="2.2.5 创建全文索引"></a>2.2.5 创建全文索引</h4><p><code>create fulltext index fulltextidx on book(info);</code></p>
+<h4 id="2-2-6-创建空间索引"><a href="#2-2-6-创建空间索引" class="headerlink" title="2.2.6 创建空间索引"></a>2.2.6 创建空间索引</h4><p><code>create SPATIAL index spatidx on t7(g);</code></p>
+<h3 id="2-3-使用alter-table-语句在已经存在的表上创建索引"><a href="#2-3-使用alter-table-语句在已经存在的表上创建索引" class="headerlink" title="2.3 使用alter table 语句在已经存在的表上创建索引"></a>2.3 使用alter table 语句在已经存在的表上创建索引</h3><p>在已经存在的表上创建索引，除了可以使用<code>create index</code>语句外，还可以使用<code>alter table</code>语句。使用<code>alter table</code>语句创建索引的语法格式如下所示：</p>
+<pre><code>alter table 表名 add [UNIQUE|FULLTEXT|SPATIAL] index
+                索引名 （字段名 [(长度)] [ASC|DESC])</code></pre><p>在上述语法中<code>UNIUE、FULLTEXT和SPATIAL</code>都是可选参数，分别用于表示唯一性索引、全文索引和空间索引；add表示像表中添加字段。<br>接下类同样以book表为例，对不同类型的索引进行详解。</p>
+<h4 id="2-3-1-创建普通索引"><a href="#2-3-1-创建普通索引" class="headerlink" title="2.3.1 创建普通索引"></a>2.3.1 创建普通索引</h4><p><code>alter table book add index index_id(bookid);</code></p>
+<h4 id="2-3-2-创建唯一性索引"><a href="#2-3-2-创建唯一性索引" class="headerlink" title="2.3.2 创建唯一性索引"></a>2.3.2 创建唯一性索引</h4><p><code>alter table book add unique uniqueidx(bookid);</code></p>
+<h4 id="2-3-3-创建单列索引"><a href="#2-3-3-创建单列索引" class="headerlink" title="2.3.3 创建单列索引"></a>2.3.3 创建单列索引</h4><p><code>alter table book add index singleidx (comment(50));</code></p>
+<h4 id="2-3-4-创建多列索引"><a href="#2-3-4-创建多列索引" class="headerlink" title="2.3.4 创建多列索引"></a>2.3.4 创建多列索引</h4><p><code>alter table book add index multidx(autros(50),info(50));</code></p>
+<h4 id="2-3-5-创建全文索引"><a href="#2-3-5-创建全文索引" class="headerlink" title="2.3.5 创建全文索引"></a>2.3.5 创建全文索引</h4><p><code>alter table book add fulltext index fulltextidx(info);</code></p>
+<h4 id="2-3-6-创建空间索引"><a href="#2-3-6-创建空间索引" class="headerlink" title="2.3.6 创建空间索引"></a>2.3.6 创建空间索引</h4><p><code>alter table t8 add spatial index spatidx(space);</code></p>
+<h2 id="3-删除索引"><a href="#3-删除索引" class="headerlink" title="3.删除索引"></a>3.删除索引</h2><p>由于索引会占用一定的磁盘空间，因此，为了避免影响数据库性能，应该及时删除不在使用的索引。删除索引的方式有两种，具体如下:</p>
+<h3 id="3-1使用alter-table删除索引"><a href="#3-1使用alter-table删除索引" class="headerlink" title="3.1使用alter table删除索引"></a>3.1使用alter table删除索引</h3><p>使用<code>alter table``删除索引的基本语法格式如下所示：</code>alter table 表名 drop index 索引名```</p>
+<pre><code>alter table book index fulltextidx；</code></pre><h3 id="3-2使用drop-index删除索引"><a href="#3-2使用drop-index删除索引" class="headerlink" title="3.2使用drop index删除索引"></a>3.2使用drop index删除索引</h3><p>使用<code>drop index</code> 删除索引的基本语法格式如下：<br><code>drop index 索引名 on 表名；</code></p>
+<pre><code>drop index spatidx on t8;</code></pre>]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>索引</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql表的约束</title>
     <url>/2019/12/18/biao-de-yue-shu/</url>
     <content><![CDATA[<h2 id="表的约束"><a href="#表的约束" class="headerlink" title="表的约束"></a>表的约束</h2><p>为了防止数据表中插入错误的数据，在mysql中定义了一些维护数据库完整性的规则，即表的约束。<br><img src="http://qiniuyun.dajienihao.cn/image/1218/%E8%A1%A8%E7%9A%84%E7%BA%A6%E6%9D%9F.jpg" alt=""></p>
 <h3 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h3><h4 id="单字段主键"><a href="#单字段主键" class="headerlink" title="单字段主键"></a>单字段主键</h4><p>单字段主键指的是由一个字段构成的主键，其基本语法格式如下所示:<br><code>字段名 数据类型 primary key；</code></p>

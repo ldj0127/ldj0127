@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2019-12-18T06:51:43.530Z</updated>
+  <updated>2019-12-29T08:23:05.065Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql表的约束</title>
+    <link href="http://dajienihao.cn/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/"/>
+    <id>http://dajienihao.cn/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/</id>
+    <published>2019-12-29T08:24:45.000Z</published>
+    <updated>2019-12-29T08:23:05.065Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;当初学编程的，都想做一个游戏，俄罗斯方块？贪吃蛇？不不不，今天我所讲的是五子棋双人对战，对比那些来说，应该算比较简单的了。&lt;br&gt;相信很多人都有看过，不过视频中，我发现有些代码是不需要的，而且还存在一些bug，针对视频所存在的bug我都做了调整，经测试，目前无bug。&lt;br
+        
+      
+    
+    </summary>
+    
+    
+      <category term="安卓" scheme="http://dajienihao.cn/categories/%E5%AE%89%E5%8D%93/"/>
+    
+    
+      <category term="安卓" scheme="http://dajienihao.cn/tags/%E5%AE%89%E5%8D%93/"/>
+    
+      <category term="自定义view" scheme="http://dajienihao.cn/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
+    
+      <category term="项目实战" scheme="http://dajienihao.cn/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql的索引</title>
+    <link href="http://dajienihao.cn/2019/12/21/mysql-de-suo-yin/"/>
+    <id>http://dajienihao.cn/2019/12/21/mysql-de-suo-yin/</id>
+    <published>2019-12-21T06:56:45.000Z</published>
+    <updated>2019-12-21T06:58:28.318Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;索引&quot;&gt;&lt;a href=&quot;#索引&quot; class=&quot;headerlink&quot; title=&quot;索引&quot;&gt;&lt;/a&gt;索引&lt;/h1&gt;&lt;p&gt;在数据库操作中，经常需要查询特定的数据，例如，当执行&lt;code&gt;select * from student where
+        
+      
+    
+    </summary>
+    
+    
+      <category term="mysql" scheme="http://dajienihao.cn/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://dajienihao.cn/tags/mysql/"/>
+    
+      <category term="索引" scheme="http://dajienihao.cn/tags/%E7%B4%A2%E5%BC%95/"/>
+    
+  </entry>
   
   <entry>
     <title>mysql表的约束</title>
@@ -50,7 +110,7 @@
     <link href="http://dajienihao.cn/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/"/>
     <id>http://dajienihao.cn/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/</id>
     <published>2019-12-14T03:24:45.000Z</published>
-    <updated>2019-12-18T06:47:47.844Z</updated>
+    <updated>2019-12-29T08:25:05.979Z</updated>
     
     <summary type="html">
     
