@@ -1,6 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>原生JDBC的使用</title>
+    <url>/2020/01/13/yuan-sheng-de-jdbc-de-shi-yong/</url>
+    <content><![CDATA[<h2 id="JDBC是什么"><a href="#JDBC是什么" class="headerlink" title="JDBC是什么"></a>JDBC是什么</h2><blockquote>
+<p>JAVA Database Connectivity java数据库连接</p>
+</blockquote>
+<h2 id="为什么会出现JDBC"><a href="#为什么会出现JDBC" class="headerlink" title="为什么会出现JDBC"></a>为什么会出现JDBC</h2><blockquote>
+<p>SUN公司提供的一种数据库访问规则、规范, 由于数据库种类较多，并且java语言使用比较广泛，sun公司就提供了一种规范，让其他的数据库提供商去实现底层的访问规则。 我们的java程序只要使用sun公司提供的jdbc驱动即可。</p>
+</blockquote>
+<h2 id="使用JDBC的基本步骤"><a href="#使用JDBC的基本步骤" class="headerlink" title="使用JDBC的基本步骤"></a>使用JDBC的基本步骤</h2><h3 id="1-注册驱动"><a href="#1-注册驱动" class="headerlink" title="1. 注册驱动"></a>1. 注册驱动</h3><pre><code>   DriverManager.registerDriver(new com.mysql.jdbc.Driver());</code></pre><h3 id="2-建立连接"><a href="#2-建立连接" class="headerlink" title="2. 建立连接"></a>2. 建立连接</h3><pre><code>   //DriverManager.getConnection(&quot;jdbc:mysql://localhost/test?user=monty&amp;password=greatsqldb&quot;);
+   //建立连接 参数一： 协议 + 访问的数据库 ， 参数二： 用户名 ， 参数三： 密码。
+   conn = DriverManager.getConnection(&quot;jdbc:mysql://localhost/student&quot;, &quot;root&quot;, &quot;root&quot;);</code></pre><h3 id="3-创建statement"><a href="#3-创建statement" class="headerlink" title="3. 创建statement"></a>3. 创建statement</h3><pre><code>   //创建statement ， 跟数据库打交道，一定需要这个对象
+   st = conn.createStatement();</code></pre><h3 id="4-执行sql-，得到ResultSet"><a href="#4-执行sql-，得到ResultSet" class="headerlink" title="4. 执行sql ，得到ResultSet"></a>4. 执行sql ，得到ResultSet</h3><pre><code>   //执行查询 ， 得到结果集
+   String sql = &quot;select * from t_stu&quot;;
+   rs = st.executeQuery(sql);</code></pre><h3 id="5-遍历结果集"><a href="#5-遍历结果集" class="headerlink" title="5. 遍历结果集"></a>5. 遍历结果集</h3><pre><code>   //遍历查询每一条记录
+       while(rs.next()){
+           int id = rs.getInt(&quot;id&quot;);
+           String name = rs.getString(&quot;name&quot;);
+           int age = rs.getInt(&quot;age&quot;);
+           System.out.println(&quot;id=&quot;+id + &quot;===name=&quot;+name+&quot;==age=&quot;+age);    
+       }</code></pre><h3 id="6-释放资源"><a href="#6-释放资源" class="headerlink" title="6. 释放资源"></a>6. 释放资源</h3><pre><code>    if (rs != null) {
+        try {
+            rs.close();
+        } catch (SQLException sqlEx) { } // ignore 
+        rs = null;
+    }
+    ...</code></pre><h2 id="JDBC-工具类构建"><a href="#JDBC-工具类构建" class="headerlink" title="JDBC 工具类构建"></a>JDBC 工具类构建</h2><h3 id="1-资源释放工作的整合"><a href="#1-资源释放工作的整合" class="headerlink" title="1. 资源释放工作的整合"></a>1. 资源释放工作的整合</h3><h3 id="2-驱动防二次注册"><a href="#2-驱动防二次注册" class="headerlink" title="2. 驱动防二次注册"></a>2. 驱动防二次注册</h3><pre><code>   DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+   Driver 这个类里面有静态代码块，一上来就执行了，所以等同于我们注册了两次驱动。 其实没这个必要的。
+   //静态代码块 ---&gt; 类加载了，就执行。 java.sql.DriverManager.registerDriver(new Driver());
+    最后形成以下代码即可。
+    Class.forName(&quot;com.mysql.jdbc.Driver&quot;);    </code></pre><h3 id="3-使用properties配置文件"><a href="#3-使用properties配置文件" class="headerlink" title="3. 使用properties配置文件"></a>3. 使用properties配置文件</h3><ol>
+<li>在src底下声明一个文件 xxx.properties ，里面的内容吐下：<pre><code>   driverClass=com.mysql.jdbc.Driver
+   url=jdbc:mysql://localhost/student
+   name=root
+   password=root</code></pre></li>
+<li>在工具类里面，使用静态代码块，读取属性<pre><code> static{
+     try {
+         //1. 创建一个属性配置对象
+         Properties properties = new Properties();
+         InputStream is = new FileInputStream(&quot;jdbc.properties&quot;); //对应文件位于工程根目录
+         //使用类加载器，去读取src底下的资源文件。 后面在servlet  //对应文件位于src目录底下
+         //InputStream is = JDBCUtil.class.getClassLoader().getResourceAsStream(&quot;jdbc.properties&quot;);
+         //导入输入流。
+         properties.load(is);
+         //读取属性
+         driverClass = properties.getProperty(&quot;driverClass&quot;);
+         url = properties.getProperty(&quot;url&quot;);
+         name = properties.getProperty(&quot;name&quot;);
+         password = properties.getProperty(&quot;password&quot;);
+     } catch (Exception e) {
+         e.printStackTrace();
+     }
+ }</code></pre></li>
+</ol>
+<h2 id="数据库的CRUD-sql"><a href="#数据库的CRUD-sql" class="headerlink" title="数据库的CRUD sql"></a>数据库的CRUD sql</h2><h3 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h3><pre><code>  INSERT INTO t_stu (NAME , age) VALUES (&#39;wangqiang&#39;,28)
+    INSERT INTO t_stu VALUES (NULL,&#39;wangqiang2&#39;,28)
+        // 1. 获取连接对象
+        conn = JDBCUtil.getConn();
+        // 2. 根据连接对象，得到statement
+        st = conn.createStatement();
+        //3. 执行添加
+        String sql = &quot;insert into t_stu values(null , &#39;aobama&#39; , 59)&quot;;
+        //影响的行数， ，如果大于0 表明操作成功。 否则失败
+        int result = st.executeUpdate(sql);
+        if(result &gt;0 ){
+            System.out.println(&quot;添加成功&quot;);
+        }else{
+            System.out.println(&quot;添加失败&quot;);
+        }</code></pre><h3 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h3><pre><code>  DELETE FROM t_stu WHERE id = 6
+        // 1. 获取连接对象
+        conn = JDBCUtil.getConn();
+        // 2. 根据连接对象，得到statement
+        st = conn.createStatement();
+        //3. 执行添加
+        String sql = &quot;delete from t_stu where name=&#39;aobama&#39;&quot;;
+        //影响的行数， ，如果大于0 表明操作成功。 否则失败
+        int result = st.executeUpdate(sql);
+        if(result &gt;0 ){
+            System.out.println(&quot;删除成功&quot;);
+        }else{
+            System.out.println(&quot;删除失败&quot;);
+        }</code></pre><h3 id="query"><a href="#query" class="headerlink" title="query"></a>query</h3><pre><code>  SELECT * FROM t_stu
+        // 1. 获取连接对象
+        conn = JDBCUtil.getConn();
+        // 2. 根据连接对象，得到statement
+        st = conn.createStatement();
+        // 3. 执行sql语句，返回ResultSet
+        String sql = &quot;select * from t_stu&quot;;
+        rs = st.executeQuery(sql);
+        // 4. 遍历结果集
+        while (rs.next()) {
+            String name = rs.getString(&quot;name&quot;);
+            int age = rs.getInt(&quot;age&quot;);
+            System.out.println(name + &quot;   &quot; + age);
+        }</code></pre><h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><pre><code>  UPDATE t_stu SET age = 38 WHERE id = 1;
+        // 1. 获取连接对象
+        conn = JDBCUtil.getConn();
+        // 2. 根据连接对象，得到statement
+        st = conn.createStatement();
+        //3. 执行添加
+        String sql = &quot;update t_stu set age = 26 where name =&#39;qyq&#39;&quot;;
+        //影响的行数， ，如果大于0 表明操作成功。 否则失败
+        int result = st.executeUpdate(sql);
+        if(result &gt;0 ){
+            System.out.println(&quot;更新成功&quot;);
+        }else{
+            System.out.println(&quot;更新失败&quot;);
+        }</code></pre><h2 id="使用单元测试，测试代码"><a href="#使用单元测试，测试代码" class="headerlink" title="使用单元测试，测试代码"></a>使用单元测试，测试代码</h2><ol>
+<li><p>定义一个类， TestXXX , 里面定义方法 testXXX.</p>
+</li>
+<li><p>添加junit的支持。 </p>
+<pre><code>右键工程 --- add Library --- Junit --- Junit4</code></pre></li>
+<li><p>在方法的上面加上注解 ， 其实就是一个标记。</p>
+<pre><code>@Test
+public void testQuery() {
+    ...
+}</code></pre></li>
+<li><p>光标选中方法名字，然后右键执行单元测试。  或者是打开outline视图， 然后选择方法右键执行。</p>
+</li>
+</ol>
+<h2 id="Dao模式"><a href="#Dao模式" class="headerlink" title="Dao模式"></a>Dao模式</h2><blockquote>
+<p>Data Access Object 数据访问对象</p>
+</blockquote>
+<ol>
+<li>新建一个dao的接口， 里面声明数据库访问规则</li>
+</ol>
+<pre><code>    /**
+     * 定义操作数据库的方法
+     */
+    public interface UserDao {
+        /**
+         * 查询所有
+         */
+        void findAll();
+    }</code></pre><ol start="2">
+<li>新建一个dao的实现类，具体实现早前定义的规则</li>
+</ol>
+<pre><code>    public class UserDaoImpl implements UserDao{
+    @Override
+    public void findAll() {
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+        try {
+            //1. 获取连接对象
+            conn = JDBCUtil.getConn();
+            //2. 创建statement对象
+            st = conn.createStatement();
+            String sql = &quot;select * from t_user&quot;;
+            rs = st.executeQuery(sql);        
+            while(rs.next()){
+                String userName = rs.getString(&quot;username&quot;);
+                String password = rs.getString(&quot;password&quot;);
+                System.out.println(userName+&quot;=&quot;+password);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            JDBCUtil.release(conn, st, rs);
+        }
+    }
+}</code></pre><ol start="3">
+<li>直接使用实现<br> @Test<br> public void testFindAll(){<br> UserDao dao = new UserDaoImpl();<pre><code> dao.findAll();</code></pre> }</li>
+</ol>
+<h2 id="Statement的安全问题"><a href="#Statement的安全问题" class="headerlink" title="Statement的安全问题"></a>Statement的安全问题</h2><h3 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h3><p>Statement执行 ，其实是拼接sql语句的。  先拼接sql语句，然后在一起执行。 </p>
+<pre><code>    String sql = &quot;select * from t_user where username=&#39;&quot;+ username  +&quot;&#39; and password=&#39;&quot;+ password +&quot;&#39;&quot;;
+
+    UserDao dao = new UserDaoImpl();
+    dao.login(&quot;admin&quot;, &quot;100234khsdf88&#39; or &#39;1=1&quot;);
+
+    SELECT * FROM t_user WHERE username=&#39;admin&#39; AND PASSWORD=&#39;100234khsdf88&#39; or &#39;1=1&#39; 
+
+    前面先拼接sql语句， 如果变量里面带有了 数据库的关键字，那么一并认为是关键字。 不认为是普通的字符串。 
+    rs = st.executeQuery(sql);</code></pre><h3 id="PrepareStatement"><a href="#PrepareStatement" class="headerlink" title="PrepareStatement"></a>PrepareStatement</h3><p>该对象就是替换前面的statement对象。<br>相比较以前的statement， 预先处理给定的sql语句，对其执行语法检查。 在sql语句里面使用 ? 占位符来替代后续要传递进来的变量。 后面进来的变量值，将会被看成是字符串，不会产生任何的关键字。</p>
+<pre><code>         String sql = &quot;insert into t_user values(null , ? , ?)&quot;;
+         ps = conn.prepareStatement(sql);
+         //给占位符赋值 从左到右数过来，1 代表第一个问号， 永远你是1开始。
+         ps.setString(1, userName);
+         ps.setString(2, password);</code></pre><p>​    </p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>JDBC入门</li>
+<li>抽取工具类  </li>
+<li>Statement CRUD 演练crud</li>
+<li>Dao模式  声明与实现分开</li>
+<li>PrepareStament 预处理sql语句，解决上面statement出现的问题</li>
+</ol>
+]]></content>
+      <categories>
+        <category>JDBC</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>原生JDBC的使用</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>安卓自定义view五子棋项目</title>
     <url>/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/</url>
     <content><![CDATA[<p>当初学编程的，都想做一个游戏，俄罗斯方块？贪吃蛇？不不不，今天我所讲的是五子棋双人对战，对比那些来说，应该算比较简单的了。<br>相信很多人都有看过，不过视频中，我发现有些代码是不需要的，而且还存在一些bug，针对视频所存在的bug我都做了调整，经测试，目前无bug。<br>创建一个类，然后继承View，需要实现构造方法，我们选择两个参数的构造方法就行了<br>下面贴出代码：</p>

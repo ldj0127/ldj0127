@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2019-12-29T08:34:43.897Z</updated>
+  <updated>2020-01-13T12:36:32.698Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>原生JDBC的使用</title>
+    <link href="http://dajienihao.cn/2020/01/13/yuan-sheng-de-jdbc-de-shi-yong/"/>
+    <id>http://dajienihao.cn/2020/01/13/yuan-sheng-de-jdbc-de-shi-yong/</id>
+    <published>2020-01-13T08:24:45.000Z</published>
+    <updated>2020-01-13T12:36:32.698Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;JDBC是什么&quot;&gt;&lt;a href=&quot;#JDBC是什么&quot; class=&quot;headerlink&quot; title=&quot;JDBC是什么&quot;&gt;&lt;/a&gt;JDBC是什么&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;JAVA Database Connectivity
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JDBC" scheme="http://dajienihao.cn/categories/JDBC/"/>
+    
+    
+      <category term="mysql" scheme="http://dajienihao.cn/tags/mysql/"/>
+    
+      <category term="原生JDBC的使用" scheme="http://dajienihao.cn/tags/%E5%8E%9F%E7%94%9FJDBC%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>安卓自定义view五子棋项目</title>
