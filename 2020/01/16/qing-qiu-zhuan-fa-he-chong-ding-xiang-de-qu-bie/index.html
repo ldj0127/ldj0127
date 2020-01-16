@@ -9,9 +9,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mysql数据类型详解, L">
-    <meta name="description" content="#数据类型使用mysql数据库存储数据时，不同的类型决定了不同mysql不同的存储方式不同。为此mysql数据库提供了多种数据类型，其中包括整数类型、浮点数类型、定点数类型、日期和时间类型和二进制类型。下面将对此进行详解。
-1.整数类型在M">
+    <meta name="keywords" content="请求转发和重定向的区别, L">
+    <meta name="description" content="请求转发和重定向的区别重定向现实生活的例子①：A对B说，帮忙拿下快递
+②：B对A说，没有空，你找下C吧
+③：A对C说，帮忙拿下快递
+④：C然后拿了快递给A
+流程图
+//重定向写法： 重新定位方向 参数即跳转的位置
+response.send">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +24,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>mysql数据类型详解 | L</title>
+    <title>请求转发和重定向的区别 | L</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,13 +293,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://qiniuyun.dajienihao.cn/image/jpg/background/mysql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://qiniuyun.dajienihao.cn/image/jpg/background/192524-15326043240a4f.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        mysql数据类型详解
+                        请求转发和重定向的区别
                     </div>
                 </div>
             </div>
@@ -406,12 +411,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/mysql/">
-                                <span class="chip bg-color">mysql</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
-                                <span class="chip bg-color">数据类型</span>
+                            <a href="/tags/http/">
+                                <span class="chip bg-color">http</span>
                             </a>
                         
                     </div>
@@ -422,8 +423,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/mysql/" class="post-category">
-                                mysql
+                            <a href="/categories/JavaEE/" class="post-category">
+                                JavaEE
                             </a>
                         
                     </div>
@@ -434,21 +435,16 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-14
+                    2020-01-16
                 </div>
                 
-                
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-12-29
-                </div>
                 
 
                 
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        541
+                        428
                     </div>
                     
 
@@ -471,12 +467,45 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>#数据类型<br>使用mysql数据库存储数据时，不同的类型决定了不同mysql不同的存储方式不同。为此mysql数据库提供了多种数据类型，其中包括整数类型、浮点数类型、定点数类型、日期和时间类型和二进制类型。下面将对此进行详解。</p>
-<h2 id="1-整数类型"><a href="#1-整数类型" class="headerlink" title="1.整数类型"></a>1.整数类型</h2><p>在Mysql数据库中，经常需要存储整数数值。根据数值取值范围的不同，Mysql中的整数类型可分为五种，分别是TINYINT、SMALLINT、MEDIUMINT、INT和BIGINT。<br><img src="http://qiniuyun.dajienihao.cn/image/1211/image.png" alt=""><br>从表中可以看出，不同的整数类型占用的字节数和取值范围都不同。需要注意的是，不同整数类型的取值范围是可以根据字节数算出来的。</p>
-<h2 id="2-浮点数类型和定点数类型"><a href="#2-浮点数类型和定点数类型" class="headerlink" title="2.浮点数类型和定点数类型"></a>2.浮点数类型和定点数类型</h2><p>在mysql数据库中小数都是使用浮点数和定点数来表示的。浮点数的类型可以分为单精度浮点数类型（FLOAT）和双精度浮点数类型（DOUBLE）。而定点数类型只有DECMIMAL（M，D）<br><img src="http://qiniuyun.dajienihao.cn/image/1214/%E6%B5%AE%E7%82%B9%E5%9E%8B%E5%92%8C%E5%AE%9A%E7%82%B9%E5%9E%8B.jpg241642558434741.png" alt=""></p>
-<p>从表中可以看出DECIMAL类型的取值范围与DOUBLE类型的取值范围相同，需要注意的是DECIMAL的有效取值范围是由M和D决定的。其中，M表示的是数据的长度，D表示小数点后的长度。比如将DECIMAL（6，2）的数据3.14159插入数据库中，现实的结果为3.14。</p>
-<h2 id="3-日期与时间类型"><a href="#3-日期与时间类型" class="headerlink" title="3.日期与时间类型"></a>3.日期与时间类型</h2><p>为了方便在数据库中存储时间和日期，mysql提供了表示日期和时间的数据类型。分别是YEAR、DATE、TIME、DATETIME和TIMESTAMP。<br><img src="http://qiniuyun.dajienihao.cn/20191121112931554.jpg" alt=""><br>从表中可以看出每种日期和时间类型的取值范围都是不同的。需要注意的是如果插入的数值不合法，系统会自动将对应的零值插入数据库中。</p>
-<h2 id="4-字符串和二进制类型"><a href="#4-字符串和二进制类型" class="headerlink" title="4.字符串和二进制类型"></a>4.字符串和二进制类型</h2><p>为了存储字符串、图片和声音等数据，mysql提供了字符串类型和二进制类型。<br><img src="http://qiniuyun.dajienihao.cn/image/1214/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%B1%BB%E5%9E%8B.jpg" alt=""><br>表中列举的字符串和二进制类型，不同的数据类型具有不同的特点。</p>
+                <h1 id="请求转发和重定向的区别"><a href="#请求转发和重定向的区别" class="headerlink" title="请求转发和重定向的区别"></a>请求转发和重定向的区别</h1><h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><h3 id="现实生活的例子"><a href="#现实生活的例子" class="headerlink" title="现实生活的例子"></a>现实生活的例子</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0116/%E9%87%8D%E5%AE%9A%E5%90%91.png" alt=""><br>①：A对B说，帮忙拿下快递</p>
+<p>②：B对A说，没有空，你找下C吧</p>
+<p>③：A对C说，帮忙拿下快递</p>
+<p>④：C然后拿了快递给A</p>
+<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0116/20180527154555552.png" alt=""></p>
+<pre><code>//重定向写法： 重新定位方向 参数即跳转的位置
+response.sendRedirect(&quot;login_success.html&quot;);</code></pre><ol>
+<li><p>地址上显示的是最后的那个资源的路径地址</p>
+</li>
+<li><p>请求次数最少有两次， 服务器在第一次请求后，会返回302 以及一个地址， 浏览器在根据这个地址，执行第二次访问。</p>
+</li>
+<li><p>可以跳转到任意路径。 不是自己的工程也可以跳。</p>
+</li>
+<li><p>效率稍微低一点， 执行两次请求。 </p>
+</li>
+<li><p>后续的请求，没法使用上一次的request存储的数据，或者 没法使用上一次的request对象，因为这是两次不同的请求。</p>
+</li>
+<li><p>重定向访问的可能是外部资源 需要加项目路径${pageContext.request.contextPath}</p>
+</li>
+</ol>
+<h2 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h2><h3 id="现实生活的例子-1"><a href="#现实生活的例子-1" class="headerlink" title="现实生活的例子"></a>现实生活的例子</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0116/%E8%BD%AC%E5%8F%91.png" alt=""><br>①：A对B说，帮忙拿下快递</p>
+<p>②：第二步，B没有空，直接找让C帮A拿下快递</p>
+<p>③：C拿到了快递并返回给A</p>
+<pre><code>//请求转发的写法： 参数即跳转的位置
+request.getRequestDispatcher(&quot;login_success.html&quot;).forward(request, response);</code></pre><h3 id="流程图-1"><a href="#流程图-1" class="headerlink" title="流程图"></a>流程图</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0116/20180527171706259.png" alt=""></p>
+<ol>
+<li><p>地址上显示的是请求servlet的地址。  返回200 ok</p>
+</li>
+<li><p>请求次数只有一次， 因为是服务器内部帮客户端执行了后续的工作。 </p>
+</li>
+<li><p>只能跳转自己项目的资源路径 。  </p>
+</li>
+<li><p>效率上稍微高一点，因为只执行一次请求。 </p>
+</li>
+<li><p>可以使用上一次的request对象。 </p>
+</li>
+<li><p>请求转发路径写内部枯井 无需加项目路径</p>
+</li>
+</ol>
 
             </div>
             <hr/>
@@ -502,7 +531,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://dajienihao.cn/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/">http://dajienihao.cn/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/</a>
+                    <a href="http://dajienihao.cn/2020/01/16/qing-qiu-zhuan-fa-he-chong-ding-xiang-de-qu-bie/">http://dajienihao.cn/2020/01/16/qing-qiu-zhuan-fa-he-chong-ding-xiang-de-qu-bie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -540,12 +569,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/mysql/">
-                                    <span class="chip bg-color">mysql</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
-                                    <span class="chip bg-color">数据类型</span>
+                                <a href="/tags/http/">
+                                    <span class="chip bg-color">http</span>
                                 </a>
                             
                         </div>
@@ -712,51 +737,53 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/12/18/biao-de-yue-shu/">
+                <a href="/2020/01/16/qing-qiu-zhuan-fa-he-chong-ding-xiang-de-qu-bie/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/123945-1496983185ad61.jpg" class="responsive-img" alt="mysql表的约束">
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/192524-15326043240a4f.jpg" class="responsive-img" alt="请求转发和重定向的区别">
                         
-                        <span class="card-title">mysql表的约束</span>
+                        <span class="card-title">请求转发和重定向的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            表的约束为了防止数据表中插入错误的数据，在mysql中定义了一些维护数据库完整性的规则，即表的约束。
-主键约束单字段主键单字段主键指的是由一个字段构成的主键，其基本语法格式如下所示:字段名 数据类型 primary key；
- mysql-
+                            请求转发和重定向的区别重定向现实生活的例子①：A对B说，帮忙拿下快递
+②：B对A说，没有空，你找下C吧
+③：A对C说，帮忙拿下快递
+④：C然后拿了快递给A
+流程图
+//重定向写法： 重新定位方向 参数即跳转的位置
+response.send
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/mysql/" class="post-category">
-                                    mysql
+                            <a href="/categories/JavaEE/" class="post-category">
+                                    JavaEE
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mysql/">
-                        <span class="chip bg-color">mysql</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%A1%A8%E7%9A%84%E7%BA%A6%E6%9D%9F/">
-                        <span class="chip bg-color">表的约束</span>
+                    <a href="/tags/http/">
+                        <span class="chip bg-color">http</span>
                     </a>
                     
                 </div>
@@ -770,32 +797,34 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/11/mysql-shu-ju-ku-ji-biao-de-ji-ben-cao-zuo/">
+                <a href="/2020/01/13/yuan-sheng-de-jdbc-de-shi-yong/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/224644-1574347604d36e.jpg" class="responsive-img" alt="mysql数据库及表的基本操作">
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/184426-15686306666a07.jpg" class="responsive-img" alt="原生JDBC的使用">
                         
-                        <span class="card-title">mysql数据库及表的基本操作</span>
+                        <span class="card-title">原生JDBC的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mysql简单操作mysql服务的启动与暂停net start mysql
-net stop mysqlmysql登录-u用户名 -p密码创建和查看数据库create database 数据库名称
-show crate database 数
+                            JDBC是什么
+JAVA Database Connectivity java数据库连接
+
+为什么会出现JDBC
+SUN公司提供的一种数据库访问规则、规范, 由于数据库种类较多，并且java语言使用比较广泛，sun公司就提供了一种规范，让其
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/mysql/" class="post-category">
-                                    mysql
+                            <a href="/categories/JDBC/" class="post-category">
+                                    JDBC
                                 </a>
                             
                             
@@ -807,6 +836,10 @@ show crate database 数
                     
                     <a href="/tags/mysql/">
                         <span class="chip bg-color">mysql</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8E%9F%E7%94%9FJDBC%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                        <span class="chip bg-color">原生JDBC的使用</span>
                     </a>
                     
                 </div>

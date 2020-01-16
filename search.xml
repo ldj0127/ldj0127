@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>请求转发和重定向的区别</title>
+    <url>/2020/01/16/qing-qiu-zhuan-fa-he-chong-ding-xiang-de-qu-bie/</url>
+    <content><![CDATA[<h1 id="请求转发和重定向的区别"><a href="#请求转发和重定向的区别" class="headerlink" title="请求转发和重定向的区别"></a>请求转发和重定向的区别</h1><h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><h3 id="现实生活的例子"><a href="#现实生活的例子" class="headerlink" title="现实生活的例子"></a>现实生活的例子</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0116/%E9%87%8D%E5%AE%9A%E5%90%91.png" alt=""><br>①：A对B说，帮忙拿下快递</p>
+<p>②：B对A说，没有空，你找下C吧</p>
+<p>③：A对C说，帮忙拿下快递</p>
+<p>④：C然后拿了快递给A</p>
+<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0116/20180527154555552.png" alt=""></p>
+<pre><code>//重定向写法： 重新定位方向 参数即跳转的位置
+response.sendRedirect(&quot;login_success.html&quot;);</code></pre><ol>
+<li><p>地址上显示的是最后的那个资源的路径地址</p>
+</li>
+<li><p>请求次数最少有两次， 服务器在第一次请求后，会返回302 以及一个地址， 浏览器在根据这个地址，执行第二次访问。</p>
+</li>
+<li><p>可以跳转到任意路径。 不是自己的工程也可以跳。</p>
+</li>
+<li><p>效率稍微低一点， 执行两次请求。 </p>
+</li>
+<li><p>后续的请求，没法使用上一次的request存储的数据，或者 没法使用上一次的request对象，因为这是两次不同的请求。</p>
+</li>
+<li><p>重定向访问的可能是外部资源 需要加项目路径${pageContext.request.contextPath}</p>
+</li>
+</ol>
+<h2 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h2><h3 id="现实生活的例子-1"><a href="#现实生活的例子-1" class="headerlink" title="现实生活的例子"></a>现实生活的例子</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0116/%E8%BD%AC%E5%8F%91.png" alt=""><br>①：A对B说，帮忙拿下快递</p>
+<p>②：第二步，B没有空，直接找让C帮A拿下快递</p>
+<p>③：C拿到了快递并返回给A</p>
+<pre><code>//请求转发的写法： 参数即跳转的位置
+request.getRequestDispatcher(&quot;login_success.html&quot;).forward(request, response);</code></pre><h3 id="流程图-1"><a href="#流程图-1" class="headerlink" title="流程图"></a>流程图</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0116/20180527171706259.png" alt=""></p>
+<ol>
+<li><p>地址上显示的是请求servlet的地址。  返回200 ok</p>
+</li>
+<li><p>请求次数只有一次， 因为是服务器内部帮客户端执行了后续的工作。 </p>
+</li>
+<li><p>只能跳转自己项目的资源路径 。  </p>
+</li>
+<li><p>效率上稍微高一点，因为只执行一次请求。 </p>
+</li>
+<li><p>可以使用上一次的request对象。 </p>
+</li>
+<li><p>请求转发路径写内部枯井 无需加项目路径</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>JavaEE</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>原生JDBC的使用</title>
     <url>/2020/01/13/yuan-sheng-de-jdbc-de-shi-yong/</url>
     <content><![CDATA[<h2 id="JDBC是什么"><a href="#JDBC是什么" class="headerlink" title="JDBC是什么"></a>JDBC是什么</h2><blockquote>
