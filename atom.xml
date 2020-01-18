@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2020-01-16T09:43:00.807Z</updated>
+  <updated>2020-01-18T09:44:10.909Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Maven学习笔记</title>
+    <link href="http://dajienihao.cn/2020/01/18/maven-xue-xi-bi-ji/"/>
+    <id>http://dajienihao.cn/2020/01/18/maven-xue-xi-bi-ji/</id>
+    <published>2020-01-18T08:24:45.000Z</published>
+    <updated>2020-01-18T09:44:10.909Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1、目前掌握的技术&quot;&gt;&lt;a href=&quot;#1、目前掌握的技术&quot; class=&quot;headerlink&quot; title=&quot;1、目前掌握的技术&quot;&gt;&lt;/a&gt;1、目前掌握的技术&lt;/h2&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Maven" scheme="http://dajienihao.cn/categories/Maven/"/>
+    
+    
+      <category term="项目开发" scheme="http://dajienihao.cn/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="java" scheme="http://dajienihao.cn/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>请求转发和重定向的区别</title>
@@ -167,7 +196,7 @@
     <link href="http://dajienihao.cn/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/"/>
     <id>http://dajienihao.cn/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/</id>
     <published>2019-12-14T03:24:45.000Z</published>
-    <updated>2019-12-29T08:25:05.979Z</updated>
+    <updated>2020-01-18T08:33:13.395Z</updated>
     
     <summary type="html">
     
@@ -175,8 +204,7 @@
       
         
         
-          &lt;p&gt;#数据类型&lt;br&gt;使用mysql数据库存储数据时，不同的类型决定了不同mysql不同的存储方式不同。为此mysql数据库提供了多种数据类型，其中包括整数类型、浮点数类型、定点数类型、日期和时间类型和二进制类型。下面将对此进行详解。&lt;/p&gt;
-&lt;h2
+          &lt;h1 id=&quot;数据类型&quot;&gt;&lt;a href=&quot;#数据类型&quot; class=&quot;headerlink&quot;
         
       
     

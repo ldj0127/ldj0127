@@ -1,6 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Maven学习笔记</title>
+    <url>/2020/01/18/maven-xue-xi-bi-ji/</url>
+    <content><![CDATA[<h2 id="1、目前掌握的技术"><a href="#1、目前掌握的技术" class="headerlink" title="1、目前掌握的技术"></a>1、目前掌握的技术</h2><p><img src="https://img-blog.csdn.net/20170727170011085?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<h2 id="2、目前的技术在开发中存在的问题-why"><a href="#2、目前的技术在开发中存在的问题-why" class="headerlink" title="2、目前的技术在开发中存在的问题[why]"></a>2、目前的技术在开发中存在的问题[why]</h2><ol>
+<li>一个项目就是一个工程如果项目非常庞大，就不适合继续使用package来划分模块。最好是每一个模块对应一个项目，利于分工协作。借助于maven就可以将一个项目拆分成多个工程。</li>
+<li>项目中需要的jar包必须手动“复制”、”粘贴” 到WEB-INF/lib 项目下带来的问题：同样的jar包文件重复出现在不同的项目工程中，一方面浪费存储空间，另外也让工程比较臃肿。借助Maven，可以将jar包仅仅保存在“仓库”中，有需要使用的工程“引用”这个文件，并不需要重复复制。</li>
+<li>jar包需要别人替我们准备好，或到官网下载所有知名框架或第三方工具jar包已经按照统一规范放在了Maven的中央仓库中。</li>
+<li>个jar包依赖的其他jar包需要自己手动加到项目中<br>Maven会自动将被依赖的jar包导入进来。</li>
+</ol>
+<h2 id="3、Maven是什么-what"><a href="#3、Maven是什么-what" class="headerlink" title="3、Maven是什么[what]"></a>3、Maven是什么[what]</h2><ol>
+<li>Maven 是 Apache 软件基金会组织维护的一款自动化构建工具，专注服务于 Java 平台的项目构建和依赖管理 。Maven 这个单词的本意是：专家，内行。读音是[‘meɪv(ə)n]或[‘mevn]。构建工具的发展：Make→Ant→Maven→Gradle</li>
+<li>构建：就是以我们编写的Java代码、框架配置文件、国际化等其他资源文件、jsp页面和图片等静态资源作为“原材料”，去“生产”出一个可以运行的项目的过程。<br>eclipse中的项目与tomcat中编译结果对比：<br><img src="https://img-blog.csdn.net/20170728201331986?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></li>
+<li>构建过程中的几个主要环节<br>①清理：删除以前的编译结果，为重新编译做好准备。<br>②编译：将Java源程序编译为字节码文件。<br>③测试：针对项目中的关键点进行测试，确保项目在迭代开发过程中关键点的正确性。<br>④报告：将每一次测试后以标准的格式记录和展示测试结果。<br>⑤打包：将一个包含诸多文件的工程封装为一个压缩文件用于安装或部署。Java工程对应jar包，Web工程对象war包。<br>⑥安装：在Maven环境下特指将打包的结果——Jar包或War包安装到本地仓库中。<br>⑦部署：将打包的结果部署到远程仓库或将war包部署到服务器上运行。</li>
+<li>自动化构建<br>程序员一天的工作：<br><img src="https://img-blog.csdn.net/20170728203846138?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>能否将这些程式化的工作交给机器自动完成呢？——当然可以！这就是自动化构建。<br><img src="https://img-blog.csdn.net/20170728203927253?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>此时 Maven 的意义就体现出来了，它可以自动的从构建过程的起点一直执行到终点：<br><img src="https://img-blog.csdn.net/20170728203953999?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></li>
+</ol>
+<h2 id="4、安装Maven核心程序"><a href="#4、安装Maven核心程序" class="headerlink" title="4、安装Maven核心程序"></a>4、安装Maven核心程序</h2><ol>
+<li>检查JAVA_HOME环境变量<blockquote>
+<p>cmd输入echo %JAVA_HOME%<br>C:\Program Files\Java\jdk1.8.0_181</p>
+</blockquote>
+</li>
+<li>解压Maven核心程序的压缩包，放在一个<strong>非中文、无空格</strong>的路径下<blockquote>
+<p>D:\apache-maven-3.6.3</p>
+</blockquote>
+</li>
+<li>配置Maven相关的环境变量<br>①MAVEN_HOME 或 M2_HOME<br><img src="https://img-blog.csdn.net/20170728211509244?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>②path<br><img src="https://img-blog.csdn.net/20170728211603564?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></li>
+<li>验证：运行 mvn -v 命令查看Maven版本<blockquote>
+<p>C:\Users\Lenovo&gt;mvn -v<br>Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)<br>Maven home: D:\apache-maven-3.6.3\bin..<br>Java version: 1.8.0_181, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk1.8.0_181\jre<br>Default locale: zh_CN, platform encoding: GBK<br>OS name: “windows 10”, version: “10.0”, arch: “amd64”, family: “windows”</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="5、Maven的核心概念"><a href="#5、Maven的核心概念" class="headerlink" title="5、Maven的核心概念"></a>5、Maven的核心概念</h2><ol>
+<li>约定的目录结构</li>
+<li>POM</li>
+<li>坐标</li>
+<li>依赖</li>
+<li>仓库</li>
+<li>生命周期/插件/目标</li>
+<li>继承</li>
+<li>聚合</li>
+</ol>
+<h2 id="6、第一个Maven工程"><a href="#6、第一个Maven工程" class="headerlink" title="6、第一个Maven工程"></a>6、第一个Maven工程</h2><ol>
+<li>创建约定的目录结构<br><img src="https://img-blog.csdn.net/20170728213202634?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>pom.xml文件为Maven工程的核心配置文件</li>
+<li>为什么要遵循约定的目录结构呢？<br>我们在开发中如果需要让第三方工具或框架知道我们自己创建的资源在哪，那么基本上就是两种方式：<br>①以配置文件的方式明确告诉框架 如 &lt; param-value&gt;classpath:spring-context.xml &lt; /param-value&gt;<br>②遵循框架内部已经存在的约定 如log4j的配置文件名规定必须为 log4j.properties 或 log4j.xml ；Maven 使用约定的目录结构</li>
+</ol>
+<h2 id="7、Maven常用命令"><a href="#7、Maven常用命令" class="headerlink" title="7、Maven常用命令"></a>7、Maven常用命令</h2><ol>
+<li>注意：执行与构建过程相关的Maven命令，必须进入pom.xml 所在的目录。</li>
+<li>常用命令<br>【1】mvn clean : 清理<br>【2】mvn compile : 编译主程序<br>【3】mvn test-compile : 编译测试程序<br>【4】mvn test : 执行测试<br>【5】mvn package : 打包<br>【6】mvn install ： 安装<br>【7】mvn site ：生成站点</li>
+</ol>
+<h2 id="8、关于联网问题"><a href="#8、关于联网问题" class="headerlink" title="8、关于联网问题"></a>8、关于联网问题</h2><ol>
+<li>Maven 的核心程序中仅仅定义了抽象的生命周期，但是具体的工作必须有特定的插件来完成。而插件本身不包含在Maven核心程序中。</li>
+<li>当我们执行的Maven命令需要用到某些插件时，Maven核心程序会首先到本地仓库中查找。</li>
+<li>本地仓库的默认位置：[系统登陆用户的家目录] \ .m2\repository</li>
+<li>Maven核心程序如果在本地仓库中找不到需要的插件，那么它会自动连接外网，到中央仓库下载。</li>
+<li>如果此时无法连接外网，则构建失败。</li>
+<li>修改默认本地仓库的位置可以让Maven核心程序到我们事先准备好的目录下查找插件<br>①找到Maven解压目录\conf\settings.xml<br>②在setting.xml 文件中找到 localRepository 标签<br>③将 &lt; localRepository&gt;/path/to/local/repo&lt; /localRepository&gt;从注释中取<br>出<br>④将标签体内容修改为自定义的Maven仓库目录</li>
+</ol>
+<h2 id="9、POM"><a href="#9、POM" class="headerlink" title="9、POM"></a>9、POM</h2><ol>
+<li>含义：Project Object Model 项目对象模型<br>DOM ：Document Object Model 文档对象模型</li>
+<li>pom.xml 对于 Maven工程是核心配置文件，与构建过程相关的一切设置都在这个文件中进行配置。<br>重要程度相当于web.xml 对于动态web工程</li>
+</ol>
+<h2 id="10、坐标"><a href="#10、坐标" class="headerlink" title="10、坐标"></a>10、坐标</h2><ol>
+<li><p>数学中的坐标：<br>①在平面中，使用X,Y坐标可以唯一的定位平面中任何一个点。<br>②在空间中，使用X,Y，Z三个向量可以唯一的定位空间中的任何一个点。</p>
+</li>
+<li><p>Maven的坐标：<br>使用下面三个向量在仓库中唯一定位一个Maven工程<br>①groupid:公司或组织域名倒序+项目名</p>
+<pre><code> &lt; groupid&gt;com.atguigu.maven&lt; /groupid&gt;</code></pre><p>②artifactid:模块名</p>
+<pre><code> &lt; artifactid&gt;Hello&lt; /artifactid&gt;  </code></pre><p>③version：版本  </p>
+<pre><code> &lt; version&gt;1.0.0&lt; /version&gt;</code></pre></li>
+<li><p>Maven 工程的坐标与仓库中路径的对应关系，以spring为例</p>
+<pre><code> &lt; groupId&gt;org.springframework&lt; /groupId&gt;
+ &lt; artifactId&gt;spring-core&lt; /artifactId&gt;
+ &lt; version&gt;4.0.0.RELEASE&lt; /version&gt;
+ org/springframework/spring-core/4.0.0.RELEASE/spring-core-4.0.0.RELEASE.jar</code></pre></li>
+</ol>
+<p>注意：我们自己的 Maven 工程必须执行安装操作才会进入仓库。安装的命令是：mvn install</p>
+<h2 id="11、仓库"><a href="#11、仓库" class="headerlink" title="11、仓库"></a>11、仓库</h2><ol>
+<li>仓库的分类<br>①本地仓库：当前电脑上部署的仓库目录，为当前电脑上所有Maven工程服务<br>②远程仓库<br>（1）私服：搭建在局域网环境中，为局域网范围内的所有Maven工程服务<br><img src="https://img-blog.csdn.net/20170729222712252?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>（2）中央仓库：假设在Internet上，为全世界所有Maven工程服务<br>（3）中央仓库镜像：为了分担中央仓库流量，提升用户访问速度</li>
+<li>仓库中保存的内容：Maven工程<br>①Maven自身所需要的插件<br>②第三方框架或工具的jar包<br>③我们自己开发的Maven工程<br>不管是什么样的 jar 包，在仓库中都是按照坐标生成目录结构，所以可以通过统一的方式查询或依赖。</li>
+</ol>
+<h2 id="12、依赖"><a href="#12、依赖" class="headerlink" title="12、依赖"></a>12、依赖</h2><ol>
+<li>当 A jar 包用到了 B jar 包中的某些类时，A 就对 B 产生了依赖，这是概念上的描述。Maven解析依赖信息时会到仓库中查找被依赖的jar包。<br>对于我们自己开发的Maven工程，要使用mvn install 命令安装后就可以进入仓库。<br><img src="https://img-blog.csdn.net/20170730165534132?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></li>
+<li>依赖的范围<br>①从项目结构角度理解compile和test的区别<br><img src="https://img-blog.csdn.net/20170730165755167?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>compile范围依赖<br>》对主程序是否有效：有效<br>》对测试程序是否有效：有效<br>》是否参与打包：参与<br>》是否参与部署：参与<br>》典型例子：spring-core<br>test范围依赖<br>》对主程序是否有效：无效<br>》对测试程序是否有效：有效<br>》是否参与打包：不参与<br>》是否参与部署：不参与<br>》典型例子：Junit<br>②从开发和运行这两个阶段理解compile 和 provided 的区别<br><img src="https://img-blog.csdn.net/20170730170327848?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>》对主程序是否有效：有效<br>》对测试程序是否有效：有效<br>》是否参与打包：不参与<br>》是否参与部署：不参与<br>》典型例子：Servlet-api.jar<br>③有效性总结<br><img src="https://img-blog.csdn.net/20170730170652211?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></li>
+<li>依赖的传递性<br>A依赖B，B依赖C，A能否使用C呢？要看B依赖C的范围是不是compile<br><img src="https://img-blog.csdn.net/20170730171006616?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></li>
+<li>依赖的排除<br>如果我们当前工程中引入了一个依赖是A，而A又依赖了B，那么Maven会自动将A依赖的B引入当前工程，但是个别情况下B有可能是一个不稳定版本，或对当前工程有不良影响。这时我们可以在引入A的时候将B排除。<br>①情景举例<br><img src="https://img-blog.csdn.net/20170730172241301?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>②配置方式<pre><code> &lt;dependency&gt;
+ &lt;groupId&gt;com.atguigu.maven&lt;/groupId&gt;
+ &lt;artifactId&gt;HelloFriend&lt;/artifactId&gt;
+ &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+ &lt;type&gt;jar&lt;/type&gt;
+ &lt;scope&gt;compile&lt;/scope&gt;
+ &lt;exclusions&gt;
+     &lt; exclusion&gt;
+         &lt;groupId&gt;commons-logging&lt;/groupId&gt;
+         &lt;artifactId&gt;commons-logging&lt;/artifactId&gt;
+     &lt;/ exclusion&gt; 
+ &lt;/exclusions&gt;
+ &lt;/dependency&gt;</code></pre>③排除后的效果<br><img src="https://img-blog.csdn.net/20170730172540566?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></li>
+<li>统一管理所依赖 .jar 包的版本<br>对同一个框架的一组jar包最好使用相同的版本。为了方便升级架构，可以将jar包的版本信息统一提取出来<br>①统一声明版本号<br><img src="https://img-blog.csdn.net/20170730173201613?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>其中 atguigu.spring.version 部分是自定义标签。<br>②引用前面声明的版本号<br><img src="https://img-blog.csdn.net/20170730173318435?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><img src="" alt=""><br>③其他用法<br><img src="https://img-blog.csdn.net/20170730173423688?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></li>
+<li>依赖的原则，解决jar包冲突<br>①路径最短者优先<br><img src="https://img-blog.csdn.net/20170810171428094?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>②路径相同时先声明者优先<br><img src="https://img-blog.csdn.net/20170810171449146?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></li>
+</ol>
+<h2 id="13、生命周期"><a href="#13、生命周期" class="headerlink" title="13、生命周期"></a>13、生命周期</h2><ol>
+<li>各个构建环节执行的顺序：不能打乱顺序，必须按照既定的正确顺序来执行。</li>
+<li>Maven的核心程序中定义了抽象的生命周期，生命周期中各个阶段的具体任务是由插件来完成的。</li>
+<li>Maven核心程序为了更好的实现自动化构建，按照这一特点执行生命周期中各个阶段：不论现在要执行生命周期中的哪一阶段，都是从这个生命周期最初的位置开始执行。</li>
+<li>Maven有三套相互独立的生命周期，分别是：<br>①Clean Lifecycle 在进行真正的构建之前进行一些清理工作。<br>②Default Lifecycle 构建的核心部分，编译、测试、打包、安装、部署等等。<br>③Site Lifecycle 生成项目报告，站点，发布站点。</li>
+<li>他们相互独立。也可以直接运行 mvn clean install site 运行所有这三套生命周期。</li>
+<li>每套生命周期都由一组阶段(Phase)组成，我们平时在命令行输入的命令总会对应于一个特定的阶段。比如，运行 mvn clean，这个 clean 是 Clean 生命周期的一个阶段。有 Clean 生命周期，也有 clean 阶段。</li>
+<li>Clean声明周期<br>①pre-clean 执行一些需要在clean之前完成的工作<br>②clean 移除所有上一次构建生成的文件<br>③post-clean 执行一些需要在clean 之后立刻完成的工作</li>
+<li>Default声明周期<br>Default 生命周期是 Maven 生命周期中最重要的一个，绝大部分工作都发生在这个生命周期中。这里，只解释一些比较重要和常用的阶段：<br>validate<br>generate-sources<br>process-sources<br>generate-resources<br>process-resources 复制并处理资源文件，至目标目录，准备打包。<br>compile 编译项目的源代码。<br>process-classes<br>generate-test-sources<br>process-test-sources<br>generate-test-resources<br>process-test-resources 复制并处理资源文件，至目标测试目录。<br>test-compile 编译测试源代码。<br>process-test-classes<br>test 使用合适的单元测试框架运行测试。这些测试代码不会被打包或部署。<br>prepare-package<br>package 接受编译好的代码，打包成可发布的格式，如 JAR。<br>pre-integration-test<br>integration-test<br>post-integration-test<br>verify<br>install 将包安装至本地仓库，以让其它项目依赖。<br>deploy 将最终的包复制到远程的仓库，以让其它开发人员与项目共享或部署到服务器上运行。</li>
+<li>Site生命周期<br>①pre-site 执行一些需要在生成站点文档之前完成的工作<br>②site 生成项目的站点文档<br>③post-site 执行一些需要在生成站点文档之后完成的工作，并且为部署做准备<br>④site-deploy 将生成的站点文档部署到特定的服务器上<br>这里经常用到的是 site 阶段和 site-deploy 阶段，用以生成和发布 Maven 站点，这可是 Maven 相当强大的功能，Manager 比较喜欢，文档及统计数据自动生成，很好看。</li>
+<li>插件和目标<br>Maven的核心仅仅定义了抽象的声明周期，具体的任务都是交由插件完成的。<br>每个插件都实现多个功能，每个功能就是一个插件目标<br>Maven的生命周期与插件目标相互绑定，以完成某个具体的构建任务。<br>可以将目标看做“调用插件功能的命令”<br>例如：compile 就是插件 maven-compiler-plugin 的一个目标；pre-clean 是插件 maven-clean-plugin 的一个目标。</li>
+</ol>
+<h2 id="14、在Eclipse中使用Maven"><a href="#14、在Eclipse中使用Maven" class="headerlink" title="14、在Eclipse中使用Maven"></a>14、在Eclipse中使用Maven</h2><ol>
+<li>Maven插件Eclipse已经内置。</li>
+<li>Maven插件的设置： Window-&gt;Preferences-&gt;Maven<br>①installations : 指定Maven核心程序的位置。默认是插件自带的Maven程序，改为我们自己解压的那个。<br>②user settings : 指定Maven核心程序中 conf/settings.xml 文件的位置，进而获取本地仓库的位置。</li>
+<li>基本操作<br>①创建Maven版的Java工程<br>创建时勾选上 Create a simple project(skip archetype selection)<br><img src="https://img-blog.csdn.net/20170810142943257?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>创建的Maven工程默认使用的是JDK1.5，打开Maven核心程序settings.xml文件，找到profiles标签，加入如下配置，即可更改 <pre><code> &lt;profile&gt;
+     &lt;id&gt;jdk-1.7&lt;/id&gt;
+     &lt;activation&gt;
+         &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+         &lt;jdk&gt;1.7&lt;/jdk&gt;
+     &lt;/activation&gt;
+     &lt;properties&gt;
+         &lt;maven.compiler.source&gt;1.7&lt;/maven.compiler.source&gt;
+         &lt;maven.compiler.target&gt;1.7&lt;/maven.compiler.target&gt;
+         &lt;maven.compiler.compilerVersion&gt;1.7&lt;/maven.compiler.compilerVersion&gt;
+     &lt;/properties&gt;
+ &lt;/profile&gt;</code></pre>②创建Maven版的Web工程<br>1、New Maven project时，Packaging 选择 war<br><img src="https://img-blog.csdn.net/20170810145801982?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>2、调整web目录结构，在项目上点右键 -&gt; properties-&gt;Project Facets -&gt; 把Dynamic Web Module 勾选去掉，并Apply -&gt; 将Dynamic Web Module 重新勾选 -&gt; 点击Further configuration available -&gt; 修改 Content directory为src/main/webapp -&gt; Apply 即在Maven工程上生成动态Web目录结构<br>3、新建jsp文件发现报错：The superclass “javax.servlet.http.HttpServlet” was not found on the Java Build Path<br>因为缺少Tomcat 运行时环境<br>以Maven方式添加：<br>在pom.xml文件中添加<br><img src="https://img-blog.csdn.net/20170810152056630?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>4、jsp写入EL表达式时发现报错：javax.servlet.jsp cannot be resolved to a type<br>将JSPAPI导入<br>在pom.xml文件中添加<br><img src="https://img-blog.csdn.net/20170810153716289?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>注意：scope一定要是provided，不然jar包冲突，运行时会报空指针异常<br>③执行Maven命令<br>选中pom.xml 右键 Run As-&gt;Maven build…-&gt;Goals-&gt;输入 compile -&gt;点击 run</li>
+</ol>
+<h2 id="15、继承"><a href="#15、继承" class="headerlink" title="15、继承"></a>15、继承</h2><ol>
+<li>现状<br>Hello依赖的Junit：4.0<br>HelloFriend依赖的Junit：4.0<br>MakeFriends依赖的Junit：4.9<br>由于test范围的依赖不能传递，所以必然会分散在各个模块工程中，很容易造成版本不一致。</li>
+<li>需求：统一管理各个模块工程中对Junit依赖的版本。</li>
+<li>解决思路：将Junit依赖统一提取到“父”工程中，在子工程中声明Junit依赖是不指定版本，以父工程中统一设定的为准。同时也便于修改。</li>
+<li>操作步骤：<br>①创建一个Maven工程作为父工程。注意：打包方式为pom<br><img src="https://img-blog.csdn.net/20170810175950040?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>②在子工程中声明对父工程的引用<br><img src="https://img-blog.csdn.net/20170810180137704?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>③将子工程的坐标中与父工程坐标中重复的内容删除<br><img src="https://img-blog.csdn.net/20170810180306736?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>④在父工程中统一管理Junit的依赖<br><img src="https://img-blog.csdn.net/20170810180410293?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>⑤在子工程中删除Junit依赖的版本号部分<br><img src="https://img-blog.csdn.net/20170810180504760?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>注意：配置集成后，执行安装命令时要先安装父工程。</li>
+</ol>
+<h2 id="16、聚合"><a href="#16、聚合" class="headerlink" title="16、聚合"></a>16、聚合</h2><ol>
+<li>作用：一键安装各个模块工程。</li>
+<li>配置方式：在一个“总的聚合工程”中配置各个参与聚合的模块<br><img src="https://img-blog.csdn.net/20170810191758989?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></li>
+<li>使用方式：在聚合工程的pom.xml 上点右键-&gt;run as-&gt;maven install</li>
+</ol>
+<h2 id="17、Maven-Web工程的自动部署"><a href="#17、Maven-Web工程的自动部署" class="headerlink" title="17、Maven_Web工程的自动部署"></a>17、Maven_Web工程的自动部署</h2><p>在pom.xml 中添加如下配置：</p>
+<pre><code>          &lt;!--配置当前工程构建过程中的特殊设置   --&gt;
+          &lt;build&gt;
+            &lt;finalName&gt;AtguiguWeb&lt;/finalName&gt;
+            &lt;!-- 配置构建过程中需要使用的插件 --&gt;
+            &lt;plugins&gt;
+                &lt;plugin&gt;
+                    &lt;!-- cargo是一家专门从事启动Servlet容器的组织 --&gt;
+                    &lt;groupId&gt;org.codehaus.cargo&lt;/groupId&gt;
+                    &lt;artifactId&gt;cargo-maven2-plugin&lt;/artifactId&gt;
+                    &lt;version&gt;1.2.3&lt;/version&gt;
+                    &lt;!-- 针对插件进行的配置 --&gt;
+                    &lt;configuration&gt;
+                        &lt;!-- 配置当前系统中容器的位置 --&gt;
+                        &lt;container&gt;
+                            &lt;containerId&gt;tomcat6x&lt;/containerId&gt;
+                            &lt;home&gt;D:\DevInstall\apache-tomcat-6.0.39&lt;/home&gt;
+                        &lt;/container&gt;
+                        &lt;configuration&gt;
+                            &lt;type&gt;existing&lt;/type&gt;
+                            &lt;home&gt;D:\DevInstall\apache-tomcat-6.0.39&lt;/home&gt;
+                            &lt;!-- 如果Tomcat端口为默认值8080则不必设置该属性 --&gt;
+                            &lt;properties&gt;
+                                &lt;cargo.servlet.port&gt;8989&lt;/cargo.servlet.port&gt;
+                            &lt;/properties&gt;
+                        &lt;/configuration&gt;
+                    &lt;/configuration&gt;
+                    &lt;!-- 配置插件在什么情况下执行 --&gt;
+                    &lt;executions&gt;  
+                        &lt;execution&gt;  
+                            &lt;id&gt;cargo-run&lt;/id&gt;
+                            &lt;!-- 生命周期的阶段 --&gt;  
+                            &lt;phase&gt;install&lt;/phase&gt;  
+                            &lt;goals&gt;
+                                &lt;!-- 插件的目标 --&gt;  
+                                &lt;goal&gt;run&lt;/goal&gt;  
+                            &lt;/goals&gt;  
+                        &lt;/execution&gt;  
+                    &lt;/executions&gt;
+                &lt;/plugin&gt;
+             &lt;/plugins&gt;
+            &lt;/build&gt;</code></pre><p>执行mvn deploy 命令</p>
+<h2 id="18、Maven-酷站"><a href="#18、Maven-酷站" class="headerlink" title="18、Maven 酷站"></a>18、Maven 酷站</h2><p>我们可以到 <a href="http://mvnrepository.com/搜索需要的" target="_blank" rel="noopener">http://mvnrepository.com/搜索需要的</a> jar 包的依赖信息。</p>
+]]></content>
+      <categories>
+        <category>Maven</category>
+      </categories>
+      <tags>
+        <tag>项目开发</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>请求转发和重定向的区别</title>
     <url>/2020/01/16/qing-qiu-zhuan-fa-he-chong-ding-xiang-de-qu-bie/</url>
     <content><![CDATA[<h1 id="请求转发和重定向的区别"><a href="#请求转发和重定向的区别" class="headerlink" title="请求转发和重定向的区别"></a>请求转发和重定向的区别</h1><h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><h3 id="现实生活的例子"><a href="#现实生活的例子" class="headerlink" title="现实生活的例子"></a>现实生活的例子</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0116/%E9%87%8D%E5%AE%9A%E5%90%91.png" alt=""><br>①：A对B说，帮忙拿下快递</p>
@@ -702,7 +892,7 @@ on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中
   <entry>
     <title>mysql数据类型详解</title>
     <url>/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/</url>
-    <content><![CDATA[<p>#数据类型<br>使用mysql数据库存储数据时，不同的类型决定了不同mysql不同的存储方式不同。为此mysql数据库提供了多种数据类型，其中包括整数类型、浮点数类型、定点数类型、日期和时间类型和二进制类型。下面将对此进行详解。</p>
+    <content><![CDATA[<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>使用mysql数据库存储数据时，不同的类型决定了不同mysql不同的存储方式不同。为此mysql数据库提供了多种数据类型，其中包括整数类型、浮点数类型、定点数类型、日期和时间类型和二进制类型。下面将对此进行详解。</p>
 <h2 id="1-整数类型"><a href="#1-整数类型" class="headerlink" title="1.整数类型"></a>1.整数类型</h2><p>在Mysql数据库中，经常需要存储整数数值。根据数值取值范围的不同，Mysql中的整数类型可分为五种，分别是TINYINT、SMALLINT、MEDIUMINT、INT和BIGINT。<br><img src="http://qiniuyun.dajienihao.cn/image/1211/image.png" alt=""><br>从表中可以看出，不同的整数类型占用的字节数和取值范围都不同。需要注意的是，不同整数类型的取值范围是可以根据字节数算出来的。</p>
 <h2 id="2-浮点数类型和定点数类型"><a href="#2-浮点数类型和定点数类型" class="headerlink" title="2.浮点数类型和定点数类型"></a>2.浮点数类型和定点数类型</h2><p>在mysql数据库中小数都是使用浮点数和定点数来表示的。浮点数的类型可以分为单精度浮点数类型（FLOAT）和双精度浮点数类型（DOUBLE）。而定点数类型只有DECMIMAL（M，D）<br><img src="http://qiniuyun.dajienihao.cn/image/1214/%E6%B5%AE%E7%82%B9%E5%9E%8B%E5%92%8C%E5%AE%9A%E7%82%B9%E5%9E%8B.jpg241642558434741.png" alt=""></p>
 <p>从表中可以看出DECIMAL类型的取值范围与DOUBLE类型的取值范围相同，需要注意的是DECIMAL的有效取值范围是由M和D决定的。其中，M表示的是数据的长度，D表示小数点后的长度。比如将DECIMAL（6，2）的数据3.14159插入数据库中，现实的结果为3.14。</p>
