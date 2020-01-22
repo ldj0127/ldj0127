@@ -1,6 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Data、String和sql.Timestamp之间的互相转换</title>
+    <url>/2020/01/22/java-zhong-data-string-he-sql.timestamp-zhi-jian-de-hu-xiang-zhuan-huan/</url>
+    <content><![CDATA[<h1 id="JAVA中java-util-Date、java-sql-Timestamp和String之间的互相转换"><a href="#JAVA中java-util-Date、java-sql-Timestamp和String之间的互相转换" class="headerlink" title="JAVA中java.util.Date、java.sql.Timestamp和String之间的互相转换"></a>JAVA中java.util.Date、java.sql.Timestamp和String之间的互相转换</h1><h2 id="java-util-Date与的String互转"><a href="#java-util-Date与的String互转" class="headerlink" title="java.util.Date与的String互转"></a>java.util.Date与的String互转</h2><h3 id="java-util-Date—-gt-String"><a href="#java-util-Date—-gt-String" class="headerlink" title="java.util.Date—-&gt;String"></a>java.util.Date—-&gt;String</h3><pre><code>/**
+ * 将java.util.Date对象转化为String字符串
+ * @param date
+ *            要格式的java.util.Date对象
+ * @param strFormat
+ *            输出的String字符串格式的限定（如：&quot;yyyy-MM-dd HH:mm:ss&quot;）
+ * @return 表示日期的字符串
+ */
+public static String dateToStr(java.util.Date date, String strFormat) {
+    SimpleDateFormat sf = new SimpleDateFormat(strFormat);
+    String str = sf.format(date);
+    return str;
+}</code></pre><h3 id="String—-gt-java-util-Date"><a href="#String—-gt-java-util-Date" class="headerlink" title="String—-&gt;java.util.Date"></a>String—-&gt;java.util.Date</h3><pre><code>/**
+ * 将String字符串转换为java.util.Date格式日期
+ * @param strDate
+ *            表示日期的字符串
+ * @param dateFormat
+ *            传入字符串的日期表示格式（如：&quot;yyyy-MM-dd HH:mm:ss&quot;）
+ * @return java.util.Date类型日期对象（如果转换失败则返回null）
+ */
+public static java.util.Date strToUtilDate(String strDate, String dateFormat) {
+    SimpleDateFormat sf = new SimpleDateFormat(dateFormat);
+    java.util.Date date = null;
+    try {
+        date = sf.parse(strDate);
+    } catch (ParseException e) {
+        e.printStackTrace();
+    }
+    return date;
+}</code></pre><h2 id="java-sql-Timestamp与的String互转"><a href="#java-sql-Timestamp与的String互转" class="headerlink" title="java.sql.Timestamp与的String互转"></a>java.sql.Timestamp与的String互转</h2><h3 id="java-sql-Timestamp—-gt-String"><a href="#java-sql-Timestamp—-gt-String" class="headerlink" title="java.sql.Timestamp—-&gt;String"></a>java.sql.Timestamp—-&gt;String</h3><pre><code>/**
+ * 将java.sql.Timestamp对象转化为String字符串
+ * @param time
+ *            要格式的java.sql.Timestamp对象
+ * @param strFormat
+ *            输出的String字符串格式的限定（如：&quot;yyyy-MM-dd HH:mm:ss&quot;）
+ * @return 表示日期的字符串
+ */
+public static String dateToStr(java.sql.Timestamp time, String strFormat) {
+    DateFormat df = new SimpleDateFormat(strFormat);
+    String str = df.format(time);
+    return str;
+}</code></pre><h3 id="String—-gt-java-sql-Timestamp"><a href="#String—-gt-java-sql-Timestamp" class="headerlink" title="String—-&gt;java.sql.Timestamp"></a>String—-&gt;java.sql.Timestamp</h3><pre><code>/**
+ * 将String字符串转换为java.sql.Timestamp格式日期,用于数据库保存
+ * @param strDate
+ *            表示日期的字符串
+ * @param dateFormat
+ *            传入字符串的日期表示格式（如：&quot;yyyy-MM-dd HH:mm:ss&quot;）
+ * @return java.sql.Timestamp类型日期对象（如果转换失败则返回null）
+ */
+public static java.sql.Timestamp strToSqlDate(String strDate, String dateFormat) {
+    SimpleDateFormat sf = new SimpleDateFormat(dateFormat);
+    java.util.Date date = null;
+    try {
+            date = sf.parse(strDate);
+    } catch (ParseException e) {
+            e.printStackTrace();
+    }
+    java.sql.Timestamp dateSQL = new java.sql.Timestamp(date.getTime());
+    return dateSQL;
+}</code></pre><h2 id="java-util-Date与的java-sql-Timestamp互转"><a href="#java-util-Date与的java-sql-Timestamp互转" class="headerlink" title="java.util.Date与的java.sql.Timestamp互转"></a>java.util.Date与的java.sql.Timestamp互转</h2><h3 id="java-util-Date—-gt-java-sql-Timestamp（用String做中间变量，此方法依赖于上面的方法）"><a href="#java-util-Date—-gt-java-sql-Timestamp（用String做中间变量，此方法依赖于上面的方法）" class="headerlink" title="java.util.Date—-&gt;java.sql.Timestamp（用String做中间变量，此方法依赖于上面的方法）"></a>java.util.Date—-&gt;java.sql.Timestamp（用String做中间变量，此方法依赖于上面的方法）</h3><pre><code>/**
+ * 将java.util.Date对象转化为java.sql.Timestamp对象
+ *
+ * @param date
+ *            要转化的java.util.Date对象
+ * @return 转化后的java.sql.Timestamp对象
+ */
+public static java.sql.Timestamp dateToTime(java.util.Date date) {
+    String strDate = dateToStr(date, &quot;yyyy-MM-dd HH:mm:ss SSS&quot;);
+    return strToSqlDate(strDate, &quot;yyyy-MM-dd HH:mm:ss SSS&quot;);
+}</code></pre><h3 id="java-sql-Timestamp—-gt-java-util-Date（二者是父子关系，可以直接赋值，自动转换）"><a href="#java-sql-Timestamp—-gt-java-util-Date（二者是父子关系，可以直接赋值，自动转换）" class="headerlink" title="java.sql.Timestamp—-&gt;java.util.Date（二者是父子关系，可以直接赋值，自动转换）"></a>java.sql.Timestamp—-&gt;java.util.Date（二者是父子关系，可以直接赋值，自动转换）</h3><pre><code>/**
+ * 将java.sql.Timestamp对象转化为java.util.Date对象
+ * 
+ * @param time
+ *            要转化的java.sql.Timestamp对象
+ * @return 转化后的java.util.Date对象
+ */
+public static java.util.Date timeToDate(java.sql.Timestamp time) {
+    return time;
+}</code></pre><h2 id="完整的类在这"><a href="#完整的类在这" class="headerlink" title="完整的类在这"></a>完整的类在这</h2><pre><code>import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+/**
+ * 关于java.util.Date、java.sql.Timestamp和String之间的互相转换的方法
+ * @Description: TODO
+ * @CreateTime: 2017年10月25日 下午3:20:44
+ * @version V1.0
+ */
+public class DateUtil {
+
+    /**
+     * 将String字符串转换为java.util.Date格式日期
+     * 
+     * @param strDate
+     *            表示日期的字符串
+     * @param dateFormat
+     *            传入字符串的日期表示格式（如：&quot;yyyy-MM-dd HH:mm:ss&quot;）
+     * @return java.util.Date类型日期对象（如果转换失败则返回null）
+     */
+    public static java.util.Date strToUtilDate(String strDate, String dateFormat) {
+        SimpleDateFormat sf = new SimpleDateFormat(dateFormat);
+        java.util.Date date = null;
+        try {
+            date = sf.parse(strDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
+    }
+
+    /**
+     * 将String字符串转换为java.sql.Timestamp格式日期,用于数据库保存
+     * 
+     * @param strDate
+     *            表示日期的字符串
+     * @param dateFormat
+     *            传入字符串的日期表示格式（如：&quot;yyyy-MM-dd HH:mm:ss&quot;）
+     * @return java.sql.Timestamp类型日期对象（如果转换失败则返回null）
+     */
+    public static java.sql.Timestamp strToSqlDate(String strDate, String dateFormat) {
+        SimpleDateFormat sf = new SimpleDateFormat(dateFormat);
+        java.util.Date date = null;
+        try {
+            date = sf.parse(strDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        java.sql.Timestamp dateSQL = new java.sql.Timestamp(date.getTime());
+        return dateSQL;
+    }
+
+    /**
+     * 将java.util.Date对象转化为String字符串
+     * 
+     * @param date
+     *            要格式的java.util.Date对象
+     * @param strFormat
+     *            输出的String字符串格式的限定（如：&quot;yyyy-MM-dd HH:mm:ss&quot;）
+     * @return 表示日期的字符串
+     */
+    public static String dateToStr(java.util.Date date, String strFormat) {
+        SimpleDateFormat sf = new SimpleDateFormat(strFormat);
+        String str = sf.format(date);
+        return str;
+    }
+
+    /**
+     * 将java.sql.Timestamp对象转化为String字符串
+     * 
+     * @param time
+     *            要格式的java.sql.Timestamp对象
+     * @param strFormat
+     *            输出的String字符串格式的限定（如：&quot;yyyy-MM-dd HH:mm:ss&quot;）
+     * @return 表示日期的字符串
+     */
+    public static String dateToStr(java.sql.Timestamp time, String strFormat) {
+        DateFormat df = new SimpleDateFormat(strFormat);
+        String str = df.format(time);
+        return str;
+    }
+
+    /**
+     * 将java.sql.Timestamp对象转化为java.util.Date对象
+     * 
+     * @param time
+     *            要转化的java.sql.Timestamp对象
+     * @return 转化后的java.util.Date对象
+     */
+    public static java.util.Date timeToDate(java.sql.Timestamp time) {
+        return time;
+    }
+
+    /**
+     * 将java.util.Date对象转化为java.sql.Timestamp对象
+     * 
+     * @param date
+     *            要转化的java.util.Date对象
+     * @return 转化后的java.sql.Timestamp对象
+     */
+    public static java.sql.Timestamp dateToTime(java.util.Date date) {
+        String strDate = dateToStr(date, &quot;yyyy-MM-dd HH:mm:ss SSS&quot;);
+        return strToSqlDate(strDate, &quot;yyyy-MM-dd HH:mm:ss SSS&quot;);
+    }
+
+    /**
+     * 返回表示系统当前时间的java.util.Date对象
+     * @return  返回表示系统当前时间的java.util.Date对象
+     */
+    public static java.util.Date nowDate(){
+        return new java.util.Date();
+    }
+
+    /**
+     * 返回表示系统当前时间的java.sql.Timestamp对象
+     * @return  返回表示系统当前时间的java.sql.Timestamp对象
+     */
+    public static java.sql.Timestamp nowTime(){
+        return dateToTime(new java.util.Date());
+    }
+}</code></pre>]]></content>
+      <categories>
+        <category>工具类</category>
+      </categories>
+      <tags>
+        <tag>Date、String和sql.Timestamp转换</tag>
+        <tag>工具类</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Maven学习笔记</title>
     <url>/2020/01/18/maven-xue-xi-bi-ji/</url>
     <content><![CDATA[<h2 id="1、目前掌握的技术"><a href="#1、目前掌握的技术" class="headerlink" title="1、目前掌握的技术"></a>1、目前掌握的技术</h2><p><img src="https://img-blog.csdn.net/20170727170011085?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>

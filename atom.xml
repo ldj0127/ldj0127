@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2020-01-18T09:44:10.909Z</updated>
+  <updated>2020-01-22T05:50:54.601Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Data、String和sql.Timestamp之间的互相转换</title>
+    <link href="http://dajienihao.cn/2020/01/22/java-zhong-data-string-he-sql.timestamp-zhi-jian-de-hu-xiang-zhuan-huan/"/>
+    <id>http://dajienihao.cn/2020/01/22/java-zhong-data-string-he-sql.timestamp-zhi-jian-de-hu-xiang-zhuan-huan/</id>
+    <published>2020-01-22T08:24:45.000Z</published>
+    <updated>2020-01-22T05:50:54.601Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JAVA中java-util-Date、java-sql-Timestamp和String之间的互相转换&quot;&gt;&lt;a href=&quot;#JAVA中java-util-Date、java-sql-Timestamp和String之间的互相转换&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具类" scheme="http://dajienihao.cn/categories/%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    
+    
+      <category term="Date、String和sql.Timestamp转换" scheme="http://dajienihao.cn/tags/Date%E3%80%81String%E5%92%8Csql-Timestamp%E8%BD%AC%E6%8D%A2/"/>
+    
+      <category term="工具类" scheme="http://dajienihao.cn/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>Maven学习笔记</title>
