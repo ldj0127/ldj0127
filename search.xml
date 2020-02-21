@@ -1,6 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>spring的概述</title>
+    <url>/2020/02/21/spring-gai-shu/</url>
+    <content><![CDATA[<h1 id="Spring-概述"><a href="#Spring-概述" class="headerlink" title="Spring 概述"></a>Spring 概述</h1><h2 id="1-spring是什么"><a href="#1-spring是什么" class="headerlink" title="1.spring是什么"></a>1.spring是什么</h2><p>Spring 是分层的 Java SE/EE 应用 <code>full-stack</code> 轻量级开源框架，以 <code>IoC（Inverse Of Control：反转控制）</code>和 <code>AOP（Aspect Oriented Programming：面向切面编程）</code>为内核，提供了展现层 Spring MVC 和持久层 Spring JDBC 以及业务层事务管理等众多的企业级应用技术，还能整合开源世界众多著名的第三方框架和类库，逐渐成为使用最多的 Java EE 企业应用开源框架。</p>
+<h2 id="2-spring的发展历程"><a href="#2-spring的发展历程" class="headerlink" title="2.spring的发展历程"></a>2.spring的发展历程</h2><p>1997 年 IBM 提出了 EJB 的思想<br>1998 年，SUN 制定开发标准规范 EJB1.0<br>1999 年，EJB1.1 发布<br>2001 年，EJB2.0 发布<br>2003 年，EJB2.1 发布<br>2006 年，EJB3.0 发布<br><code>Rod Johnson（spring 之父）</code><br>Expert One-to-One J2EE Design and Development(2002)<br>阐述了 J2EE 使用 EJB 开发设计的优点及解决方案<br>Expert One-to-One J2EE Development without EJB(2004)<br>阐述了 J2EE 开发不使用 EJB 的解决方式（Spring 雏形）<br>2017 年 9 月份发布了 spring 的最新版本 spring 5.0 通用版（GA）</p>
+<h2 id="3-spring的优势"><a href="#3-spring的优势" class="headerlink" title="3.spring的优势"></a>3.spring的优势</h2><h3 id="方便解耦，简化开发"><a href="#方便解耦，简化开发" class="headerlink" title="方便解耦，简化开发"></a>方便解耦，简化开发</h3><p>通过 Spring 提供的 IoC 容器，可以将对象间的依赖关系交由 Spring 进行控制，避免硬编码所造成的过度程序耦合。用户也不必再为单例模式类、属性文件解析等这些很底层的需求编写代码，可以更专注于上层的应用。</p>
+<h3 id="AOP编程的支持"><a href="#AOP编程的支持" class="headerlink" title="AOP编程的支持"></a>AOP编程的支持</h3><p>通过 Spring 的 AOP 功能，方便进行面向切面的编程，许多不容易用传统 OOP 实现的功能可以通过 AOP 轻松应付。</p>
+<h3 id="声明式事务的支持"><a href="#声明式事务的支持" class="headerlink" title="声明式事务的支持"></a>声明式事务的支持</h3><p>声明式事务的支持可以将我们从单调烦闷的事务管理代码中解脱出来，通过声明式方式灵活的进行事务的管理，提高开发效率和质量。</p>
+<h3 id="方便程序的测试"><a href="#方便程序的测试" class="headerlink" title="方便程序的测试"></a>方便程序的测试</h3><p>可以用非容器依赖的编程方式进行几乎所有的测试工作，测试不再是昂贵的操作，而是随手可做的事情。</p>
+<h3 id="方便集成各种优秀的框架"><a href="#方便集成各种优秀的框架" class="headerlink" title="方便集成各种优秀的框架"></a>方便集成各种优秀的框架</h3><p>Spring 可以降低各种框架的使用难度，提供了对各种优秀框架（Struts、Hibernate、Hessian、Quartz等）的直接支持。</p>
+<h3 id="降低JavaEEApi的使用难度"><a href="#降低JavaEEApi的使用难度" class="headerlink" title="降低JavaEEApi的使用难度"></a>降低JavaEEApi的使用难度</h3><p>Spring 对 JavaEE API（如 JDBC、JavaMail、远程调用等）进行了薄薄的封装层，使这些 API 的使用难度大为降低。</p>
+<h3 id="Java源码是经典的学习范例"><a href="#Java源码是经典的学习范例" class="headerlink" title="Java源码是经典的学习范例"></a>Java源码是经典的学习范例</h3><p>Spring 的源代码设计精妙、结构清晰、匠心独用，处处体现着大师对 Java 设计模式灵活运用以及对 Java 技术的高深造诣。它的源代码无意是 Java 技术的最佳实践的范例。</p>
+<h2 id="spring的体系结构"><a href="#spring的体系结构" class="headerlink" title="spring的体系结构"></a>spring的体系结构</h2><p><img src="http://qiniuyun.dajienihao.cn/image/0221/spring-overview.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>spring</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>框架</tag>
+        <tag>spring的概述</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>spring对bean的管理细节</title>
+    <url>/2020/02/21/spring-zhong-chuang-jian-bean-de-san-chong-fang-shi/</url>
+    <content><![CDATA[<h1 id="把对象的创建交给spring来管理"><a href="#把对象的创建交给spring来管理" class="headerlink" title="把对象的创建交给spring来管理"></a>把对象的创建交给spring来管理</h1><p>spring对bean的管理细节</p>
+<ol>
+<li>创建bean的三种方式</li>
+<li>bean对象的作用范围</li>
+<li>bean对象的生命周期</li>
+</ol>
+<h2 id="创建bean的三种方式"><a href="#创建bean的三种方式" class="headerlink" title="创建bean的三种方式"></a>创建bean的三种方式</h2><h3 id="1-使用默认的构造器创建"><a href="#1-使用默认的构造器创建" class="headerlink" title="1.使用默认的构造器创建"></a>1.使用默认的构造器创建</h3><p>在spring的配置文件中使用bean标签，配以id和class属性之后，且没有其他属性和标签时。采用的就是默认构造函数创建bean对象，此时如果类中没有默认构造函数，则对象无法创建。<br> <code>&lt;bean id=&quot;accountService&quot; class=&quot;com.itheima.service.impl.AccountServiceImpl&quot;&gt;&lt;/bean&gt;</code></p>
+<h3 id="2-使用普通工厂中的方法创建"><a href="#2-使用普通工厂中的方法创建" class="headerlink" title="2.使用普通工厂中的方法创建"></a>2.使用普通工厂中的方法创建</h3><p>使用普通工厂中的方法创建对象（使用某个类中的方法创建对象，并存入spring容器）<br><code>&lt;bean id=&quot;instanceFactory&quot; class=&quot;com.itheima.factory.InstanceFactory&quot;&gt;&lt;/bean&gt;</code><br><code>&lt;bean id=&quot;accountService&quot; factory-bean=&quot;instanceFactory&quot; factory-method=&quot;getAccountService&quot;&gt;&lt;/bean&gt;</code></p>
+<h3 id="3-使用工厂中的静态方法创建"><a href="#3-使用工厂中的静态方法创建" class="headerlink" title="3.使用工厂中的静态方法创建"></a>3.使用工厂中的静态方法创建</h3><p>使用工厂中的静态方法创建对象（使用某个类中的静态方法创建对象，并存入spring容器)<br><code>&lt;bean id=&quot;accountService&quot; class=&quot;com.itheima.factory.StaticFactory&quot; factory-method=&quot;getAccountService&quot;&gt;&lt;/bean&gt;</code></p>
+<h2 id="bean的作用范围"><a href="#bean的作用范围" class="headerlink" title="bean的作用范围"></a>bean的作用范围</h2><p><strong>bean标签的scope属性</strong>：</p>
+<ul>
+<li>作用：用于指定bean的作用范围</li>
+<li>取值： 常用的就是单例的和多例的</li>
+</ul>
+<pre><code>singleton：单例的（默认值）
+prototype：多例的
+request：作用于web应用的请求范围
+session：作用于web应用的会话范围
+global-session：作用于集群环境的会话范围（全局会话范围），当不是集群环境时，它就是session</code></pre><p><code>&lt;bean id=&quot;accountService&quot; class=&quot;com.itheima.service.impl.AccountServiceImpl&quot; scope=&quot;prototype&quot;&gt;&lt;/bean&gt;</code></p>
+<h2 id="bean的生命周期"><a href="#bean的生命周期" class="headerlink" title="bean的生命周期"></a>bean的生命周期</h2><p><strong>单例对象</strong></p>
+<ul>
+<li>出生：当容器创建时对象出生</li>
+<li>活着：只要容器还在，对象一直活着</li>
+<li>死亡：容器销毁，对象消亡</li>
+<li>总结：单例对象的生命周期和容器相同</li>
+</ul>
+<p><strong>多例对象</strong></p>
+<ul>
+<li>出生：当我们使用对象时spring框架为我们创建</li>
+<li>活着：对象只要是在使用过程中就一直活着。</li>
+<li>死亡：当对象长时间不用，且没有别的对象引用时，由Java的垃圾回收器回收<br><code>&lt;bean id=&quot;accountService&quot; class=&quot;com.itheima.service.impl.AccountServiceImpl&quot;
+scope=&quot;prototype&quot; init-method=&quot;init&quot; destroy-method=&quot;destroy&quot;&gt;&lt;/bean&gt;</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>spring</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>框架</tag>
+        <tag>spring的使用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么要使用mybatis</title>
+    <url>/2020/02/15/shi-yong-mybatis-de-you-dian/</url>
+    <content><![CDATA[<p>#为什么要使用mybatis</p>
+<p><strong>Mybatis是一个半自动化持久层框架</strong></p>
+<p><strong>JDBC</strong></p>
+<ul>
+<li>sql夹在java代码块中，耦合度高导致硬编码内伤</li>
+<li>维护不易且实际开发需求中sql是有变化的，频繁修改情况多见</li>
+</ul>
+<p><strong>Hibernate和JPA</strong></p>
+<ul>
+<li>长难复杂Sql,对于Hibernate而言处理也不容易</li>
+<li>内部自动声场的sql，不容易做特殊优化</li>
+<li>基于全映射的全自动框架，大量字段的pojo进行部分映射困难，导致数据库性能下降</li>
+</ul>
+<p><strong>对于开发人员而言，核心SQL还是需要自己优化</strong></p>
+<p><strong>sql和Java编码分开，功能边界清晰，一个专注业务、一个专注数据</strong></p>
+]]></content>
+      <categories>
+        <category>持久层框架</category>
+      </categories>
+      <tags>
+        <tag>框架</tag>
+        <tag>数据库</tag>
+        <tag>mybatis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Data、String和sql.Timestamp之间的互相转换</title>
     <url>/2020/01/22/java-zhong-data-string-he-sql.timestamp-zhi-jian-de-hu-xiang-zhuan-huan/</url>
     <content><![CDATA[<h1 id="JAVA中java-util-Date、java-sql-Timestamp和String之间的互相转换"><a href="#JAVA中java-util-Date、java-sql-Timestamp和String之间的互相转换" class="headerlink" title="JAVA中java.util.Date、java.sql.Timestamp和String之间的互相转换"></a>JAVA中java.util.Date、java.sql.Timestamp和String之间的互相转换</h1><h2 id="java-util-Date与的String互转"><a href="#java-util-Date与的String互转" class="headerlink" title="java.util.Date与的String互转"></a>java.util.Date与的String互转</h2><h3 id="java-util-Date—-gt-String"><a href="#java-util-Date—-gt-String" class="headerlink" title="java.util.Date—-&gt;String"></a>java.util.Date—-&gt;String</h3><pre><code>/**
@@ -397,7 +494,7 @@ public class DateUtil {
         <category>Maven</category>
       </categories>
       <tags>
-        <tag>项目开发</tag>
+        <tag>项目整合</tag>
         <tag>java</tag>
       </tags>
   </entry>
@@ -445,9 +542,10 @@ request.getRequestDispatcher(&quot;login_success.html&quot;).forward(request, re
 </ol>
 ]]></content>
       <categories>
-        <category>JavaEE</category>
+        <category>后端</category>
       </categories>
       <tags>
+        <tag>java</tag>
         <tag>http</tag>
       </tags>
   </entry>
@@ -1055,7 +1153,7 @@ on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中
       </categories>
       <tags>
         <tag>mysql</tag>
-        <tag>索引</tag>
+        <tag>表的索引</tag>
       </tags>
   </entry>
   <entry>
@@ -1134,6 +1232,7 @@ show crate database 数据库名称</code></pre><h3 id="修改数据库编码"><
       </categories>
       <tags>
         <tag>mysql</tag>
+        <tag>database</tag>
       </tags>
   </entry>
   <entry>
@@ -1168,6 +1267,7 @@ show crate database 数据库名称</code></pre><h3 id="修改数据库编码"><
         <category>MVC</category>
       </categories>
       <tags>
+        <tag>后端</tag>
         <tag>设计模式</tag>
       </tags>
   </entry>
