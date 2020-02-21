@@ -449,7 +449,7 @@
                     </div>
                 </div>
 
-                <div class="introduction center-align" data-aos="fade-up">If you wish to succeed, you should use persistence as your good friend, experience as your reference, prudence as your brother and hope as your sentry.</div>
+                <div class="introduction center-align" data-aos="fade-up">我深怕自己本非美玉，故而不敢加以刻苦琢磨，却又半信自己是块美玉，故又不肯庸庸碌碌，与瓦砾为伍。</div>
 
                 <style type="text/css">
     #posts-chart,
@@ -552,7 +552,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"工具类","value":1},{"name":"Maven","value":1},{"name":"spring","value":2},{"name":"反射","value":1},{"name":"MVC","value":1},{"name":"编程工具","value":1},{"name":"mysql","value":4},{"name":"持久层框架","value":1},{"name":"安卓","value":1},{"name":"JDBC","value":1},{"name":"后端","value":1}],
+                data: [{"name":"MVC","value":1},{"name":"编程工具","value":1},{"name":"spring","value":2},{"name":"Maven","value":1},{"name":"工具类","value":1},{"name":"反射","value":1},{"name":"mysql","value":4},{"name":"持久层框架","value":1},{"name":"安卓","value":1},{"name":"JDBC","value":1},{"name":"后端","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -576,7 +576,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["mysql","java","框架","后端","spring","Date、String和sql.Timestamp转换","工具类","项目整合","spring的概述","设计模式"]
+                data: ["mysql","java","后端","框架","spring","设计模式","eclipse","spring的概述","项目整合","Date、String和sql.Timestamp转换"]
             }
         ],
         yAxis: [
@@ -706,26 +706,26 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/Date%E3%80%81String%E5%92%8Csql-Timestamp%E8%BD%AC%E6%8D%A2/">
-                <span class="chip center-align waves-effect waves-light chip-default">Date、String和sql.Timestamp转换</span>
+            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                <span class="chip center-align waves-effect waves-light chip-default">设计模式</span>
             </a>
             
             
             
-            <a href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/">
-                <span class="chip center-align waves-effect waves-light chip-default">工具类</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%95%B4%E5%90%88/">
-                <span class="chip center-align waves-effect waves-light chip-default">项目整合</span>
+            <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                <span class="chip center-align waves-effect waves-light chip-default">后端</span>
             </a>
             
             
             
             <a href="/tags/java/">
                 <span class="chip center-align waves-effect waves-light chip-default">java</span>
+            </a>
+            
+            
+            
+            <a href="/tags/eclipse/">
+                <span class="chip center-align waves-effect waves-light chip-default">eclipse</span>
             </a>
             
             
@@ -748,20 +748,20 @@
             
             
             
-            <a href="/tags/%E5%90%8E%E7%AB%AF/">
-                <span class="chip center-align waves-effect waves-light chip-default">后端</span>
+            <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%95%B4%E5%90%88/">
+                <span class="chip center-align waves-effect waves-light chip-default">项目整合</span>
             </a>
             
             
             
-            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                <span class="chip center-align waves-effect waves-light chip-default">设计模式</span>
+            <a href="/tags/Date%E3%80%81String%E5%92%8Csql-Timestamp%E8%BD%AC%E6%8D%A2/">
+                <span class="chip center-align waves-effect waves-light chip-default">Date、String和sql.Timestamp转换</span>
             </a>
             
             
             
-            <a href="/tags/eclipse/">
-                <span class="chip center-align waves-effect waves-light chip-default">eclipse</span>
+            <a href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/">
+                <span class="chip center-align waves-effect waves-light chip-default">工具类</span>
             </a>
             
             
@@ -1066,6 +1066,34 @@ $(function () {
 	
 	
     
+        <script src="//code.tidio.co/dpqbmcxdtqwsms5reukwhel2yweys8rl.js"></script>
+        <script> 
+            $(document).ready(function () {
+                setInterval(change_Tidio, 50);  
+                function change_Tidio() { 
+                    var tidio=$("#tidio-chat iframe");
+                    if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"85px":"20px";   
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";   
+                        document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    } 
+                    else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;   
+                        document.getElementById("tidio-chat-iframe").style.right="-15px"; 
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;   
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                        document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                    }
+                } 
+            }); 
+        </script>
+    
 
     
     <script>
@@ -1088,6 +1116,11 @@ $(function () {
     </script>
     
 
+    
+    <script type="text/javascript" color="255,127,80"
+        pointColor="175,238,238" opacity='0.7'
+        zIndex="-1" count="199"
+        src="/libs/background/canvas-nest.js"></script>
     
 
     

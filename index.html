@@ -429,21 +429,18 @@
     
     
     <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('http://qiniuyun.dajienihao.cn/image/jpg/background/000043-157305604379c0.jpg');">
+            style="background-image: url('/medias/featureimages/13.jpg');">
         <div class="container" style="right: 0px;left: 0px;">
             <div class="row">
                 <div class="col s10 offset-s1">
-                    <div class="title center-align">Maven学习笔记</div>
+                    <div class="title center-align">MVC设计模式</div>
                     <div class="description center-align">
                     
-                        1、目前掌握的技术
-2、目前的技术在开发中存在的问题[why]
-一个项目就是一个工程如果项目非常庞大，就不适合继续使用package来划分模块。最好是每一个模块对应一个项目，利于分工协作。借助于maven就可以将一个项目拆分成多个工程。
-项
+                        什么是MVCMVC全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里
                     
                     </div>
                     <div class="cover-btns">
-                        <a href="/2020/01/18/maven-xue-xi-bi-ji/" class="waves-effect waves-light btn" target="_blank">
+                        <a href="/2019/12/08/mvc-she-ji-mo-shi/" class="waves-effect waves-light btn" target="_blank">
                             <i class="icon far fa-eye fa-fw"></i>阅读更多
                         </a>
                     </div>
@@ -476,6 +473,31 @@
     
     
     <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('http://qiniuyun.dajienihao.cn/image/jpg/background/000043-157305604379c0.jpg');">
+        <div class="container" style="right: 0px;left: 0px;">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">Maven学习笔记</div>
+                    <div class="description center-align">
+                    
+                        1、目前掌握的技术
+2、目前的技术在开发中存在的问题[why]
+一个项目就是一个工程如果项目非常庞大，就不适合继续使用package来划分模块。最好是每一个模块对应一个项目，利于分工协作。借助于maven就可以将一个项目拆分成多个工程。
+项
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2020/01/18/maven-xue-xi-bi-ji/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon far fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
             style="background-image: url('/medias/featureimages/23.jpg');">
         <div class="container" style="right: 0px;left: 0px;">
             <div class="row">
@@ -488,28 +510,6 @@
                     </div>
                     <div class="cover-btns">
                         <a href="/2019/10/31/java-ji-chu-fan-she/" class="waves-effect waves-light btn" target="_blank">
-                            <i class="icon far fa-eye fa-fw"></i>阅读更多
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('/medias/featureimages/13.jpg');">
-        <div class="container" style="right: 0px;left: 0px;">
-            <div class="row">
-                <div class="col s10 offset-s1">
-                    <div class="title center-align">MVC设计模式</div>
-                    <div class="description center-align">
-                    
-                        什么是MVCMVC全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里
-                    
-                    </div>
-                    <div class="cover-btns">
-                        <a href="/2019/12/08/mvc-she-ji-mo-shi/" class="waves-effect waves-light btn" target="_blank">
                             <i class="icon far fa-eye fa-fw"></i>阅读更多
                         </a>
                     </div>
@@ -973,12 +973,12 @@ Hibernate和JPA
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%95%B4%E5%90%88/">
-                            <span class="chip bg-color">项目整合</span>
-                        </a>
-                        
                         <a href="/tags/java/">
                             <span class="chip bg-color">java</span>
+                        </a>
+                        
+                        <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%95%B4%E5%90%88/">
+                            <span class="chip bg-color">项目整合</span>
                         </a>
                         
                     </div>
@@ -1451,6 +1451,34 @@ $(function () {
 	
 	
     
+        <script src="//code.tidio.co/dpqbmcxdtqwsms5reukwhel2yweys8rl.js"></script>
+        <script> 
+            $(document).ready(function () {
+                setInterval(change_Tidio, 50);  
+                function change_Tidio() { 
+                    var tidio=$("#tidio-chat iframe");
+                    if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"85px":"20px";   
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";   
+                        document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    } 
+                    else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;   
+                        document.getElementById("tidio-chat-iframe").style.right="-15px"; 
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;   
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                        document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                    }
+                } 
+            }); 
+        </script>
+    
 
     
     <script>
@@ -1473,6 +1501,11 @@ $(function () {
     </script>
     
 
+    
+    <script type="text/javascript" color="255,127,80"
+        pointColor="175,238,238" opacity='0.7'
+        zIndex="-1" count="199"
+        src="/libs/background/canvas-nest.js"></script>
     
 
     

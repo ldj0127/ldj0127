@@ -166,9 +166,9 @@
       <category term="Maven" scheme="http://dajienihao.cn/categories/Maven/"/>
     
     
-      <category term="项目整合" scheme="http://dajienihao.cn/tags/%E9%A1%B9%E7%9B%AE%E6%95%B4%E5%90%88/"/>
-    
       <category term="java" scheme="http://dajienihao.cn/tags/java/"/>
+    
+      <category term="项目整合" scheme="http://dajienihao.cn/tags/%E9%A1%B9%E7%9B%AE%E6%95%B4%E5%90%88/"/>
     
   </entry>
   
@@ -401,9 +401,9 @@
       <category term="MVC" scheme="http://dajienihao.cn/categories/MVC/"/>
     
     
-      <category term="后端" scheme="http://dajienihao.cn/tags/%E5%90%8E%E7%AB%AF/"/>
-    
       <category term="设计模式" scheme="http://dajienihao.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="后端" scheme="http://dajienihao.cn/tags/%E5%90%8E%E7%AB%AF/"/>
     
   </entry>
   
@@ -430,9 +430,9 @@
       <category term="编程工具" scheme="http://dajienihao.cn/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="java" scheme="http://dajienihao.cn/tags/java/"/>
-    
       <category term="后端" scheme="http://dajienihao.cn/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+      <category term="java" scheme="http://dajienihao.cn/tags/java/"/>
     
       <category term="eclipse" scheme="http://dajienihao.cn/tags/eclipse/"/>
     
@@ -461,9 +461,9 @@
       <category term="反射" scheme="http://dajienihao.cn/categories/%E5%8F%8D%E5%B0%84/"/>
     
     
-      <category term="java" scheme="http://dajienihao.cn/tags/java/"/>
-    
       <category term="后端" scheme="http://dajienihao.cn/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+      <category term="java" scheme="http://dajienihao.cn/tags/java/"/>
     
   </entry>
   

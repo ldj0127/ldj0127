@@ -494,8 +494,8 @@ public class DateUtil {
         <category>Maven</category>
       </categories>
       <tags>
-        <tag>项目整合</tag>
         <tag>java</tag>
+        <tag>项目整合</tag>
       </tags>
   </entry>
   <entry>
@@ -1267,8 +1267,8 @@ show crate database 数据库名称</code></pre><h3 id="修改数据库编码"><
         <category>MVC</category>
       </categories>
       <tags>
-        <tag>后端</tag>
         <tag>设计模式</tag>
+        <tag>后端</tag>
       </tags>
   </entry>
   <entry>
@@ -1286,8 +1286,8 @@ show crate database 数据库名称</code></pre><h3 id="修改数据库编码"><
         <category>编程工具</category>
       </categories>
       <tags>
-        <tag>java</tag>
         <tag>后端</tag>
+        <tag>java</tag>
         <tag>eclipse</tag>
       </tags>
   </entry>
@@ -1555,8 +1555,8 @@ show crate database 数据库名称</code></pre><h3 id="修改数据库编码"><
         <category>反射</category>
       </categories>
       <tags>
-        <tag>java</tag>
         <tag>后端</tag>
+        <tag>java</tag>
       </tags>
   </entry>
 </search>
