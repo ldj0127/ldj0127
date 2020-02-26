@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>SpringIOC常用注解</title>
+      <link href="/2020/02/26/springioc-chang-yong-zhu-jie/"/>
+      <url>/2020/02/26/springioc-chang-yong-zhu-jie/</url>
+      
+        <content type="html"><![CDATA[<h2 id="springIOC常用注解"><a href="#springIOC常用注解" class="headerlink" title="springIOC常用注解"></a>springIOC常用注解</h2><p>注解配置和xml配置所要实现的功能都是一样的，只是形式不一样而已，xml配置是写在xml文件中，而注解配置是在类中添加注解(使用注解方式配置要在配置文件中添加扫描包)。这里我们按照不同类型进行讲解。</p><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><blockquote><p>他们的作用和在XML配置文件中编写一个标签实现的功能是一样的</p></blockquote><h4 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h4><p><strong>作用</strong>：用于把当前类对象存入spring容器中<br>属性：<strong>value</strong>：用于指定bean的id。当我们不写时，它的默认值是当前类名，且首字母改小写。</p><h4 id="Controller-Service-Repository"><a href="#Controller-Service-Repository" class="headerlink" title="@Controller @Service @Repository"></a>@Controller @Service @Repository</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>：一般用在表现<span class="token annotation punctuation">@Service</span>：一般用在业务层<span class="token annotation punctuation">@Repository</span>：一般用在持久层</code></pre><p>以上三个注解他们的作用和属性与Component是一模一样。<br>他们三个是spring框架为我们提供明确的三层使用的注解，使我们的三层对象更加清晰</p><ul><li>XML配置方式<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>默认无参构造方式<span class="token operator">--</span><span class="token operator">></span><span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"student"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"cn.yangtzl.Student"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>工厂模式普通方法<span class="token operator">--</span><span class="token operator">></span>  <span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"factory"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"cn.yangtzl.Factory"</span> <span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>  <span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"student"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"cn.yangtzl.Student"</span> factory<span class="token operator">-</span>bean<span class="token operator">=</span><span class="token string">"factory"</span> factory<span class="token operator">-</span>method<span class="token operator">=</span><span class="token string">"getStudent"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>工厂模式静态方法<span class="token operator">--</span><span class="token operator">></span>  <span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"student"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"cn.yangtzl.Student"</span> factory<span class="token operator">-</span>method<span class="token operator">=</span><span class="token string">"getStudent"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span></code></pre></li><li>注解方式配置<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//总的，不知道该类属于哪一层就用这个</span><span class="token comment" spellcheck="true">/*使分层更加明确*/</span><span class="token comment" spellcheck="true">//@Controller //表现层</span><span class="token comment" spellcheck="true">//@Service //业务层</span><span class="token comment" spellcheck="true">//@Repository //持久层</span><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre><h3 id="数据注入"><a href="#数据注入" class="headerlink" title="数据注入"></a>数据注入</h3></li></ul><blockquote><p>他们的作用和在xml配置文件中的bean标签中写一个标签的作用是一样的</p></blockquote><h4 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>    <span class="token keyword">private</span> AccountStudentImpl account<span class="token punctuation">;</span>    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        account<span class="token punctuation">.</span><span class="token function">getStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span></code></pre><p><strong>作用</strong>：自动按照类型注入。只要容器中有唯一的一个 bean 对象类型和要注入的变量类型匹配，就可以注入成功。<br>如果ioc容器中没有任何 bean 的类型和要注入的变量类型匹配，则报错。<br><strong>Ioc容器中有多个类型匹配时</strong>：使用要注入的对象变量名称作为 bean 的 id，在 spring 容器查找，找到了也可以注入成功。找不到就报错。<br><strong>出现位置</strong>：可以是变量上，也可以是方法上。</p><h4 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>  <span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"account"</span><span class="token punctuation">)</span>  <span class="token keyword">private</span> AccountStudentImpl account<span class="token punctuation">;</span>  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>      account<span class="token punctuation">.</span><span class="token function">getStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token punctuation">}</span></code></pre><p><strong>作用</strong>：在按照类中注入的基础之上再按照名称注入。它在给类成员注入时不能单独使用必需和<code>@Autowire</code>一起使用。但是在给方法参数注入时可以独立使用。<br>属性：<strong>value</strong>：用于指定注入bean的id。</p><h4 id="Resource"><a href="#Resource" class="headerlink" title="@Resource"></a>@Resource</h4><pre class=" language-java"><code class="language-java"> <span class="token annotation punctuation">@Resource</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"accountStudent"</span><span class="token punctuation">)</span>    <span class="token keyword">private</span> AccountStudentImpl account<span class="token punctuation">;</span>    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        account<span class="token punctuation">.</span><span class="token function">getStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span></code></pre><p><strong>作用</strong>：直接按照 Bean 的 id 注入。它也只能注入其他 bean 类型。<br>属性：<strong>name</strong>：指定 bean 的 id。</p><blockquote><p>以上三个注入都只能注入其他bean类型的数据，而基本类型和String类型无法使用上述注解实现。另外，集合类型的注入只能通过XML来实现。</p></blockquote><h4 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h4><pre class=" language-java"><code class="language-java"> <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"yang"</span><span class="token punctuation">)</span>    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"18"</span><span class="token punctuation">)</span>    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span></code></pre><p><strong>作用</strong>：注入基本数据类型和 String 类型数据的<br>属性：<br><strong>value</strong>：用于指定值。它可以使用spring中SpEL(也就是spring的el表达式）<br><strong>SpEL的写法</strong>：${表达式}</p><h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><h4 id="Scope"><a href="#Scope" class="headerlink" title="@Scope"></a>@Scope</h4><pre class=" language-java"><code class="language-java"> <span class="token annotation punctuation">@Service</span><span class="token punctuation">(</span><span class="token string">"accountService"</span><span class="token punctuation">)</span>    <span class="token annotation punctuation">@Scope</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"prototype"</span><span class="token punctuation">)</span>    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AccountServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">IAccountService</span> <span class="token punctuation">{</span>        <span class="token annotation punctuation">@Autowired</span>        <span class="token keyword">private</span> AccountStudentImpl account<span class="token punctuation">;</span>        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>            account<span class="token punctuation">.</span><span class="token function">getStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre><p><strong>作用</strong>：用于指定bean的作用范围<br>属性：<strong>value</strong>：指定范围的取值。常用取值：singleton (默认单例)、prototype（多例）</p><h3 id="作用范围"><a href="#作用范围" class="headerlink" title="作用范围"></a>作用范围</h3><blockquote><p>他们的作用就和在bean标签中使用init-method和destroy-methode的作用是一样的</p></blockquote><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@PostConstruct</span>    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"初始化方法执行了"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token annotation punctuation">@PreDestroy</span>    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"销毁方法执行了"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span></code></pre><h4 id="PostConstruct"><a href="#PostConstruct" class="headerlink" title="@PostConstruct"></a>@PostConstruct</h4><p>作用：用于指定初始化方法</p><h4 id="PreDestroy"><a href="#PreDestroy" class="headerlink" title="@PreDestroy"></a>@PreDestroy</h4><p>作用：用于指定销毁方法</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> spring </tag>
+            
+            <tag> IOC </tag>
+            
+            <tag> 注解 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>spring中的依赖注入</title>
+      <link href="/2020/02/25/spring-zhong-yi-lai-zhu-ru/"/>
+      <url>/2020/02/25/spring-zhong-yi-lai-zhu-ru/</url>
+      
+        <content type="html"><![CDATA[<h1 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h1><p>Spring框架的核心功能之一就是通过依赖注入的方式来管理Bean之间的依赖关系。那么我们今天的主角依赖注入到底有什么神奇之处呢？请往下继续看。</p><h2 id="依赖注入的概述"><a href="#依赖注入的概述" class="headerlink" title="依赖注入的概述"></a>依赖注入的概述</h2><p>依赖注入（<code>Dependency Injection</code>）。<br>平常的java开发中，程序员在某个类中需要依赖其它类的方法，则通常是new一个依赖类再调用类实例的方法，这种开发存在的问题是new的类实例不好统一管理，spring提出了依赖注入的思想，即依赖类不由程序员实例化，而是通过spring容器帮我们new指定实例并且将实例注入到需要该对象的类中。依赖注入的另一种说法是“控制反转”，通俗的理解是：平常我们new一个实例，这个实例的控制权是我们程序员，而控制反转是指new实例工作不由我们程序员来做而是交给spring容器来做。</p><h2 id="spring中的依赖注入"><a href="#spring中的依赖注入" class="headerlink" title="spring中的依赖注入"></a>spring中的依赖注入</h2><p>依赖注入能注入的数据有三类</p><ul><li>基本数据类型和string</li><li>其他bean类型（在配置文件中或者注解配置过的bean）</li><li>复杂类型/集合类型</li></ul><h2 id="spring依赖注入的方式"><a href="#spring依赖注入的方式" class="headerlink" title="spring依赖注入的方式"></a>spring依赖注入的方式</h2><p>在实际环境中实现IoC容器的方式主要分为两大类，一类是依赖查找，依赖查找是通过资源定位，把对应的资源查找回来；另一类则是依赖注入，而Spring主要使用的是依赖注入。一般而言，依赖注入可以分为3种方式。</p><h3 id="1-构造函数方式注入"><a href="#1-构造函数方式注入" class="headerlink" title="1.构造函数方式注入"></a>1.构造函数方式注入</h3><p>构造器注入依赖于构造方法实现，而构造方法可以是有参数的或者是无参数的。在大部分的情况下，我们都是通过类的构造方法来创建类对象，Spring也可以采用反射的方式，通过使用构造方法来完成注入，这就是构造器注入的原理。</p><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Role</span> <span class="token punctuation">{</span>    <span class="token keyword">private</span> Long id<span class="token punctuation">;</span>    <span class="token keyword">private</span> String roleName<span class="token punctuation">;</span>    <span class="token keyword">private</span> String note<span class="token punctuation">;</span>    <span class="token keyword">public</span> <span class="token function">Role</span><span class="token punctuation">(</span>String roleName<span class="token punctuation">,</span> String note<span class="token punctuation">)</span> <span class="token punctuation">{</span>         <span class="token keyword">this</span><span class="token punctuation">.</span>roleName <span class="token operator">=</span> roleName<span class="token punctuation">;</span>          <span class="token keyword">this</span><span class="token punctuation">.</span>note <span class="token operator">=</span> note<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre><p>这个时候是没有办法利用无参数的构造方法去创建对象的，为了使Spring能够正确创建这个对象，可以像代码清单那样去做。</p><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"role1"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.ssm.chapter9.pojo.Role"</span><span class="token operator">></span>    <span class="token operator">&lt;</span>constructor<span class="token operator">-</span>arg index<span class="token operator">=</span><span class="token string">"0"</span> value<span class="token operator">=</span><span class="token string">"总经理"</span><span class="token operator">/</span><span class="token operator">></span>    <span class="token operator">&lt;</span>constructor<span class="token operator">-</span>arg index<span class="token operator">=</span><span class="token string">"1"</span> value<span class="token operator">=</span><span class="token string">"公司管理者"</span><span class="token operator">/</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span></code></pre><p>使用的标签:<code>constructor-arg</code><br>标签出现的位置：bean标签的内部<br>标签中的属性<br>type：用于指定要注入的数据的数据类型，该数据类型也是构造函数中某个或某些参数的类型<br>index：用于指定要注入的数据给构造函数中指定索引位置的参数赋值。索引的位置是从0开始<br>name：用于指定给构造函数中指定名称的参数赋值<br> —————–以上三个用于指定给构造函数中哪个参数赋值————-<br>value：用于提供基本类型和String类型的数据<br>ref：用于指定其他的bean类型数据。它指的就是在spring的Ioc核心容器中出现过的bean对象</p><h3 id="2-set方法注入"><a href="#2-set方法注入" class="headerlink" title="2.set方法注入"></a>2.set方法注入</h3><p>setter注入是Spring中最主流的注入方式，它利用JavaBean规范所定义的setter方法来完成注入，灵活且可读性高。它消除了使用构造器注入时出现多个参数的可能性，首先可以把构造方法声明为无参数的，然后使用setter注入为其设置对应的值，其实也是通过Java反射技术得以现实的。这里假设先在代码清单中为Role类加入一个没有参数的构造方法，然后做代码清单的配置。</p><pre class=" language-java"><code class="language-java">    <span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"role2"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.ssm.chapter9.pojo.Role"</span><span class="token operator">></span>        <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"roleName"</span> value<span class="token operator">=</span><span class="token string">"高级工程师"</span><span class="token operator">/</span><span class="token operator">></span>        <span class="token operator">&lt;</span>property name<span class="token operator">=</span><span class="token string">"note"</span> value<span class="token operator">=</span><span class="token string">"重要人员"</span><span class="token operator">/</span><span class="token operator">></span>    <span class="token operator">&lt;</span><span class="token operator">/</span>bean</code></pre><p>这样Spring就会通过反射调用没有参数的构造方法生成对象，同时通过反射对应的setter注入配置的值了。这种方式是Spring最为主要的方式，在实际工作中使用广泛。<br>涉及的标签：<code>property</code><br>出现的位置：bean标签的内部<br>标签的属性<br>name：用于指定注入时所调用的set方法名称<br>value：用于提供基本类型和String类型的数据<br>ref：用于指定其他的bean类型数据。它指的就是在spring的Ioc核心容器中出现过的bean对象</p><h4 id="复杂类型的注入-集合类型的注入"><a href="#复杂类型的注入-集合类型的注入" class="headerlink" title="复杂类型的注入/集合类型的注入"></a>复杂类型的注入/集合类型的注入</h4><p>用于给List结构集合注入的标签：list array set<br>用于个Map结构集合注入的标签: map  props<br>结构相同，标签可以互换</p><h3 id="3-注解方式注入"><a href="#3-注解方式注入" class="headerlink" title="3.注解方式注入"></a>3.注解方式注入</h3><h2 id="几种方式的优劣"><a href="#几种方式的优劣" class="headerlink" title="几种方式的优劣"></a>几种方式的优劣</h2><h3 id="构造器方式"><a href="#构造器方式" class="headerlink" title="构造器方式"></a>构造器方式</h3><p>优势：在获取bean对象时，注入数据是必须的操作，否则对象无法创建成功。<br>弊端：改变了bean对象的实例化方式，使我们在创建对象时，如果用不到这些数据，也必须提供。</p><h3 id="set方式"><a href="#set方式" class="headerlink" title="set方式"></a>set方式</h3><p>优势：创建对象时没有明确的限制，可以直接使用默认构造函数<br>弊端：如果有某个成员必须有值，则获取对象是有可能set方法没有执行。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> spring </tag>
+            
+            <tag> 依赖注入 </tag>
+            
+            <tag> DI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>String、StringBuffer和StringBuilder的区别</title>
       <link href="/2020/02/22/string-stringbuffer-he-stringbuilder-de-qu-bie/"/>
       <url>/2020/02/22/string-stringbuffer-he-stringbuilder-de-qu-bie/</url>
@@ -20,9 +78,9 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
             <tag> StringBuffer </tag>
+            
+            <tag> 字符串 </tag>
             
             <tag> StringBuiler </tag>
             
@@ -49,9 +107,9 @@
       
         <tags>
             
-            <tag> String </tag>
-            
             <tag> 字符串 </tag>
+            
+            <tag> String </tag>
             
             <tag> 常用方法 </tag>
             
@@ -437,9 +495,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 后端 </tag>
+            
+            <tag> java </tag>
             
             <tag> eclipse </tag>
             
@@ -466,9 +524,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 后端 </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
