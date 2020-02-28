@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2020-02-26T08:47:47.840Z</updated>
+  <updated>2020-02-28T02:57:02.657Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -15,6 +15,93 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java环境的安装配置</title>
+    <link href="http://dajienihao.cn/2020/02/28/java-huan-jing-de-an-zhuang-ji-pei-zhi/"/>
+    <id>http://dajienihao.cn/2020/02/28/java-huan-jing-de-an-zhuang-ji-pei-zhi/</id>
+    <published>2020-02-28T01:24:45.000Z</published>
+    <updated>2020-02-28T02:57:02.657Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;java环境&quot;&gt;&lt;a href=&quot;#java环境&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://dajienihao.cn/categories/java/"/>
+    
+    
+      <category term="环境安装" scheme="http://dajienihao.cn/tags/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"/>
+    
+      <category term="jdk" scheme="http://dajienihao.cn/tags/jdk/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>lombok的安装使用</title>
+    <link href="http://dajienihao.cn/2020/02/28/lombok-de-an-zhuang-shi-yong/"/>
+    <id>http://dajienihao.cn/2020/02/28/lombok-de-an-zhuang-shi-yong/</id>
+    <published>2020-02-28T00:24:45.000Z</published>
+    <updated>2020-02-28T01:22:34.100Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;lombok的安装使用&quot;&gt;&lt;a href=&quot;#lombok的安装使用&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://dajienihao.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="idea" scheme="http://dajienihao.cn/tags/idea/"/>
+    
+      <category term="插件" scheme="http://dajienihao.cn/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring配置类注解</title>
+    <link href="http://dajienihao.cn/2020/02/26/spring-pei-zhi-lei-zhu-jie/"/>
+    <id>http://dajienihao.cn/2020/02/26/spring-pei-zhi-lei-zhu-jie/</id>
+    <published>2020-02-26T14:24:45.000Z</published>
+    <updated>2020-02-26T14:25:36.151Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Spring配置类注解&quot;&gt;&lt;a href=&quot;#Spring配置类注解&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="spring" scheme="http://dajienihao.cn/categories/spring/"/>
+    
+    
+      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
+    
+      <category term="注解" scheme="http://dajienihao.cn/tags/%E6%B3%A8%E8%A7%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringIOC常用注解</title>
@@ -52,7 +139,7 @@
     <link href="http://dajienihao.cn/2020/02/25/spring-zhong-yi-lai-zhu-ru/"/>
     <id>http://dajienihao.cn/2020/02/25/spring-zhong-yi-lai-zhu-ru/</id>
     <published>2020-02-25T08:24:45.000Z</published>
-    <updated>2020-02-25T08:50:46.729Z</updated>
+    <updated>2020-02-26T14:39:07.028Z</updated>
     
     <summary type="html">
     
@@ -526,66 +613,6 @@
     
     
       <category term="设计模式" scheme="http://dajienihao.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="后端" scheme="http://dajienihao.cn/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>eclipse导入普通javaweb项目报错问题</title>
-    <link href="http://dajienihao.cn/2019/11/23/eclipse-dao-ru-pu-tong-javaweb-xiang-mu-bao-cuo-wen-ti/"/>
-    <id>http://dajienihao.cn/2019/11/23/eclipse-dao-ru-pu-tong-javaweb-xiang-mu-bao-cuo-wen-ti/</id>
-    <published>2019-11-23T01:04:41.000Z</published>
-    <updated>2019-11-23T02:39:15.341Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Eclipse导入javaweb项目代码报错解决方案&quot;&gt;&lt;a href=&quot;#Eclipse导入javaweb项目代码报错解决方案&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="编程工具" scheme="http://dajienihao.cn/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="java" scheme="http://dajienihao.cn/tags/java/"/>
-    
-      <category term="后端" scheme="http://dajienihao.cn/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-      <category term="eclipse" scheme="http://dajienihao.cn/tags/eclipse/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java反射基础</title>
-    <link href="http://dajienihao.cn/2019/10/31/java-ji-chu-fan-she/"/>
-    <id>http://dajienihao.cn/2019/10/31/java-ji-chu-fan-she/</id>
-    <published>2019-10-31T09:03:27.000Z</published>
-    <updated>2019-12-08T13:35:36.405Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;h3 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot; class=&quot;headerlink&quot; title=&quot;1.
-        
-      
-    
-    </summary>
-    
-    
-      <category term="反射" scheme="http://dajienihao.cn/categories/%E5%8F%8D%E5%B0%84/"/>
-    
-    
-      <category term="java" scheme="http://dajienihao.cn/tags/java/"/>
     
       <category term="后端" scheme="http://dajienihao.cn/tags/%E5%90%8E%E7%AB%AF/"/>
     

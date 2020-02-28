@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://dajienihao.cn/2020/02/26/springioc-chang-yong-zhu-jie/</loc>
-    <lastmod>2020-02-26</lastmod>
+    <loc>http://dajienihao.cn/2020/02/28/java-huan-jing-de-an-zhuang-ji-pei-zhi/</loc>
+    <lastmod>2020-02-28</lastmod>
+  </url>  <url>
+    <loc>http://dajienihao.cn/2020/02/28/lombok-de-an-zhuang-shi-yong/</loc>
+    <lastmod>2020-02-28</lastmod>
   </url>  <url>
     <loc>http://dajienihao.cn/2020/02/25/spring-zhong-yi-lai-zhu-ru/</loc>
-    <lastmod>2020-02-25</lastmod>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://dajienihao.cn/2020/02/26/spring-pei-zhi-lei-zhu-jie/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://dajienihao.cn/2020/02/26/springioc-chang-yong-zhu-jie/</loc>
+    <lastmod>2020-02-26</lastmod>
   </url>  <url>
     <loc>http://dajienihao.cn/2020/02/22/string-stringbuffer-he-stringbuilder-de-qu-bie/</loc>
     <lastmod>2020-02-22</lastmod>
