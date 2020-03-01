@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2020-02-28T02:57:02.657Z</updated>
+  <updated>2020-03-01T05:41:39.921Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Sprin中的AOP</title>
+    <link href="http://dajienihao.cn/2020/03/01/spring-zhong-de-aop/"/>
+    <id>http://dajienihao.cn/2020/03/01/spring-zhong-de-aop/</id>
+    <published>2020-03-01T05:24:45.000Z</published>
+    <updated>2020-03-01T05:41:39.921Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;AOP的相关概念&quot;&gt;&lt;a href=&quot;#AOP的相关概念&quot; class=&quot;headerlink&quot; title=&quot;AOP的相关概念&quot;&gt;&lt;/a&gt;AOP的相关概念&lt;/h1&gt;&lt;h2 id=&quot;1-AOP概述&quot;&gt;&lt;a href=&quot;#1-AOP概述&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Spring" scheme="http://dajienihao.cn/categories/Spring/"/>
+    
+    
+      <category term="后端" scheme="http://dajienihao.cn/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+      <category term="AOP" scheme="http://dajienihao.cn/tags/AOP/"/>
+    
+      <category term="框架" scheme="http://dajienihao.cn/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>java环境的安装配置</title>
@@ -250,9 +281,9 @@
       <category term="spring" scheme="http://dajienihao.cn/categories/spring/"/>
     
     
-      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
-    
       <category term="框架" scheme="http://dajienihao.cn/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
     
       <category term="spring的概述" scheme="http://dajienihao.cn/tags/spring%E7%9A%84%E6%A6%82%E8%BF%B0/"/>
     
@@ -281,9 +312,9 @@
       <category term="spring" scheme="http://dajienihao.cn/categories/spring/"/>
     
     
-      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
-    
       <category term="框架" scheme="http://dajienihao.cn/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
     
       <category term="spring的使用" scheme="http://dajienihao.cn/tags/spring%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     
@@ -586,35 +617,6 @@
       <category term="mysql" scheme="http://dajienihao.cn/tags/mysql/"/>
     
       <category term="database" scheme="http://dajienihao.cn/tags/database/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MVC设计模式</title>
-    <link href="http://dajienihao.cn/2019/12/08/mvc-she-ji-mo-shi/"/>
-    <id>http://dajienihao.cn/2019/12/08/mvc-she-ji-mo-shi/</id>
-    <published>2019-12-08T12:24:45.000Z</published>
-    <updated>2020-02-21T12:42:51.447Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;什么是MVC&quot;&gt;&lt;a href=&quot;#什么是MVC&quot; class=&quot;headerlink&quot; title=&quot;什么是MVC&quot;&gt;&lt;/a&gt;什么是MVC&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;MVC&lt;/strong&gt;全名是Model View
-        
-      
-    
-    </summary>
-    
-    
-      <category term="MVC" scheme="http://dajienihao.cn/categories/MVC/"/>
-    
-    
-      <category term="设计模式" scheme="http://dajienihao.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="后端" scheme="http://dajienihao.cn/tags/%E5%90%8E%E7%AB%AF/"/>
     
   </entry>
   
