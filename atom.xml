@@ -70,9 +70,9 @@
     
       <category term="后端" scheme="http://dajienihao.cn/tags/%E5%90%8E%E7%AB%AF/"/>
     
-      <category term="框架" scheme="http://dajienihao.cn/tags/%E6%A1%86%E6%9E%B6/"/>
-    
       <category term="AOP" scheme="http://dajienihao.cn/tags/AOP/"/>
+    
+      <category term="框架" scheme="http://dajienihao.cn/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -248,9 +248,9 @@
       <category term="java" scheme="http://dajienihao.cn/categories/java/"/>
     
     
-      <category term="字符串" scheme="http://dajienihao.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
       <category term="StringBuffer" scheme="http://dajienihao.cn/tags/StringBuffer/"/>
+    
+      <category term="字符串" scheme="http://dajienihao.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
       <category term="StringBuiler" scheme="http://dajienihao.cn/tags/StringBuiler/"/>
     
@@ -279,9 +279,9 @@
       <category term="java" scheme="http://dajienihao.cn/categories/java/"/>
     
     
-      <category term="String" scheme="http://dajienihao.cn/tags/String/"/>
-    
       <category term="字符串" scheme="http://dajienihao.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="String" scheme="http://dajienihao.cn/tags/String/"/>
     
       <category term="常用方法" scheme="http://dajienihao.cn/tags/%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
     
@@ -310,9 +310,9 @@
       <category term="spring" scheme="http://dajienihao.cn/categories/spring/"/>
     
     
-      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
-    
       <category term="框架" scheme="http://dajienihao.cn/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
     
       <category term="spring的概述" scheme="http://dajienihao.cn/tags/spring%E7%9A%84%E6%A6%82%E8%BF%B0/"/>
     
@@ -341,9 +341,9 @@
       <category term="spring" scheme="http://dajienihao.cn/categories/spring/"/>
     
     
-      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
-    
       <category term="框架" scheme="http://dajienihao.cn/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
     
       <category term="spring的使用" scheme="http://dajienihao.cn/tags/spring%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     
