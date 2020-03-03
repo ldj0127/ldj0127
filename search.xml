@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>idea中web项目配置文件编译问题</title>
+    <url>/2020/03/03/idea-zhong-web-xiang-mu-pei-zhi-wen-jian-bian-yi-wen-ti/</url>
+    <content><![CDATA[<h2 id="idea中web项目配置文件编译问题"><a href="#idea中web项目配置文件编译问题" class="headerlink" title="idea中web项目配置文件编译问题"></a>idea中web项目配置文件编译问题</h2><p>Resources 一般用于标注资源文件目录。在 maven 项目下，资源目录是单独划分出来的，其目录为：<code>src - main -resources</code>。<br>但这一篇讲的是普通web项目src下的资源文件。</p>
+<p>我们可以将配置文件等直接放在src下，但是配置文件很多的话项目就显得很乱，所以我们可以创建一个config包，将配置文件都在放在里面。但我们创建的是一个普通的包，idea并不会将里面的文件编译后自动复制到编译后的文件夹中，也就是classes目录。</p>
+<p>idea对这些配置的文件方式很明显和eclipse是不同的。在idea中有一个 Content Roots的概念。需要为每一个folder配置相应的Content Roots。Content Roots包括resources、sources、tests等。<br><img src="http://qiniuyun.dajienihao.cn/image/0303/13156151561.png" alt=""></p>
+<p>如图所示，src文件夹被标注为Sources，那么下面的所有子文件夹均为Sources，编译后生成.class文件。</p>
+<p>Resources文件夹被标注为Resources，那么在该文件夹下的配置文件在编译时会自动复制到编译文件夹中。</p>
+<p>所以这里就有了解决方案，将config文件夹改为resources。<br>这时我们的配置文件就被编译到编译文件夹下了。<br><img src="http://qiniuyun.dajienihao.cn/image/0303/QQ%E6%88%AA%E5%9B%BE20200303110724.jpg" alt=""></p>
+]]></content>
+      <categories>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>后端</tag>
+        <tag>开发工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Sprin中的AOP</title>
     <url>/2020/03/01/spring-zhong-de-aop/</url>
     <content><![CDATA[<h1 id="AOP的相关概念"><a href="#AOP的相关概念" class="headerlink" title="AOP的相关概念"></a>AOP的相关概念</h1><h2 id="1-AOP概述"><a href="#1-AOP概述" class="headerlink" title="1. AOP概述"></a>1. AOP概述</h2><h3 id="1-1-什么是AOP"><a href="#1-1-什么是AOP" class="headerlink" title="1.1 什么是AOP"></a>1.1 什么是AOP</h3><p><strong>AOP</strong>：全称是<code>Aspect Oriented Programming</code>即：面向切面编程。<br>简单的说它就是把我们程序重复的代码抽取出来，在需要执行的时候，使用动态代理的技术，在不修改源码的基础上，对我们的已有方法进行增强。</p>
@@ -23,8 +41,8 @@
       </categories>
       <tags>
         <tag>后端</tag>
-        <tag>AOP</tag>
         <tag>框架</tag>
+        <tag>AOP</tag>
       </tags>
   </entry>
   <entry>
@@ -446,8 +464,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>java</category>
       </categories>
       <tags>
-        <tag>StringBuffer</tag>
         <tag>字符串</tag>
+        <tag>StringBuffer</tag>
         <tag>StringBuiler</tag>
       </tags>
   </entry>
@@ -467,8 +485,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>java</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>String</tag>
+        <tag>字符串</tag>
         <tag>常用方法</tag>
       </tags>
   </entry>
@@ -490,8 +508,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>spring</category>
       </categories>
       <tags>
-        <tag>框架</tag>
         <tag>spring</tag>
+        <tag>框架</tag>
         <tag>spring的概述</tag>
       </tags>
   </entry>
@@ -536,8 +554,8 @@ scope=&quot;prototype&quot; init-method=&quot;init&quot; destroy-method=&quot;de
         <category>spring</category>
       </categories>
       <tags>
-        <tag>框架</tag>
         <tag>spring</tag>
+        <tag>框架</tag>
         <tag>spring的使用</tag>
       </tags>
   </entry>
