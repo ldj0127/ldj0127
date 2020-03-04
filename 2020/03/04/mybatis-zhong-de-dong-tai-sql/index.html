@@ -9,8 +9,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mysql的索引, L">
-    <meta name="description" content="索引在数据库操作中，经常需要查询特定的数据，例如，当执行select * from student where id=10000语句时，MySQL数据库必须从第一条记录开始遍历，直到找出id为10000的数据，这样的效率显然非常低。为此，M">
+    <meta name="keywords" content="mybatis中动态sql, L">
+    <meta name="description" content="动态 SQLMyBatis 的强大特性之一便是它的动态 SQL。如果你有使用 JDBC 或其它类似框架的经验，你就能体会到根据不同条件拼接 SQL 语句的痛苦。例如拼接时要确保不能忘记添加必要的空格，还要注意去掉列表最后一个列名的逗号。利用">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>mysql的索引 | L</title>
+    <title>mybatis中动态sql | L</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -287,13 +287,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://qiniuyun.dajienihao.cn/image/jpg/background/005346-1570294426c666.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://qiniuyun.dajienihao.cn/image/jpg/background/180443-1523786683938c.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        mysql的索引
+                        mybatis中动态sql
                     </div>
                 </div>
             </div>
@@ -405,12 +405,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/mysql/">
-                                <span class="chip bg-color">mysql</span>
+                            <a href="/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/">
+                                <span class="chip bg-color">持久层框架</span>
                             </a>
                         
-                            <a href="/tags/%E8%A1%A8%E7%9A%84%E7%B4%A2%E5%BC%95/">
-                                <span class="chip bg-color">表的索引</span>
+                            <a href="/tags/mybatis/">
+                                <span class="chip bg-color">mybatis</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%85%8D%E7%BD%AE/">
+                                <span class="chip bg-color">配置</span>
                             </a>
                         
                     </div>
@@ -421,8 +425,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/mysql/" class="post-category">
-                                mysql
+                            <a href="/categories/mybatis/" class="post-category">
+                                mybatis
                             </a>
                         
                     </div>
@@ -433,28 +437,23 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-21
+                    2020-03-04
                 </div>
                 
-                
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-21
-                </div>
                 
 
                 
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.8k
+                        1.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        8 分
                     </div>
                     
                 
@@ -470,88 +469,159 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>在数据库操作中，经常需要查询特定的数据，例如，当执行<code>select * from student where id=10000</code>语句时，MySQL数据库必须从第一条记录开始遍历，直到找出id为10000的数据，这样的效率显然非常低。为此，MySQL允许建立索引来加快数据表的查询和排序。</p>
-<h2 id="1-索引的概念"><a href="#1-索引的概念" class="headerlink" title="1.索引的概念"></a>1.索引的概念</h2><p>数据库的索引好比新华字典的音序表，它是对数据库表中一列或多列的值进行排序后的一种结构，其作用就是提高表中数据的查询进度。MySQL的索引分为很多种，具体如下：</p>
-<h3 id="1-1普通索引"><a href="#1-1普通索引" class="headerlink" title="1.1普通索引"></a>1.1普通索引</h3><p>普通索引是由<code>key或index</code>定义的索引，他是mysql中的基本索引类型，可以创建在任何数据类型中，其值是否唯一和非空由字段本身的约束条件决定。例如，在grade表的stu_id字段上建立一个普通索引，查询记录时，就可以根据该索引进行查询了。</p>
-<h3 id="1-2唯一性索引"><a href="#1-2唯一性索引" class="headerlink" title="1.2唯一性索引"></a>1.2唯一性索引</h3><p>唯一性索引是由<code>UNIQUE</code>定义的索引，该索引所在的字段必须是唯一的。例如，在grade表的id字段建立唯一性索引，那么，id字段的值就必须是唯一的。</p>
-<h3 id="1-3全文索引"><a href="#1-3全文索引" class="headerlink" title="1.3全文索引"></a>1.3全文索引</h3><p>全文索引是由<code>FULLTEXT</code>定义的索引，他只能创建在<code>char、varchar或text</code>类型上的字段上，而且只有<code>MYISAM</code>存储引擎支持全文索引。</p>
-<h3 id="1-4单列索引"><a href="#1-4单列索引" class="headerlink" title="1.4单列索引"></a>1.4单列索引</h3><p>单列索引指得是在表中单个字段上创建索引，它可以是普通索引、唯一索引或全文索引，只要保证该索引对应表中的一个字段即可。</p>
-<h3 id="1-5空间索引"><a href="#1-5空间索引" class="headerlink" title="1.5空间索引"></a>1.5空间索引</h3><p>空间索引是由<code>SPATIAL</code>定义的索引，他只能创建在空间数据类型的字段上，MySQL的空间数据类型有四种，分别是<code>GEOMETRY、POINT、LINESTRING和POLYGON</code>。需要注意的是，创建空间索引的字段，必须将其声明为<code>NOT NULL</code>，并且空间索引只能在<code>MYISAM</code>的表创建。</p>
+                <h2 id="动态-SQL"><a href="#动态-SQL" class="headerlink" title="动态 SQL"></a>动态 SQL</h2><p>MyBatis 的强大特性之一便是它的动态 SQL。如果你有使用 JDBC 或其它类似框架的经验，你就能体会到根据不同条件拼接 SQL 语句的痛苦。例如拼接时要确保不能忘记添加必要的空格，还要注意去掉列表最后一个列名的逗号。利用动态 SQL 这一特性可以彻底摆脱这种痛苦。</p>
+<p>动态 SQL 元素和 JSTL 或基于类似 XML 的文本处理器相似。在 MyBatis 之前的版本中，有很多元素需要花时间了解。MyBatis 3 大大精简了元素种类，现在只需学习原来一半的元素便可。MyBatis 采用功能强大的基于 OGNL 的表达式来淘汰其它大部分元素。</p>
+<ul>
+<li>if</li>
+<li>choose (when, otherwise)</li>
+<li>trim (where, set)</li>
+<li>foreach</li>
+</ul>
+<h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"findActiveBlogWithTitleLike"</span>
+     resultType<span class="token operator">=</span><span class="token string">"Blog"</span><span class="token operator">></span>
+  SELECT <span class="token operator">*</span> FROM BLOG WHERE state <span class="token operator">=</span> ‘ACTIVE’
+  <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"title != null"</span><span class="token operator">></span>
+    AND title like #<span class="token punctuation">{</span>title<span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
+<p>这条语句提供了一种可选的查找文本功能。如果没有传入“title”，那么所有处于“ACTIVE”状态的BLOG都会返回；反之若传入了“title”，那么就会对“title”一列进行模糊查找并返回 BLOG 结果（细心的读者可能会发现，“title”参数值是可以包含一些掩码或通配符的）。</p>
+<p>如果希望通过“title”和“author”两个参数进行可选搜索该怎么办呢？首先，改变语句的名称让它更具实际意义；然后只要加入另一个条件即可。</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"findActiveBlogLike"</span>
+     resultType<span class="token operator">=</span><span class="token string">"Blog"</span><span class="token operator">></span>
+  SELECT <span class="token operator">*</span> FROM BLOG WHERE state <span class="token operator">=</span> ‘ACTIVE’
+  <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"title != null"</span><span class="token operator">></span>
+    AND title like #<span class="token punctuation">{</span>title<span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"author != null and author.name != null"</span><span class="token operator">></span>
+    AND author_name like #<span class="token punctuation">{</span>author<span class="token punctuation">.</span>name<span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
+<h3 id="choose-when-otherwise"><a href="#choose-when-otherwise" class="headerlink" title="choose, when, otherwise"></a>choose, when, otherwise</h3><p>有时我们不想应用到所有的条件语句，而只想从中择其一项。针对这种情况，MyBatis 提供了 choose 元素，它有点像 Java 中的 switch 语句。</p>
+<p>还是上面的例子，但是这次变为提供了“title”就按“title”查找，提供了“author”就按“author”查找的情形，若两者都没有提供，就返回所有符合条件的 BLOG（实际情况可能是由管理员按一定策略选出 BLOG 列表，而不是返回大量无意义的随机结果）。</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"findActiveBlogLike"</span>
+     resultType<span class="token operator">=</span><span class="token string">"Blog"</span><span class="token operator">></span>
+  SELECT <span class="token operator">*</span> FROM BLOG WHERE state <span class="token operator">=</span> ‘ACTIVE’
+  <span class="token operator">&lt;</span>choose<span class="token operator">></span>
+    <span class="token operator">&lt;</span>when test<span class="token operator">=</span><span class="token string">"title != null"</span><span class="token operator">></span>
+      AND title like #<span class="token punctuation">{</span>title<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>when<span class="token operator">></span>
+    <span class="token operator">&lt;</span>when test<span class="token operator">=</span><span class="token string">"author != null and author.name != null"</span><span class="token operator">></span>
+      AND author_name like #<span class="token punctuation">{</span>author<span class="token punctuation">.</span>name<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>when<span class="token operator">></span>
+    <span class="token operator">&lt;</span>otherwise<span class="token operator">></span>
+      AND featured <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>otherwise<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>choose<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
+<h3 id="trim-where-set"><a href="#trim-where-set" class="headerlink" title="trim, where, set"></a>trim, where, set</h3><p>前面几个例子已经合宜地解决了一个臭名昭著的动态 SQL 问题。现在回到“if”示例，这次我们将“ACTIVE = 1”也设置成动态的条件，看看会发生什么。</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"findActiveBlogLike"</span>
+     resultType<span class="token operator">=</span><span class="token string">"Blog"</span><span class="token operator">></span>
+  SELECT <span class="token operator">*</span> FROM BLOG
+  WHERE
+  <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"state != null"</span><span class="token operator">></span>
+    state <span class="token operator">=</span> #<span class="token punctuation">{</span>state<span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"title != null"</span><span class="token operator">></span>
+    AND title like #<span class="token punctuation">{</span>title<span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"author != null and author.name != null"</span><span class="token operator">></span>
+    AND author_name like #<span class="token punctuation">{</span>author<span class="token punctuation">.</span>name<span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
+<p>如果这些条件没有一个能匹配上会发生什么？最终这条 SQL 会变成这样：</p>
+<pre class=" language-java"><code class="language-java">SELECT <span class="token operator">*</span> FROM BLOG
+WHERE</code></pre>
+<p>这会导致查询失败。如果仅仅第二个条件匹配又会怎样？这条 SQL 最终会是这样:</p>
+<pre class=" language-java"><code class="language-java">SELECT <span class="token operator">*</span> FROM BLOG
+WHERE
+AND title like ‘someTitle’</code></pre>
+<p>这个查询也会失败。这个问题不能简单地用条件句式来解决，如果你也曾经被迫这样写过，那么你很可能从此以后都不会再写出这种语句了。</p>
+<p>MyBatis 有一个简单的处理，这在 90% 的情况下都会有用。而在不能使用的地方，你可以自定义处理方式来令其正常工作。一处简单的修改就能达到目的：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"findActiveBlogLike"</span>
+     resultType<span class="token operator">=</span><span class="token string">"Blog"</span><span class="token operator">></span>
+  SELECT <span class="token operator">*</span> FROM BLOG
+  <span class="token operator">&lt;</span>where<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"state != null"</span><span class="token operator">></span>
+         state <span class="token operator">=</span> #<span class="token punctuation">{</span>state<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"title != null"</span><span class="token operator">></span>
+        AND title like #<span class="token punctuation">{</span>title<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"author != null and author.name != null"</span><span class="token operator">></span>
+        AND author_name like #<span class="token punctuation">{</span>author<span class="token punctuation">.</span>name<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>where<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
+<p>where 元素只会在至少有一个子元素的条件返回 SQL 子句的情况下才去插入“WHERE”子句。而且，若语句的开头为“AND”或“OR”，where 元素也会将它们去除。</p>
+<p>如果 where 元素没有按正常套路出牌，我们可以通过自定义 trim 元素来定制 where 元素的功能。比如，和 where 元素等价的自定义 trim 元素为：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>trim prefix<span class="token operator">=</span><span class="token string">"WHERE"</span> prefixOverrides<span class="token operator">=</span><span class="token string">"AND |OR "</span><span class="token operator">></span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>trim<span class="token operator">></span></code></pre>
+<p>prefixOverrides 属性会忽略通过管道分隔的文本序列（注意此例中的空格也是必要的）。它的作用是移除所有指定在 prefixOverrides 属性中的内容，并且插入 prefix 属性中指定的内容。</p>
+<p>类似的用于动态更新语句的解决方案叫做 set。set 元素可以用于动态包含需要更新的列，而舍去其它的。比如：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>update id<span class="token operator">=</span><span class="token string">"updateAuthorIfNecessary"</span><span class="token operator">></span>
+  update Author
+    <span class="token operator">&lt;</span>set<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"username != null"</span><span class="token operator">></span>username<span class="token operator">=</span>#<span class="token punctuation">{</span>username<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"password != null"</span><span class="token operator">></span>password<span class="token operator">=</span>#<span class="token punctuation">{</span>password<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"email != null"</span><span class="token operator">></span>email<span class="token operator">=</span>#<span class="token punctuation">{</span>email<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"bio != null"</span><span class="token operator">></span>bio<span class="token operator">=</span>#<span class="token punctuation">{</span>bio<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>set<span class="token operator">></span>
+  where id<span class="token operator">=</span>#<span class="token punctuation">{</span>id<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>update<span class="token operator">></span></code></pre>
+<p>这里，set 元素会动态前置 SET 关键字，同时也会删掉无关的逗号，因为用了条件语句之后很可能就会在生成的 SQL 语句的后面留下这些逗号。（译者注：因为用的是“if”元素，若最后一个“if”没有匹配上而前面的匹配上，SQL 语句的最后就会有一个逗号遗留）</p>
+<p>若你对 set 元素等价的自定义 trim 元素的代码感兴趣，那这就是它的真面目：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>trim prefix<span class="token operator">=</span><span class="token string">"SET"</span> suffixOverrides<span class="token operator">=</span><span class="token string">","</span><span class="token operator">></span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>trim<span class="token operator">></span></code></pre>
 <blockquote>
-<p>需要注意的是，虽然索引可以提高数据的查询速度，但索引会占据一定的磁盘空间，并且在创建和维护索引时，其消耗的时间是随着数据量的增加而增加的。因此使用索引时，应该综合考虑索引的优点和缺点。</p>
+<p>注意这里我们删去的是后缀值，同时添加了前缀值。</p>
 </blockquote>
-<h2 id="2-创建索引"><a href="#2-创建索引" class="headerlink" title="2.创建索引"></a>2.创建索引</h2><p>要想使用索引提高数据表的查询速度，首先要创建一个索引。创建索引的方法有三种，具体如下。</p>
-<h3 id="2-1创建表的时候创建索引"><a href="#2-1创建表的时候创建索引" class="headerlink" title="2.1创建表的时候创建索引"></a>2.1创建表的时候创建索引</h3><p>创建表的时候可以直接创建索引，这中方式最简单、方便，其基本的语法格式如下所示：</p>
-<pre><code>create table 表名(字段名 数据类型 [完整约束条件]，
-                  字段名 数据类型 [完整约束条件]，
-                  ...
-                      字段名 数据类型 
-                      [UNIQUE|FULLTEXT|SPATIAL] INDEX｜KEY 
-                          [别名](字段名1 [(长度)] [ASC]|[DESC])，
-）；</code></pre><p>关于上述语法的相关解释具体如下。</p>
-<ol>
-<li>UNIQUE：可选参数，表示唯一索引。</li>
-<li>FULLTEXT：可选参数，表示全文索引。</li>
-<li>SPATIAL：可选参数，表示空间索引。</li>
-<li>INDEX和KEY：用来表示字段的索引，二选一即可。</li>
-<li>别名：可选参数，表示创建的索引名称。</li>
-<li>字段名1：指定索引对应字段的名称。</li>
-<li>长度：可选参数，用于表示索引的长度。</li>
-<li>ASC和DESC：可选参数，其中ASC表示升序排列，DESC表示降序排列。</li>
-</ol>
-<p>为了帮助读者更好地了解如何在创建表的时候创建索引，接下来，通过具体的案例，分别对MySQL的六种索引类型进行详解，具体如下：</p>
-<h4 id="2-1-1-创建普通索引"><a href="#2-1-1-创建普通索引" class="headerlink" title="2.1.1 创建普通索引"></a>2.1.1 创建普通索引</h4><pre><code>create table t1(id int，
-                name varchar(20),
-                score float,
-                INDEX (name)
-);</code></pre><h4 id="2-1-2-创建唯一性索引"><a href="#2-1-2-创建唯一性索引" class="headerlink" title="2.1.2 创建唯一性索引"></a>2.1.2 创建唯一性索引</h4><pre><code>create table t2(id int not null,
-                name varchar(20) not null,
-                score float,
-                unique index unique_id(id Asc)
-);</code></pre><h4 id="2-1-3-创建全文索引"><a href="#2-1-3-创建全文索引" class="headerlink" title="2.1.3 创建全文索引"></a>2.1.3 创建全文索引</h4><pre><code>create table t3(id int not null,
-                name varchar(20) not null,
-                score float,
-                fulltext index fulltext_name(name)
-)engine=myisam;</code></pre><h4 id="2-1-4-创建单列索引"><a href="#2-1-4-创建单列索引" class="headerlink" title="2.1.4 创建单列索引"></a>2.1.4 创建单列索引</h4><pre><code>create table t4(id int not null,
-                name varchar(20) not null,
-                score float,
-                index single_name(name(20))
-);</code></pre><h4 id="2-1-5-创建多列索引"><a href="#2-1-5-创建多列索引" class="headerlink" title="2.1.5 创建多列索引"></a>2.1.5 创建多列索引</h4><pre><code>create table t5(id int not null,
-                name varchar(20) not null,
-                score float,
-                index multi(name(20),id)
-);</code></pre><h4 id="2-1-6-创建空间索引"><a href="#2-1-6-创建空间索引" class="headerlink" title="2.1.6 创建空间索引"></a>2.1.6 创建空间索引</h4><pre><code>create table t6(id int,
-                space GEOMETRY not null,
-                SPATIAL index sp(space）
-)engine=myisam；</code></pre><h3 id="2-2-创建使用create-index语句在已存在的表上创建索引"><a href="#2-2-创建使用create-index语句在已存在的表上创建索引" class="headerlink" title="2.2 创建使用create index语句在已存在的表上创建索引"></a>2.2 创建使用create index语句在已存在的表上创建索引</h3><p>若想在一个已经存在的表上创建索引，可以使用<code>create index语句，create index</code>语句创建索引的具体语法格式如下所示：</p>
-<pre><code>create [UNIQUE|FULLTEXT|SPATIAL] index 索引名
-on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中<code>UNIUE、FULLTEXT和SPATIAL</code>都是可选参数，分别用于表示唯一性索引、全文索引和空间索引；index用于指明字段为索引。<br>为了便于学习如何使用<code>create index</code>语句在已经存在的表创建索引，接下来创建一个book表，该表中没有任何的索引，创建book表的sql语句如下所示：</p>
-<pre><code>create table book(
-                bookid int not null,
-                bookname varchar(255) not null,
-                authors varchar(255) not null,
-                info varchar(255) null,
-                comment varchar(255) null,
-                publicyear year not null
-);</code></pre><h4 id="2-2-1-创建普通索引"><a href="#2-2-1-创建普通索引" class="headerlink" title="2.2.1 创建普通索引"></a>2.2.1 创建普通索引</h4><p><code>create index index_id on book (bookid);</code></p>
-<h4 id="2-2-2-创建唯一性索引"><a href="#2-2-2-创建唯一性索引" class="headerlink" title="2.2.2 创建唯一性索引"></a>2.2.2 创建唯一性索引</h4><p><code>create unique index uniqueidx on book (bookid);</code></p>
-<h4 id="2-2-3-创建单列索引"><a href="#2-2-3-创建单列索引" class="headerlink" title="2.2.3 创建单列索引"></a>2.2.3 创建单列索引</h4><p><code>create index singleidx on book(comment);</code></p>
-<h4 id="2-2-4-创建多列索引"><a href="#2-2-4-创建多列索引" class="headerlink" title="2.2.4 创建多列索引"></a>2.2.4 创建多列索引</h4><p><code>create index mulitidx on book(authors(20),info(20));</code></p>
-<h4 id="2-2-5-创建全文索引"><a href="#2-2-5-创建全文索引" class="headerlink" title="2.2.5 创建全文索引"></a>2.2.5 创建全文索引</h4><p><code>create fulltext index fulltextidx on book(info);</code></p>
-<h4 id="2-2-6-创建空间索引"><a href="#2-2-6-创建空间索引" class="headerlink" title="2.2.6 创建空间索引"></a>2.2.6 创建空间索引</h4><p><code>create SPATIAL index spatidx on t7(g);</code></p>
-<h3 id="2-3-使用alter-table-语句在已经存在的表上创建索引"><a href="#2-3-使用alter-table-语句在已经存在的表上创建索引" class="headerlink" title="2.3 使用alter table 语句在已经存在的表上创建索引"></a>2.3 使用alter table 语句在已经存在的表上创建索引</h3><p>在已经存在的表上创建索引，除了可以使用<code>create index</code>语句外，还可以使用<code>alter table</code>语句。使用<code>alter table</code>语句创建索引的语法格式如下所示：</p>
-<pre><code>alter table 表名 add [UNIQUE|FULLTEXT|SPATIAL] index
-                索引名 （字段名 [(长度)] [ASC|DESC])</code></pre><p>在上述语法中<code>UNIUE、FULLTEXT和SPATIAL</code>都是可选参数，分别用于表示唯一性索引、全文索引和空间索引；add表示像表中添加字段。<br>接下类同样以book表为例，对不同类型的索引进行详解。</p>
-<h4 id="2-3-1-创建普通索引"><a href="#2-3-1-创建普通索引" class="headerlink" title="2.3.1 创建普通索引"></a>2.3.1 创建普通索引</h4><p><code>alter table book add index index_id(bookid);</code></p>
-<h4 id="2-3-2-创建唯一性索引"><a href="#2-3-2-创建唯一性索引" class="headerlink" title="2.3.2 创建唯一性索引"></a>2.3.2 创建唯一性索引</h4><p><code>alter table book add unique uniqueidx(bookid);</code></p>
-<h4 id="2-3-3-创建单列索引"><a href="#2-3-3-创建单列索引" class="headerlink" title="2.3.3 创建单列索引"></a>2.3.3 创建单列索引</h4><p><code>alter table book add index singleidx (comment(50));</code></p>
-<h4 id="2-3-4-创建多列索引"><a href="#2-3-4-创建多列索引" class="headerlink" title="2.3.4 创建多列索引"></a>2.3.4 创建多列索引</h4><p><code>alter table book add index multidx(autros(50),info(50));</code></p>
-<h4 id="2-3-5-创建全文索引"><a href="#2-3-5-创建全文索引" class="headerlink" title="2.3.5 创建全文索引"></a>2.3.5 创建全文索引</h4><p><code>alter table book add fulltext index fulltextidx(info);</code></p>
-<h4 id="2-3-6-创建空间索引"><a href="#2-3-6-创建空间索引" class="headerlink" title="2.3.6 创建空间索引"></a>2.3.6 创建空间索引</h4><p><code>alter table t8 add spatial index spatidx(space);</code></p>
-<h2 id="3-删除索引"><a href="#3-删除索引" class="headerlink" title="3.删除索引"></a>3.删除索引</h2><p>由于索引会占用一定的磁盘空间，因此，为了避免影响数据库性能，应该及时删除不在使用的索引。删除索引的方式有两种，具体如下:</p>
-<h3 id="3-1使用alter-table删除索引"><a href="#3-1使用alter-table删除索引" class="headerlink" title="3.1使用alter table删除索引"></a>3.1使用alter table删除索引</h3><p>使用<code>alter table``删除索引的基本语法格式如下所示：</code>alter table 表名 drop index 索引名```</p>
-<pre><code>alter table book index fulltextidx；</code></pre><h3 id="3-2使用drop-index删除索引"><a href="#3-2使用drop-index删除索引" class="headerlink" title="3.2使用drop index删除索引"></a>3.2使用drop index删除索引</h3><p>使用<code>drop index</code> 删除索引的基本语法格式如下：<br><code>drop index 索引名 on 表名；</code></p>
-<pre><code>drop index spatidx on t8;</code></pre>
+<h3 id="foreach"><a href="#foreach" class="headerlink" title="foreach"></a>foreach</h3><p>动态 SQL 的另外一个常用的操作需求是对一个集合进行遍历，通常是在构建 IN 条件语句的时候。比如：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"selectPostIn"</span> resultType<span class="token operator">=</span><span class="token string">"domain.blog.Post"</span><span class="token operator">></span>
+  SELECT <span class="token operator">*</span>
+  FROM POST P
+  WHERE ID in
+  <span class="token operator">&lt;</span>foreach item<span class="token operator">=</span><span class="token string">"item"</span> index<span class="token operator">=</span><span class="token string">"index"</span> collection<span class="token operator">=</span><span class="token string">"list"</span>
+      open<span class="token operator">=</span><span class="token string">"("</span> separator<span class="token operator">=</span><span class="token string">","</span> close<span class="token operator">=</span><span class="token string">")"</span><span class="token operator">></span>
+        #<span class="token punctuation">{</span>item<span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>foreach<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
+<p>foreach 元素的功能非常强大，它允许你指定一个集合，声明可以在元素体内使用的集合项（item）和索引（index）变量。它也允许你指定开头与结尾的字符串以及在迭代结果之间放置分隔符。这个元素是很智能的，因此它不会偶然地附加多余的分隔符。</p>
+<blockquote>
+<p>注意 你可以将任何可迭代对象（如 List、Set 等）、Map 对象或者数组对象传递给 foreach 作为集合参数。当使用可迭代对象或者数组时，index 是当前迭代的次数，item 的值是本次迭代获取的元素。当使用 Map 对象（或者 Map.Entry 对象的集合）时，index 是键，item 是值。<br>到此我们已经完成了涉及 XML 配置文件和 XML 映射文件的讨论。下一章将详细探讨 Java API，这样就能提高已创建的映射文件的利用效率。</p>
+</blockquote>
+<h3 id="script"><a href="#script" class="headerlink" title="script"></a>script</h3><p>要在带注解的映射器接口类中使用动态 SQL，可以使用 script 元素。比如:</p>
+<pre class=" language-java"><code class="language-java">     <span class="token annotation punctuation">@Update</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"&lt;script>"</span><span class="token punctuation">,</span>
+      <span class="token string">"update Author"</span><span class="token punctuation">,</span>
+      <span class="token string">"  &lt;set>"</span><span class="token punctuation">,</span>
+      <span class="token string">"    &lt;if test='username != null'>username=#{username},&lt;/if>"</span><span class="token punctuation">,</span>
+      <span class="token string">"    &lt;if test='password != null'>password=#{password},&lt;/if>"</span><span class="token punctuation">,</span>
+      <span class="token string">"    &lt;if test='email != null'>email=#{email},&lt;/if>"</span><span class="token punctuation">,</span>
+      <span class="token string">"    &lt;if test='bio != null'>bio=#{bio}&lt;/if>"</span><span class="token punctuation">,</span>
+      <span class="token string">"  &lt;/set>"</span><span class="token punctuation">,</span>
+      <span class="token string">"where id=#{id}"</span><span class="token punctuation">,</span>
+      <span class="token string">"&lt;/script>"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">void</span> <span class="token function">updateAuthorValues</span><span class="token punctuation">(</span>Author author<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h3><p>bind 元素可以从 OGNL 表达式中创建一个变量并将其绑定到上下文。比如：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"selectBlogsLike"</span> resultType<span class="token operator">=</span><span class="token string">"Blog"</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>bind name<span class="token operator">=</span><span class="token string">"pattern"</span> value<span class="token operator">=</span><span class="token string">"'%' + _parameter.getTitle() + '%'"</span> <span class="token operator">/</span><span class="token operator">></span>
+  SELECT <span class="token operator">*</span> FROM BLOG
+  WHERE title LIKE #<span class="token punctuation">{</span>pattern<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
+<h3 id="多数据库支持"><a href="#多数据库支持" class="headerlink" title="多数据库支持"></a>多数据库支持</h3><p>一个配置了“_databaseId”变量的 databaseIdProvider 可用于动态代码中，这样就可以根据不同的数据库厂商构建特定的语句。比如下面的例子：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>insert id<span class="token operator">=</span><span class="token string">"insert"</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>selectKey keyProperty<span class="token operator">=</span><span class="token string">"id"</span> resultType<span class="token operator">=</span><span class="token string">"int"</span> order<span class="token operator">=</span><span class="token string">"BEFORE"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"_databaseId == 'oracle'"</span><span class="token operator">></span>
+      select seq_users<span class="token punctuation">.</span>nextval from dual
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"_databaseId == 'db2'"</span><span class="token operator">></span>
+      select nextval <span class="token keyword">for</span> seq_users from sysibm<span class="token punctuation">.</span>sysdummy1"
+    <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>selectKey<span class="token operator">></span>
+  insert into users <span class="token function">values</span> <span class="token punctuation">(</span>#<span class="token punctuation">{</span>id<span class="token punctuation">}</span><span class="token punctuation">,</span> #<span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>insert<span class="token operator">></span></code></pre>
+
             </div>
             <hr/>
 
@@ -576,7 +646,7 @@ on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://dajienihao.cn/2019/12/21/mysql-de-suo-yin/">http://dajienihao.cn/2019/12/21/mysql-de-suo-yin/</a>
+                    <a href="http://dajienihao.cn/2020/03/04/mybatis-zhong-de-dong-tai-sql/">http://dajienihao.cn/2020/03/04/mybatis-zhong-de-dong-tai-sql/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -614,12 +684,16 @@ on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/mysql/">
-                                    <span class="chip bg-color">mysql</span>
+                                <a href="/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/">
+                                    <span class="chip bg-color">持久层框架</span>
                                 </a>
                             
-                                <a href="/tags/%E8%A1%A8%E7%9A%84%E7%B4%A2%E5%BC%95/">
-                                    <span class="chip bg-color">表的索引</span>
+                                <a href="/tags/mybatis/">
+                                    <span class="chip bg-color">mybatis</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%85%8D%E7%BD%AE/">
+                                    <span class="chip bg-color">配置</span>
                                 </a>
                             
                         </div>
@@ -786,53 +860,55 @@ on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/">
+                <a href="/2020/03/04/mybatis-zhong-de-dong-tai-sql/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/163806-1570264686e1ed.jpg" class="responsive-img" alt="安卓自定义view五子棋项目">
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/180443-1523786683938c.jpg" class="responsive-img" alt="mybatis中动态sql">
                         
-                        <span class="card-title">安卓自定义view五子棋项目</span>
+                        <span class="card-title">mybatis中动态sql</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            当初学编程的，都想做一个游戏，俄罗斯方块？贪吃蛇？不不不，今天我所讲的是五子棋双人对战，对比那些来说，应该算比较简单的了。相信很多人都有看过，不过视频中，我发现有些代码是不需要的，而且还存在一些bug，针对视频所存在的bug我都做了调整，经
+                            动态 SQLMyBatis 的强大特性之一便是它的动态 SQL。如果你有使用 JDBC 或其它类似框架的经验，你就能体会到根据不同条件拼接 SQL 语句的痛苦。例如拼接时要确保不能忘记添加必要的空格，还要注意去掉列表最后一个列名的逗号。利用
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AE%89%E5%8D%93/" class="post-category">
-                                    安卓
+                            <a href="/categories/mybatis/" class="post-category">
+                                    mybatis
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AE%89%E5%8D%93/">
-                        <span class="chip bg-color">安卓</span>
+                    <a href="/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/">
+                        <span class="chip bg-color">持久层框架</span>
                     </a>
                     
-                    <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/">
-                        <span class="chip bg-color">自定义view</span>
+                    <a href="/tags/mybatis/">
+                        <span class="chip bg-color">mybatis</span>
                     </a>
                     
-                    <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">
-                        <span class="chip bg-color">项目实战</span>
+                    <a href="/tags/%E9%85%8D%E7%BD%AE/">
+                        <span class="chip bg-color">配置</span>
                     </a>
                     
                 </div>
@@ -846,32 +922,30 @@ on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/18/biao-de-yue-shu/">
+                <a href="/2020/03/03/mybatis-zhong-mapper-wen-jian-pei-zhi/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/123945-1496983185ad61.jpg" class="responsive-img" alt="mysql表的约束">
+                        <img src="http://qiniuyun.dajienihao.cn/image/0303/180028-15570504283944.jpg" class="responsive-img" alt="mybatis中mapper文件配置">
                         
-                        <span class="card-title">mysql表的约束</span>
+                        <span class="card-title">mybatis中mapper文件配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            表的约束为了防止数据表中插入错误的数据，在mysql中定义了一些维护数据库完整性的规则，即表的约束。
-主键约束单字段主键单字段主键指的是由一个字段构成的主键，其基本语法格式如下所示:字段名 数据类型 primary key；
- mysql-
+                            mybatis中xml映射文件MyBatis 的真正强大在于它的映射语句，这是它的魔力所在。由于它的异常强大，映射器的 XML 文件就显得相对简单。如果拿它跟具有相同功能的 JDBC 代码进行对比，你会立即发现省掉了将近 95% 的代码。M
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/mysql/" class="post-category">
-                                    mysql
+                            <a href="/categories/mybatis/" class="post-category">
+                                    mybatis
                                 </a>
                             
                             
@@ -881,12 +955,16 @@ on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mysql/">
-                        <span class="chip bg-color">mysql</span>
+                    <a href="/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/">
+                        <span class="chip bg-color">持久层框架</span>
                     </a>
                     
-                    <a href="/tags/%E8%A1%A8%E7%9A%84%E7%BA%A6%E6%9D%9F/">
-                        <span class="chip bg-color">表的约束</span>
+                    <a href="/tags/mybatis/">
+                        <span class="chip bg-color">mybatis</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%85%8D%E7%BD%AE/">
+                        <span class="chip bg-color">配置</span>
                     </a>
                     
                 </div>
