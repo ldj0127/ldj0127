@@ -9,17 +9,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="为什么要使用mybatis, L">
-    <meta name="description" content="#为什么要使用mybatis
-Mybatis是一个半自动化持久层框架
-JDBC
-
-sql夹在java代码块中，耦合度高导致硬编码内伤
-维护不易且实际开发需求中sql是有变化的，频繁修改情况多见
-
-Hibernate和JPA
-
-长难复杂Sql">
+    <meta name="keywords" content="mybatis不同方式的多表查询, L">
+    <meta name="description" content="mybatis的多表查询假如我们有一个员工表和员工所在部门表，那么员工表的部门ID外键部门表的部门ID，那么在mybatis这样的持久层框架中，它是在底层自动的对数据库数据进行封装成对应的实体类对象，那如何在展示到浏览器端时，展示员工信息时">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -27,7 +18,7 @@ Hibernate和JPA
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>为什么要使用mybatis | L</title>
+    <title>mybatis不同方式的多表查询 | L</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -296,13 +287,13 @@ Hibernate和JPA
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://qiniuyun.dajienihao.cn/image/jpg/background/095559-15614277592283.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://qiniuyun.dajienihao.cn/image/jpg/background/183201-15420187218258.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        为什么要使用mybatis
+                        mybatis不同方式的多表查询
                     </div>
                 </div>
             </div>
@@ -414,16 +405,16 @@ Hibernate和JPA
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                                <span class="chip bg-color">框架</span>
+                            <a href="/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/">
+                                <span class="chip bg-color">持久层框架</span>
                             </a>
                         
                             <a href="/tags/mybatis/">
                                 <span class="chip bg-color">mybatis</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                                <span class="chip bg-color">数据库</span>
+                            <a href="/tags/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/">
+                                <span class="chip bg-color">多表查询</span>
                             </a>
                         
                     </div>
@@ -434,8 +425,8 @@ Hibernate和JPA
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/" class="post-category">
-                                持久层框架
+                            <a href="/categories/mybatis/" class="post-category">
+                                mybatis
                             </a>
                         
                     </div>
@@ -446,23 +437,28 @@ Hibernate和JPA
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-15
+                    2020-03-04
                 </div>
                 
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-03-05
+                </div>
                 
 
                 
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        176
+                        907
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        4 分
                     </div>
                     
                 
@@ -478,21 +474,125 @@ Hibernate和JPA
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>#为什么要使用mybatis</p>
-<p><strong>Mybatis是一个半自动化持久层框架</strong></p>
-<p><strong>JDBC</strong></p>
-<ul>
-<li>sql夹在java代码块中，耦合度高导致硬编码内伤</li>
-<li>维护不易且实际开发需求中sql是有变化的，频繁修改情况多见</li>
-</ul>
-<p><strong>Hibernate和JPA</strong></p>
-<ul>
-<li>长难复杂Sql,对于Hibernate而言处理也不容易</li>
-<li>内部自动声场的sql，不容易做特殊优化</li>
-<li>基于全映射的全自动框架，大量字段的pojo进行部分映射困难，导致数据库性能下降</li>
-</ul>
-<p><strong>对于开发人员而言，核心SQL还是需要自己优化</strong></p>
-<p><strong>sql和Java编码分开，功能边界清晰，一个专注业务、一个专注数据</strong></p>
+                <h1 id="mybatis的多表查询"><a href="#mybatis的多表查询" class="headerlink" title="mybatis的多表查询"></a>mybatis的多表查询</h1><p>假如我们有一个员工表和员工所在部门表，那么员工表的部门ID外键部门表的部门ID，那么在mybatis这样的持久层框架中，它是在底层自动的对数据库数据进行封装成对应的实体类对象，那如何在展示到浏览器端时，展示员工信息时展示它的部门名称呢？</p>
+<h2 id="多对一查询"><a href="#多对一查询" class="headerlink" title="多对一查询"></a>多对一查询</h2><p>实体类型：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Emp</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> Integer empid<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String ename<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String esex<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Date ehiredate<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Double esal<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Dept dept<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dept</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">public</span> Integer deptid <span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String dname <span class="token punctuation">;</span> 
+    <span class="token keyword">public</span> String dloc <span class="token punctuation">;</span> 
+<span class="token punctuation">}</span></code></pre>
+<h3 id="使用配置方式"><a href="#使用配置方式" class="headerlink" title="使用配置方式"></a>使用配置方式</h3><p>EmpMapper.xml文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>resultMap id<span class="token operator">=</span><span class="token string">"BaseEmp"</span> type<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Emp"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"empid"</span> column<span class="token operator">=</span><span class="token string">"empid"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>id<span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ename"</span> column<span class="token operator">=</span><span class="token string">"ename"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esex"</span> column<span class="token operator">=</span><span class="token string">"esex"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ehiredate"</span> column<span class="token operator">=</span><span class="token string">"ehiredate"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esal"</span> column<span class="token operator">=</span><span class="token string">"esal"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
+        <span class="token operator">&lt;</span>association property<span class="token operator">=</span><span class="token string">"dept"</span> javaType<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Dept"</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"deptid"</span> column<span class="token operator">=</span><span class="token string">"deptid"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>id<span class="token operator">></span>
+            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dname"</span> column<span class="token operator">=</span><span class="token string">"dname"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
+            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dloc"</span> column<span class="token operator">=</span><span class="token string">"dloc"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>association<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>resultMap<span class="token operator">></span>
+<span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"queryAllEmp3"</span> resultMap<span class="token operator">=</span><span class="token string">"BaseEmp"</span><span class="token operator">></span>
+         select <span class="token operator">*</span> from emp inner join dept <span class="token function">using</span> <span class="token punctuation">(</span>deptid<span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
+<h3 id="使用注解方式"><a href="#使用注解方式" class="headerlink" title="使用注解方式"></a>使用注解方式</h3><h4 id="半注解方式"><a href="#半注解方式" class="headerlink" title="半注解方式"></a>半注解方式</h4><p>EmpMapper.xml文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>resultMap type<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Emp"</span> id<span class="token operator">=</span><span class="token string">"myEmp"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"eid"</span> column<span class="token operator">=</span><span class="token string">"eid"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ename"</span> column<span class="token operator">=</span><span class="token string">"ename"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esex"</span> column<span class="token operator">=</span><span class="token string">"esex"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"eaddress"</span> column<span class="token operator">=</span><span class="token string">"eaddress"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ehiredate"</span> column<span class="token operator">=</span><span class="token string">"ehiredate"</span> javaType<span class="token operator">=</span><span class="token string">"java.util.Date"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esal"</span> column<span class="token operator">=</span><span class="token string">"esal"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Double"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> javaType<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Dept"</span> 指emp里面dept属性的类型<span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>association property<span class="token operator">=</span><span class="token string">"dept"</span> javaType<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Dept"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"deptid"</span> column<span class="token operator">=</span><span class="token string">"deptid"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dname"</span> column<span class="token operator">=</span><span class="token string">"dname"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dloc"</span> column<span class="token operator">=</span><span class="token string">"dloc"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>association<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>resultMap<span class="token operator">></span></code></pre>
+<p>EmpMapper.java文件</p>
+<pre class=" language-java"><code class="language-java">    <span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from emp inner join dept using(deptid)"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@ResultMap</span><span class="token punctuation">(</span><span class="token string">"EmpMapper.myEmp"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Emp<span class="token operator">></span> <span class="token function">queryAllEmp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<p>注意：添加注解的类要添加到mybatis的配置中,不然不会处理注解。当从配置方式换成注解方式时，<code>namespace</code>不能再和Mapper.java的全类名对应。</p>
+</blockquote>
+<h4 id="全注解方式"><a href="#全注解方式" class="headerlink" title="全注解方式"></a>全注解方式</h4><p>EmpMapper.java文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from emp inner join dept using("</span>deptid"<span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Results</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"eid"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"eid"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"ename"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"ename"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"esex"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"esex"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"eaddress"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"eaddress"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"ehiredate"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"ehiredate"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"esal"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"esal"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Double<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property<span class="token operator">=</span><span class="token string">"dept"</span><span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token string">"deptid"</span><span class="token punctuation">,</span>javaType<span class="token operator">=</span>Dept<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>one<span class="token operator">=</span><span class="token annotation punctuation">@One</span><span class="token punctuation">(</span>select<span class="token operator">=</span><span class="token string">"com.ahdy.mapper.DeptMapper.queryDeptByDeptId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Emp<span class="token operator">></span> <span class="token function">queryAllEmp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+<p>DeptMapper.java文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*根据部门ID查询部门*/</span>
+<span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from sys_dept where deptid=#{value}"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> Dept <span class="token function">queryDeptByDeptId</span><span class="token punctuation">(</span>Integer deptid<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="一对多查询"><a href="#一对多查询" class="headerlink" title="一对多查询"></a>一对多查询</h2><p>实体类文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dept</span> 
+<span class="token punctuation">{</span> 
+    <span class="token keyword">public</span> Integer deptid <span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String dname <span class="token punctuation">;</span> 
+    <span class="token keyword">public</span> String dloc <span class="token punctuation">;</span> 
+    <span class="token keyword">public</span> Set<span class="token operator">&lt;</span>Emp<span class="token operator">></span> set<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Emp</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> Integer empid<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String ename<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String esex<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Date ehiredate<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Double esal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="使用配置方式-1"><a href="#使用配置方式-1" class="headerlink" title="使用配置方式"></a>使用配置方式</h3><p>Mapper文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>resultMap type<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Dept"</span> id<span class="token operator">=</span><span class="token string">"myDept"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"deptid"</span> column<span class="token operator">=</span><span class="token string">"deptid"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dname"</span> column<span class="token operator">=</span><span class="token string">"dname"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dloc"</span> column<span class="token operator">=</span><span class="token string">"dloc"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 里面有一个emps的  HashSet javaType指emps的类型 ofType指 HashSet 里面的元素类型<span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>collection property<span class="token operator">=</span><span class="token string">"emps"</span> javaType<span class="token operator">=</span><span class="token string">"java.util.HashSet"</span> ofType<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Emp"</span> <span class="token operator">></span>
+            <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"eid"</span> column<span class="token operator">=</span><span class="token string">"eid"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ename"</span> column<span class="token operator">=</span><span class="token string">"ename"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esex"</span> column<span class="token operator">=</span><span class="token string">"esex"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"eaddress"</span> column<span class="token operator">=</span><span class="token string">"eaddress"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ehiredate"</span> column<span class="token operator">=</span><span class="token string">"ehiredate"</span> javaType<span class="token operator">=</span><span class="token string">"java.util.Date"</span><span class="token operator">/</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esal"</span> column<span class="token operator">=</span><span class="token string">"esal"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Double"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>collection<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>resultMap<span class="token operator">></span>
+<span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"queryAllDept"</span> resultMap<span class="token operator">=</span><span class="token string">"myDept"</span><span class="token operator">></span>
+    select <span class="token operator">*</span> from dept inner join emp <span class="token function">using</span><span class="token punctuation">(</span>deptid<span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
+<blockquote>
+<p>注意：collection中javaType指emps的类型 ofType指 HashSet 里面的元素类型</p>
+</blockquote>
+<h3 id="使用注解方式-1"><a href="#使用注解方式-1" class="headerlink" title="使用注解方式"></a>使用注解方式</h3><p>DeptMapper.java文件</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from sys_dept "</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Results</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"deptid"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"deptid"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"dname"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"dname"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"dloc"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"dloc"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property<span class="token operator">=</span><span class="token string">"emps"</span><span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token string">"deptid"</span><span class="token punctuation">,</span>javaType<span class="token operator">=</span>Set<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+    many<span class="token operator">=</span><span class="token annotation punctuation">@Many</span><span class="token punctuation">(</span>select<span class="token operator">=</span><span class="token string">"com.sxt.dao.EmpMapper.queryEmpsByDeptId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Dept<span class="token operator">></span> <span class="token function">queryAllDept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>EmpMapper.java文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*根据部门ID查询员工*/</span>
+<span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from sys_emp where deptid=#{value}"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> List<span class="token operator">&lt;</span>Emp<span class="token operator">></span> <span class="token function">queryEmpsByDeptId</span><span class="token punctuation">(</span>Integer deptid<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
             </div>
             <hr/>
@@ -518,7 +618,7 @@ Hibernate和JPA
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://dajienihao.cn/2020/02/15/shi-yong-mybatis-de-you-dian/">http://dajienihao.cn/2020/02/15/shi-yong-mybatis-de-you-dian/</a>
+                    <a href="http://dajienihao.cn/2020/03/04/mybatis-bu-tong-fang-shi-de-duo-biao-cha-xun/">http://dajienihao.cn/2020/03/04/mybatis-bu-tong-fang-shi-de-duo-biao-cha-xun/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -556,16 +656,16 @@ Hibernate和JPA
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                                    <span class="chip bg-color">框架</span>
+                                <a href="/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/">
+                                    <span class="chip bg-color">持久层框架</span>
                                 </a>
                             
                                 <a href="/tags/mybatis/">
                                     <span class="chip bg-color">mybatis</span>
                                 </a>
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                                    <span class="chip bg-color">数据库</span>
+                                <a href="/tags/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/">
+                                    <span class="chip bg-color">多表查询</span>
                                 </a>
                             
                         </div>
@@ -732,59 +832,55 @@ Hibernate和JPA
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/02/21/spring-zhong-chuang-jian-bean-de-san-chong-fang-shi/">
+                <a href="/2020/03/04/mybatis-bu-tong-fang-shi-de-duo-biao-cha-xun/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/095746-1475287066b546.jpg" class="responsive-img" alt="spring对bean的管理细节">
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/183201-15420187218258.jpg" class="responsive-img" alt="mybatis不同方式的多表查询">
                         
-                        <span class="card-title">spring对bean的管理细节</span>
+                        <span class="card-title">mybatis不同方式的多表查询</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            把对象的创建交给spring来管理spring对bean的管理细节
-
-创建bean的三种方式
-bean对象的作用范围
-bean对象的生命周期
-
-创建bean的三种方式1.使用默认的构造器创建在spring的配置文件中使用bean标签，配以i
+                            mybatis的多表查询假如我们有一个员工表和员工所在部门表，那么员工表的部门ID外键部门表的部门ID，那么在mybatis这样的持久层框架中，它是在底层自动的对数据库数据进行封装成对应的实体类对象，那如何在展示到浏览器端时，展示员工信息时
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/spring/" class="post-category">
-                                    spring
+                            <a href="/categories/mybatis/" class="post-category">
+                                    mybatis
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                        <span class="chip bg-color">框架</span>
+                    <a href="/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/">
+                        <span class="chip bg-color">持久层框架</span>
                     </a>
                     
-                    <a href="/tags/spring/">
-                        <span class="chip bg-color">spring</span>
+                    <a href="/tags/mybatis/">
+                        <span class="chip bg-color">mybatis</span>
                     </a>
                     
-                    <a href="/tags/spring%E7%9A%84%E4%BD%BF%E7%94%A8/">
-                        <span class="chip bg-color">spring的使用</span>
+                    <a href="/tags/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/">
+                        <span class="chip bg-color">多表查询</span>
                     </a>
                     
                 </div>
@@ -798,31 +894,30 @@ bean对象的生命周期
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/22/java-zhong-data-string-he-sql.timestamp-zhi-jian-de-hu-xiang-zhuan-huan/">
+                <a href="/2020/03/04/mybatis-zhong-de-dong-tai-sql/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/002739-1577377659b456.jpg" class="responsive-img" alt="Data、String和sql.Timestamp之间的互相转换">
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/180443-1523786683938c.jpg" class="responsive-img" alt="mybatis中动态sql">
                         
-                        <span class="card-title">Data、String和sql.Timestamp之间的互相转换</span>
+                        <span class="card-title">mybatis中动态sql</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JAVA中java.util.Date、java.sql.Timestamp和String之间的互相转换java.util.Date与的String互转java.util.Date—-&gt;String/**
- * 将java.util.
+                            动态 SQLMyBatis 的强大特性之一便是它的动态 SQL。如果你有使用 JDBC 或其它类似框架的经验，你就能体会到根据不同条件拼接 SQL 语句的痛苦。例如拼接时要确保不能忘记添加必要的空格，还要注意去掉列表最后一个列名的逗号。利用
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B7%A5%E5%85%B7%E7%B1%BB/" class="post-category">
-                                    工具类
+                            <a href="/categories/mybatis/" class="post-category">
+                                    mybatis
                                 </a>
                             
                             
@@ -832,12 +927,16 @@ bean对象的生命周期
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Date%E3%80%81String%E5%92%8Csql-Timestamp%E8%BD%AC%E6%8D%A2/">
-                        <span class="chip bg-color">Date、String和sql.Timestamp转换</span>
+                    <a href="/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/">
+                        <span class="chip bg-color">持久层框架</span>
                     </a>
                     
-                    <a href="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/">
-                        <span class="chip bg-color">工具类</span>
+                    <a href="/tags/mybatis/">
+                        <span class="chip bg-color">mybatis</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%85%8D%E7%BD%AE/">
+                        <span class="chip bg-color">配置</span>
                     </a>
                     
                 </div>
