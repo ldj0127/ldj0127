@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2020-03-05T12:21:34.710Z</updated>
+  <updated>2020-03-07T10:49:43.345Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -15,6 +15,97 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>springMvc请求参数的绑定</title>
+    <link href="http://dajienihao.cn/2020/03/07/springmvc-can-shu-bang-ding/"/>
+    <id>http://dajienihao.cn/2020/03/07/springmvc-can-shu-bang-ding/</id>
+    <published>2020-03-07T11:24:45.000Z</published>
+    <updated>2020-03-07T10:49:43.345Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;请求参数的绑定&quot;&gt;&lt;a href=&quot;#请求参数的绑定&quot; class=&quot;headerlink&quot; title=&quot;请求参数的绑定&quot;&gt;&lt;/a&gt;请求参数的绑定&lt;/h1&gt;&lt;h2 id=&quot;请求参数的绑定说明&quot;&gt;&lt;a href=&quot;#请求参数的绑定说明&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringMvc" scheme="http://dajienihao.cn/categories/SpringMvc/"/>
+    
+    
+      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
+    
+      <category term="mvc" scheme="http://dajienihao.cn/tags/mvc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>springMvc常用注解</title>
+    <link href="http://dajienihao.cn/2020/03/07/springmvc-chang-yong-zhu-jie/"/>
+    <id>http://dajienihao.cn/2020/03/07/springmvc-chang-yong-zhu-jie/</id>
+    <published>2020-03-07T11:24:45.000Z</published>
+    <updated>2020-03-07T13:03:35.234Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;RequestMapping&quot;&gt;&lt;a href=&quot;#RequestMapping&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringMvc" scheme="http://dajienihao.cn/categories/SpringMvc/"/>
+    
+    
+      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
+    
+      <category term="mvc" scheme="http://dajienihao.cn/tags/mvc/"/>
+    
+      <category term="注解" scheme="http://dajienihao.cn/tags/%E6%B3%A8%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>springMvc入门配置</title>
+    <link href="http://dajienihao.cn/2020/03/07/springmvc-de-ji-chu-pei-zhi/"/>
+    <id>http://dajienihao.cn/2020/03/07/springmvc-de-ji-chu-pei-zhi/</id>
+    <published>2020-03-07T10:24:45.000Z</published>
+    <updated>2020-03-07T09:49:05.699Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SpringMVC的入门配置&quot;&gt;&lt;a href=&quot;#SpringMVC的入门配置&quot; class=&quot;headerlink&quot; title=&quot;SpringMVC的入门配置&quot;&gt;&lt;/a&gt;SpringMVC的入门配置&lt;/h1&gt;&lt;h2 id=&quot;springMvc是什么&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringMvc" scheme="http://dajienihao.cn/categories/SpringMvc/"/>
+    
+    
+      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
+    
+      <category term="mvc" scheme="http://dajienihao.cn/tags/mvc/"/>
+    
+      <category term="配置" scheme="http://dajienihao.cn/tags/%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>mybatis不同方式的多表查询</title>
@@ -70,11 +161,11 @@
       <category term="mybatis" scheme="http://dajienihao.cn/categories/mybatis/"/>
     
     
+      <category term="配置" scheme="http://dajienihao.cn/tags/%E9%85%8D%E7%BD%AE/"/>
+    
       <category term="持久层框架" scheme="http://dajienihao.cn/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
       <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
-    
-      <category term="配置" scheme="http://dajienihao.cn/tags/%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
@@ -101,11 +192,11 @@
       <category term="mybatis" scheme="http://dajienihao.cn/categories/mybatis/"/>
     
     
+      <category term="配置" scheme="http://dajienihao.cn/tags/%E9%85%8D%E7%BD%AE/"/>
+    
       <category term="持久层框架" scheme="http://dajienihao.cn/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
       <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
-    
-      <category term="配置" scheme="http://dajienihao.cn/tags/%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
@@ -533,96 +624,6 @@
       <category term="项目整合" scheme="http://dajienihao.cn/tags/%E9%A1%B9%E7%9B%AE%E6%95%B4%E5%90%88/"/>
     
       <category term="java" scheme="http://dajienihao.cn/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>请求转发和重定向的区别</title>
-    <link href="http://dajienihao.cn/2020/01/16/qing-qiu-zhuan-fa-he-chong-ding-xiang-de-qu-bie/"/>
-    <id>http://dajienihao.cn/2020/01/16/qing-qiu-zhuan-fa-he-chong-ding-xiang-de-qu-bie/</id>
-    <published>2020-01-16T08:24:45.000Z</published>
-    <updated>2020-02-21T12:46:57.347Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;请求转发和重定向的区别&quot;&gt;&lt;a href=&quot;#请求转发和重定向的区别&quot; class=&quot;headerlink&quot; title=&quot;请求转发和重定向的区别&quot;&gt;&lt;/a&gt;请求转发和重定向的区别&lt;/h1&gt;&lt;h2 id=&quot;重定向&quot;&gt;&lt;a href=&quot;#重定向&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="后端" scheme="http://dajienihao.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-      <category term="java" scheme="http://dajienihao.cn/tags/java/"/>
-    
-      <category term="http" scheme="http://dajienihao.cn/tags/http/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>原生JDBC的使用</title>
-    <link href="http://dajienihao.cn/2020/01/13/yuan-sheng-de-jdbc-de-shi-yong/"/>
-    <id>http://dajienihao.cn/2020/01/13/yuan-sheng-de-jdbc-de-shi-yong/</id>
-    <published>2020-01-13T08:24:45.000Z</published>
-    <updated>2020-01-13T12:36:32.698Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;JDBC是什么&quot;&gt;&lt;a href=&quot;#JDBC是什么&quot; class=&quot;headerlink&quot; title=&quot;JDBC是什么&quot;&gt;&lt;/a&gt;JDBC是什么&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;JAVA Database Connectivity
-        
-      
-    
-    </summary>
-    
-    
-      <category term="JDBC" scheme="http://dajienihao.cn/categories/JDBC/"/>
-    
-    
-      <category term="mysql" scheme="http://dajienihao.cn/tags/mysql/"/>
-    
-      <category term="原生JDBC的使用" scheme="http://dajienihao.cn/tags/%E5%8E%9F%E7%94%9FJDBC%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安卓自定义view五子棋项目</title>
-    <link href="http://dajienihao.cn/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/"/>
-    <id>http://dajienihao.cn/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/</id>
-    <published>2019-12-29T08:24:45.000Z</published>
-    <updated>2019-12-29T08:34:43.897Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;当初学编程的，都想做一个游戏，俄罗斯方块？贪吃蛇？不不不，今天我所讲的是五子棋双人对战，对比那些来说，应该算比较简单的了。&lt;br&gt;相信很多人都有看过，不过视频中，我发现有些代码是不需要的，而且还存在一些bug，针对视频所存在的bug我都做了调整，经测试，目前无bug。&lt;br
-        
-      
-    
-    </summary>
-    
-    
-      <category term="安卓" scheme="http://dajienihao.cn/categories/%E5%AE%89%E5%8D%93/"/>
-    
-    
-      <category term="安卓" scheme="http://dajienihao.cn/tags/%E5%AE%89%E5%8D%93/"/>
-    
-      <category term="自定义view" scheme="http://dajienihao.cn/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
-    
-      <category term="项目实战" scheme="http://dajienihao.cn/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/"/>
     
   </entry>
   

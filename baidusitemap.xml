@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://dajienihao.cn/2020/03/07/springmvc-chang-yong-zhu-jie/</loc>
+    <lastmod>2020-03-07</lastmod>
+  </url>  <url>
+    <loc>http://dajienihao.cn/2020/03/07/springmvc-can-shu-bang-ding/</loc>
+    <lastmod>2020-03-07</lastmod>
+  </url>  <url>
+    <loc>http://dajienihao.cn/2020/03/07/springmvc-de-ji-chu-pei-zhi/</loc>
+    <lastmod>2020-03-07</lastmod>
+  </url>  <url>
+    <loc>http://dajienihao.cn/2019/12/08/mvc-she-ji-mo-shi/</loc>
+    <lastmod>2020-03-07</lastmod>
+  </url>  <url>
     <loc>http://dajienihao.cn/2020/03/04/mybatis-bu-tong-fang-shi-de-duo-biao-cha-xun/</loc>
     <lastmod>2020-03-05</lastmod>
   </url>  <url>
@@ -50,9 +62,6 @@
     <lastmod>2020-02-21</lastmod>
   </url>  <url>
     <loc>http://dajienihao.cn/2019/12/11/mysql-shu-ju-ku-ji-biao-de-ji-ben-cao-zuo/</loc>
-    <lastmod>2020-02-21</lastmod>
-  </url>  <url>
-    <loc>http://dajienihao.cn/2019/12/08/mvc-she-ji-mo-shi/</loc>
     <lastmod>2020-02-21</lastmod>
   </url>  <url>
     <loc>http://dajienihao.cn/2019/12/18/biao-de-yue-shu/</loc>
