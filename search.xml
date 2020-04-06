@@ -4,6 +4,62 @@
   
     
     <entry>
+      <title>mybatis-plus简介</title>
+      <link href="/2020/04/06/mybatis-plus-jian-jie/"/>
+      <url>/2020/04/06/mybatis-plus-jian-jie/</url>
+      
+        <content type="html"><![CDATA[<h2 id="mybatis-plus"><a href="#mybatis-plus" class="headerlink" title="mybatis-plus"></a>mybatis-plus</h2><p><img src="http://qiniuyun.dajienihao.cn/image/0404/logo.png" alt="MyBatis-Plus为简化开发而生"></p><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</p><blockquote><p><strong>愿景</strong><br>我们的愿景是成为 MyBatis 最好的搭档，就像 魂斗罗 中的 1P、2P，基友搭配，效率翻倍。</p></blockquote><p><img src="http://qiniuyun.dajienihao.cn/image/0404/relationship-with-mybatis.png" alt=""></p><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul><li><strong>无侵入</strong>：只做增强不做改变，引入它不会对现有工程产生影响，如丝般顺滑</li><li><strong>损耗小</strong>：启动即会自动注入基本 CURD，性能基本无损耗，直接面向对象操作</li><li><strong>强大的 CRUD 操作</strong>：内置通用 Mapper、通用 Service，仅仅通过少量配置即可实现单表大部分 CRUD 操作，更有强大的条件构造器，满足各类使用需求</li><li><strong>支持 Lambda 形式调用</strong>：通过 Lambda 表达式，方便的编写各类查询条件，无需再担心字段写错</li><li><strong>支持主键自动生成</strong>：支持多达 4 种主键策略（内含分布式唯一 ID 生成器 Sequence），可自由配置，完美解决主键问题</li><li><strong>支持 ActiveRecord 模式</strong>：支持 ActiveRecord 形式调用，实体类只需继承 Model 类即可进行强大的 CRUD 操作</li><li><strong>支持自定义全局通用操作</strong>：支持全局通用方法注入（ Write once, use anywhere ）</li><li><strong>内置代码生成器</strong>：采用代码或者 Maven 插件可快速生成 Mapper 、 Model 、 Service 、 Controller 层代码，支持模板引擎，更有超多自定义配置等您来使用</li><li><strong>内置分页插件</strong>：基于 MyBatis 物理分页，开发者无需关心具体操作，配置好插件之后，写分页等同于普通 List 查询</li><li><strong>分页插件支持多种数据库</strong>：支持 MySQL、MariaDB、Oracle、DB2、H2、HSQL、SQLite、Postgre、SQLServer 等多种数据库</li><li><strong>内置性能分析插件</strong>：可输出 Sql 语句以及其执行时间，建议开发测试时启用该功能，能快速揪出慢查询</li><li><strong>内置全局拦截插件</strong>：提供全表 delete 、 update 操作智能分析阻断，也可自定义拦截规则，预防误操作</li></ul><h3 id="支持数据库"><a href="#支持数据库" class="headerlink" title="支持数据库"></a>支持数据库</h3><ul><li>mysql 、 mariadb 、 oracle 、 db2 、 h2 、 hsql 、 sqlite 、 postgresql 、 sqlserver</li><li>达梦数据库 、 虚谷数据库 、 人大金仓数据库</li></ul><h3 id="框架结构"><a href="#框架结构" class="headerlink" title="框架结构"></a>框架结构</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0404/mybatis-plus-framework.jpg" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> mybatisplus </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mybatisplus </tag>
+            
+            <tag> mybatis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DateTimeFormat和JsonFormat 注解</title>
+      <link href="/2020/03/26/qian-hou-duan-shi-jian-lei-xing-zhuan-huan/"/>
+      <url>/2020/03/26/qian-hou-duan-shi-jian-lei-xing-zhuan-huan/</url>
+      
+        <content type="html"><![CDATA[<h2 id="DateTimeFormat和-JsonFormat注解的使用"><a href="#DateTimeFormat和-JsonFormat注解的使用" class="headerlink" title="@DateTimeFormat和@JsonFormat注解的使用"></a>@DateTimeFormat和@JsonFormat注解的使用</h2><p>从数据库获取时间传到前端进行展示的时候，我们有时候可能无法得到一个满意的时间格式的时间日期，在数据库中显示的是正确的时间格式，获取出来却变成了很丑的时间戳，<code>@JsonForma</code>t注解很好的解决了这个问题，我们通过使用<code>@JsonFormat</code>可以很好的解决：后台到前台时间格式保持一致的问题，其次，另一个问题是，我们在使用WEB服务的时，可能会需要用到，传入时间给后台，比如注册新用户需要填入出生日期等，这个时候前台传递给后台的时间格式同样是不一致的，而我们的与之对应的便有了另一个注解，<code>@DataTimeFormat</code>便很好的解决了这个问题，接下来记录一下具体的<code>@JsonFormat与DateTimeFormat</code>的使用过程。</p><h3 id="JsonFormat"><a href="#JsonFormat" class="headerlink" title="@JsonFormat"></a>@JsonFormat</h3><h4 id="1-使用maven引入-JsonFormat所需要的jar包，我贴一下我这里的pom文件的依赖"><a href="#1-使用maven引入-JsonFormat所需要的jar包，我贴一下我这里的pom文件的依赖" class="headerlink" title="1.使用maven引入@JsonFormat所需要的jar包，我贴一下我这里的pom文件的依赖"></a>1.使用maven引入@JsonFormat所需要的jar包，我贴一下我这里的pom文件的依赖</h4><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>dependency<span class="token operator">></span>    <span class="token operator">&lt;</span>groupId<span class="token operator">></span>com<span class="token punctuation">.</span>fasterxml<span class="token punctuation">.</span>jackson<span class="token punctuation">.</span>core<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>    <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>jackson<span class="token operator">-</span>annotations<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>    <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">2.8</span><span class="token punctuation">.</span><span class="token number">8</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span><span class="token operator">&lt;</span>dependency<span class="token operator">></span>    <span class="token operator">&lt;</span>groupId<span class="token operator">></span>com<span class="token punctuation">.</span>fasterxml<span class="token punctuation">.</span>jackson<span class="token punctuation">.</span>core<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>    <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>jackson<span class="token operator">-</span>databind<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>    <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">2.8</span><span class="token punctuation">.</span><span class="token number">8</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span><span class="token operator">&lt;</span>dependency<span class="token operator">></span>    <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>codehaus<span class="token punctuation">.</span>jackson<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>    <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>jackson<span class="token operator">-</span>mapper<span class="token operator">-</span>asl<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>    <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">1.9</span><span class="token punctuation">.</span><span class="token number">13</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span></code></pre><h4 id="2-在你需要查询出来的时间的数据库字段对应的实体类的属性上添加-JsonFormat"><a href="#2-在你需要查询出来的时间的数据库字段对应的实体类的属性上添加-JsonFormat" class="headerlink" title="2.在你需要查询出来的时间的数据库字段对应的实体类的属性上添加@JsonFormat"></a>2.在你需要查询出来的时间的数据库字段对应的实体类的属性上添加@JsonFormat</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestClass</span> <span class="token punctuation">{</span>    <span class="token comment" spellcheck="true">//设置时区为上海时区，时间格式自己据需求定。</span>    <span class="token annotation punctuation">@JsonFormat</span><span class="token punctuation">(</span>pattern<span class="token operator">=</span><span class="token string">"yyyy-MM-dd"</span><span class="token punctuation">,</span>timezone <span class="token operator">=</span> <span class="token string">"GMT+8"</span><span class="token punctuation">)</span>    <span class="token keyword">private</span> Date testTime<span class="token punctuation">;</span>    <span class="token keyword">public</span> Date <span class="token function">gettestTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">return</span> testTime<span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">settestTime</span><span class="token punctuation">(</span>Date testTimee<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">this</span><span class="token punctuation">.</span>testTime<span class="token operator">=</span> testTime<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre><blockquote><p>这里解释一下：@JsonFormat(pattern=”yyyy-MM-dd”,timezone = “GMT+8”)<br>pattern:是你需要转换的时间日期的格式<br>timezone：jackson在序列化时间时是按照国际标准时间GMT进行格式化的，而在国内默认时区使用的是CST时区，两者相差8小时。</p></blockquote><h4 id="3-完成上面两步之后，我们用对应的实体类来接收数据库查询出来的结果时就完成了时间格式的转换，再返回给前端时就是一个符合我们设置的时间格式了"><a href="#3-完成上面两步之后，我们用对应的实体类来接收数据库查询出来的结果时就完成了时间格式的转换，再返回给前端时就是一个符合我们设置的时间格式了" class="headerlink" title="3.完成上面两步之后，我们用对应的实体类来接收数据库查询出来的结果时就完成了时间格式的转换，再返回给前端时就是一个符合我们设置的时间格式了"></a>3.完成上面两步之后，我们用对应的实体类来接收数据库查询出来的结果时就完成了时间格式的转换，再返回给前端时就是一个符合我们设置的时间格式了</h4><h3 id="DateTimeFormat"><a href="#DateTimeFormat" class="headerlink" title="@DateTimeFormat"></a>@DateTimeFormat</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DateVo</span> <span class="token punctuation">{</span>    <span class="token annotation punctuation">@DateTimeFormat</span><span class="token punctuation">(</span>pattern<span class="token operator">=</span><span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span>    <span class="token keyword">private</span> Date date<span class="token punctuation">;</span>    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setDate</span><span class="token punctuation">(</span>Date date<span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token keyword">this</span><span class="token punctuation">.</span>date <span class="token operator">=</span> date<span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token keyword">public</span> Date <span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token keyword">return</span> date<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre><p>加入 @DateTimeFormat 注解后参数可以被接收到了，但日期时间的格式还是需要自己再手动转换一下。因为 @DateTimeFormat 注解的 pattern 属性值指定的日期时间格式并不是将要转换成的日期格式，这个指定的格式是和传入的参数对应的，假如注解为：<code>@DateTimeFormat(pattern=&quot;yyyy/MM/dd HH:mm:ss&quot;)</code>则传入的参数应该是这样的：2018/08/02 22:05:55否则会抛出异常。</p><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>注解@JsonFormat主要是后台到前台的时间格式的转换<br>注解@DataFormAT主要是前后到后台的时间格式的转换</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 时间转换 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> spring </tag>
+            
+            <tag> 注解 </tag>
+            
+            <tag> json </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ssm的整合</title>
       <link href="/2020/03/10/ssm-zheng-he/"/>
       <url>/2020/03/10/ssm-zheng-he/</url>
@@ -217,9 +273,9 @@
       
         <tags>
             
-            <tag> 持久层框架 </tag>
-            
             <tag> mybatis </tag>
+            
+            <tag> 持久层框架 </tag>
             
             <tag> 多表查询 </tag>
             
@@ -248,9 +304,9 @@
             
             <tag> 配置 </tag>
             
-            <tag> 持久层框架 </tag>
-            
             <tag> mybatis </tag>
+            
+            <tag> 持久层框架 </tag>
             
         </tags>
       
@@ -277,9 +333,9 @@
             
             <tag> 配置 </tag>
             
-            <tag> 持久层框架 </tag>
-            
             <tag> mybatis </tag>
+            
+            <tag> 持久层框架 </tag>
             
         </tags>
       
@@ -443,9 +499,9 @@
             
             <tag> spring </tag>
             
-            <tag> IOC </tag>
-            
             <tag> 注解 </tag>
+            
+            <tag> IOC </tag>
             
         </tags>
       
