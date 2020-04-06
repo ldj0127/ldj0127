@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2020-04-06T01:13:11.890Z</updated>
+  <updated>2020-04-06T09:19:33.304Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -15,6 +15,97 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mybatis-plus代码生成器</title>
+    <link href="http://dajienihao.cn/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/"/>
+    <id>http://dajienihao.cn/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/</id>
+    <published>2020-04-06T09:30:45.000Z</published>
+    <updated>2020-04-06T09:19:33.304Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;添加依赖&quot;&gt;&lt;a href=&quot;#添加依赖&quot; class=&quot;headerlink&quot; title=&quot;添加依赖&quot;&gt;&lt;/a&gt;添加依赖&lt;/h2&gt;&lt;pre class=&quot; language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="mybatisplus" scheme="http://dajienihao.cn/categories/mybatisplus/"/>
+    
+    
+      <category term="mybatisplus" scheme="http://dajienihao.cn/tags/mybatisplus/"/>
+    
+      <category term="代码生成器" scheme="http://dajienihao.cn/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>springboot集成mybatis-plus</title>
+    <link href="http://dajienihao.cn/2020/04/06/springboot-ji-cheng-mybatisplus/"/>
+    <id>http://dajienihao.cn/2020/04/06/springboot-ji-cheng-mybatisplus/</id>
+    <published>2020-04-06T08:30:45.000Z</published>
+    <updated>2020-04-06T09:37:31.335Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;添加依赖&quot;&gt;&lt;a href=&quot;#添加依赖&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="mybatisplus" scheme="http://dajienihao.cn/categories/mybatisplus/"/>
+    
+    
+      <category term="mybatisplus" scheme="http://dajienihao.cn/tags/mybatisplus/"/>
+    
+      <category term="springboot" scheme="http://dajienihao.cn/tags/springboot/"/>
+    
+      <category term="整合" scheme="http://dajienihao.cn/tags/%E6%95%B4%E5%90%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>spring集成mybatis-plus</title>
+    <link href="http://dajienihao.cn/2020/04/06/spring-ji-cheng-mybatisplus/"/>
+    <id>http://dajienihao.cn/2020/04/06/spring-ji-cheng-mybatisplus/</id>
+    <published>2020-04-06T02:30:45.000Z</published>
+    <updated>2020-04-06T04:47:16.520Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;加入依赖&quot;&gt;&lt;a href=&quot;#加入依赖&quot; class=&quot;headerlink&quot; title=&quot;加入依赖&quot;&gt;&lt;/a&gt;加入依赖&lt;/h3&gt;&lt;pre class=&quot; language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="mybatisplus" scheme="http://dajienihao.cn/categories/mybatisplus/"/>
+    
+    
+      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
+    
+      <category term="mybatisplus" scheme="http://dajienihao.cn/tags/mybatisplus/"/>
+    
+      <category term="整合" scheme="http://dajienihao.cn/tags/%E6%95%B4%E5%90%88/"/>
+    
+  </entry>
   
   <entry>
     <title>mybatis-plus简介</title>
@@ -190,9 +281,9 @@
       <category term="idea" scheme="http://dajienihao.cn/categories/idea/"/>
     
     
-      <category term="idea" scheme="http://dajienihao.cn/tags/idea/"/>
-    
       <category term="快捷键" scheme="http://dajienihao.cn/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+      <category term="idea" scheme="http://dajienihao.cn/tags/idea/"/>
     
   </entry>
   
@@ -310,9 +401,9 @@
       <category term="mybatis" scheme="http://dajienihao.cn/categories/mybatis/"/>
     
     
-      <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
-    
       <category term="持久层框架" scheme="http://dajienihao.cn/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
     
       <category term="多表查询" scheme="http://dajienihao.cn/tags/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/"/>
     
@@ -343,9 +434,9 @@
     
       <category term="配置" scheme="http://dajienihao.cn/tags/%E9%85%8D%E7%BD%AE/"/>
     
-      <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
-    
       <category term="持久层框架" scheme="http://dajienihao.cn/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
     
   </entry>
   
@@ -374,9 +465,9 @@
     
       <category term="配置" scheme="http://dajienihao.cn/tags/%E9%85%8D%E7%BD%AE/"/>
     
-      <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
-    
       <category term="持久层框架" scheme="http://dajienihao.cn/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
     
   </entry>
   
@@ -524,99 +615,6 @@
       <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
     
       <category term="注解" scheme="http://dajienihao.cn/tags/%E6%B3%A8%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringIOC常用注解</title>
-    <link href="http://dajienihao.cn/2020/02/26/springioc-chang-yong-zhu-jie/"/>
-    <id>http://dajienihao.cn/2020/02/26/springioc-chang-yong-zhu-jie/</id>
-    <published>2020-02-26T01:24:45.000Z</published>
-    <updated>2020-02-26T08:47:47.840Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;springIOC常用注解&quot;&gt;&lt;a href=&quot;#springIOC常用注解&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="spring" scheme="http://dajienihao.cn/categories/spring/"/>
-    
-    
-      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
-    
-      <category term="注解" scheme="http://dajienihao.cn/tags/%E6%B3%A8%E8%A7%A3/"/>
-    
-      <category term="IOC" scheme="http://dajienihao.cn/tags/IOC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>spring中的依赖注入</title>
-    <link href="http://dajienihao.cn/2020/02/25/spring-zhong-yi-lai-zhu-ru/"/>
-    <id>http://dajienihao.cn/2020/02/25/spring-zhong-yi-lai-zhu-ru/</id>
-    <published>2020-02-25T08:24:45.000Z</published>
-    <updated>2020-02-26T14:39:07.028Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;依赖注入&quot;&gt;&lt;a href=&quot;#依赖注入&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="spring" scheme="http://dajienihao.cn/categories/spring/"/>
-    
-    
-      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
-    
-      <category term="依赖注入" scheme="http://dajienihao.cn/tags/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/"/>
-    
-      <category term="DI" scheme="http://dajienihao.cn/tags/DI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>String、StringBuffer和StringBuilder的区别</title>
-    <link href="http://dajienihao.cn/2020/02/22/string-stringbuffer-he-stringbuilder-de-qu-bie/"/>
-    <id>http://dajienihao.cn/2020/02/22/string-stringbuffer-he-stringbuilder-de-qu-bie/</id>
-    <published>2020-02-22T12:24:45.000Z</published>
-    <updated>2020-02-22T13:58:30.083Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;String-StringBuffer-StringBuilder三者的使用方法和区别&quot;&gt;&lt;a href=&quot;#String-StringBuffer-StringBuilder三者的使用方法和区别&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://dajienihao.cn/categories/java/"/>
-    
-    
-      <category term="StringBuffer" scheme="http://dajienihao.cn/tags/StringBuffer/"/>
-    
-      <category term="字符串" scheme="http://dajienihao.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="StringBuiler" scheme="http://dajienihao.cn/tags/StringBuiler/"/>
     
   </entry>
   
