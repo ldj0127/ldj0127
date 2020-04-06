@@ -2104,8 +2104,8 @@ String cookieValue<span class="token punctuation">)</span><span class="token pun
         <category>mybatis</category>
       </categories>
       <tags>
-        <tag>持久层框架</tag>
         <tag>mybatis</tag>
+        <tag>持久层框架</tag>
         <tag>多表查询</tag>
       </tags>
   </entry>
@@ -2270,8 +2270,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>配置</tag>
-        <tag>持久层框架</tag>
         <tag>mybatis</tag>
+        <tag>持久层框架</tag>
       </tags>
   </entry>
   <entry>
@@ -2419,8 +2419,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>配置</tag>
-        <tag>持久层框架</tag>
         <tag>mybatis</tag>
+        <tag>持久层框架</tag>
       </tags>
   </entry>
   <entry>
@@ -2464,8 +2464,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>后端</tag>
-        <tag>框架</tag>
         <tag>AOP</tag>
+        <tag>框架</tag>
       </tags>
   </entry>
   <entry>
