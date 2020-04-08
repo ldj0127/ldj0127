@@ -1,6 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>linux下安装mysql 5.7</title>
+    <url>/2020/04/08/linux-xia-an-zhuang-mysql5.7/</url>
+    <content><![CDATA[<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">下载地址</a><br><img src="http://qiniuyun.dajienihao.cn/image/0408/01.jpg" alt=""></p>
+<h2 id="xftp传输"><a href="#xftp传输" class="headerlink" title="xftp传输"></a>xftp传输</h2><p>这就不说了</p>
+<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><ol>
+<li>先创建个文件夹准备放解压后的文件<code>mkdir /usr/local/mysql</code></li>
+<li>然后到你存放刚才传输的目录<code>tar -zxvf mysql-5.7.29-linux-glibc2.12-x86_64.tar.gz  -C /usr/local/mysql/</code></li>
+<li>解压完后到解压的目录<code>cd /usr/local/mysql</code></li>
+<li>给文件夹改名<code>mv mysql-5.7.29-linux-glibc2.12-x86_64/ mysql</code></li>
+</ol>
+<h2 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h2><h3 id="1-进入安装mysql软件目录"><a href="#1-进入安装mysql软件目录" class="headerlink" title="1.进入安装mysql软件目录"></a>1.进入安装mysql软件目录</h3><p><code>cd /usr/local/mysql/mysql</code></p>
+<h3 id="2-创建数据仓库目录"><a href="#2-创建数据仓库目录" class="headerlink" title="2.创建数据仓库目录"></a>2.创建数据仓库目录</h3><ol>
+<li><code>mkdir /data</code></li>
+<li><code>mkdir /data/mysql</code></li>
+</ol>
+<h3 id="3-新建mysql用户、组及目录"><a href="#3-新建mysql用户、组及目录" class="headerlink" title="3.新建mysql用户、组及目录"></a>3.新建mysql用户、组及目录</h3><ol>
+<li>新建一个msyql组<code>groupadd mysql</code></li>
+<li>新建msyql用户禁止登录shell<code>useradd -r -s /sbin/nologin -g mysql mysql -d /usr/local/mysql/mysql</code></li>
+</ol>
+<h3 id="4-改变目录属有者"><a href="#4-改变目录属有者" class="headerlink" title="4.改变目录属有者"></a>4.改变目录属有者</h3><ol>
+<li><code>cd /usr/local/mysql</code></li>
+<li><code>chown -R mysql .</code></li>
+<li><code>chgrp -R mysql .</code><br>数据库目录<br><code>chown -R mysql /data/mysql</code></li>
+</ol>
+<h3 id="5-配置参数"><a href="#5-配置参数" class="headerlink" title="5.配置参数"></a>5.配置参数</h3><ol>
+<li><code>bin/mysqld --initialize --user=mysql --basedir=/usr/local/mysql/mysql --datadir=/data/mysql</code><br><img src="http://qiniuyun.dajienihao.cn/image/0408/02.jpg" alt=""><br>此处需要注意记录生成的临时密码,如上文fdaD%PVNj67S</li>
+<li><code>bin/mysql_ssl_rsa_setup --datadir=/data/mysql</code></li>
+</ol>
+<h3 id="6-修改系统配置文件"><a href="#6-修改系统配置文件" class="headerlink" title="6.修改系统配置文件"></a>6.修改系统配置文件</h3><ol>
+<li><code>cd /usr/local/mysql/mysql/support-files</code></li>
+<li><code>cp my-default.cnf /etc/my.cnf</code><blockquote>
+<p>这里没有话就跳过,去查看这个地址有没有my.cnf文件。如果就把权限改了<code>chmod 777 my.cnf</code></p>
+</blockquote>
+</li>
+<li><code>cp mysql.server /etc/init.d/mysql</code></li>
+<li><code>vim /etc/init.d/mysql</code>修改以下内容<br><img src="http://qiniuyun.dajienihao.cn/image/0408/03.jpg" alt=""></li>
+</ol>
+<h3 id="7-启动mysql"><a href="#7-启动mysql" class="headerlink" title="7.启动mysql"></a>7.启动mysql</h3><ol>
+<li><code>/etc/init.d/mysql start</code><blockquote>
+<p>如果无法启动执行下面命令<code>chmod 777 /etc/my.cnf</code>再执行<code>/etc/init.d/mysql start</code></p>
+</blockquote>
+</li>
+</ol>
+<p><img src="http://qiniuyun.dajienihao.cn/image/0408/04.jpg" alt="这就启动成功了"></p>
+<h3 id="8-登陆并改密码"><a href="#8-登陆并改密码" class="headerlink" title="8.登陆并改密码"></a>8.登陆并改密码</h3><ol>
+<li>登陆的bin目录下执行<code>mysql  -u root -p</code><blockquote>
+<p>如果出现：-bash: mysql: command not found 就执行：<code>ln -s /usr/local/mysql/mysql/bin/mysql /usr/bin</code> 没有出现就不用执行</p>
+</blockquote>
+</li>
+<li>然后键入刚才的临时密码 成功了</li>
+<li><code>set password=password(&#39;root&#39;);</code><br><img src="http://qiniuyun.dajienihao.cn/image/0408/05.jpg" alt=""></li>
+</ol>
+<h3 id="9-添加系统路径【为设置开机启动提供】"><a href="#9-添加系统路径【为设置开机启动提供】" class="headerlink" title="9.添加系统路径【为设置开机启动提供】"></a>9.添加系统路径【为设置开机启动提供】</h3><ol>
+<li><code>vim /etc/profile</code>添加：<code>export PATH=/usr/local/mysql/mysql/bin:$PATH</code><br><img src="http://qiniuyun.dajienihao.cn/image/0408/06.jpg" alt=""></li>
+<li><code>source /etc/profile</code></li>
+</ol>
+<h3 id="10-配置mysql自动启动"><a href="#10-配置mysql自动启动" class="headerlink" title="10.配置mysql自动启动"></a>10.配置mysql自动启动</h3><ol>
+<li>chmod 755 /etc/init.d/mysql</li>
+<li>chkconfig –add mysql</li>
+<li>chkconfig –level 345 mysql on</li>
+</ol>
+<h2 id="navcat连接远程的mysql"><a href="#navcat连接远程的mysql" class="headerlink" title="navcat连接远程的mysql"></a>navcat连接远程的mysql</h2><p>设置root账户的host地址（修改了才可以远程连接）</p>
+<ol>
+<li>mysql -uroot -p</li>
+<li>键入密码</li>
+<li>mysql&gt;grant all privileges on <em>.</em> to ‘root’@’%’ identified by ‘root’;</li>
+<li>mysql&gt;flush privileges;<br><img src="http://qiniuyun.dajienihao.cn/image/0408/07.jpg" alt=""></li>
+</ol>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>linux下安装tomcat</title>
     <url>/2020/04/08/linux-xia-an-zhuang-tomcat/</url>
     <content><![CDATA[<h2 id="jdk的安装"><a href="#jdk的安装" class="headerlink" title="jdk的安装"></a>jdk的安装</h2><p>这一步就不说了 现在centos7里jdk是安装好了的</p>
@@ -2162,8 +2240,8 @@ String cookieValue<span class="token punctuation">)</span><span class="token pun
         <category>mybatis</category>
       </categories>
       <tags>
-        <tag>持久层框架</tag>
         <tag>mybatis</tag>
+        <tag>持久层框架</tag>
         <tag>多表查询</tag>
       </tags>
   </entry>
@@ -2328,8 +2406,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>配置</tag>
-        <tag>持久层框架</tag>
         <tag>mybatis</tag>
+        <tag>持久层框架</tag>
       </tags>
   </entry>
   <entry>
@@ -2477,8 +2555,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>配置</tag>
-        <tag>持久层框架</tag>
         <tag>mybatis</tag>
+        <tag>持久层框架</tag>
       </tags>
   </entry>
   <entry>
@@ -2522,8 +2600,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>后端</tag>
-        <tag>框架</tag>
         <tag>AOP</tag>
+        <tag>框架</tag>
       </tags>
   </entry>
   <entry>
@@ -2945,8 +3023,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>java</category>
       </categories>
       <tags>
-        <tag>StringBuffer</tag>
         <tag>字符串</tag>
+        <tag>StringBuffer</tag>
         <tag>StringBuiler</tag>
       </tags>
   </entry>
@@ -2966,8 +3044,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>java</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>String</tag>
+        <tag>字符串</tag>
         <tag>常用方法</tag>
       </tags>
   </entry>

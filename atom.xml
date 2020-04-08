@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2020-04-08T05:56:59.869Z</updated>
+  <updated>2020-04-08T08:34:18.265Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux下安装mysql 5.7</title>
+    <link href="http://dajienihao.cn/2020/04/08/linux-xia-an-zhuang-mysql5.7/"/>
+    <id>http://dajienihao.cn/2020/04/08/linux-xia-an-zhuang-mysql5.7/</id>
+    <published>2020-04-08T08:30:45.000Z</published>
+    <updated>2020-04-08T08:34:18.265Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://dev.mysql.com/downloads/mysql/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://dajienihao.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://dajienihao.cn/tags/linux/"/>
+    
+      <category term="mysql" scheme="http://dajienihao.cn/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>linux下安装tomcat</title>
@@ -460,9 +489,9 @@
       <category term="mybatis" scheme="http://dajienihao.cn/categories/mybatis/"/>
     
     
-      <category term="持久层框架" scheme="http://dajienihao.cn/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
-    
       <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
+    
+      <category term="持久层框架" scheme="http://dajienihao.cn/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
       <category term="多表查询" scheme="http://dajienihao.cn/tags/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/"/>
     
@@ -493,9 +522,9 @@
     
       <category term="配置" scheme="http://dajienihao.cn/tags/%E9%85%8D%E7%BD%AE/"/>
     
-      <category term="持久层框架" scheme="http://dajienihao.cn/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
-    
       <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
+    
+      <category term="持久层框架" scheme="http://dajienihao.cn/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -524,9 +553,9 @@
     
       <category term="配置" scheme="http://dajienihao.cn/tags/%E9%85%8D%E7%BD%AE/"/>
     
-      <category term="持久层框架" scheme="http://dajienihao.cn/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
-    
       <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
+    
+      <category term="持久层框架" scheme="http://dajienihao.cn/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -584,38 +613,9 @@
     
       <category term="后端" scheme="http://dajienihao.cn/tags/%E5%90%8E%E7%AB%AF/"/>
     
-      <category term="框架" scheme="http://dajienihao.cn/tags/%E6%A1%86%E6%9E%B6/"/>
-    
       <category term="AOP" scheme="http://dajienihao.cn/tags/AOP/"/>
     
-  </entry>
-  
-  <entry>
-    <title>java环境的安装配置</title>
-    <link href="http://dajienihao.cn/2020/02/28/java-huan-jing-de-an-zhuang-ji-pei-zhi/"/>
-    <id>http://dajienihao.cn/2020/02/28/java-huan-jing-de-an-zhuang-ji-pei-zhi/</id>
-    <published>2020-02-28T01:24:45.000Z</published>
-    <updated>2020-02-28T02:57:02.657Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;java环境&quot;&gt;&lt;a href=&quot;#java环境&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://dajienihao.cn/categories/java/"/>
-    
-    
-      <category term="环境安装" scheme="http://dajienihao.cn/tags/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"/>
-    
-      <category term="jdk" scheme="http://dajienihao.cn/tags/jdk/"/>
+      <category term="框架" scheme="http://dajienihao.cn/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
