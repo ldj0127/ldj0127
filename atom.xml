@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2020-04-06T09:19:33.304Z</updated>
+  <updated>2020-04-08T05:56:59.869Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux下安装tomcat</title>
+    <link href="http://dajienihao.cn/2020/04/08/linux-xia-an-zhuang-tomcat/"/>
+    <id>http://dajienihao.cn/2020/04/08/linux-xia-an-zhuang-tomcat/</id>
+    <published>2020-04-08T06:30:45.000Z</published>
+    <updated>2020-04-08T05:56:59.869Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;jdk的安装&quot;&gt;&lt;a href=&quot;#jdk的安装&quot; class=&quot;headerlink&quot; title=&quot;jdk的安装&quot;&gt;&lt;/a&gt;jdk的安装&lt;/h2&gt;&lt;p&gt;这一步就不说了 现在centos7里jdk是安装好了的&lt;/p&gt;
+&lt;h2 id=&quot;下载tomcat&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://dajienihao.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://dajienihao.cn/tags/linux/"/>
+    
+      <category term="安装tomcat" scheme="http://dajienihao.cn/tags/%E5%AE%89%E8%A3%85tomcat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vm安装centos7</title>
+    <link href="http://dajienihao.cn/2020/04/07/vm-zhong-an-zhuang-centos7/"/>
+    <id>http://dajienihao.cn/2020/04/07/vm-zhong-an-zhuang-centos7/</id>
+    <published>2020-04-07T01:30:45.000Z</published>
+    <updated>2020-04-07T01:27:57.709Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;linux的安装&quot;&gt;&lt;a href=&quot;#linux的安装&quot; class=&quot;headerlink&quot; title=&quot;linux的安装&quot;&gt;&lt;/a&gt;linux的安装&lt;/h1&gt;&lt;h2 id=&quot;1-安装vmware&quot;&gt;&lt;a href=&quot;#1-安装vmware&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://dajienihao.cn/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://dajienihao.cn/tags/linux/"/>
+    
+      <category term="虚拟机" scheme="http://dajienihao.cn/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>mybatis-plus代码生成器</title>
@@ -401,9 +460,9 @@
       <category term="mybatis" scheme="http://dajienihao.cn/categories/mybatis/"/>
     
     
-      <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
-    
       <category term="持久层框架" scheme="http://dajienihao.cn/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
     
       <category term="多表查询" scheme="http://dajienihao.cn/tags/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/"/>
     
@@ -434,9 +493,9 @@
     
       <category term="配置" scheme="http://dajienihao.cn/tags/%E9%85%8D%E7%BD%AE/"/>
     
-      <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
-    
       <category term="持久层框架" scheme="http://dajienihao.cn/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
     
   </entry>
   
@@ -465,9 +524,9 @@
     
       <category term="配置" scheme="http://dajienihao.cn/tags/%E9%85%8D%E7%BD%AE/"/>
     
-      <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
-    
       <category term="持久层框架" scheme="http://dajienihao.cn/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="mybatis" scheme="http://dajienihao.cn/tags/mybatis/"/>
     
   </entry>
   
@@ -525,9 +584,9 @@
     
       <category term="后端" scheme="http://dajienihao.cn/tags/%E5%90%8E%E7%AB%AF/"/>
     
-      <category term="AOP" scheme="http://dajienihao.cn/tags/AOP/"/>
-    
       <category term="框架" scheme="http://dajienihao.cn/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="AOP" scheme="http://dajienihao.cn/tags/AOP/"/>
     
   </entry>
   
@@ -557,64 +616,6 @@
       <category term="环境安装" scheme="http://dajienihao.cn/tags/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"/>
     
       <category term="jdk" scheme="http://dajienihao.cn/tags/jdk/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>lombok的安装使用</title>
-    <link href="http://dajienihao.cn/2020/02/28/lombok-de-an-zhuang-shi-yong/"/>
-    <id>http://dajienihao.cn/2020/02/28/lombok-de-an-zhuang-shi-yong/</id>
-    <published>2020-02-28T00:24:45.000Z</published>
-    <updated>2020-02-28T01:22:34.100Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;lombok的安装使用&quot;&gt;&lt;a href=&quot;#lombok的安装使用&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="http://dajienihao.cn/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="idea" scheme="http://dajienihao.cn/tags/idea/"/>
-    
-      <category term="插件" scheme="http://dajienihao.cn/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring配置类注解</title>
-    <link href="http://dajienihao.cn/2020/02/26/spring-pei-zhi-lei-zhu-jie/"/>
-    <id>http://dajienihao.cn/2020/02/26/spring-pei-zhi-lei-zhu-jie/</id>
-    <published>2020-02-26T14:24:45.000Z</published>
-    <updated>2020-02-26T14:25:36.151Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Spring配置类注解&quot;&gt;&lt;a href=&quot;#Spring配置类注解&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="spring" scheme="http://dajienihao.cn/categories/spring/"/>
-    
-    
-      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
-    
-      <category term="注解" scheme="http://dajienihao.cn/tags/%E6%B3%A8%E8%A7%A3/"/>
     
   </entry>
   

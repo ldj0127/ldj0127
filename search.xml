@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>linux下安装tomcat</title>
+    <url>/2020/04/08/linux-xia-an-zhuang-tomcat/</url>
+    <content><![CDATA[<h2 id="jdk的安装"><a href="#jdk的安装" class="headerlink" title="jdk的安装"></a>jdk的安装</h2><p>这一步就不说了 现在centos7里jdk是安装好了的</p>
+<h2 id="下载tomcat"><a href="#下载tomcat" class="headerlink" title="下载tomcat"></a>下载tomcat</h2><p><img src="http://qiniuyun.dajienihao.cn/image/0408/1.jpg" alt=""><br>这里我把下载链接给大家<a href="https://tomcat.apache.org/download-80.cgi" target="_blank" rel="noopener">点击进入</a><br><img src="http://qiniuyun.dajienihao.cn/image/0408/2.jpg" alt=""><br>注意千万别下成图上框中的文件，下的是二进制带src的包，里边少了很多东西，后面是没法运行起来的。</p>
+<h2 id="使用xftp传输"><a href="#使用xftp传输" class="headerlink" title="使用xftp传输"></a>使用xftp传输</h2><p>这也没啥好说的</p>
+<h2 id="解压运行"><a href="#解压运行" class="headerlink" title="解压运行"></a>解压运行</h2><p>先创建个文件夹准备放解压后的文件<br><code>mkdir /usr/local/tomcat</code><br>然后到你存放刚才传输的目录<br><code>tar -zxvf apache-tomcat-8.5.53.tar.gz  -C /usr/local/tomcat/</code><br>解压完后到解压的目录<br><code>cd /usr/local/tomcat/apache-tomcat-8.5.53</code><br>然后执行 启动命令<br><code>bin/startup.sh</code><br>如果最后一句出现Tomcat started.就说明tomcat启动起来了</p>
+<h2 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h2><h3 id="查看防火墙状态"><a href="#查看防火墙状态" class="headerlink" title="查看防火墙状态"></a>查看防火墙状态</h3><p>使用<code>systemctl status firewalld.service</code>查看防火墙状态<br>如果是下面情况说明你的防火墙在开着。反之是在关着，就不用再看下面一步操作了。<br><img src="http://qiniuyun.dajienihao.cn/image/0408/3.jpg" alt="启动状态"></p>
+<h3 id="关闭防火墙-1"><a href="#关闭防火墙-1" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h3><p>使用<code>systemctl stop firewalld.service</code>命令关闭防火墙，再次使用上面查看防火墙的命令查看。如果是下面状态，说明防火墙已经关闭。<br><img src="http://qiniuyun.dajienihao.cn/image/0408/4.jpg" alt="关闭状态"></p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>输入你的ip加8080端口访问,出现下面界面就说明已经成功了。<br><img src="http://qiniuyun.dajienihao.cn/image/0408/5.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>安装tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vm安装centos7</title>
+    <url>/2020/04/07/vm-zhong-an-zhuang-centos7/</url>
+    <content><![CDATA[<h1 id="linux的安装"><a href="#linux的安装" class="headerlink" title="linux的安装"></a>linux的安装</h1><h2 id="1-安装vmware"><a href="#1-安装vmware" class="headerlink" title="1.安装vmware"></a>1.安装vmware</h2><p>安装软件应该是都会的这里就不说了</p>
+<h2 id="2-下载centos7镜像"><a href="#2-下载centos7镜像" class="headerlink" title="2.下载centos7镜像"></a>2.下载centos7镜像</h2><p><a href="http://mirrors.aliyun.com/centos/7/isos/x86_64/" target="_blank" rel="noopener">下载地址</a></p>
+<h2 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h2><p>选中下一步<br><img src="http://qiniuyun.dajienihao.cn/image/0407/1.png" alt=""></p>
+<h2 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h2><p>选中下一步<br><img src="http://qiniuyun.dajienihao.cn/image/0407/2.png" alt=""></p>
+<h2 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h2><p>选中下一步<br><img src="http://qiniuyun.dajienihao.cn/image/0407/3.png" alt=""></p>
+<h2 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h2><p>选中下一步<br><img src="http://qiniuyun.dajienihao.cn/image/0407/4.png" alt=""></p>
+<h2 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h2><p>选中下一步<br><img src="http://qiniuyun.dajienihao.cn/image/0407/5.png" alt=""></p>
+<h2 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h2><p><img src="http://qiniuyun.dajienihao.cn/image/0407/6.png" alt=""></p>
+<h2 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h2><p>选择下载的镜像文件的位置<br><img src="http://qiniuyun.dajienihao.cn/image/0407/7.png" alt=""></p>
+<h2 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h2><p>第一行回车<br><img src="http://qiniuyun.dajienihao.cn/image/0407/8.png" alt=""></p>
+<h2 id="11"><a href="#11" class="headerlink" title="11."></a>11.</h2><p><img src="http://qiniuyun.dajienihao.cn/image/0407/9.png" alt=""></p>
+<h2 id="12"><a href="#12" class="headerlink" title="12."></a>12.</h2><p>选择正确的时区，中国上海 调整时间<br><img src="http://qiniuyun.dajienihao.cn/image/0407/10.png" alt=""></p>
+<h2 id="13"><a href="#13" class="headerlink" title="13."></a>13.</h2><p><img src="http://qiniuyun.dajienihao.cn/image/0407/11.png" alt=""></p>
+<h2 id="14"><a href="#14" class="headerlink" title="14."></a>14.</h2><p>选中 完成<br><img src="http://qiniuyun.dajienihao.cn/image/0407/12.png" alt=""></p>
+<h2 id="15"><a href="#15" class="headerlink" title="15."></a>15.</h2><p><img src="http://qiniuyun.dajienihao.cn/image/0407/13.png" alt=""></p>
+<h2 id="16"><a href="#16" class="headerlink" title="16."></a>16.</h2><p>选中 完成<br><img src="http://qiniuyun.dajienihao.cn/image/0407/14.png" alt=""></p>
+<h2 id="17"><a href="#17" class="headerlink" title="17."></a>17.</h2><p><img src="http://qiniuyun.dajienihao.cn/image/0407/15.png" alt=""></p>
+<h2 id="18"><a href="#18" class="headerlink" title="18."></a>18.</h2><p>以上一步骤将框中的分别添加进去<br><img src="http://qiniuyun.dajienihao.cn/image/0407/16.png" alt=""></p>
+<h2 id="19"><a href="#19" class="headerlink" title="19."></a>19.</h2><p><img src="http://qiniuyun.dajienihao.cn/image/0407/17.png" alt=""></p>
+<h2 id="20"><a href="#20" class="headerlink" title="20."></a>20.</h2><p><img src="http://qiniuyun.dajienihao.cn/image/0407/18.png" alt=""></p>
+<h2 id="21"><a href="#21" class="headerlink" title="21."></a>21.</h2><p>打开网卡 完成<br><img src="http://qiniuyun.dajienihao.cn/image/0407/19.png" alt=""></p>
+<h2 id="22"><a href="#22" class="headerlink" title="22."></a>22.</h2><p>分别设置root账户密码 和创建用户<br><img src="http://qiniuyun.dajienihao.cn/image/0407/20.png" alt=""></p>
+<h2 id="23"><a href="#23" class="headerlink" title="23."></a>23.</h2><p><img src="http://qiniuyun.dajienihao.cn/image/0407/21.png" alt=""></p>
+<h2 id="24"><a href="#24" class="headerlink" title="24."></a>24.</h2><p>设置完成后 完成配置重启<br><img src="http://qiniuyun.dajienihao.cn/image/0407/22.png" alt=""></p>
+<h2 id="25"><a href="#25" class="headerlink" title="25."></a>25.</h2><p>第一次重启会进入这个页面<br><img src="http://qiniuyun.dajienihao.cn/image/0407/23.png" alt=""></p>
+<h2 id="26"><a href="#26" class="headerlink" title="26."></a>26.</h2><p><img src="http://qiniuyun.dajienihao.cn/image/0407/24.png" alt=""></p>
+<h2 id="27"><a href="#27" class="headerlink" title="27."></a>27.</h2><p>进到此页面输入密码即可<br><img src="http://qiniuyun.dajienihao.cn/image/0407/666.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>虚拟机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mybatis-plus代码生成器</title>
     <url>/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/</url>
     <content><![CDATA[<h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>dependency<span class="token operator">></span>
@@ -2104,8 +2162,8 @@ String cookieValue<span class="token punctuation">)</span><span class="token pun
         <category>mybatis</category>
       </categories>
       <tags>
-        <tag>mybatis</tag>
         <tag>持久层框架</tag>
+        <tag>mybatis</tag>
         <tag>多表查询</tag>
       </tags>
   </entry>
@@ -2270,8 +2328,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>配置</tag>
-        <tag>mybatis</tag>
         <tag>持久层框架</tag>
+        <tag>mybatis</tag>
       </tags>
   </entry>
   <entry>
@@ -2419,8 +2477,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>配置</tag>
-        <tag>mybatis</tag>
         <tag>持久层框架</tag>
+        <tag>mybatis</tag>
       </tags>
   </entry>
   <entry>
@@ -2464,8 +2522,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>后端</tag>
-        <tag>AOP</tag>
         <tag>框架</tag>
+        <tag>AOP</tag>
       </tags>
   </entry>
   <entry>
