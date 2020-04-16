@@ -1,6 +1,267 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Redis简介及常用命令</title>
+    <url>/2020/04/14/redis-jian-jie-ji-chang-yong-ming-ling/</url>
+    <content><![CDATA[<h2 id="1-Redis简介"><a href="#1-Redis简介" class="headerlink" title="1. Redis简介"></a>1. Redis简介</h2><h3 id="1-1-Redis简介"><a href="#1-1-Redis简介" class="headerlink" title="1.1 Redis简介"></a>1.1 Redis简介</h3><p>Redis:Remote Dictionary Server(远程字典服务器)<br>Redis是当前比较热门的NOSQL系统之一，它是一个开源的使用ANSI c语言编写的key-value存储系统（区别于MySQL的二维表格的形式储）。和Memcache类似，但很大程度补偿了Memcache的不足。和Memcache一样，Redis数据都是缓存在计算机内存中，不同的是，Memcache只能将数据缓存到内存中，无法自动定期写入硬盘，这就表示，一断电或重启，内存清空，数据丢失。所以Memcache的应用场景适用于缓存无需持久化的数据。而Redis不同的是它会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，实现数据的持久化</p>
+<h3 id="1-2-Redis的特点"><a href="#1-2-Redis的特点" class="headerlink" title="1.2 Redis的特点"></a>1.2 Redis的特点</h3><ol>
+<li>Redis读取的速度是110000次/s，写的速度是81000次/s</li>
+<li>原子 。Redis的所有操作都是原子性的，同时Redis还支持对几个操作全并后的原子性执行。</li>
+<li>支持多种数据结构：string（字符串）；list（列表）；hash（哈希），set（集合）；zset(有序集合)</li>
+<li>持久化，主从复制（集群）</li>
+<li>支持过期时间，支持事务，消息订阅。</li>
+<li>官方不支持window,但是又第三方版本。</li>
+</ol>
+<h3 id="1-3-Redis的应用场景"><a href="#1-3-Redis的应用场景" class="headerlink" title="1.3 Redis的应用场景"></a>1.3 Redis的应用场景</h3><h4 id="1-3-1-数据缓存（提高访问性能）"><a href="#1-3-1-数据缓存（提高访问性能）" class="headerlink" title="1.3.1 数据缓存（提高访问性能）"></a>1.3.1 数据缓存（提高访问性能）</h4><p>将一些数据在短时间之内不会发生变化，而且它们还要被频繁访问，为了提高用户的请求速度和降低网站的负载，降低数据库的读写次数，就把这些数据放到缓存中。</p>
+<h4 id="1-3-2-会话缓存"><a href="#1-3-2-会话缓存" class="headerlink" title="1.3.2 会话缓存"></a>1.3.2 会话缓存</h4><p>session cache，保存web会话信息</p>
+<h4 id="1-3-3-排行榜-计数器"><a href="#1-3-3-排行榜-计数器" class="headerlink" title="1.3.3 排行榜/计数器"></a>1.3.3 排行榜/计数器</h4><p>NGINX+lua+redis计数器进行IP自动封禁</p>
+<h4 id="1-3-4消息队列"><a href="#1-3-4消息队列" class="headerlink" title="1.3.4消息队列"></a>1.3.4消息队列</h4><p>构建实时消息系统，聊天，群聊</p>
+<h2 id="2-redis的数据类型"><a href="#2-redis的数据类型" class="headerlink" title="2. redis的数据类型"></a>2. redis的数据类型</h2><p>使用Redis进行应用设计和开发的一个核心概念是数据类型。与关系数据库不同，在Redis中不存在需要我们担心的表，在使用Redis进行应用设计和开发时，我们首先应该考虑的是Redis原生支持的哪种数据类型阳适合我们的应该场景，此外，我们无法像在关系数据库中那样，使用sql来操作Redis中的数据，相反，我们需要直接使用API发送数据反对应的命令，来操作想要操作的数据</p>
+<h3 id="2-1-字符串类型"><a href="#2-1-字符串类型" class="headerlink" title="2.1 字符串类型"></a>2.1 字符串类型</h3><p><code>Map&lt;String,String&gt;</code><br>字符串类型是编程语言和应用程序中最常见和最有用的数据类型，也是Redis的基本数据类型之一，事实上，Redis中所有键都必须是字符串。</p>
+<h3 id="2-2-list数据类型"><a href="#2-2-list数据类型" class="headerlink" title="2.2 list数据类型"></a>2.2 list数据类型</h3><p><code>Map&lt;String,List&lt;Object&gt;&gt;</code><br>列表是应用我只是应该程序开发中非常有用的数据类型之一，列表能存在一组对象，因此它也可以被用于栈或者队列，在Redis中，与键相关的联的值可以是字符串组成的列表，Redis中的列表更像是数据结构中的双向链表。</p>
+<h3 id="2-3-hash数据类型"><a href="#2-3-hash数据类型" class="headerlink" title="2.3 hash数据类型"></a>2.3 hash数据类型</h3><p><code>Map&lt;String,Map&lt;Object,Object&gt;&gt;</code><br>哈希表示字段和值之间的映射关系，与JAVA中的Map类似，Redis数据集本身就可以看做一个哈希，其中字符串类型的键关联到如字符串和列表之类的数据对象，而Reidis的数据对象也可以再次使用哈希，其字段和值必须 是字符串。</p>
+<h3 id="2-4-set数据类型"><a href="#2-4-set数据类型" class="headerlink" title="2.4 set数据类型"></a>2.4 set数据类型</h3><p><code>Map&lt;String,Set&lt;Object,Object&gt;&gt;</code><br>集合类型是由唯一，无序对象组成的集合(collection).它经常用于测试某个成员是集合中，重复项删除和集合运算（求并，交，差集），Redis的值对象可以是字符串集合。</p>
+<h3 id="2-5-zset-sortset-数据类型"><a href="#2-5-zset-sortset-数据类型" class="headerlink" title="2.5 zset(sortset)数据类型"></a>2.5 zset(sortset)数据类型</h3><p>有序集合是一个类似于set但是更复杂的数据类型,单词sorted意为着这种集合中的每个元素都有一个可用于排序的权重，并且我们可以按顺序从集合中得到元素在某些需要一个保持数据有序的场景中，使用这种原生的序的特性是很方便的。</p>
+<h2 id="3-Redis的相关命令详解"><a href="#3-Redis的相关命令详解" class="headerlink" title="3. Redis的相关命令详解"></a>3. Redis的相关命令详解</h2><p>关于命令的学习查询看这个网站<a href="">http://www.redis.net.cn/order/</a> </p>
+<h3 id="3-1-常用命令"><a href="#3-1-常用命令" class="headerlink" title="3.1 常用命令"></a>3.1 常用命令</h3><pre><code>keys * 获取所有的key
+select 0 选择第一个库
+move myString 1 将当前的数据库key移动到某个数据库,目标库有，则不能移动
+flushdb 清除指定库
+randomkey  从当前数据库中随机返回
+type key 类型
+del key1 删除key
+exists key 判断是否存在key
+expire key 10 10过期
+pexpire key 1000 毫秒
+persist key 删除过期时间
+ttl key 查看还有多少秒过期，-1表示永不过期，-2表示已过期</code></pre><h3 id="3-2-string"><a href="#3-2-string" class="headerlink" title="3.2 string"></a>3.2 string</h3><pre><code>set name cxx
+get name
+getrange name 0 -1 字符串分段   0 -1是全部   0 -2  ==n-1
+getset name new_cxx 设置值，返回旧值
+mset key1 key2 批量设置
+mget key1 key2 批量获取
+setnx key value 不存在就插入（not exists）
+setrange key index value 从index开始替换value
+incr age 递增
+incrby age 10 递增
+decr age 递减
+decrby age 10 递减
+incrbyfloat 增减浮点数
+append 追加
+strlen 长度
+object encoding key  得到key 的类型  string里面有三种编码
+        int  用于能够副作用64位有符号整数表示的字符串
+        embstr 用于长度小于或等于44字节  Redis3.x中是39字节，这种类型的编码在内存使用时性能更好
+        raw  用于长度大于44字节的</code></pre><h3 id="3-3-list"><a href="#3-3-list" class="headerlink" title="3.3 list"></a>3.3 list</h3><pre><code>lpush mylist a b c 左插入
+rpush mylist x y z 右插入
+lrange mylist 0 -1 取出数据集合  0 -1是取出所有   0   1取第第一个和第二个
+lpop mylist 弹出集合最后一个元素  弹出之后就没有了哦
+rpop mylist 弹出第一个元素  弹出之后就没有了哦
+llen mylist 长度  
+lrem mylist count value 删除
+    |-COUNT 的值可以是以下几种：
+        |--count &amp;gt; 0 : 从表头开始向表尾搜索，移除与 VALUE 相等的元素，数量为 COUNT 。
+        |--count &amp;lt; 0 : 从表尾开始向表头搜索，移除与 VALUE 相等的元素，数量为 COUNT 的绝对值。
+        |--count = 0 : 移除表中所有与 VALUE 相等的值。
+lindex mylist 2 指定索引的值
+lset mylist 2 n 索引设值
+ltrim mylist 0 4   
+        |--对一个列表进行修剪(trim)，就是说，让列表只保留指定区间内的元素，不在指定区间之内的元素都将被删除。下标 0 表示列表的第一个元素，以 1 表示列表的第二个元素，以此类推。 你也可以使用负数下标，以 -1 表示列表的最后一个元素， -2 表示列表的倒数第二个元素，以此类推。
+linsert mylist before a 插入
+linsert mylist after a 插入
+        |--命令用于在列表的元素前或者后插入元素。 当指定元素不存在于列表中时，不执行任何操作。 当列             表不存在时，被视为空列表，不执行任何操作。 如果 key 不是列表类型，返回一个错误。
+rpoplpush list list2 转移列表的数据
+        |--命令用于移除列表的最后一个元素，并将该元素添加到另一个列表并返回。</code></pre><h3 id="3-4-hash"><a href="#3-4-hash" class="headerlink" title="3.4 hash"></a>3.4 hash</h3><pre><code> hset myhash name cxx
+     |--命令用于为哈希表中的字段赋值 。
+        |--如果哈希表不存在，一个新的哈希表被创建并进行 HSET 操作。
+        |--如果字段已经存在于哈希表中，旧值将被覆盖。
+hget myhash name
+hmset myhash name cxx age 25 note &quot;i am notes&quot;
+hmget myhash name age note   
+hgetall myhash 获取所有的
+hexists myhash name 是否存在
+hsetnx myhash score 100 设置不存在的
+hincrby myhash id 1 递增
+hdel myhash name 删除
+hkeys myhash 只取key
+hvals myhash 只取value
+hlen myhash 长度</code></pre><h3 id="3-5-set"><a href="#3-5-set" class="headerlink" title="3.5 set"></a>3.5 set</h3><pre><code>  sadd myset redis 
+smembers myset 数据集合
+srem myset set1 删除
+sismember myset set1 判断元素是否在集合中
+scard key_name 个数
+sdiff | sinter | sunion 操作：集合间运算：差集 | 交集 | 并集
+srandmember 随机获取集合中的元素
+spop 从集合中弹出一个元素</code></pre><h3 id="3-6-zset"><a href="#3-6-zset" class="headerlink" title="3.6 zset"></a>3.6 zset</h3><pre><code>zadd zset 1 one
+zadd zset 2 two
+zadd zset 3 three
+zincrby zset 1 one 增长分数
+zscore zset two 获取分数
+zrange zset 0 -1 withscores 范围值
+zrangebyscore zset 10 25 withscores 指定范围的值
+zrangebyscore zset 10 25 withscores limit 1 2 分页
+Zrevrangebyscore zset 10 25 withscores 指定范围的值
+zcard zset 元素数量
+Zcount zset 获得指定分数范围内的元素个数
+Zrem zset one two 删除一个或多个元素
+Zremrangebyrank zset 0 1 按照排名范围删除元素
+Zremrangebyscore zset 0 1 按照分数范围删除元素
+Zrank zset 0 -1 分数最小的元素排名为0
+Zrevrank zset 0 -1 分数最大的元素排名为0
+Zinterstore
+zunionstore rank:last_week 7 rank:20150323 rank:20150324 rank:20150325 weights 1 1 1 1 1 1 1</code></pre>]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis的安装</title>
+    <url>/2020/04/13/linux-an-zhuang-redis/</url>
+    <content><![CDATA[<h2 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h2><p><a href="https://redis.io/" target="_blank" rel="noopener">下载地址</a></p>
+<h2 id="2-文件传输"><a href="#2-文件传输" class="headerlink" title="2.文件传输"></a>2.文件传输</h2><p>这没啥好说的了</p>
+<h2 id="3-解压"><a href="#3-解压" class="headerlink" title="3.解压"></a>3.解压</h2><p><code>tar -zxvf redis-5.0.8.tar.gz</code></p>
+<h2 id="4-拷贝"><a href="#4-拷贝" class="headerlink" title="4.拷贝"></a>4.拷贝</h2><p><code>cp -r /root/download/redis-5.0.8 /usr/local/src/redis</code></p>
+<h2 id="5-编译依赖项"><a href="#5-编译依赖项" class="headerlink" title="5.编译依赖项"></a>5.编译依赖项</h2><ol>
+<li><code>cd /usr/local/src/redis/deps/</code></li>
+<li><code>make hiredis jemalloc lua linenoise</code></li>
+</ol>
+<h2 id="6-进行编译"><a href="#6-进行编译" class="headerlink" title="6.进行编译"></a>6.进行编译</h2><ol>
+<li><code>cd /usr/local/src/redis</code></li>
+<li><code>make</code></li>
+</ol>
+<h2 id="7-安装"><a href="#7-安装" class="headerlink" title="7.安装"></a>7.安装</h2><ol>
+<li><code>mkdir /usr/local/redis</code></li>
+<li><code>make install PREFIX=/usr/local/redis</code></li>
+</ol>
+<h2 id="8-验证安装是否成功"><a href="#8-验证安装是否成功" class="headerlink" title="8.验证安装是否成功"></a>8.验证安装是否成功</h2><ol>
+<li><code>cd /usr/local/redis/bin</code></li>
+<li><code>ls</code><br>看到如下启动文件就可以了<br><img src="http://qiniuyun.dajienihao.cn/image/0413/1.png" alt=""><br>使用which命令查看系统里面是否有redis的服务<br><code>which redis-server</code><br><img src="http://qiniuyun.dajienihao.cn/image/0413/2.png" alt="显示为没有"></li>
+</ol>
+<h2 id="9-把配置文件移动到-root-myredis目录"><a href="#9-把配置文件移动到-root-myredis目录" class="headerlink" title="9.把配置文件移动到/root/myredis目录"></a>9.把配置文件移动到/root/myredis目录</h2><ol>
+<li><code>mkdir /root/myredis</code></li>
+<li><code>cp /usr/local/src/redis/redis.conf /root/myredis</code></li>
+</ol>
+<h2 id="10-启动Redis"><a href="#10-启动Redis" class="headerlink" title="10.启动Redis"></a>10.启动Redis</h2><ol>
+<li><code>cd /usr/local/redis/bin</code></li>
+<li><code>./redis-server /root/myredis/redis.conf</code></li>
+</ol>
+<h2 id="11-修改后台运行"><a href="#11-修改后台运行" class="headerlink" title="11.修改后台运行"></a>11.修改后台运行</h2><p>默认情况，Redis不是在后台运行，我们需要把redis放在后台运行<br><code>vim /root/myredis/redis.conf</code><br><img src="http://qiniuyun.dajienihao.cn/image/0413/3.png" alt="将no改为yes"></p>
+<h2 id="12-再次启动查看进程"><a href="#12-再次启动查看进程" class="headerlink" title="12.再次启动查看进程"></a>12.再次启动查看进程</h2><ol>
+<li><code>./redis-server /usr/myredis/redis.conf</code></li>
+<li>查看进程<code>ps -ef|grep redis</code>可以看到在6379端口号已启动了redis</li>
+</ol>
+<h2 id="13-客户端链接和退出"><a href="#13-客户端链接和退出" class="headerlink" title="13.客户端链接和退出"></a>13.客户端链接和退出</h2><h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><p>cd /usr/local/redis/bin<br>./redis-cli  默认是-h 127.0.0.1 -p 6379 </p>
+<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><p>quit</p>
+<h2 id="14-开机自启Redis的配置"><a href="#14-开机自启Redis的配置" class="headerlink" title="14.开机自启Redis的配置"></a>14.开机自启Redis的配置</h2><ol>
+<li>vim /etc/rc.local</li>
+<li>加入<code>/usr/local/redis/bin/redis-server /usr/myredis/redis-conf</code></li>
+</ol>
+<h2 id="15-bin目录的文件说明"><a href="#15-bin目录的文件说明" class="headerlink" title="15.bin目录的文件说明"></a>15.bin目录的文件说明</h2><ul>
+<li>redis-benchmark：redis性能测试工具</li>
+<li>redis-check-aof：检查aof日志的工具</li>
+<li>redis-check-rdb：检查rdb日志的工具</li>
+<li>redis-cli：连接用的客户端</li>
+<li>redis-server：redis服务进程</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker的安装</title>
+    <url>/2020/04/10/docker-de-an-zhuang/</url>
+    <content><![CDATA[<h2 id="1-Docker-下载"><a href="#1-Docker-下载" class="headerlink" title="1.Docker 下载"></a>1.Docker 下载</h2><p>官网 <a href="http://www.docker.com" target="_blank" rel="noopener">http://www.docker.com</a><br>仓库  <a href="https://hub.docker.com" target="_blank" rel="noopener">https://hub.docker.com</a></p>
+<h2 id="2-Docker-安装前提说明"><a href="#2-Docker-安装前提说明" class="headerlink" title="2.Docker 安装前提说明"></a>2.Docker 安装前提说明</h2><h3 id="2-1-CentOS-Docker-安装"><a href="#2-1-CentOS-Docker-安装" class="headerlink" title="2.1 CentOS Docker 安装"></a>2.1 CentOS Docker 安装</h3><p>Docker支持以下的CentOS版本：</p>
+<ul>
+<li>CentOS 7 (64-bit)</li>
+<li>CentOS 6.5 (64-bit) 或更高的版本</li>
+</ul>
+<h3 id="2-2-前提条件"><a href="#2-2-前提条件" class="headerlink" title="2.2 前提条件"></a>2.2 前提条件</h3><p>目前，CentOS 仅发行版本中的内核支持 Docker。</p>
+<ul>
+<li>Docker 运行在 CentOS 7 上，要求系统为64位、系统内核版本为 3.10以上。[我们基于7以上的版本来讲的哦]。</li>
+<li>Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64位、系统内核版本为 2.6.32-431 或者更高版本。</li>
+</ul>
+<h3 id="2-3-查看自己的内核"><a href="#2-3-查看自己的内核" class="headerlink" title="2.3 查看自己的内核"></a>2.3 查看自己的内核</h3><p>uname命令用于打印当前系统相关信息（内核版本号、硬件架构、主机名称和操作系统类型等）。<br><code>uname -r</code> </p>
+<blockquote>
+<p>注意在centos6.5下面也可以安装。但是有点麻烦。想装的可以自己去查资源</p>
+</blockquote>
+<h2 id="3-docker安装"><a href="#3-docker安装" class="headerlink" title="3.docker安装"></a>3.docker安装</h2><h3 id="3-1-centos下安装Docker文档"><a href="#3-1-centos下安装Docker文档" class="headerlink" title="3.1 centos下安装Docker文档"></a>3.1 centos下安装Docker文档</h3><p><a href="https://docs.docker.com/engine/install/" target="_blank" rel="noopener">https://docs.docker.com/engine/install/</a></p>
+<h3 id="3-2-安装"><a href="#3-2-安装" class="headerlink" title="3.2 安装"></a>3.2 安装</h3><h4 id="3-2-1-确定是centos7的版本"><a href="#3-2-1-确定是centos7的版本" class="headerlink" title="3.2.1 确定是centos7的版本"></a>3.2.1 确定是centos7的版本</h4><h4 id="3-2-2-yum安装gcc相关"><a href="#3-2-2-yum安装gcc相关" class="headerlink" title="3.2.2 yum安装gcc相关"></a>3.2.2 yum安装gcc相关</h4><ol>
+<li><code>yum -y install gcc</code></li>
+<li><code>yum -y install gcc-c++</code></li>
+</ol>
+<h4 id="3-2-3-安装方法"><a href="#3-2-3-安装方法" class="headerlink" title="3.2.3 安装方法"></a>3.2.3 安装方法</h4><p> <code>yum install docker</code></p>
+<h4 id="3-2-4-启动docker"><a href="#3-2-4-启动docker" class="headerlink" title="3.2.4 启动docker"></a>3.2.4 启动docker</h4><p><code>systemctl start docker</code><br><code>systemctl enable docker</code> 开机自启</p>
+<h4 id="3-2-5-查看版本"><a href="#3-2-5-查看版本" class="headerlink" title="3.2.5 查看版本"></a>3.2.5 查看版本</h4><p><code>docker version</code></p>
+<h2 id="4-测试运行-hello-world"><a href="#4-测试运行-hello-world" class="headerlink" title="4.测试运行 hello-world"></a>4.测试运行 hello-world</h2><p> <code>docker run hello-world</code><br>由于本地没有hello-world这个镜像，所以会下载一个hello-world的镜像，并在容器内运行。</p>
+<h2 id="5-测试运行nginx"><a href="#5-测试运行nginx" class="headerlink" title="5.测试运行nginx"></a>5.测试运行nginx</h2><ol>
+<li>拉取下来<code>docker pull nginx</code></li>
+<li>启动<code>docker run -d -p 80:80 nginx</code> 将端口映射为80,不可以不写。</li>
+</ol>
+<p>测试访问<a href="http://192.168.247.129:80" target="_blank" rel="noopener">http://192.168.247.129:80</a></p>
+<h2 id="6-docker加速配置"><a href="#6-docker加速配置" class="headerlink" title="6.docker加速配置"></a>6.docker加速配置</h2><h3 id="为什么要加速"><a href="#为什么要加速" class="headerlink" title="为什么要加速"></a>为什么要加速</h3><p>因为docker的运行需要在本地有相关的镜像，如果本地没有，就会去镜像仓库里面下载到本地，再运行，有时候下载比较慢，所以要配置镜像加速<br>阿里云的加速。</p>
+<ol>
+<li>编辑<code>vim /etc/docker/daemon.json</code></li>
+<li>添加<code>&quot;registry-mirrors&quot;: [&quot;https://o26dr81d.mirror.aliyuncs.com&quot;]</code></li>
+<li>刷新<code>systemctl daemon-reload</code></li>
+<li>重启<code>systemctl restart docker</code></li>
+</ol>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>docker</tag>
+        <tag>容器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux下安装nginx</title>
+    <url>/2020/04/09/linux-xia-an-zhuang-nginx/</url>
+    <content><![CDATA[<h2 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h2><p><a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">下载地址</a></p>
+<h2 id="2-先安装nginx依赖的包"><a href="#2-先安装nginx依赖的包" class="headerlink" title="2.先安装nginx依赖的包"></a>2.先安装nginx依赖的包</h2><h3 id="2-1-gcc"><a href="#2-1-gcc" class="headerlink" title="2.1 gcc"></a>2.1 gcc</h3><p>安装nginx需要先将官网下载的源码进行编译，编译依赖gcc环境，如果没有gcc环境，需要安装gcc。<br><code>Yum install gcc-c++</code></p>
+<h3 id="2-2-PCRE"><a href="#2-2-PCRE" class="headerlink" title="2.2 PCRE"></a>2.2 PCRE</h3><p>PCRE(Perl Compatible Regular Expressions)是一个Perl库，包括 perl 兼容的正则表达式库。nginx的http模块使用pcre来解析正则表达式，所以需要在linux上安装pcre库。<br><code>yum install -y pcre pcre-devel</code></p>
+<h3 id="2-3-zlib"><a href="#2-3-zlib" class="headerlink" title="2.3 zlib"></a>2.3 zlib</h3><p>zlib库提供了很多种压缩和解压缩的方式，nginx使用zlib对http包的内容进行gzip，所以需要在linux上安装zlib库。<br><code>yum install -y zlib zlib-devel</code></p>
+<h3 id="2-4-openssl"><a href="#2-4-openssl" class="headerlink" title="2.4 openssl"></a>2.4 openssl</h3><p>OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用程序供测试或其它目的使用。 nginx不仅支持http协议，还支持https（即在ssl协议上传输http），所以需要在linux安装openssl库。<br> <code>yum install -y openssl openssl-devel</code></p>
+<h2 id="3-上传nginx到linux"><a href="#3-上传nginx到linux" class="headerlink" title="3.上传nginx到linux"></a>3.上传nginx到linux</h2><p>这就不说了</p>
+<h2 id="4-解压拷贝"><a href="#4-解压拷贝" class="headerlink" title="4.解压拷贝"></a>4.解压拷贝</h2><ol>
+<li>解压nginx-1.16.1.tar.gz包<code>tar -zxvf nginx-1.16.1.tar.gz</code></li>
+<li>修改文件夹的名字<code>mv nginx-1.16.1 nginx</code></li>
+<li>把nginx拷贝到/usr/local/src里面<code>cp -r nginx /usr/local/src</code></li>
+</ol>
+<h2 id="5-安装"><a href="#5-安装" class="headerlink" title="5.安装"></a>5.安装</h2><ol>
+<li>进入nginx的目录<code>cd /usr/local/src/nginx</code></li>
+<li>创建nginx的安装目录<code>mkdir  /usr/nginx</code></li>
+<li>运行configure<code>./configure --prefix=/usr/nginx</code>(指定安装目录编译)</li>
+<li>make编译<code>make</code></li>
+<li>编译安装<code>make install</code></li>
+</ol>
+<h2 id="6-Nginx的目录说明"><a href="#6-Nginx的目录说明" class="headerlink" title="6.Nginx的目录说明"></a>6.Nginx的目录说明</h2><p><strong>conf</strong>:配置目录<br><strong>html</strong>:静态文件[cdn加速]<br><strong>logs</strong>:日志目录<br><strong>sbin</strong>:执行文件</p>
+<h2 id="7-Nginx的启动、停止"><a href="#7-Nginx的启动、停止" class="headerlink" title="7.Nginx的启动、停止"></a>7.Nginx的启动、停止</h2><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><ol>
+<li><code>cd /usr/nginx/sbin</code></li>
+<li><code>./nginx</code>  </li>
+</ol>
+<h3 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h3><p><code>./nginx -s stop</code></p>
+<h3 id="刷新-当用户修改了conf-nginx-conf"><a href="#刷新-当用户修改了conf-nginx-conf" class="headerlink" title="刷新[当用户修改了conf/nginx.conf]"></a>刷新[当用户修改了conf/nginx.conf]</h3><p> <code>./nginx -s reload</code></p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>linux下安装mysql 5.7</title>
     <url>/2020/04/08/linux-xia-an-zhuang-mysql5.7/</url>
     <content><![CDATA[<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">下载地址</a><br><img src="http://qiniuyun.dajienihao.cn/image/0408/01.jpg" alt=""></p>
@@ -662,19 +923,47 @@ create table <span class="token function">account</span><span class="token punct
         <span class="token operator">&lt;</span>project<span class="token punctuation">.</span>build<span class="token punctuation">.</span>sourceEncoding<span class="token operator">></span>UTF<span class="token operator">-</span><span class="token number">8</span><span class="token operator">&lt;</span><span class="token operator">/</span>project<span class="token punctuation">.</span>build<span class="token punctuation">.</span>sourceEncoding<span class="token operator">></span>
         <span class="token operator">&lt;</span>maven<span class="token punctuation">.</span>compiler<span class="token punctuation">.</span>source<span class="token operator">></span><span class="token number">1.8</span><span class="token operator">&lt;</span><span class="token operator">/</span>maven<span class="token punctuation">.</span>compiler<span class="token punctuation">.</span>source<span class="token operator">></span>
         <span class="token operator">&lt;</span>maven<span class="token punctuation">.</span>compiler<span class="token punctuation">.</span>target<span class="token operator">></span><span class="token number">1.8</span><span class="token operator">&lt;</span><span class="token operator">/</span>maven<span class="token punctuation">.</span>compiler<span class="token punctuation">.</span>target<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>版本锁定<span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>spring<span class="token punctuation">.</span>version<span class="token operator">></span><span class="token number">5.0</span><span class="token punctuation">.</span><span class="token number">2</span><span class="token punctuation">.</span>RELEASE<span class="token operator">&lt;</span><span class="token operator">/</span>spring<span class="token punctuation">.</span>version<span class="token operator">></span>
         <span class="token operator">&lt;</span>slf4j<span class="token punctuation">.</span>version<span class="token operator">></span><span class="token number">1.6</span><span class="token punctuation">.</span><span class="token number">6</span><span class="token operator">&lt;</span><span class="token operator">/</span>slf4j<span class="token punctuation">.</span>version<span class="token operator">></span>
         <span class="token operator">&lt;</span>log4j<span class="token punctuation">.</span>version<span class="token operator">></span><span class="token number">1.2</span><span class="token punctuation">.</span><span class="token number">12</span><span class="token operator">&lt;</span><span class="token operator">/</span>log4j<span class="token punctuation">.</span>version<span class="token operator">></span>
-        <span class="token operator">&lt;</span>mysql<span class="token punctuation">.</span>version<span class="token operator">></span><span class="token number">5.1</span><span class="token punctuation">.</span><span class="token number">6</span><span class="token operator">&lt;</span><span class="token operator">/</span>mysql<span class="token punctuation">.</span>version<span class="token operator">></span>
-        <span class="token operator">&lt;</span>mybatis<span class="token punctuation">.</span>version<span class="token operator">></span><span class="token number">3.4</span><span class="token punctuation">.</span><span class="token number">5</span><span class="token operator">&lt;</span><span class="token operator">/</span>mybatis<span class="token punctuation">.</span>version<span class="token operator">></span>
+        <span class="token operator">&lt;</span>spring<span class="token punctuation">.</span>version<span class="token operator">></span><span class="token number">5.2</span><span class="token punctuation">.</span><span class="token number">4</span><span class="token punctuation">.</span>RELEASE<span class="token operator">&lt;</span><span class="token operator">/</span>spring<span class="token punctuation">.</span>version<span class="token operator">></span>
+        <span class="token operator">&lt;</span>mysql<span class="token punctuation">.</span>version<span class="token operator">></span><span class="token number">5.1</span><span class="token punctuation">.</span><span class="token number">47</span><span class="token operator">&lt;</span><span class="token operator">/</span>mysql<span class="token punctuation">.</span>version<span class="token operator">></span>
+        <span class="token operator">&lt;</span>mybatis<span class="token punctuation">.</span>version<span class="token operator">></span><span class="token number">3.5</span><span class="token punctuation">.</span><span class="token number">4</span><span class="token operator">&lt;</span><span class="token operator">/</span>mybatis<span class="token punctuation">.</span>version<span class="token operator">></span>
+        <span class="token operator">&lt;</span>druid<span class="token punctuation">.</span>version<span class="token operator">></span><span class="token number">1.1</span><span class="token punctuation">.</span><span class="token number">22</span><span class="token operator">&lt;</span><span class="token operator">/</span>druid<span class="token punctuation">.</span>version<span class="token operator">></span>
+        <span class="token operator">&lt;</span>lombok<span class="token punctuation">.</span>version<span class="token operator">></span><span class="token number">1.18</span><span class="token punctuation">.</span><span class="token number">12</span><span class="token operator">&lt;</span><span class="token operator">/</span>lombok<span class="token punctuation">.</span>version<span class="token operator">></span>
+        <span class="token operator">&lt;</span>junit<span class="token punctuation">.</span>version<span class="token operator">></span><span class="token number">4.12</span><span class="token operator">&lt;</span><span class="token operator">/</span>junit<span class="token punctuation">.</span>version<span class="token operator">></span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>properties<span class="token operator">></span>
 
     <span class="token operator">&lt;</span>dependencies<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mvnrepository<span class="token punctuation">.</span>com<span class="token operator">/</span>artifact<span class="token operator">/</span>com<span class="token punctuation">.</span>alibaba<span class="token operator">/</span>druid <span class="token operator">--</span><span class="token operator">></span>
         <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>aspectj<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>aspectjweaver<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">1.6</span><span class="token punctuation">.</span><span class="token number">8</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>com<span class="token punctuation">.</span>alibaba<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>druid<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>version<span class="token operator">></span>$<span class="token punctuation">{</span>druid<span class="token punctuation">.</span>version<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>mysql<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>mysql<span class="token operator">-</span>connector<span class="token operator">-</span>java<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>version<span class="token operator">></span>$<span class="token punctuation">{</span>mysql<span class="token punctuation">.</span>version<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>mybatis<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>mybatis<span class="token operator">-</span>spring<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">2.0</span><span class="token punctuation">.</span><span class="token number">4</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>mybatis<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>mybatis<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>version<span class="token operator">></span>$<span class="token punctuation">{</span>mybatis<span class="token punctuation">.</span>version<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>projectlombok<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>lombok<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>version<span class="token operator">></span>$<span class="token punctuation">{</span>lombok<span class="token punctuation">.</span>version<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>aspects<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>version<span class="token operator">></span>$<span class="token punctuation">{</span>spring<span class="token punctuation">.</span>version<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
         <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
         <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
             <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
@@ -714,32 +1003,9 @@ create table <span class="token function">account</span><span class="token punct
         <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
             <span class="token operator">&lt;</span>groupId<span class="token operator">></span>junit<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
             <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>junit<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">4.12</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+            <span class="token operator">&lt;</span>version<span class="token operator">></span>$<span class="token punctuation">{</span>junit<span class="token punctuation">.</span>version<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
             <span class="token operator">&lt;</span>scope<span class="token operator">></span>compile<span class="token operator">&lt;</span><span class="token operator">/</span>scope<span class="token operator">></span>
         <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>mysql<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>mysql<span class="token operator">-</span>connector<span class="token operator">-</span>java<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>version<span class="token operator">></span>$<span class="token punctuation">{</span>mysql<span class="token punctuation">.</span>version<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>javax<span class="token punctuation">.</span>servlet<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>servlet<span class="token operator">-</span>api<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">2.5</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-            <span class="token operator">&lt;</span>scope<span class="token operator">></span>provided<span class="token operator">&lt;</span><span class="token operator">/</span>scope<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>jsp<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>jsp<span class="token operator">-</span>api<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">2.0</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-            <span class="token operator">&lt;</span>scope<span class="token operator">></span>provided<span class="token operator">&lt;</span><span class="token operator">/</span>scope<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>jstl<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>jstl<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">1.2</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> log start <span class="token operator">--</span><span class="token operator">></span>
         <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
             <span class="token operator">&lt;</span>groupId<span class="token operator">></span>log4j<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
             <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>log4j<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
@@ -754,25 +1020,7 @@ create table <span class="token function">account</span><span class="token punct
             <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>slf4j<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
             <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>slf4j<span class="token operator">-</span>log4j12<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
             <span class="token operator">&lt;</span>version<span class="token operator">></span>$<span class="token punctuation">{</span>slf4j<span class="token punctuation">.</span>version<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> log end <span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>mybatis<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>mybatis<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>version<span class="token operator">></span>$<span class="token punctuation">{</span>mybatis<span class="token punctuation">.</span>version<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>mybatis<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>mybatis<span class="token operator">-</span>spring<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">1.3</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
-        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>c3p0<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>c3p0<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">0.9</span><span class="token punctuation">.</span><span class="token number">1.2</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-            <span class="token operator">&lt;</span>type<span class="token operator">></span>jar<span class="token operator">&lt;</span><span class="token operator">/</span>type<span class="token operator">></span>
-            <span class="token operator">&lt;</span>scope<span class="token operator">></span>compile<span class="token operator">&lt;</span><span class="token operator">/</span>scope<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span> <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> log end <span class="token operator">--</span><span class="token operator">></span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>dependencies<span class="token operator">></span></code></pre>
 <h3 id="4-编写实体类"><a href="#4-编写实体类" class="headerlink" title="4.编写实体类"></a>4.编写实体类</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Account</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
@@ -1664,8 +1912,8 @@ bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
         <category>idea</category>
       </categories>
       <tags>
-        <tag>快捷键</tag>
         <tag>idea</tag>
+        <tag>快捷键</tag>
       </tags>
   </entry>
   <entry>
@@ -2834,8 +3082,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>spring</tag>
-        <tag>IOC</tag>
         <tag>注解</tag>
+        <tag>IOC</tag>
       </tags>
   </entry>
   <entry>
@@ -3023,8 +3271,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>java</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>StringBuffer</tag>
+        <tag>字符串</tag>
         <tag>StringBuiler</tag>
       </tags>
   </entry>
@@ -3044,8 +3292,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>java</category>
       </categories>
       <tags>
-        <tag>String</tag>
         <tag>字符串</tag>
+        <tag>String</tag>
         <tag>常用方法</tag>
       </tags>
   </entry>
