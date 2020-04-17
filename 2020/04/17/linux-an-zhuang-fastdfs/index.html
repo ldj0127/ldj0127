@@ -9,8 +9,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="安卓自定义view五子棋项目, L">
-    <meta name="description" content="当初学编程的，都想做一个游戏，俄罗斯方块？贪吃蛇？不不不，今天我所讲的是五子棋双人对战，对比那些来说，应该算比较简单的了。相信很多人都有看过，不过视频中，我发现有些代码是不需要的，而且还存在一些bug，针对视频所存在的bug我都做了调整，经">
+    <meta name="keywords" content="Linux下的安装部署fastdfs, L">
+    <meta name="description" content="Linux下的安装部署fastdfs安装fastDFS需要分别安装fastdfs-nginx-module，fastdfs，nginx，libfastcommon
+1.安装gcc(编译时需要)yum install -y gcc gcc-c">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>安卓自定义view五子棋项目 | L</title>
+    <title>Linux下的安装部署fastdfs | L</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -287,13 +288,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://qiniuyun.dajienihao.cn/image/jpg/background/163806-1570264686e1ed.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://qiniuyun.dajienihao.cn/image/background/001727-15821290478ef2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        安卓自定义view五子棋项目
+                        Linux下的安装部署fastdfs
                     </div>
                 </div>
             </div>
@@ -405,16 +406,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AE%89%E5%8D%93/">
-                                <span class="chip bg-color">安卓</span>
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
                             </a>
                         
-                            <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/">
-                                <span class="chip bg-color">自定义view</span>
-                            </a>
-                        
-                            <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">
-                                <span class="chip bg-color">项目实战</span>
+                            <a href="/tags/fastdfs/">
+                                <span class="chip bg-color">fastdfs</span>
                             </a>
                         
                     </div>
@@ -425,8 +422,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%AE%89%E5%8D%93/" class="post-category">
-                                安卓
+                            <a href="/categories/linux/" class="post-category">
+                                linux
                             </a>
                         
                     </div>
@@ -437,7 +434,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-29
+                    2020-04-17
                 </div>
                 
                 
@@ -446,14 +443,14 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.3k
+                        1.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        11 分
+                        5 分
                     </div>
                     
                 
@@ -469,312 +466,107 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>当初学编程的，都想做一个游戏，俄罗斯方块？贪吃蛇？不不不，今天我所讲的是五子棋双人对战，对比那些来说，应该算比较简单的了。<br>相信很多人都有看过，不过视频中，我发现有些代码是不需要的，而且还存在一些bug，针对视频所存在的bug我都做了调整，经测试，目前无bug。<br>创建一个类，然后继承View，需要实现构造方法，我们选择两个参数的构造方法就行了<br>下面贴出代码：</p>
-<pre><code>public panel(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();//初始化方法
-    }</code></pre><p>所需定义的内容：</p>
-<pre><code>private int mPanelWidth;
-private float mLineHeight;//棋盘行距
-private int MAX_LINE = 10;//棋盘行数
-private Paint mPaint = new Paint();//绘制对象
-private Bitmap mWhitePiece;//白色棋子
-private Bitmap mBlackPiece;//黑色棋子
-private boolean mIsWhite = true;//白棋先手，当前轮到白棋出子
-private List&lt;Point&gt; mWhiteArray = new ArrayList&lt;&gt;();//放白色棋子落子的坐标
-private List&lt;Point&gt; mBlackArray = new ArrayList&lt;&gt;();//放黑色棋子落子的坐标
-private float ratioPieceOfLineHeight = 3 * 1.0f / 4;//棋子占据的比例
-private boolean mIsGameOver;//判断游戏结束
-private boolean mIsWhiteWinner;//true白子胜利，false黑子胜利
-private int MAX_COUNT_IN_LINE = 5;//五子棋数</code></pre><p>  对画笔的初始化：</p>
-<pre><code> private void init() {//初始化方法
-        mPaint.setColor(Color.rgb(0, 0, 0));//设置颜色
-        mPaint.setAntiAlias(true);//抗锯齿
-        mPaint.setDither(true);//设置防抖动
-        mPaint.setStyle(Paint.Style.STROKE);//绘制棋盘线条，画笔为描边样式
-        mWhitePiece = BitmapFactory.decodeResource(getResources(), R.drawable.stone_w2);//设置白色棋子图片
-        mBlackPiece = BitmapFactory.decodeResource(getResources(), R.drawable.stone_b1);//设置黑色棋子图片
-    }</code></pre><p> 对于自定义view有一定基础的小伙伴都知道，自定义一般都要实现2个方法，1：onSizeChanged（视图大小的改变）；2：onMeasure（告诉父view，子视图占用多大的空间）<br>下面上代码，我都有详细注解，就不一个一个解释了：<br>onMeasure：</p>
-<pre><code>    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {//设置棋盘大小
-        int widthSize = MeasureSpec.getSize(widthMeasureSpec);//获取宽度
-        int widthMode = MeasureSpec.getMode(widthMeasureSpec);//根据测量值提取模式
-        int heightSize = MeasureSpec.getSize(heightMeasureSpec);//获取高度
-        int heightMode = MeasureSpec.getMode(heightMeasureSpec);//根据测量值提取模式
-        int width = Math.min(widthSize, heightSize);//取最小值获取设置正方形棋盘
-        if (widthMode == MeasureSpec.UNSPECIFIED)//当模式为未指定模式时就为棋盘长宽就为高度
-            width = heightSize;
-        else if (heightMode == MeasureSpec.UNSPECIFIED)//当模式为未指定模式时就为棋盘长宽就为宽度
-            width = widthSize;
-        setMeasuredDimension(width, width);//取宽高的最小值绘制棋盘
-    }</code></pre><p> onSizeChanged：</p>
-<pre><code> protected void onSizeChanged(int w, int h, int oldw, int oldh) {//当宽高发生改变进行回调
-        super.onSizeChanged(w, h, oldw, oldh);
-        mPanelWidth = w;
-        mLineHeight = mPanelWidth * 1.0f / MAX_LINE;//棋盘行距
-        int pieceWidth = (int) (mLineHeight * ratioPieceOfLineHeight);//棋子比列
-        mWhitePiece = Bitmap.createScaledBitmap(mWhitePiece, pieceWidth, pieceWidth, false);//设置棋子大小
-        mBlackPiece = Bitmap.createScaledBitmap(mBlackPiece, pieceWidth, pieceWidth, false);//设置棋子大小
-    }</code></pre><p> 好了，下面我们进图画图操作，需要的操作是，先画棋盘，在画棋子，然后判断游戏结束。</p>
-<pre><code>  protected void onDraw(Canvas canvas) {//绘制方法
-        super.onDraw(canvas);
-        drawBoard(canvas);//绘制棋盘
-        drawPiece(canvas);//绘制棋子
-        checkGameOver();//检查游戏是否结束
-    }</code></pre><p> 绘制棋盘：</p>
-<pre><code>  private void drawBoard(Canvas canvas) {//绘制棋盘方法
-        int w = mPanelWidth;//棋盘宽度
-        float lineHeight = mLineHeight;//棋盘行距
-        for (int i = 0; i &lt; MAX_LINE; i++) {
-            int startX = (int) (lineHeight / 2);//起点坐标
-            int endX = (int) (w - lineHeight / 2);//终点坐标
-            int y = (int) ((0.5 + i) * lineHeight);//y轴起点坐标
-            canvas.drawLine(startX, y, endX, y, mPaint);//绘制x轴线条
-            canvas.drawLine(y, startX, y, endX, mPaint);//绘制y轴线条
-        }
-    }</code></pre><p>绘制棋子：</p>
-<pre><code>private void drawPiece(Canvas canvas) {//绘制棋子方法
-        for (int i = 0; i &lt; mWhiteArray.size(); i++) {
-            Point whitePoint = mWhiteArray.get(i);//拿到棋子
-            canvas.drawBitmap(mWhitePiece,
-                    (whitePoint.x + (1 - ratioPieceOfLineHeight) / 2) * mLineHeight,
-                    (whitePoint.y + (1 - ratioPieceOfLineHeight) / 2) * mLineHeight, null);//棋子坐标计算
-        }
-        for (int i = 0; i &lt; mBlackArray.size(); i++) {
-            Point blackPoint = mBlackArray.get(i);//拿到棋子
-            canvas.drawBitmap(mBlackPiece,
-                    (blackPoint.x + (1 - ratioPieceOfLineHeight) / 2) * mLineHeight,
-                    (blackPoint.y + (1 - ratioPieceOfLineHeight) / 2) * mLineHeight, null);//棋子坐标计算
-        }
-    }</code></pre><p>判断游戏是否结束:</p>
-<pre><code>private void checkGameOver() {//判断游戏是否结束及和棋
-        boolean whiteWin = checkFiveInLine(mWhiteArray);//白子成功五子连珠
-        boolean blackWin = checkFiveInLine(mBlackArray);//黑子成功五子连珠
-        int max = MAX_LINE * MAX_LINE;//最大落子数的和
-        if (whiteWin || blackWin) {//有人胜利
-            mIsGameOver = true;//游戏结束
-            mIsWhiteWinner = whiteWin;
-            String text = mIsWhiteWinner ? &quot;白棋胜利&quot; : &quot;黑棋胜利&quot;;//白子赢了提示白棋胜利，否者黑棋胜利
-            if (mIsGameOver) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setIcon(R.drawable.dy);
-                builder.setTitle(&quot;游戏结束，&quot; + text);
-                builder.setMessage(&quot;请选项下面选项！！！！&quot;);
-                builder.setNegativeButton(&quot;退出游戏&quot;, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        System.exit(0);
-                    }
-                });
-                builder.setNeutralButton(&quot;查看棋盘！&quot;, new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                });
-                builder.setPositiveButton(&quot;再来一局&quot;, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        reStart();
-                    }
-                });
-                builder.setCancelable(false);
-                builder.show();
-            }
-        } else if ((mBlackArray.size() + mWhiteArray.size()) == max) {//当白棋子数和黑棋字数相加等于最大数时无人胜利，双方和棋
-            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder.setIcon(R.drawable.dy);
-            builder.setTitle(&quot;棋逢对手,将遇良才！&quot;);
-            builder.setMessage(&quot;二位和棋，是否再战一句！！！&quot;);
-            builder.setNegativeButton(&quot;退出游戏&quot;, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    System.exit(0);
-                }
-            });
-            builder.setNeutralButton(&quot;查看棋盘！&quot;, new DialogInterface.OnClickListener() {
-
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.dismiss();
-                }
-            });
-            builder.setPositiveButton(&quot;再来一局&quot;, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    reStart();
-                }
-            });
-            builder.setCancelable(false);
-            builder.show();
-        }
-    }</code></pre><p>游戏结束的判断的依据：</p>
-<pre><code>private boolean checkFiveInLine(List&lt;Point&gt; points) {//判断是否五子连珠
-        for (Point p : points) {
-            int x = p.x;
-            int y = p.y;
-            boolean win = checkHorizontal(x, y, points);//判断xy位置的棋子是否有左右相邻的五个一致
-            if (win)
-                return true;
-            win = checkVertiacal(x, y, points);//判断xy位置的棋子是否有上下相邻的五个一致
-            if (win)
-                return true;
-            win = checkLeftDiagonal(x, y, points);//判断xy位置的棋子是否有左斜相邻的五个一致
-            if (win)
-                return true;
-            win = checkRightDiagonal(x, y, points);//判断xy位置的棋子是否有右斜相邻的五个一致
-            if (win)
-                return true;
-        }
-        return false;
-    }</code></pre><p>判断是否有横向五子连珠：</p>
-<pre><code>private boolean checkHorizontal(int x, int y, List&lt;Point&gt; points) {//判断x，y位置的棋子是否有横向相邻的五个一致
-        int count = 1;//当前子
-        for (int i = 1; i &lt; MAX_COUNT_IN_LINE; i++) {//从当前子往左数最大4个，如果有相同子count加1
-            if (points.contains(new Point(x - i, y))) {
-                count++;
-            } else {
-                break;
-            }
-        }
-        if (count == MAX_COUNT_IN_LINE)//如果count为5表示成功连珠
-            return true;
-
-
-        for (int i = 1; i &lt; MAX_COUNT_IN_LINE; i++) {//从当前子往右数最大4个，如果有相同子count加1
-            if (points.contains(new Point(x + i, y))) {
-                count++;
-            } else {
-                break;
-            }
-        }
-        if (count == MAX_COUNT_IN_LINE)//如果count为5表示成功连珠
-            return true;
-        return false;
-    }</code></pre><p>其他方向的代码和上面一样只是循环中x，y的值改一下，就不放具体代码了，具体提示一下竖向判断的(x,y-1),(x,y+1）左斜是(x - i, y + i),(x + i, y - i) 右斜是(x - i, y - i),(x + i, y + i)<br>重新开始游戏:</p>
-<pre><code>public void reStart() {//重新开始游戏
-        mWhiteArray.clear();
-        mBlackArray.clear();
-        mIsGameOver = false;
-        mIsWhiteWinner = false;
-        mIsWhite=true;
-        invalidate();
-    }</code></pre><p>悔棋：</p>
-<pre><code>public void withDraw() {//悔棋
-        if (mIsGameOver) {
-            Toast.makeText(getContext(), &quot;游戏已经结束，不能悔棋&quot;, Toast.LENGTH_LONG).show();
-            return;
-        }
-        if (mBlackArray.size() &gt; 0 || mWhiteArray.size() &gt; 0) {
-            if (mIsWhite) {
-                mBlackArray.remove(mBlackArray.size() - 1);
-                mIsWhite = !mIsWhite;
-            } else {
-                mWhiteArray.remove(mWhiteArray.size() - 1);
-                mIsWhite = !mIsWhite;
-            }
-            invalidate();
-        }
-    }</code></pre><p>这里我没有考虑到禁手的问题，感觉如果考虑到禁手的话，算法比较复杂，人机对战。这里呢此类的代码就完成了<br>下面将布局代码发出来</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    tools:context=&quot;.MainActivity&quot;
-    android:background=&quot;@drawable/bg&quot;&gt;
-    &lt;TextView
-        android:id=&quot;@+id/textview&quot;
-        android:textColor=&quot;#000000&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:textSize=&quot;30dp&quot;
-        android:layout_centerHorizontal=&quot;true&quot;
-        android:layout_above=&quot;@id/wuziqi&quot;
-        /&gt;
-    &lt;com.example.myapplication.panel
-        android:id=&quot;@+id/wuziqi&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        android:layout_centerInParent=&quot;true&quot; /&gt;
-    &lt;LinearLayout
-        android:layout_below=&quot;@id/wuziqi&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_marginLeft=&quot;60dp&quot;
-        android:layout_marginRight=&quot;60dp&quot;
-        android:layout_height=&quot;wrap_content&quot;&gt;
-
-        &lt;Button
-            android:id=&quot;@+id/restart&quot;
-            android:text=&quot;重新开始&quot;
-            android:onClick=&quot;reStart&quot;
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;wrap_content&quot;/&gt;
-        &lt;TextView
-            android:layout_weight=&quot;1&quot;
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:text=&quot;&quot;/&gt;
-        &lt;Button
-            android:id=&quot;@+id/withdraw&quot;
-            android:text=&quot;悔棋&quot;
-            android:onClick=&quot;withdraw&quot;
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;wrap_content&quot;/&gt;
-    &lt;/LinearLayout&gt;
-&lt;/RelativeLayout&gt;</code></pre><p>mainactivity.java文件的代码也发出来</p>
-<pre><code>public class MainActivity extends AppCompatActivity {
-    panel panel;
-    TextView textView;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        panel=findViewById(R.id.wuziqi);
-    }
-
-    public void reStart(View view) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setIcon(R.drawable.dy);
-        builder.setTitle(&quot;重新开始&quot;);
-        builder.setMessage(&quot;重新开始游戏需要双方棋手同意请选择！！！&quot;);
-        builder.setNegativeButton(&quot;取消&quot;, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        });
-        builder.setPositiveButton(&quot;重新开始&quot;, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                panel.reStart();
-            }
-        });
-        builder.setCancelable(false);
-        builder.show();
-    }
-
-    public void withdraw(View view) {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setIcon(R.drawable.dy);
-        builder.setTitle(&quot;悔棋&quot;);
-        builder.setMessage(&quot;悔棋需要双方棋手同意请选择！！！&quot;);
-        builder.setNegativeButton(&quot;取消&quot;, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        });
-        builder.setPositiveButton(&quot;确定悔棋&quot;, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                panel.withDraw();
-            }
-        });
-        builder.setCancelable(false);
-        builder.show();
-    }
-}</code></pre><p>好了到这里安卓五子棋的项目就完成了，自定义view的难度在于给viwe的大小及测量，完成这些的话其实自定义view并没有这么难。</p>
+                <h1 id="Linux下的安装部署fastdfs"><a href="#Linux下的安装部署fastdfs" class="headerlink" title="Linux下的安装部署fastdfs"></a>Linux下的安装部署fastdfs</h1><p>安装fastDFS需要分别安装<code>fastdfs-nginx-module，fastdfs，nginx，libfastcommon</code></p>
+<h2 id="1-安装gcc-编译时需要"><a href="#1-安装gcc-编译时需要" class="headerlink" title="1.安装gcc(编译时需要)"></a>1.安装gcc(编译时需要)</h2><p><code>yum install -y gcc gcc-c++</code></p>
+<h2 id="2-安装libevent-运行时需要"><a href="#2-安装libevent-运行时需要" class="headerlink" title="2.安装libevent(运行时需要)"></a>2.安装libevent(运行时需要)</h2><p><code>yum -y install libevent</code></p>
+<h2 id="3-安装创建目录上传所有文件"><a href="#3-安装创建目录上传所有文件" class="headerlink" title="3.安装创建目录上传所有文件"></a>3.安装创建目录上传所有文件</h2><ol>
+<li><code>mkdir -p /fileservice/fast</code></li>
+<li><code>cd /fileservice/fast</code></li>
+</ol>
+<p><img src="http://qiniuyun.dajienihao.cn/image/0417/1.png" alt="需要的文件"></p>
+<h2 id="4-安装libfastcommon"><a href="#4-安装libfastcommon" class="headerlink" title="4.安装libfastcommon"></a>4.安装libfastcommon</h2><ol>
+<li>解压文件： <code>tar -zxvf libfastcommon-1.0.35.tar.gz</code></li>
+<li>进入libfast文件目录：<code>cd libfastcommon-1.0.35</code></li>
+<li>执行编译：<code>./make.sh</code></li>
+<li>安装：<code>./make.sh install</code></li>
+</ol>
+<h2 id="5-安装fastdfs"><a href="#5-安装fastdfs" class="headerlink" title="5.安装fastdfs"></a>5.安装fastdfs</h2><h3 id="5-1-下载"><a href="#5-1-下载" class="headerlink" title="5.1 下载"></a>5.1 下载</h3><p><a href="https://sourceforge.net/projects/fastdfs/files/" target="_blank" rel="noopener">官网</a><br>网官下载很慢，看我准备的安装文件</p>
+<h3 id="5-2-安装相关依赖库"><a href="#5-2-安装相关依赖库" class="headerlink" title="5.2 安装相关依赖库"></a>5.2 安装相关依赖库</h3><ol>
+<li><code>yum install perl</code></li>
+<li><code>yum install pcre</code></li>
+<li><code>yum install pcre-devel</code></li>
+<li><code>yum install zlib</code></li>
+<li><code>yum install zlib-devel</code></li>
+<li><code>yum install openssl</code></li>
+<li><code>yum install openssl-devel</code></li>
+</ol>
+<h3 id="5-3-安装fastdfs"><a href="#5-3-安装fastdfs" class="headerlink" title="5.3 安装fastdfs"></a>5.3 安装fastdfs</h3><ol>
+<li>进入fast目录：<code>cd /fileservice/fast</code></li>
+<li>解压文件：<code>tar -zxvf fastdfs-5.11.tar.gz</code></li>
+<li>进入解压后的目录：<code>cd fastdfs-5.11</code></li>
+<li>执行编译：<code>./make.sh</code></li>
+<li>安装：<code>./make.sh install</code></li>
+</ol>
+<h3 id="5-4-查看tracker和storage的可执行脚本-后面有用"><a href="#5-4-查看tracker和storage的可执行脚本-后面有用" class="headerlink" title="5.4 查看tracker和storage的可执行脚本(后面有用)"></a>5.4 查看tracker和storage的可执行脚本(后面有用)</h3><p><code>ll /etc/init.d/ | grep fdfs</code></p>
+<h3 id="5-5-准备配置文件-默认在-etc-fdfs-下面"><a href="#5-5-准备配置文件-默认在-etc-fdfs-下面" class="headerlink" title="5.5 准备配置文件  默认在/etc/fdfs/下面"></a>5.5 准备配置文件  默认在/etc/fdfs/下面</h3><ol>
+<li><code>cd /etc/fdfs/</code> </li>
+<li><code>cp client.conf.sample client.conf</code></li>
+<li><code>cp storage.conf.sample storage.conf</code></li>
+<li><code>cp storage_ids.conf.sample storage_ids.conf</code></li>
+<li><code>cp tracker.conf.sample tracker.conf</code></li>
+<li>然后修改tracker的存放数据和日志的目录。 <code>mkdir -p /home/dajie/fastdfs/tracker</code></li>
+</ol>
+<h2 id="6-配置和启动tracker"><a href="#6-配置和启动tracker" class="headerlink" title="6.配置和启动tracker"></a>6.配置和启动tracker</h2><h3 id="6-1-切换目录到：-etc-fdfs-目录下；"><a href="#6-1-切换目录到：-etc-fdfs-目录下；" class="headerlink" title="6.1 切换目录到： /etc/fdfs/ 目录下；"></a>6.1 切换目录到： /etc/fdfs/ 目录下；</h3><p><code>cd /etc/fdfs/</code></p>
+<h3 id="6-2-修改tracker-conf"><a href="#6-2-修改tracker-conf" class="headerlink" title="6.2 修改tracker.conf"></a>6.2 修改tracker.conf</h3><p><code>vim tracker.conf</code><br>base_path=/home/yuqing/fastdfs 改为: base_path=/home/dajie/fastdfs/tracker</p>
+<h3 id="6-3-启动tracker，运行如下命令："><a href="#6-3-启动tracker，运行如下命令：" class="headerlink" title="6.3 启动tracker，运行如下命令："></a>6.3 启动tracker，运行如下命令：</h3><p><code>service fdfs_trackerd  start</code></p>
+<blockquote>
+<p>注意：在/home/dajie/fastdfs/tracker 目录下生成两个目录， 一个是数据，一个是日志；</p>
+</blockquote>
+<h2 id="7-配置和启动storage"><a href="#7-配置和启动storage" class="headerlink" title="7.配置和启动storage"></a>7.配置和启动storage</h2><p>由于上面已经安装过FastDFS，这里只需要配置storage就好了；</p>
+<h3 id="7-1-切换目录到：-etc-fdfs-目录下；"><a href="#7-1-切换目录到：-etc-fdfs-目录下；" class="headerlink" title="7.1 切换目录到： /etc/fdfs/ 目录下；"></a>7.1 切换目录到： /etc/fdfs/ 目录下；</h3><p><code>cd /etc/fdfs/</code></p>
+<h3 id="7-2-修改storage-conf"><a href="#7-2-修改storage-conf" class="headerlink" title="7.2 修改storage.conf"></a>7.2 修改storage.conf</h3><p><code>vim storage.conf</code><br>base_path=/home/yuqing/fastdfs 改为: base_path=/home/dajie/fastdfs/storage</p>
+<h4 id="7-2-1-store存放文件的位置-store-path"><a href="#7-2-1-store存放文件的位置-store-path" class="headerlink" title="7.2.1 store存放文件的位置(store_path)"></a>7.2.1 store存放文件的位置(store_path)</h4><p>store_path0=/home/yuqing/fastdfs 改为： store_path0=/home/dajie/fastdfs/storage</p>
+<blockquote>
+<p>如果有多个挂载磁盘则定义多个store_path，如下<br>store_path1=…..<br>store_path2=……</p>
+</blockquote>
+<h4 id="7-2-2-配置tracker服务器-IP"><a href="#7-2-2-配置tracker服务器-IP" class="headerlink" title="7.2.2 配置tracker服务器:IP"></a>7.2.2 配置tracker服务器:IP</h4><p>tracker_server=192.168.247.129:22122</p>
+<blockquote>
+<p>如果有多个则配置多个tracker</p>
+</blockquote>
+<h3 id="7-3-创建-home-dajie-fastdfs-storage-目录"><a href="#7-3-创建-home-dajie-fastdfs-storage-目录" class="headerlink" title="7.3 创建/home/dajie/fastdfs/storage 目录"></a>7.3 创建/home/dajie/fastdfs/storage 目录</h3><p><code>mkdir -p /home/dajie/fastdfs/storage</code></p>
+<h3 id="7-4-启动storage，-运行命令如下："><a href="#7-4-启动storage，-运行命令如下：" class="headerlink" title="7.4 启动storage， 运行命令如下："></a>7.4 启动storage， 运行命令如下：</h3><p><code>service fdfs_storaged start</code><br>启动完成后进入 /home/dajie/fastdfs/storage/data 目录下，显示目录如下：<br><img src="http://qiniuyun.dajienihao.cn/image/0417/2.png" alt=""></p>
+<h2 id="8-使用FastDFS自带工具测试"><a href="#8-使用FastDFS自带工具测试" class="headerlink" title="8.使用FastDFS自带工具测试"></a>8.使用FastDFS自带工具测试</h2><h3 id="8-1-切换目录到-etc-fdfs-目录下；"><a href="#8-1-切换目录到-etc-fdfs-目录下；" class="headerlink" title="8.1 切换目录到 /etc/fdfs/ 目录下；"></a>8.1 切换目录到 /etc/fdfs/ 目录下；</h3><p><code>cd /etc/fdfs</code></p>
+<h3 id="8-2-修改client-conf"><a href="#8-2-修改client-conf" class="headerlink" title="8.2 修改client.conf"></a>8.2 修改client.conf</h3><p><code>vim client.conf</code><br>修改基本路径和tracker_server<br>base_path=/home/dajie/fastdfs/storage<br>tracker_server=192.168.247.129:22122</p>
+<blockquote>
+<p>注意：若tracker有多个，可以配置多个，如下:<br>tracker_server=……<br>tracker_server=……</p>
+</blockquote>
+<h3 id="8-3-拷贝一张图片111-jpg到Centos服务器上的-etc-fdfs-目录下"><a href="#8-3-拷贝一张图片111-jpg到Centos服务器上的-etc-fdfs-目录下" class="headerlink" title="8.3 拷贝一张图片111.jpg到Centos服务器上的/etc/fdfs/目录下"></a>8.3 拷贝一张图片111.jpg到Centos服务器上的/etc/fdfs/目录下</h3><h3 id="8-4-进行测试"><a href="#8-4-进行测试" class="headerlink" title="8.4 进行测试"></a>8.4 进行测试</h3><p>运行如下（运行测试程序，读取/etc/fdfs/client.conf 文件，上传/root/目录下的baobao.png文件）<br><code>/usr/bin/fdfs_upload_file /etc/fdfs/client.conf ./111.jpg</code><br>结果如下，表示搭建成功；<br><img src="http://qiniuyun.dajienihao.cn/image/0417/3.png" alt=""><br>以上图中的文件地址：<code>http://192.168.247.129/group1/M00/00/00/wKj3gV6ZDXiARK31AAEhFux3hUc421.jpg</code>对应storage服务器上的<code>/home/dajie/fastdfs/storage/data/00/00/wKj3gV6ZDXiARK31AAEhFux3hUc421.jpg</code>文件<br>由于现在还没有和nginx整合无法使用http下载。</p>
+<h2 id="9-FastDFS-和nginx整合"><a href="#9-FastDFS-和nginx整合" class="headerlink" title="9.FastDFS 和nginx整合"></a>9.FastDFS 和nginx整合</h2><h3 id="9-1-在tracker上安装-nginx"><a href="#9-1-在tracker上安装-nginx" class="headerlink" title="9.1 在tracker上安装 nginx"></a>9.1 在tracker上安装 nginx</h3><p>在每个tracker上安装nginx，的主要目的是做负载均衡及实现高可用。如果只有一台tracker可以不配置nginx。<br>一个tracker对应多个storage，通过nginx对storage负载均衡；</p>
+<h3 id="9-2-在storage-上安装nginx"><a href="#9-2-在storage-上安装nginx" class="headerlink" title="9.2 在storage 上安装nginx"></a>9.2 在storage 上安装nginx</h3><ol>
+<li><p>解压<code>tar -zxvf  fastdfs-nginx-module-1.20.tar.gz</code></p>
+</li>
+<li><p>切换目录到fastdfs-nginx-module-1.20/src 目录下<code>cd fastdfs-nginx-module-1.20/src</code></p>
+</li>
+<li><p>修改config文件，将文件中的所有 /usr/local/ 路径改为 /usr/<br>vim config<br><img src="http://qiniuyun.dajienihao.cn/image/0417/4.png" alt="/usr/include/fastdfs /usr/include/fastcommon/"></p>
+</li>
+<li><p>将fastdfs-nginx-module/src下的mod_fastdfs.conf拷贝至/etc/fdfs/下<code>cp mod_fastdfs.conf /etc/fdfs/</code></p>
+</li>
+<li><p>修改 /etc/fdfs/mod_fastdfs.conf 的内容；<code>vim /etc/fdfs/mod_fastdfs.conf</code><br>tracker_server=192.168.247.129:22122<br>url_have_group_name=true #url中包含group名称<br>store_path0=/home/dajie/fastdfs/storage #指定文件存储路径（上面配置的store路径）</p>
+<blockquote>
+<p>tracker_server=192.168.172.20:22122 #(多个tracker配置多行)</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="9-3-进入之前解压的fastdfs目录下，把http-conf、mime-conf移动至-etc-fdfs"><a href="#9-3-进入之前解压的fastdfs目录下，把http-conf、mime-conf移动至-etc-fdfs" class="headerlink" title="9.3 进入之前解压的fastdfs目录下，把http.conf、mime.conf移动至/etc/fdfs"></a>9.3 进入之前解压的fastdfs目录下，把http.conf、mime.conf移动至/etc/fdfs</h3><ol>
+<li><code>cd /fileservice/fast/fastdfs-5.11/conf/</code></li>
+<li><code>cp http.conf mime.types /etc/fdfs/</code></li>
+</ol>
+<h2 id="10-Nginx的安装"><a href="#10-Nginx的安装" class="headerlink" title="10.Nginx的安装"></a>10.Nginx的安装</h2><h3 id="10-1-解压-nginx-1-15-2-tar-gz"><a href="#10-1-解压-nginx-1-15-2-tar-gz" class="headerlink" title="10.1.解压 nginx-1.15.2.tar.gz"></a>10.1.解压 nginx-1.15.2.tar.gz</h3><ol>
+<li><code>cd /fileservice/fast/</code></li>
+<li><code>tar -zxvf nginx-1.15.2.tar.gz</code> </li>
+</ol>
+<h3 id="10-2-进入nginx解压的目录下"><a href="#10-2-进入nginx解压的目录下" class="headerlink" title="10.2.进入nginx解压的目录下"></a>10.2.进入nginx解压的目录下</h3><p><code>cd nginx-1.15.2/</code></p>
+<h3 id="10-3-加入模块命令配置"><a href="#10-3-加入模块命令配置" class="headerlink" title="10.3. 加入模块命令配置"></a>10.3. 加入模块命令配置</h3><p><code>./configure --prefix=/opt/nginx --sbin-path=/usr/bin/nginx --add-module=/fileservice/fast/fastdfs-nginx-module-1.20/src</code></p>
+<h3 id="10-4-编译并安装"><a href="#10-4-编译并安装" class="headerlink" title="10.4. 编译并安装"></a>10.4. 编译并安装</h3><p><code>make &amp;&amp; make install</code></p>
+<h3 id="10-5-修改nginx配置"><a href="#10-5-修改nginx配置" class="headerlink" title="10.5. 修改nginx配置"></a>10.5. 修改nginx配置</h3><ol>
+<li><code>cd /opt/nginx/conf</code></li>
+<li><code>vim nginx.conf</code><br><img src="http://qiniuyun.dajienihao.cn/image/0417/8.png" alt=""></li>
+</ol>
+<h3 id="10-6-启动nginx"><a href="#10-6-启动nginx" class="headerlink" title="10.6. 启动nginx"></a>10.6. 启动nginx</h3><ol>
+<li><code>cd /usr/bin/</code></li>
+<li><code>./nginx</code>#启动</li>
+</ol>
+<h3 id="11、在浏览器中访问上传到fastDFS的图片"><a href="#11、在浏览器中访问上传到fastDFS的图片" class="headerlink" title="11、在浏览器中访问上传到fastDFS的图片"></a>11、在浏览器中访问上传到fastDFS的图片</h3><p>在谷歌浏览器中访问刚才上传的图片：<br>刚才上传的图片地址为：<a href="http://192.168.247.129/group1/M00/00/00/wKj3gV6ZDXiARK31AAEhFux3hUc421.jpg" target="_blank" rel="noopener">http://192.168.247.129/group1/M00/00/00/wKj3gV6ZDXiARK31AAEhFux3hUc421.jpg</a><br><img src="http://qiniuyun.dajienihao.cn/image/0417/6.png" alt="访问成功"></p>
 
             </div>
             <hr/>
@@ -800,7 +592,7 @@ private int MAX_COUNT_IN_LINE = 5;//五子棋数</code></pre><p>  对画笔的�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://dajienihao.cn/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/">http://dajienihao.cn/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/</a>
+                    <a href="http://dajienihao.cn/2020/04/17/linux-an-zhuang-fastdfs/">http://dajienihao.cn/2020/04/17/linux-an-zhuang-fastdfs/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -838,16 +630,12 @@ private int MAX_COUNT_IN_LINE = 5;//五子棋数</code></pre><p>  对画笔的�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AE%89%E5%8D%93/">
-                                    <span class="chip bg-color">安卓</span>
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
                                 </a>
                             
-                                <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/">
-                                    <span class="chip bg-color">自定义view</span>
-                                </a>
-                            
-                                <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">
-                                    <span class="chip bg-color">项目实战</span>
+                                <a href="/tags/fastdfs/">
+                                    <span class="chip bg-color">fastdfs</span>
                                 </a>
                             
                         </div>
@@ -1014,53 +802,52 @@ private int MAX_COUNT_IN_LINE = 5;//五子棋数</code></pre><p>  对画笔的�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/01/13/yuan-sheng-de-jdbc-de-shi-yong/">
+                <a href="/2020/04/17/linux-an-zhuang-fastdfs/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/184426-15686306666a07.jpg" class="responsive-img" alt="原生JDBC的使用">
+                        <img src="http://qiniuyun.dajienihao.cn/image/background/001727-15821290478ef2.jpg" class="responsive-img" alt="Linux下的安装部署fastdfs">
                         
-                        <span class="card-title">原生JDBC的使用</span>
+                        <span class="card-title">Linux下的安装部署fastdfs</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JDBC是什么
-JAVA Database Connectivity java数据库连接
-
-为什么会出现JDBC
-SUN公司提供的一种数据库访问规则、规范, 由于数据库种类较多，并且java语言使用比较广泛，sun公司就提供了一种规范，让其
+                            Linux下的安装部署fastdfs安装fastDFS需要分别安装fastdfs-nginx-module，fastdfs，nginx，libfastcommon
+1.安装gcc(编译时需要)yum install -y gcc gcc-c
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JDBC/" class="post-category">
-                                    JDBC
+                            <a href="/categories/linux/" class="post-category">
+                                    linux
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mysql/">
-                        <span class="chip bg-color">mysql</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
-                    <a href="/tags/%E5%8E%9F%E7%94%9FJDBC%E7%9A%84%E4%BD%BF%E7%94%A8/">
-                        <span class="chip bg-color">原生JDBC的使用</span>
+                    <a href="/tags/fastdfs/">
+                        <span class="chip bg-color">fastdfs</span>
                     </a>
                     
                 </div>
@@ -1074,30 +861,30 @@ SUN公司提供的一种数据库访问规则、规范, 由于数据库种类较
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/21/mysql-de-suo-yin/">
+                <a href="/2020/04/14/redis-jian-jie-ji-chang-yong-ming-ling/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/005346-1570294426c666.jpg" class="responsive-img" alt="mysql的索引">
+                        <img src="http://qiniuyun.dajienihao.cn/image/background/001408-15736616483497.jpg" class="responsive-img" alt="Redis简介及常用命令">
                         
-                        <span class="card-title">mysql的索引</span>
+                        <span class="card-title">Redis简介及常用命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            索引在数据库操作中，经常需要查询特定的数据，例如，当执行select * from student where id=10000语句时，MySQL数据库必须从第一条记录开始遍历，直到找出id为10000的数据，这样的效率显然非常低。为此，M
+                            1. Redis简介1.1 Redis简介Redis:Remote Dictionary Server(远程字典服务器)Redis是当前比较热门的NOSQL系统之一，它是一个开源的使用ANSI c语言编写的key-value存储系统（区别于
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/mysql/" class="post-category">
-                                    mysql
+                            <a href="/categories/Redis/" class="post-category">
+                                    Redis
                                 </a>
                             
                             
@@ -1107,12 +894,8 @@ SUN公司提供的一种数据库访问规则、规范, 由于数据库种类较
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mysql/">
-                        <span class="chip bg-color">mysql</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%A1%A8%E7%9A%84%E7%B4%A2%E5%BC%95/">
-                        <span class="chip bg-color">表的索引</span>
+                    <a href="/tags/Redis/">
+                        <span class="chip bg-color">Redis</span>
                     </a>
                     
                 </div>
