@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Java中的同步代码块和同步方法</title>
-    <url>/Blog/2020/04/19/java-zhong-de-tong-bu-dai-ma-kuai-tong-bu-fang-fa/</url>
+    <url>/blog/2020/04/19/java-zhong-de-tong-bu-dai-ma-kuai-tong-bu-fang-fa/</url>
     <content><![CDATA[<h2 id="多线程容易出现问题的原因"><a href="#多线程容易出现问题的原因" class="headerlink" title="多线程容易出现问题的原因"></a>多线程容易出现问题的原因</h2><p>当多条语句在操作同一个线程共享数据时，一个线程对多条语句只执行了一部分，还没有执行完，另一个线程参与进来执行。导致共享数据的错误。即多个线程执行的不确定性引起执行结果的不稳定。<br><strong>举个栗子：火车站售票，多个窗口同时售票。</strong></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Ticketing</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> num<span class="token punctuation">;</span>
@@ -116,7 +116,7 @@
   </entry>
   <entry>
     <title>内部类</title>
-    <url>/Blog/2020/04/19/nei-bu-lei/</url>
+    <url>/blog/2020/04/19/nei-bu-lei/</url>
     <content><![CDATA[<h1 id="内部类详解"><a href="#内部类详解" class="headerlink" title="内部类详解"></a>内部类详解</h1><h2 id="成员内部类-普通内部类"><a href="#成员内部类-普通内部类" class="headerlink" title="成员内部类(普通内部类)"></a>成员内部类(普通内部类)</h2><p>个是最常见的内部类之一了，其定义也很简单，在一个类里面作为类的一个字段直接定义就可以了，例：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Outer</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> age <span class="token operator">=</span> <span class="token number">22</span><span class="token punctuation">;</span>
@@ -248,7 +248,7 @@
   </entry>
   <entry>
     <title>向上转型和向下转型</title>
-    <url>/Blog/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</url>
+    <url>/blog/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</url>
     <content><![CDATA[<h1 id="向上转型与向下转型"><a href="#向上转型与向下转型" class="headerlink" title="向上转型与向下转型"></a>向上转型与向下转型</h1><h2 id="向上转型"><a href="#向上转型" class="headerlink" title="向上转型"></a>向上转型</h2><p>子类引用的对象转换为父类类型称为向上转型。通俗地说就是是将子类对象转为父类对象。此处父类对象可以是接口。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -400,7 +400,7 @@ c1.eat();// 报错 </code></pre><p>为什么第一段代码不报错呢？相比
   </entry>
   <entry>
     <title>多线程之线程死锁</title>
-    <url>/Blog/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/</url>
+    <url>/blog/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/</url>
     <content><![CDATA[<h2 id="死锁讲解"><a href="#死锁讲解" class="headerlink" title="死锁讲解"></a>死锁讲解</h2><p>在Java中使用多线程，就会有可能导致死锁问题。死锁会让程序一直卡住，不再程序往下执行。我们只能通过中止并重启的方式来让程序重新执行。<br>这是我们非常不愿意看到的一种现象，我们要尽可能避免死锁的情况发生！造成死锁的原因可以概括成三句话：</p>
 <ul>
 <li>当前线程拥有其他线程需要的资源</li>
@@ -493,7 +493,7 @@ c1.eat();// 报错 </code></pre><p>为什么第一段代码不报错呢？相比
   </entry>
   <entry>
     <title>设计模式之单例模式</title>
-    <url>/Blog/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/</url>
+    <url>/blog/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/</url>
     <content><![CDATA[<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。<br>这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。<br><strong>注意:</strong></p>
 <ul>
 <li>1、单例类只能有一个实例。</li>
@@ -584,7 +584,7 @@ c1.eat();// 报错 </code></pre><p>为什么第一段代码不报错呢？相比
   </entry>
   <entry>
     <title>Linux下的安装部署fastdfs</title>
-    <url>/Blog/2020/04/17/linux-an-zhuang-fastdfs/</url>
+    <url>/blog/2020/04/17/linux-an-zhuang-fastdfs/</url>
     <content><![CDATA[<h1 id="Linux下的安装部署fastdfs"><a href="#Linux下的安装部署fastdfs" class="headerlink" title="Linux下的安装部署fastdfs"></a>Linux下的安装部署fastdfs</h1><p>安装fastDFS需要分别安装<code>fastdfs-nginx-module，fastdfs，nginx，libfastcommon</code></p>
 <h2 id="1-安装gcc-编译时需要"><a href="#1-安装gcc-编译时需要" class="headerlink" title="1.安装gcc(编译时需要)"></a>1.安装gcc(编译时需要)</h2><p><code>yum install -y gcc gcc-c++</code></p>
 <h2 id="2-安装libevent-运行时需要"><a href="#2-安装libevent-运行时需要" class="headerlink" title="2.安装libevent(运行时需要)"></a>2.安装libevent(运行时需要)</h2><p><code>yum -y install libevent</code></p>
@@ -697,7 +697,7 @@ c1.eat();// 报错 </code></pre><p>为什么第一段代码不报错呢？相比
   </entry>
   <entry>
     <title>Redis简介及常用命令</title>
-    <url>/Blog/2020/04/14/redis-jian-jie-ji-chang-yong-ming-ling/</url>
+    <url>/blog/2020/04/14/redis-jian-jie-ji-chang-yong-ming-ling/</url>
     <content><![CDATA[<h2 id="1-Redis简介"><a href="#1-Redis简介" class="headerlink" title="1. Redis简介"></a>1. Redis简介</h2><h3 id="1-1-Redis简介"><a href="#1-1-Redis简介" class="headerlink" title="1.1 Redis简介"></a>1.1 Redis简介</h3><p>Redis:Remote Dictionary Server(远程字典服务器)<br>Redis是当前比较热门的NOSQL系统之一，它是一个开源的使用ANSI c语言编写的key-value存储系统（区别于MySQL的二维表格的形式储）。和Memcache类似，但很大程度补偿了Memcache的不足。和Memcache一样，Redis数据都是缓存在计算机内存中，不同的是，Memcache只能将数据缓存到内存中，无法自动定期写入硬盘，这就表示，一断电或重启，内存清空，数据丢失。所以Memcache的应用场景适用于缓存无需持久化的数据。而Redis不同的是它会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，实现数据的持久化</p>
 <h3 id="1-2-Redis的特点"><a href="#1-2-Redis的特点" class="headerlink" title="1.2 Redis的特点"></a>1.2 Redis的特点</h3><ol>
 <li>Redis读取的速度是110000次/s，写的速度是81000次/s</li>
@@ -814,7 +814,7 @@ zunionstore rank:last_week 7 rank:20150323 rank:20150324 rank:20150325 weights 1
   </entry>
   <entry>
     <title>Redis的安装</title>
-    <url>/Blog/2020/04/13/linux-an-zhuang-redis/</url>
+    <url>/blog/2020/04/13/linux-an-zhuang-redis/</url>
     <content><![CDATA[<h2 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h2><p><a href="https://redis.io/" target="_blank" rel="noopener">下载地址</a></p>
 <h2 id="2-文件传输"><a href="#2-文件传输" class="headerlink" title="2.文件传输"></a>2.文件传输</h2><p>这没啥好说的了</p>
 <h2 id="3-解压"><a href="#3-解压" class="headerlink" title="3.解压"></a>3.解压</h2><p><code>tar -zxvf redis-5.0.8.tar.gz</code></p>
@@ -872,7 +872,7 @@ zunionstore rank:last_week 7 rank:20150323 rank:20150324 rank:20150325 weights 1
   </entry>
   <entry>
     <title>docker的安装</title>
-    <url>/Blog/2020/04/10/docker-de-an-zhuang/</url>
+    <url>/blog/2020/04/10/docker-de-an-zhuang/</url>
     <content><![CDATA[<h2 id="1-Docker-下载"><a href="#1-Docker-下载" class="headerlink" title="1.Docker 下载"></a>1.Docker 下载</h2><p>官网 <a href="http://www.docker.com" target="_blank" rel="noopener">http://www.docker.com</a><br>仓库  <a href="https://hub.docker.com" target="_blank" rel="noopener">https://hub.docker.com</a></p>
 <h2 id="2-Docker-安装前提说明"><a href="#2-Docker-安装前提说明" class="headerlink" title="2.Docker 安装前提说明"></a>2.Docker 安装前提说明</h2><h3 id="2-1-CentOS-Docker-安装"><a href="#2-1-CentOS-Docker-安装" class="headerlink" title="2.1 CentOS Docker 安装"></a>2.1 CentOS Docker 安装</h3><p>Docker支持以下的CentOS版本：</p>
 <ul>
@@ -921,7 +921,7 @@ zunionstore rank:last_week 7 rank:20150323 rank:20150324 rank:20150325 weights 1
   </entry>
   <entry>
     <title>linux下安装nginx</title>
-    <url>/Blog/2020/04/09/linux-xia-an-zhuang-nginx/</url>
+    <url>/blog/2020/04/09/linux-xia-an-zhuang-nginx/</url>
     <content><![CDATA[<h2 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h2><p><a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">下载地址</a></p>
 <h2 id="2-先安装nginx依赖的包"><a href="#2-先安装nginx依赖的包" class="headerlink" title="2.先安装nginx依赖的包"></a>2.先安装nginx依赖的包</h2><h3 id="2-1-gcc"><a href="#2-1-gcc" class="headerlink" title="2.1 gcc"></a>2.1 gcc</h3><p>安装nginx需要先将官网下载的源码进行编译，编译依赖gcc环境，如果没有gcc环境，需要安装gcc。<br><code>Yum install gcc-c++</code></p>
 <h3 id="2-2-PCRE"><a href="#2-2-PCRE" class="headerlink" title="2.2 PCRE"></a>2.2 PCRE</h3><p>PCRE(Perl Compatible Regular Expressions)是一个Perl库，包括 perl 兼容的正则表达式库。nginx的http模块使用pcre来解析正则表达式，所以需要在linux上安装pcre库。<br><code>yum install -y pcre pcre-devel</code></p>
@@ -958,7 +958,7 @@ zunionstore rank:last_week 7 rank:20150323 rank:20150324 rank:20150325 weights 1
   </entry>
   <entry>
     <title>linux下安装mysql 5.7</title>
-    <url>/Blog/2020/04/08/linux-xia-an-zhuang-mysql5.7/</url>
+    <url>/blog/2020/04/08/linux-xia-an-zhuang-mysql5.7/</url>
     <content><![CDATA[<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">下载地址</a><br><img src="http://qiniuyun.dajienihao.cn/image/0408/01.jpg" alt=""></p>
 <h2 id="xftp传输"><a href="#xftp传输" class="headerlink" title="xftp传输"></a>xftp传输</h2><p>这就不说了</p>
 <h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><ol>
@@ -1036,7 +1036,7 @@ zunionstore rank:last_week 7 rank:20150323 rank:20150324 rank:20150325 weights 1
   </entry>
   <entry>
     <title>linux下安装tomcat</title>
-    <url>/Blog/2020/04/08/linux-xia-an-zhuang-tomcat/</url>
+    <url>/blog/2020/04/08/linux-xia-an-zhuang-tomcat/</url>
     <content><![CDATA[<h2 id="jdk的安装"><a href="#jdk的安装" class="headerlink" title="jdk的安装"></a>jdk的安装</h2><p>这一步就不说了 现在centos7里jdk是安装好了的</p>
 <h2 id="下载tomcat"><a href="#下载tomcat" class="headerlink" title="下载tomcat"></a>下载tomcat</h2><p><img src="http://qiniuyun.dajienihao.cn/image/0408/1.jpg" alt=""><br>这里我把下载链接给大家<a href="https://tomcat.apache.org/download-80.cgi" target="_blank" rel="noopener">点击进入</a><br><img src="http://qiniuyun.dajienihao.cn/image/0408/2.jpg" alt=""><br>注意千万别下成图上框中的文件，下的是二进制带src的包，里边少了很多东西，后面是没法运行起来的。</p>
 <h2 id="使用xftp传输"><a href="#使用xftp传输" class="headerlink" title="使用xftp传输"></a>使用xftp传输</h2><p>这也没啥好说的</p>
@@ -1055,7 +1055,7 @@ zunionstore rank:last_week 7 rank:20150323 rank:20150324 rank:20150325 weights 1
   </entry>
   <entry>
     <title>vm安装centos7</title>
-    <url>/Blog/2020/04/07/vm-zhong-an-zhuang-centos7/</url>
+    <url>/blog/2020/04/07/vm-zhong-an-zhuang-centos7/</url>
     <content><![CDATA[<h1 id="linux的安装"><a href="#linux的安装" class="headerlink" title="linux的安装"></a>linux的安装</h1><h2 id="1-安装vmware"><a href="#1-安装vmware" class="headerlink" title="1.安装vmware"></a>1.安装vmware</h2><p>安装软件应该是都会的这里就不说了</p>
 <h2 id="2-下载centos7镜像"><a href="#2-下载centos7镜像" class="headerlink" title="2.下载centos7镜像"></a>2.下载centos7镜像</h2><p><a href="http://mirrors.aliyun.com/centos/7/isos/x86_64/" target="_blank" rel="noopener">下载地址</a></p>
 <h2 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h2><p>选中下一步<br><img src="http://qiniuyun.dajienihao.cn/image/0407/1.png" alt=""></p>
@@ -1094,7 +1094,7 @@ zunionstore rank:last_week 7 rank:20150323 rank:20150324 rank:20150325 weights 1
   </entry>
   <entry>
     <title>mybatis-plus代码生成器</title>
-    <url>/Blog/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/</url>
+    <url>/blog/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/</url>
     <content><![CDATA[<h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>dependency<span class="token operator">></span>
     <span class="token operator">&lt;</span>groupId<span class="token operator">></span>com<span class="token punctuation">.</span>baomidou<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
     <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>mybatis<span class="token operator">-</span>plus<span class="token operator">-</span>generator<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
@@ -1185,7 +1185,7 @@ zunionstore rank:last_week 7 rank:20150323 rank:20150324 rank:20150325 weights 1
   </entry>
   <entry>
     <title>springboot集成mybatis-plus</title>
-    <url>/Blog/2020/04/06/springboot-ji-cheng-mybatisplus/</url>
+    <url>/blog/2020/04/06/springboot-ji-cheng-mybatisplus/</url>
     <content><![CDATA[<h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><p>springboot集成mybatisplus就较为容易了，我们先建立springboot项目，选择所需要的依赖，然后将mybatisplus的依赖添加进去。</p>
 <pre class=" language-java"><code class="language-java"> <span class="token operator">&lt;</span>dependencies<span class="token operator">></span>
         <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
@@ -1285,7 +1285,7 @@ mybatis<span class="token operator">-</span>plus<span class="token operator">:</
   </entry>
   <entry>
     <title>spring集成mybatis-plus</title>
-    <url>/Blog/2020/04/06/spring-ji-cheng-mybatisplus/</url>
+    <url>/blog/2020/04/06/spring-ji-cheng-mybatisplus/</url>
     <content><![CDATA[<h3 id="加入依赖"><a href="#加入依赖" class="headerlink" title="加入依赖"></a>加入依赖</h3><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> jar包版本声明 <span class="token operator">--</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>properties<span class="token operator">></span>
         <span class="token operator">&lt;</span>mybatisplus<span class="token punctuation">.</span>version<span class="token operator">></span><span class="token number">3.2</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">&lt;</span><span class="token operator">/</span>mybatisplus<span class="token punctuation">.</span>version<span class="token operator">></span>
@@ -1510,7 +1510,7 @@ log4j<span class="token punctuation">.</span>appender<span class="token punctuat
   </entry>
   <entry>
     <title>mybatis-plus简介</title>
-    <url>/Blog/2020/04/06/mybatis-plus-jian-jie/</url>
+    <url>/blog/2020/04/06/mybatis-plus-jian-jie/</url>
     <content><![CDATA[<h2 id="mybatis-plus"><a href="#mybatis-plus" class="headerlink" title="mybatis-plus"></a>mybatis-plus</h2><p><img src="http://qiniuyun.dajienihao.cn/image/0404/logo.png" alt="MyBatis-Plus为简化开发而生"></p>
 <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</p>
 <blockquote>
@@ -1541,13 +1541,13 @@ log4j<span class="token punctuation">.</span>appender<span class="token punctuat
         <category>mybatisplus</category>
       </categories>
       <tags>
-        <tag>mybatisplus</tag>
         <tag>mybatis</tag>
+        <tag>mybatisplus</tag>
       </tags>
   </entry>
   <entry>
     <title>DateTimeFormat和JsonFormat 注解</title>
-    <url>/Blog/2020/03/26/qian-hou-duan-shi-jian-lei-xing-zhuan-huan/</url>
+    <url>/blog/2020/03/26/qian-hou-duan-shi-jian-lei-xing-zhuan-huan/</url>
     <content><![CDATA[<h2 id="DateTimeFormat和-JsonFormat注解的使用"><a href="#DateTimeFormat和-JsonFormat注解的使用" class="headerlink" title="@DateTimeFormat和@JsonFormat注解的使用"></a>@DateTimeFormat和@JsonFormat注解的使用</h2><p>从数据库获取时间传到前端进行展示的时候，我们有时候可能无法得到一个满意的时间格式的时间日期，在数据库中显示的是正确的时间格式，获取出来却变成了很丑的时间戳，<code>@JsonForma</code>t注解很好的解决了这个问题，我们通过使用<code>@JsonFormat</code>可以很好的解决：后台到前台时间格式保持一致的问题，其次，另一个问题是，我们在使用WEB服务的时，可能会需要用到，传入时间给后台，比如注册新用户需要填入出生日期等，这个时候前台传递给后台的时间格式同样是不一致的，而我们的与之对应的便有了另一个注解，<code>@DataTimeFormat</code>便很好的解决了这个问题，接下来记录一下具体的<code>@JsonFormat与DateTimeFormat</code>的使用过程。</p>
 <h3 id="JsonFormat"><a href="#JsonFormat" class="headerlink" title="@JsonFormat"></a>@JsonFormat</h3><h4 id="1-使用maven引入-JsonFormat所需要的jar包，我贴一下我这里的pom文件的依赖"><a href="#1-使用maven引入-JsonFormat所需要的jar包，我贴一下我这里的pom文件的依赖" class="headerlink" title="1.使用maven引入@JsonFormat所需要的jar包，我贴一下我这里的pom文件的依赖"></a>1.使用maven引入@JsonFormat所需要的jar包，我贴一下我这里的pom文件的依赖</h4><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>dependency<span class="token operator">></span>
     <span class="token operator">&lt;</span>groupId<span class="token operator">></span>com<span class="token punctuation">.</span>fasterxml<span class="token punctuation">.</span>jackson<span class="token punctuation">.</span>core<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
@@ -1605,7 +1605,7 @@ log4j<span class="token punctuation">.</span>appender<span class="token punctuat
   </entry>
   <entry>
     <title>ssm的整合</title>
-    <url>/Blog/2020/03/10/ssm-zheng-he/</url>
+    <url>/blog/2020/03/10/ssm-zheng-he/</url>
     <content><![CDATA[<h2 id="搭建整合环境"><a href="#搭建整合环境" class="headerlink" title="搭建整合环境"></a>搭建整合环境</h2><h3 id="1-创建maven工程"><a href="#1-创建maven工程" class="headerlink" title="1.创建maven工程"></a>1.创建maven工程</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0310/1.jpg" alt=""></p>
 <h3 id="2-创建数据库"><a href="#2-创建数据库" class="headerlink" title="2.创建数据库"></a>2.创建数据库</h3><pre class=" language-java"><code class="language-java">create database ssm<span class="token punctuation">;</span>
 use ssm<span class="token punctuation">;</span>
@@ -2003,7 +2003,7 @@ create table <span class="token function">account</span><span class="token punct
   </entry>
   <entry>
     <title>springMvc的异常处理和拦截器</title>
-    <url>/Blog/2020/03/09/springmvc-de-yi-chang-chu-li/</url>
+    <url>/blog/2020/03/09/springmvc-de-yi-chang-chu-li/</url>
     <content><![CDATA[<h2 id="1-SpringMVC中的异常处理"><a href="#1-SpringMVC中的异常处理" class="headerlink" title="1.SpringMVC中的异常处理"></a>1.SpringMVC中的异常处理</h2><p>系统中异常包括两类：预期异常和运行时异常 RuntimeException，前者通过捕获异常从而获取异常信息，后者主要通过规范代码开发、测试通过手段减少运行时异常的发生。<br>系统的 dao、service、controller 出现都通过 throws Exception 向上抛出，最后由springmvc前端控制器交由异常处理器进行异常处理。</p>
 <h3 id="1-1编写异常类"><a href="#1-1编写异常类" class="headerlink" title="1.1编写异常类"></a>1.1编写异常类</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  *自定义异常
@@ -2102,7 +2102,7 @@ create table <span class="token function">account</span><span class="token punct
   </entry>
   <entry>
     <title>springMvc静态资源和文件上传</title>
-    <url>/Blog/2020/03/09/springmvc-jing-tai-zi-yuan-he-wen-jian-shang-chuan/</url>
+    <url>/blog/2020/03/09/springmvc-jing-tai-zi-yuan-he-wen-jian-shang-chuan/</url>
     <content><![CDATA[<h2 id="静态资源配置"><a href="#静态资源配置" class="headerlink" title="静态资源配置"></a>静态资源配置</h2><p> <code>DispatcherServlet</code>会拦截到所有的资源，导致一个问题就是静态资源（img、css、js）也会被拦截到，从而不能被使用。解决问题就是需要配置静态资源不进行拦截，在springmvc.xml配置文件添加如下配置：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  *mvc:resources标签配置不过滤
@@ -2193,7 +2193,7 @@ bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
   </entry>
   <entry>
     <title>idea快捷键</title>
-    <url>/Blog/2020/03/09/idea-kuai-jie-jian/</url>
+    <url>/blog/2020/03/09/idea-kuai-jie-jian/</url>
     <content><![CDATA[<h2 id="编辑快捷键"><a href="#编辑快捷键" class="headerlink" title="编辑快捷键"></a>编辑快捷键</h2><table>
 <thead>
 <tr>
@@ -2613,7 +2613,7 @@ bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
   </entry>
   <entry>
     <title>springMvc常用注解</title>
-    <url>/Blog/2020/03/07/springmvc-chang-yong-zhu-jie/</url>
+    <url>/blog/2020/03/07/springmvc-chang-yong-zhu-jie/</url>
     <content><![CDATA[<h3 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="RequestMapping"></a>RequestMapping</h3><p>RequestMapping注解的作用是建立请求URL和处理方法之间的对应关系</p>
 <pre class=" language-java"><code class="language-java">控制器代码<span class="token operator">:</span>
 <span class="token comment" spellcheck="true">/**
@@ -2853,7 +2853,7 @@ String cookieValue<span class="token punctuation">)</span><span class="token pun
   </entry>
   <entry>
     <title>springMvc请求参数的绑定</title>
-    <url>/Blog/2020/03/07/springmvc-can-shu-bang-ding/</url>
+    <url>/blog/2020/03/07/springmvc-can-shu-bang-ding/</url>
     <content><![CDATA[<h1 id="请求参数的绑定"><a href="#请求参数的绑定" class="headerlink" title="请求参数的绑定"></a>请求参数的绑定</h1><h2 id="请求参数的绑定说明"><a href="#请求参数的绑定说明" class="headerlink" title="请求参数的绑定说明"></a>请求参数的绑定说明</h2><h3 id="绑定机制"><a href="#绑定机制" class="headerlink" title="绑定机制"></a>绑定机制</h3><ol>
 <li>表单提交的数据都是k=v格式的 username=haha&amp;password=123</li>
 <li>SpringMVC的参数绑定过程是把表单提交的请求参数，作为控制器中方法的参数进行绑定的</li>
@@ -2937,7 +2937,7 @@ String cookieValue<span class="token punctuation">)</span><span class="token pun
   </entry>
   <entry>
     <title>springMvc入门配置</title>
-    <url>/Blog/2020/03/07/springmvc-de-ji-chu-pei-zhi/</url>
+    <url>/blog/2020/03/07/springmvc-de-ji-chu-pei-zhi/</url>
     <content><![CDATA[<h1 id="SpringMVC的入门配置"><a href="#SpringMVC的入门配置" class="headerlink" title="SpringMVC的入门配置"></a>SpringMVC的入门配置</h1><h2 id="springMvc是什么"><a href="#springMvc是什么" class="headerlink" title="springMvc是什么"></a>springMvc是什么</h2><p>SpringMVC 是一种基于 Java 的实现 MVC 设计模型的请求驱动类型的轻量级 Web 框架，属于 Spring FrameWork 的后续产品，已经融合在 Spring Web Flow 里面。Spring 框架提供了构建 Web 应用程序的全功 能 MVC 模块。使用 Spring 可插入的 MVC 架构，从而在使用 Spring 进行 WEB 开发时，可以选择使用 Spring 的 Spring MVC 框架或集成其他 MVC 开发框架，如 Struts1(现在一般不用)，Struts2 等。 SpringMVC 已经成为目前最主流的 MVC 框架之一，并且随着 Spring3.0 的发布，全面超越 Struts2，成 为最优秀的 MVC 框架。 它通过一套注解，让一个简单的 Java 类成为处理请求的控制器，而无须实现任何接口。同时它还支持 RESTful 编程风格的请求。</p>
 <h2 id="SpringMVC的优势"><a href="#SpringMVC的优势" class="headerlink" title="SpringMVC的优势"></a>SpringMVC的优势</h2><p>1、清晰的角色划分：<br>前端控制器（DispatcherServlet） </p>
 <ul>
@@ -3058,7 +3058,7 @@ String cookieValue<span class="token punctuation">)</span><span class="token pun
   </entry>
   <entry>
     <title>mybatis不同方式的多表查询</title>
-    <url>/Blog/2020/03/04/mybatis-bu-tong-fang-shi-de-duo-biao-cha-xun/</url>
+    <url>/blog/2020/03/04/mybatis-bu-tong-fang-shi-de-duo-biao-cha-xun/</url>
     <content><![CDATA[<h1 id="mybatis的多表查询"><a href="#mybatis的多表查询" class="headerlink" title="mybatis的多表查询"></a>mybatis的多表查询</h1><p>假如我们有一个员工表和员工所在部门表，那么员工表的部门ID外键部门表的部门ID，那么在mybatis这样的持久层框架中，它是在底层自动的对数据库数据进行封装成对应的实体类对象，那如何在展示到浏览器端时，展示员工信息时展示它的部门名称呢？</p>
 <h2 id="多对一查询"><a href="#多对一查询" class="headerlink" title="多对一查询"></a>多对一查询</h2><p>实体类型：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Emp</span> <span class="token punctuation">{</span>
@@ -3183,14 +3183,14 @@ String cookieValue<span class="token punctuation">)</span><span class="token pun
         <category>mybatis</category>
       </categories>
       <tags>
-        <tag>mybatis</tag>
         <tag>持久层框架</tag>
+        <tag>mybatis</tag>
         <tag>多表查询</tag>
       </tags>
   </entry>
   <entry>
     <title>mybatis中动态sql</title>
-    <url>/Blog/2020/03/04/mybatis-zhong-de-dong-tai-sql/</url>
+    <url>/blog/2020/03/04/mybatis-zhong-de-dong-tai-sql/</url>
     <content><![CDATA[<h2 id="动态-SQL"><a href="#动态-SQL" class="headerlink" title="动态 SQL"></a>动态 SQL</h2><p>MyBatis 的强大特性之一便是它的动态 SQL。如果你有使用 JDBC 或其它类似框架的经验，你就能体会到根据不同条件拼接 SQL 语句的痛苦。例如拼接时要确保不能忘记添加必要的空格，还要注意去掉列表最后一个列名的逗号。利用动态 SQL 这一特性可以彻底摆脱这种痛苦。</p>
 <p>动态 SQL 元素和 JSTL 或基于类似 XML 的文本处理器相似。在 MyBatis 之前的版本中，有很多元素需要花时间了解。MyBatis 3 大大精简了元素种类，现在只需学习原来一半的元素便可。MyBatis 采用功能强大的基于 OGNL 的表达式来淘汰其它大部分元素。</p>
 <ul>
@@ -3349,13 +3349,13 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>配置</tag>
-        <tag>mybatis</tag>
         <tag>持久层框架</tag>
+        <tag>mybatis</tag>
       </tags>
   </entry>
   <entry>
     <title>mybatis中mapper文件配置</title>
-    <url>/Blog/2020/03/03/mybatis-zhong-mapper-wen-jian-pei-zhi/</url>
+    <url>/blog/2020/03/03/mybatis-zhong-mapper-wen-jian-pei-zhi/</url>
     <content><![CDATA[<h2 id="mybatis中xml映射文件"><a href="#mybatis中xml映射文件" class="headerlink" title="mybatis中xml映射文件"></a>mybatis中xml映射文件</h2><p>MyBatis 的真正强大在于它的映射语句，这是它的魔力所在。由于它的异常强大，映射器的 XML 文件就显得相对简单。如果拿它跟具有相同功能的 JDBC 代码进行对比，你会立即发现省掉了将近 95% 的代码。MyBatis 为聚焦于 SQL 而构建，以尽可能地为你减少麻烦。</p>
 <p>SQL 映射文件只有很少的几个顶级元素（按照应被定义的顺序列出）：</p>
 <ul>
@@ -3498,13 +3498,13 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>配置</tag>
-        <tag>mybatis</tag>
         <tag>持久层框架</tag>
+        <tag>mybatis</tag>
       </tags>
   </entry>
   <entry>
     <title>idea中web项目配置文件编译问题</title>
-    <url>/Blog/2020/03/03/idea-zhong-web-xiang-mu-pei-zhi-wen-jian-bian-yi-wen-ti/</url>
+    <url>/blog/2020/03/03/idea-zhong-web-xiang-mu-pei-zhi-wen-jian-bian-yi-wen-ti/</url>
     <content><![CDATA[<h2 id="idea中web项目配置文件编译问题"><a href="#idea中web项目配置文件编译问题" class="headerlink" title="idea中web项目配置文件编译问题"></a>idea中web项目配置文件编译问题</h2><p>Resources 一般用于标注资源文件目录。在 maven 项目下，资源目录是单独划分出来的，其目录为：<code>src - main -resources</code>。<br>但这一篇讲的是普通web项目src下的资源文件。</p>
 <p>我们可以将配置文件等直接放在src下，但是配置文件很多的话项目就显得很乱，所以我们可以创建一个config包，将配置文件都在放在里面。但我们创建的是一个普通的包，idea并不会将里面的文件编译后自动复制到编译后的文件夹中，也就是classes目录。</p>
 <p>idea对这些配置的文件方式很明显和eclipse是不同的。在idea中有一个 Content Roots的概念。需要为每一个folder配置相应的Content Roots。Content Roots包括resources、sources、tests等。<br><img src="http://qiniuyun.dajienihao.cn/image/0303/13156151561.png" alt=""></p>
@@ -3522,7 +3522,7 @@ AND title like ‘someTitle’</code></pre>
   </entry>
   <entry>
     <title>Sprin中的AOP</title>
-    <url>/Blog/2020/03/01/spring-zhong-de-aop/</url>
+    <url>/blog/2020/03/01/spring-zhong-de-aop/</url>
     <content><![CDATA[<h1 id="AOP的相关概念"><a href="#AOP的相关概念" class="headerlink" title="AOP的相关概念"></a>AOP的相关概念</h1><h2 id="1-AOP概述"><a href="#1-AOP概述" class="headerlink" title="1. AOP概述"></a>1. AOP概述</h2><h3 id="1-1-什么是AOP"><a href="#1-1-什么是AOP" class="headerlink" title="1.1 什么是AOP"></a>1.1 什么是AOP</h3><p><strong>AOP</strong>：全称是<code>Aspect Oriented Programming</code>即：面向切面编程。<br>简单的说它就是把我们程序重复的代码抽取出来，在需要执行的时候，使用动态代理的技术，在不修改源码的基础上，对我们的已有方法进行增强。</p>
 <h3 id="1-2-AOP的作用及优势"><a href="#1-2-AOP的作用及优势" class="headerlink" title="1.2 AOP的作用及优势"></a>1.2 AOP的作用及优势</h3><p><strong>作用</strong>：<br>&emsp;在程序运行期间，不修改源码对已有方法进行增强。<br><strong>优势</strong>：<br>&emsp;减少重复代码<br>&emsp;提高开发效率<br>&emsp;维护方便</p>
 <h3 id="1-3-AOP的实现方式"><a href="#1-3-AOP的实现方式" class="headerlink" title="1.3 AOP的实现方式"></a>1.3 AOP的实现方式</h3><p>使用动态代理技术</p>
@@ -3543,13 +3543,13 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>后端</tag>
-        <tag>框架</tag>
         <tag>AOP</tag>
+        <tag>框架</tag>
       </tags>
   </entry>
   <entry>
     <title>java环境的安装配置</title>
-    <url>/Blog/2020/02/28/java-huan-jing-de-an-zhuang-ji-pei-zhi/</url>
+    <url>/blog/2020/02/28/java-huan-jing-de-an-zhuang-ji-pei-zhi/</url>
     <content><![CDATA[<h1 id="java环境"><a href="#java环境" class="headerlink" title="java环境"></a>java环境</h1><p>最近看到许多人问java环境怎么安装配置的，这个的东西其实并不难，但是对第一次安装的人可能还是需要耗点功夫的，毕竟我第一次安装也用了一两个小时才安装好。</p>
 <h2 id="绿色版eclipse"><a href="#绿色版eclipse" class="headerlink" title="绿色版eclipse"></a>绿色版eclipse</h2><p>如果你还是安装不好的话可以使用绿色版eclipse这里我也分享给大家。<br><a href="https://pan.baidu.com/s/1pjX6macSqOsajpphoOQXQg" target="_blank" rel="noopener">绿色版eclipse</a>提取码：<code>rqng</code>这是 Eclipse EE 2019-09 的版本，不用配置环境，内部已经包含了JRE8，解压直接运行即可。<br>这是由邵发老师提供的，这里也把发哥的<a href="http://www.afanihao.cn/" target="_blank" rel="noopener">官网</a>提供一下。<br>里面具备了java，c，c++，c#的一系列教程。我就是学了发哥的java路线课程，在b站也可以搜到发哥的<a href="https://www.bilibili.com/video/av85423591/" target="_blank" rel="noopener">入门教程</a>。对于刚入门的朋友非常友好。<br>qq群号：<code>495734195</code></p>
 <h2 id="jdk下载的安装"><a href="#jdk下载的安装" class="headerlink" title="jdk下载的安装"></a>jdk下载的安装</h2><p>jdk是学习java必不可少的，以win10 64位系统和大家分享一下jdk的下载和安装。有需要的朋友可以参考下。<br>先提供jdk的下载地址：<a href="https://pan.baidu.com/s/1NrTE-2JkH_4tyMzrS1oryA" target="_blank" rel="noopener">链接</a>提取码：<code>h6im</code><br>因为oracle的官网打开太慢的了 这里我就将jdk上传到百度网盘了。</p>
@@ -3570,7 +3570,7 @@ AND title like ‘someTitle’</code></pre>
   </entry>
   <entry>
     <title>lombok的安装使用</title>
-    <url>/Blog/2020/02/28/lombok-de-an-zhuang-shi-yong/</url>
+    <url>/blog/2020/02/28/lombok-de-an-zhuang-shi-yong/</url>
     <content><![CDATA[<h2 id="lombok的安装使用"><a href="#lombok的安装使用" class="headerlink" title="lombok的安装使用"></a>lombok的安装使用</h2><p>以前的Java项目中，充斥着太多不友好的代码：POJO的getter/setter/toString；异常处理；I/O流的关闭操作等等，这些样板代码既没有技术含量，又影响着代码的美观，Lombok应运而生。<br>任何技术的出现都是为了解决某一类问题，如果在此基础上再建立奇技淫巧，不如回归Java本身，应该保持合理使用而不滥用。</p>
 <h2 id="引入相应的依赖"><a href="#引入相应的依赖" class="headerlink" title="引入相应的依赖"></a>引入相应的依赖</h2><p>Lombok的使用跟引用jar包一样，可以在<a href="https://projectlombok.org/" target="_blank" rel="noopener">lombok官网</a>下载jar包，也可以使用maven添加依赖：</p>
 <pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>dependencies<span class="token operator">></span>
@@ -3623,7 +3623,7 @@ AND title like ‘someTitle’</code></pre>
   </entry>
   <entry>
     <title>Spring配置类注解</title>
-    <url>/Blog/2020/02/26/spring-pei-zhi-lei-zhu-jie/</url>
+    <url>/blog/2020/02/26/spring-pei-zhi-lei-zhu-jie/</url>
     <content><![CDATA[<h2 id="Spring配置类注解"><a href="#Spring配置类注解" class="headerlink" title="Spring配置类注解"></a>Spring配置类注解</h2><p>今天又学到了spring的代替xml的配置文件的注解。在下面就一一说明吧。</p>
 <h3 id="Configuration"><a href="#Configuration" class="headerlink" title="@Configuration"></a>@Configuration</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SpringConfiguration</span> <span class="token punctuation">{</span>
@@ -3684,7 +3684,7 @@ AND title like ‘someTitle’</code></pre>
   </entry>
   <entry>
     <title>SpringIOC常用注解</title>
-    <url>/Blog/2020/02/26/springioc-chang-yong-zhu-jie/</url>
+    <url>/blog/2020/02/26/springioc-chang-yong-zhu-jie/</url>
     <content><![CDATA[<h2 id="springIOC常用注解"><a href="#springIOC常用注解" class="headerlink" title="springIOC常用注解"></a>springIOC常用注解</h2><p>注解配置和xml配置所要实现的功能都是一样的，只是形式不一样而已，xml配置是写在xml文件中，而注解配置是在类中添加注解(使用注解方式配置要在配置文件中添加扫描包)。这里我们按照不同类型进行讲解。</p>
 <h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><blockquote>
 <p>他们的作用和在XML配置文件中编写一个标签实现的功能是一样的</p>
@@ -3783,7 +3783,7 @@ AND title like ‘someTitle’</code></pre>
   </entry>
   <entry>
     <title>spring中的依赖注入</title>
-    <url>/Blog/2020/02/25/spring-zhong-yi-lai-zhu-ru/</url>
+    <url>/blog/2020/02/25/spring-zhong-yi-lai-zhu-ru/</url>
     <content><![CDATA[<h1 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h1><p>Spring框架的核心功能之一就是通过依赖注入的方式来管理Bean之间的依赖关系。那么我们今天的主角依赖注入到底有什么神奇之处呢？请往下继续看。</p>
 <h2 id="依赖注入的概述"><a href="#依赖注入的概述" class="headerlink" title="依赖注入的概述"></a>依赖注入的概述</h2><p>依赖注入（<code>Dependency Injection</code>）。<br>平常的java开发中，程序员在某个类中需要依赖其它类的方法，则通常是new一个依赖类再调用类实例的方法，这种开发存在的问题是new的类实例不好统一管理，spring提出了依赖注入的思想，即依赖类不由程序员实例化，而是通过spring容器帮我们new指定实例并且将实例注入到需要该对象的类中。依赖注入的另一种说法是“控制反转”，通俗的理解是：平常我们new一个实例，这个实例的控制权是我们程序员，而控制反转是指new实例工作不由我们程序员来做而是交给spring容器来做。</p>
 <h2 id="spring中的依赖注入"><a href="#spring中的依赖注入" class="headerlink" title="spring中的依赖注入"></a>spring中的依赖注入</h2><p>依赖注入能注入的数据有三类</p>
@@ -3864,7 +3864,7 @@ AND title like ‘someTitle’</code></pre>
   </entry>
   <entry>
     <title>String、StringBuffer和StringBuilder的区别</title>
-    <url>/Blog/2020/02/22/string-stringbuffer-he-stringbuilder-de-qu-bie/</url>
+    <url>/blog/2020/02/22/string-stringbuffer-he-stringbuilder-de-qu-bie/</url>
     <content><![CDATA[<h1 id="String-StringBuffer-StringBuilder三者的使用方法和区别"><a href="#String-StringBuffer-StringBuilder三者的使用方法和区别" class="headerlink" title="String,StringBuffer,StringBuilder三者的使用方法和区别"></a>String,StringBuffer,StringBuilder三者的使用方法和区别</h1><p>在java中，我们常常用到String类型来操作字符串，但是用来操作字符串变量的不仅仅只有String类型，还有StringBuilder和StringBuffer类型，尽管我们平时使用String类型比较多，但是在实际的开发中，这三种类型完全是三足鼎立的局面，根据不同的使用场景，我们要使用不同的类型，在很多情况下，使用StringBuilder和StringBuffer比使用String类型更快，还会有其它优点。</p>
 <h2 id="三者的使用"><a href="#三者的使用" class="headerlink" title="三者的使用"></a>三者的使用</h2><p>我们先来了解一下StringBuilder和StringBuffer的简单用法，至于String的用法，我们就不再赘述了，上一篇文章已将String类的方法详细的介绍了，因为StringBuffer和StringBuilder的方法基本上都一样，所以我们共同介绍它们的方法</p>
 <h3 id="toString-方法"><a href="#toString-方法" class="headerlink" title="toString()方法"></a>toString()方法</h3><p>将StringBuffer，StringBuilder对象转换为String字符串，常用在需要输出的时候，因为StringBuffer和StringBuilder的对象不能直接输出，例如：</p>
@@ -3973,7 +3973,7 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
   </entry>
   <entry>
     <title>String类型详解</title>
-    <url>/Blog/2020/02/22/string-lei-xing-xiang-jie/</url>
+    <url>/blog/2020/02/22/string-lei-xing-xiang-jie/</url>
     <content><![CDATA[<h1 id="String字符串"><a href="#String字符串" class="headerlink" title="String字符串"></a>String字符串</h1><p>字符串是常量；它们的值在创建之后不能改变。字符串缓冲区支持可变的字符串。因为 String 对象是不可变的，所以可以共享它们。例如： <code>String str=&quot;abc&quot;;</code>我们想把字符串中的c改成d发现是无法更改的，只能重新指定新字符串<code>str=&quot;abd&quot;;</code>这样效率不一定提高，但是字符串可以被编译器共享这样带来的效率就很高了。<br>有不服者说：字符串不是改变了吗？这是一种误解，字符串”abc”并未被改变。只是str变量不在指向这个对象，而是指向了另外一个字符串对象”bcd”了。对字符串的拼接实际上也是构造出一个新的字符串对象。操作符使用 连接符+；或者操作方法concat(otherStr)</p>
 <h2 id="String类型的常用方法"><a href="#String类型的常用方法" class="headerlink" title="String类型的常用方法"></a>String类型的常用方法</h2><h3 id="比较字符串"><a href="#比较字符串" class="headerlink" title="比较字符串"></a>比较字符串</h3><p><strong>按字典顺序比较两个字符串</strong>。<br><code>int  compareTo(String anotherString)</code><br><strong>不考虑大小写，按字典顺序比较两个字符串。</strong><br><code>int  compareToIgnoreCase(String str)</code><br>它们的返回值类似，如果参数字符串等于此字符串，则返回值0;如果此字符串按字典顺序小于字符串参数，则返回一个小于0的值;如果此字符串按字典顺序大于字符串参数,则返回一个大于0的值。</p>
 <h3 id="字符串的截取"><a href="#字符串的截取" class="headerlink" title="字符串的截取"></a>字符串的截取</h3><p>字符串的字符计数是从0(开始)到str.length()-1(结束);长度为str.length()<br><strong>从指定位置开始截取</strong><br><code>String  substring(int beginIndex)</code><br><strong>指定开始和结束的位置</strong><br><code>String  substring(int beginIndex, int endIndex)</code></p>
@@ -3994,7 +3994,7 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
   </entry>
   <entry>
     <title>spring的概述</title>
-    <url>/Blog/2020/02/21/spring-gai-shu/</url>
+    <url>/blog/2020/02/21/spring-gai-shu/</url>
     <content><![CDATA[<h1 id="Spring-概述"><a href="#Spring-概述" class="headerlink" title="Spring 概述"></a>Spring 概述</h1><h2 id="1-spring是什么"><a href="#1-spring是什么" class="headerlink" title="1.spring是什么"></a>1.spring是什么</h2><p>Spring 是分层的 Java SE/EE 应用 <code>full-stack</code> 轻量级开源框架，以 <code>IoC（Inverse Of Control：反转控制）</code>和 <code>AOP（Aspect Oriented Programming：面向切面编程）</code>为内核，提供了展现层 Spring MVC 和持久层 Spring JDBC 以及业务层事务管理等众多的企业级应用技术，还能整合开源世界众多著名的第三方框架和类库，逐渐成为使用最多的 Java EE 企业应用开源框架。</p>
 <h2 id="2-spring的发展历程"><a href="#2-spring的发展历程" class="headerlink" title="2.spring的发展历程"></a>2.spring的发展历程</h2><p>1997 年 IBM 提出了 EJB 的思想<br>1998 年，SUN 制定开发标准规范 EJB1.0<br>1999 年，EJB1.1 发布<br>2001 年，EJB2.0 发布<br>2003 年，EJB2.1 发布<br>2006 年，EJB3.0 发布<br><code>Rod Johnson（spring 之父）</code><br>Expert One-to-One J2EE Design and Development(2002)<br>阐述了 J2EE 使用 EJB 开发设计的优点及解决方案<br>Expert One-to-One J2EE Development without EJB(2004)<br>阐述了 J2EE 开发不使用 EJB 的解决方式（Spring 雏形）<br>2017 年 9 月份发布了 spring 的最新版本 spring 5.0 通用版（GA）</p>
 <h2 id="3-spring的优势"><a href="#3-spring的优势" class="headerlink" title="3.spring的优势"></a>3.spring的优势</h2><h3 id="方便解耦，简化开发"><a href="#方便解耦，简化开发" class="headerlink" title="方便解耦，简化开发"></a>方便解耦，简化开发</h3><p>通过 Spring 提供的 IoC 容器，可以将对象间的依赖关系交由 Spring 进行控制，避免硬编码所造成的过度程序耦合。用户也不必再为单例模式类、属性文件解析等这些很底层的需求编写代码，可以更专注于上层的应用。</p>
@@ -4010,14 +4010,14 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>spring</category>
       </categories>
       <tags>
-        <tag>spring</tag>
         <tag>框架</tag>
+        <tag>spring</tag>
         <tag>spring的概述</tag>
       </tags>
   </entry>
   <entry>
     <title>spring对bean的管理细节</title>
-    <url>/Blog/2020/02/21/spring-zhong-chuang-jian-bean-de-san-chong-fang-shi/</url>
+    <url>/blog/2020/02/21/spring-zhong-chuang-jian-bean-de-san-chong-fang-shi/</url>
     <content><![CDATA[<h1 id="把对象的创建交给spring来管理"><a href="#把对象的创建交给spring来管理" class="headerlink" title="把对象的创建交给spring来管理"></a>把对象的创建交给spring来管理</h1><p>spring对bean的管理细节</p>
 <ol>
 <li>创建bean的三种方式</li>
@@ -4056,14 +4056,14 @@ scope=&quot;prototype&quot; init-method=&quot;init&quot; destroy-method=&quot;de
         <category>spring</category>
       </categories>
       <tags>
-        <tag>spring</tag>
         <tag>框架</tag>
+        <tag>spring</tag>
         <tag>spring的使用</tag>
       </tags>
   </entry>
   <entry>
     <title>为什么要使用mybatis</title>
-    <url>/Blog/2020/02/15/shi-yong-mybatis-de-you-dian/</url>
+    <url>/blog/2020/02/15/shi-yong-mybatis-de-you-dian/</url>
     <content><![CDATA[<p>#为什么要使用mybatis</p>
 <p><strong>Mybatis是一个半自动化持久层框架</strong></p>
 <p><strong>JDBC</strong></p>
@@ -4091,7 +4091,7 @@ scope=&quot;prototype&quot; init-method=&quot;init&quot; destroy-method=&quot;de
   </entry>
   <entry>
     <title>Data、String和sql.Timestamp之间的互相转换</title>
-    <url>/Blog/2020/01/22/java-zhong-data-string-he-sql.timestamp-zhi-jian-de-hu-xiang-zhuan-huan/</url>
+    <url>/blog/2020/01/22/java-zhong-data-string-he-sql.timestamp-zhi-jian-de-hu-xiang-zhuan-huan/</url>
     <content><![CDATA[<h1 id="JAVA中java-util-Date、java-sql-Timestamp和String之间的互相转换"><a href="#JAVA中java-util-Date、java-sql-Timestamp和String之间的互相转换" class="headerlink" title="JAVA中java.util.Date、java.sql.Timestamp和String之间的互相转换"></a>JAVA中java.util.Date、java.sql.Timestamp和String之间的互相转换</h1><h2 id="java-util-Date与的String互转"><a href="#java-util-Date与的String互转" class="headerlink" title="java.util.Date与的String互转"></a>java.util.Date与的String互转</h2><h3 id="java-util-Date—-gt-String"><a href="#java-util-Date—-gt-String" class="headerlink" title="java.util.Date—-&gt;String"></a>java.util.Date—-&gt;String</h3><pre><code>/**
  * 将java.util.Date对象转化为String字符串
  * @param date
@@ -4302,7 +4302,7 @@ public class DateUtil {
   </entry>
   <entry>
     <title>Maven学习笔记</title>
-    <url>/Blog/2020/01/18/maven-xue-xi-bi-ji/</url>
+    <url>/blog/2020/01/18/maven-xue-xi-bi-ji/</url>
     <content><![CDATA[<h2 id="1、目前掌握的技术"><a href="#1、目前掌握的技术" class="headerlink" title="1、目前掌握的技术"></a>1、目前掌握的技术</h2><p><img src="https://img-blog.csdn.net/20170727170011085?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvenhtMTMwNjE5Mjk4OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
 <h2 id="2、目前的技术在开发中存在的问题-why"><a href="#2、目前的技术在开发中存在的问题-why" class="headerlink" title="2、目前的技术在开发中存在的问题[why]"></a>2、目前的技术在开发中存在的问题[why]</h2><ol>
 <li>一个项目就是一个工程如果项目非常庞大，就不适合继续使用package来划分模块。最好是每一个模块对应一个项目，利于分工协作。借助于maven就可以将一个项目拆分成多个工程。</li>
@@ -4492,7 +4492,7 @@ public class DateUtil {
   </entry>
   <entry>
     <title>请求转发和重定向的区别</title>
-    <url>/Blog/2020/01/16/qing-qiu-zhuan-fa-he-chong-ding-xiang-de-qu-bie/</url>
+    <url>/blog/2020/01/16/qing-qiu-zhuan-fa-he-chong-ding-xiang-de-qu-bie/</url>
     <content><![CDATA[<h1 id="请求转发和重定向的区别"><a href="#请求转发和重定向的区别" class="headerlink" title="请求转发和重定向的区别"></a>请求转发和重定向的区别</h1><h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><h3 id="现实生活的例子"><a href="#现实生活的例子" class="headerlink" title="现实生活的例子"></a>现实生活的例子</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0116/%E9%87%8D%E5%AE%9A%E5%90%91.png" alt=""><br>①：A对B说，帮忙拿下快递</p>
 <p>②：B对A说，没有空，你找下C吧</p>
 <p>③：A对C说，帮忙拿下快递</p>
@@ -4543,7 +4543,7 @@ request.getRequestDispatcher(&quot;login_success.html&quot;).forward(request, re
   </entry>
   <entry>
     <title>原生JDBC的使用</title>
-    <url>/Blog/2020/01/13/yuan-sheng-de-jdbc-de-shi-yong/</url>
+    <url>/blog/2020/01/13/yuan-sheng-de-jdbc-de-shi-yong/</url>
     <content><![CDATA[<h2 id="JDBC是什么"><a href="#JDBC是什么" class="headerlink" title="JDBC是什么"></a>JDBC是什么</h2><blockquote>
 <p>JAVA Database Connectivity java数据库连接</p>
 </blockquote>
@@ -4738,7 +4738,7 @@ public void testQuery() {
   </entry>
   <entry>
     <title>安卓自定义view五子棋项目</title>
-    <url>/Blog/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/</url>
+    <url>/blog/2019/12/29/an-zhuo-zi-ding-yi-view-wu-zi-qi-xiang-mu-xiang-xi/</url>
     <content><![CDATA[<p>当初学编程的，都想做一个游戏，俄罗斯方块？贪吃蛇？不不不，今天我所讲的是五子棋双人对战，对比那些来说，应该算比较简单的了。<br>相信很多人都有看过，不过视频中，我发现有些代码是不需要的，而且还存在一些bug，针对视频所存在的bug我都做了调整，经测试，目前无bug。<br>创建一个类，然后继承View，需要实现构造方法，我们选择两个参数的构造方法就行了<br>下面贴出代码：</p>
 <pre><code>public panel(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -5057,7 +5057,7 @@ private int MAX_COUNT_IN_LINE = 5;//五子棋数</code></pre><p>  对画笔的�
   </entry>
   <entry>
     <title>mysql的索引</title>
-    <url>/Blog/2019/12/21/mysql-de-suo-yin/</url>
+    <url>/blog/2019/12/21/mysql-de-suo-yin/</url>
     <content><![CDATA[<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>在数据库操作中，经常需要查询特定的数据，例如，当执行<code>select * from student where id=10000</code>语句时，MySQL数据库必须从第一条记录开始遍历，直到找出id为10000的数据，这样的效率显然非常低。为此，MySQL允许建立索引来加快数据表的查询和排序。</p>
 <h2 id="1-索引的概念"><a href="#1-索引的概念" class="headerlink" title="1.索引的概念"></a>1.索引的概念</h2><p>数据库的索引好比新华字典的音序表，它是对数据库表中一列或多列的值进行排序后的一种结构，其作用就是提高表中数据的查询进度。MySQL的索引分为很多种，具体如下：</p>
 <h3 id="1-1普通索引"><a href="#1-1普通索引" class="headerlink" title="1.1普通索引"></a>1.1普通索引</h3><p>普通索引是由<code>key或index</code>定义的索引，他是mysql中的基本索引类型，可以创建在任何数据类型中，其值是否唯一和非空由字段本身的约束条件决定。例如，在grade表的stu_id字段上建立一个普通索引，查询记录时，就可以根据该索引进行查询了。</p>
@@ -5150,7 +5150,7 @@ on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中
   </entry>
   <entry>
     <title>mysql表的约束</title>
-    <url>/Blog/2019/12/18/biao-de-yue-shu/</url>
+    <url>/blog/2019/12/18/biao-de-yue-shu/</url>
     <content><![CDATA[<h2 id="表的约束"><a href="#表的约束" class="headerlink" title="表的约束"></a>表的约束</h2><p>为了防止数据表中插入错误的数据，在mysql中定义了一些维护数据库完整性的规则，即表的约束。<br><img src="http://qiniuyun.dajienihao.cn/image/1218/%E8%A1%A8%E7%9A%84%E7%BA%A6%E6%9D%9F.jpg" alt=""></p>
 <h3 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h3><h4 id="单字段主键"><a href="#单字段主键" class="headerlink" title="单字段主键"></a>单字段主键</h4><p>单字段主键指的是由一个字段构成的主键，其基本语法格式如下所示:<br><code>字段名 数据类型 primary key；</code></p>
 <pre><code> mysql-&gt;create table example(
@@ -5192,7 +5192,7 @@ on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中
   </entry>
   <entry>
     <title>mysql数据类型详解</title>
-    <url>/Blog/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/</url>
+    <url>/blog/2019/12/14/mysql-shu-ju-lei-xing-xiang-jie/</url>
     <content><![CDATA[<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>使用mysql数据库存储数据时，不同的类型决定了不同mysql不同的存储方式不同。为此mysql数据库提供了多种数据类型，其中包括整数类型、浮点数类型、定点数类型、日期和时间类型和二进制类型。下面将对此进行详解。</p>
 <h2 id="1-整数类型"><a href="#1-整数类型" class="headerlink" title="1.整数类型"></a>1.整数类型</h2><p>在Mysql数据库中，经常需要存储整数数值。根据数值取值范围的不同，Mysql中的整数类型可分为五种，分别是TINYINT、SMALLINT、MEDIUMINT、INT和BIGINT。<br><img src="http://qiniuyun.dajienihao.cn/image/1211/image.png" alt=""><br>从表中可以看出，不同的整数类型占用的字节数和取值范围都不同。需要注意的是，不同整数类型的取值范围是可以根据字节数算出来的。</p>
 <h2 id="2-浮点数类型和定点数类型"><a href="#2-浮点数类型和定点数类型" class="headerlink" title="2.浮点数类型和定点数类型"></a>2.浮点数类型和定点数类型</h2><p>在mysql数据库中小数都是使用浮点数和定点数来表示的。浮点数的类型可以分为单精度浮点数类型（FLOAT）和双精度浮点数类型（DOUBLE）。而定点数类型只有DECMIMAL（M，D）<br><img src="http://qiniuyun.dajienihao.cn/image/1214/%E6%B5%AE%E7%82%B9%E5%9E%8B%E5%92%8C%E5%AE%9A%E7%82%B9%E5%9E%8B.jpg241642558434741.png" alt=""></p>
@@ -5210,7 +5210,7 @@ on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中
   </entry>
   <entry>
     <title>mysql数据库及表的基本操作</title>
-    <url>/Blog/2019/12/11/mysql-shu-ju-ku-ji-biao-de-ji-ben-cao-zuo/</url>
+    <url>/blog/2019/12/11/mysql-shu-ju-ku-ji-biao-de-ji-ben-cao-zuo/</url>
     <content><![CDATA[<h2 id="mysql简单操作"><a href="#mysql简单操作" class="headerlink" title="mysql简单操作"></a>mysql简单操作</h2><h3 id="mysql服务的启动与暂停"><a href="#mysql服务的启动与暂停" class="headerlink" title="mysql服务的启动与暂停"></a>mysql服务的启动与暂停</h3><pre><code>net start mysql
 net stop mysql</code></pre><h3 id="mysql登录"><a href="#mysql登录" class="headerlink" title="mysql登录"></a>mysql登录</h3><pre><code>-u用户名 -p密码</code></pre><h3 id="创建和查看数据库"><a href="#创建和查看数据库" class="headerlink" title="创建和查看数据库"></a>创建和查看数据库</h3><pre><code>create database 数据库名称
 show crate database 数据库名称</code></pre><h3 id="修改数据库编码"><a href="#修改数据库编码" class="headerlink" title="修改数据库编码"></a>修改数据库编码</h3><pre><code>alter database 数据库名称 default character set 编码方式 collate 编码方式_bin</code></pre><h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><pre><code>drop database 数据库名称</code></pre><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><pre><code>create table 表名（
@@ -5229,7 +5229,7 @@ show crate database 数据库名称</code></pre><h3 id="修改数据库编码"><
   </entry>
   <entry>
     <title>MVC设计模式</title>
-    <url>/Blog/2019/12/08/mvc-she-ji-mo-shi/</url>
+    <url>/blog/2019/12/08/mvc-she-ji-mo-shi/</url>
     <content><![CDATA[<h2 id="什么是MVC"><a href="#什么是MVC" class="headerlink" title="什么是MVC"></a>什么是MVC</h2><p><strong>MVC</strong>全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。MVC被独特的发展起来用于映射传统的输入、处理和输出功能在一个逻辑的图形化用户界面的结构中。</p>
 <ul>
 <li><p>Model（模型） 模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。</p>
@@ -5265,7 +5265,7 @@ show crate database 数据库名称</code></pre><h3 id="修改数据库编码"><
   </entry>
   <entry>
     <title>eclipse导入普通javaweb项目报错问题</title>
-    <url>/Blog/2019/11/23/eclipse-dao-ru-pu-tong-javaweb-xiang-mu-bao-cuo-wen-ti/</url>
+    <url>/blog/2019/11/23/eclipse-dao-ru-pu-tong-javaweb-xiang-mu-bao-cuo-wen-ti/</url>
     <content><![CDATA[<h2 id="Eclipse导入javaweb项目代码报错解决方案"><a href="#Eclipse导入javaweb项目代码报错解决方案" class="headerlink" title="Eclipse导入javaweb项目代码报错解决方案"></a>Eclipse导入javaweb项目代码报错解决方案</h2><p>相信大家在前期学习javaweb的时候导入项目都会碰到一个问题，那就是导入Javaweb项目时代码没有报错但项目图标就是有红叉。</p>
 <p>以下是我导入项目发生的错误，我带大家看一下<br><img src="http://qiniuyun.dajienihao.cn/1122%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99.png" alt=""><br>导入项目时会出现这样的错误，jsp页面全部报错！下面我把我如何解决的方法告诉大家：</p>
 <h3 id="1-首先，点开你导入项目的项目名，右键选择Build-Path-gt-Configure-Build-Path"><a href="#1-首先，点开你导入项目的项目名，右键选择Build-Path-gt-Configure-Build-Path" class="headerlink" title="1.首先，点开你导入项目的项目名，右键选择Build Path--------&gt;Configure Build Path"></a><strong>1.首先，点开你导入项目的项目名，右键选择<code>Build Path--------&gt;Configure Build Path</code></strong></h3><p><img src="http://qiniuyun.dajienihao.cn/1122lib.png" alt=""></p>
@@ -5285,7 +5285,7 @@ show crate database 数据库名称</code></pre><h3 id="修改数据库编码"><
   </entry>
   <entry>
     <title>java反射基础</title>
-    <url>/Blog/2019/10/31/java-ji-chu-fan-she/</url>
+    <url>/blog/2019/10/31/java-ji-chu-fan-she/</url>
     <content><![CDATA[<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><p>Java反射(<code>Reflection</code>)机制就是在运行状态中，对于任意一个类，都能够知道这个类的属性和方法。对于任意一个对象能够调用它的任意一个属性和方法。这种动态获取的信息和动态调用对象的方法的功能称为Java语言的反射机制。Java程序中一般的对象的类型都是在编译期就确定下来的，而Java反射机制可以动态地创建对象并调用其属性，这样的对象的类型在编译期是未知的。所以我们可以通过反射机制直接创建对象，即使这个对象的类型在编译期是未知的。</p>
 <p>反射的核心是JVM在运行时才动态加载类或调用方法/访问属性，它不需要事先（写代码的时候或编译期）知道运行对象是谁。反射机制就是通过<code>java.lang.Class</code>类来实现的，在<code>Java</code>中，<code>Object</code>类是所有类的根类，而<code>Class</code>类就是描述Java类的类。</p>
 <blockquote>
