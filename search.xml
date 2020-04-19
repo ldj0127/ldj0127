@@ -3966,8 +3966,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>java</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>StringBuffer</tag>
+        <tag>字符串</tag>
         <tag>StringBuiler</tag>
       </tags>
   </entry>
@@ -3987,8 +3987,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>java</category>
       </categories>
       <tags>
-        <tag>String</tag>
         <tag>字符串</tag>
+        <tag>String</tag>
         <tag>常用方法</tag>
       </tags>
   </entry>

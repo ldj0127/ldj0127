@@ -5,9 +5,9 @@
   <subtitle>不忘初心，方得始终</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://da_jie_liang.gitee.io/blog/"/>
+  <link href="http://da_jie_liang.gitee.io/"/>
   <updated>2020-04-19T08:37:43.026Z</updated>
-  <id>http://da_jie_liang.gitee.io/blog/</id>
+  <id>http://da_jie_liang.gitee.io/</id>
   
   <author>
     <name>Da jie</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Java中的同步代码块和同步方法</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/19/java-zhong-de-tong-bu-dai-ma-kuai-tong-bu-fang-fa/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/19/java-zhong-de-tong-bu-dai-ma-kuai-tong-bu-fang-fa/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/19/java-zhong-de-tong-bu-dai-ma-kuai-tong-bu-fang-fa/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/19/java-zhong-de-tong-bu-dai-ma-kuai-tong-bu-fang-fa/</id>
     <published>2020-04-19T05:30:45.000Z</published>
     <updated>2020-04-19T08:37:43.026Z</updated>
     
@@ -36,21 +36,21 @@
     </summary>
     
     
-      <category term="多线程" scheme="http://da_jie_liang.gitee.io/blog/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="多线程" scheme="http://da_jie_liang.gitee.io/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
     
-      <category term="synchronized" scheme="http://da_jie_liang.gitee.io/blog/tags/synchronized/"/>
+      <category term="synchronized" scheme="http://da_jie_liang.gitee.io/tags/synchronized/"/>
     
-      <category term="多线程" scheme="http://da_jie_liang.gitee.io/blog/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="多线程" scheme="http://da_jie_liang.gitee.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
-      <category term="锁" scheme="http://da_jie_liang.gitee.io/blog/tags/%E9%94%81/"/>
+      <category term="锁" scheme="http://da_jie_liang.gitee.io/tags/%E9%94%81/"/>
     
   </entry>
   
   <entry>
     <title>内部类</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/19/nei-bu-lei/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/19/nei-bu-lei/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/19/nei-bu-lei/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/19/nei-bu-lei/</id>
     <published>2020-04-19T05:30:45.000Z</published>
     <updated>2020-04-19T08:27:59.713Z</updated>
     
@@ -67,19 +67,19 @@
     </summary>
     
     
-      <category term="java" scheme="http://da_jie_liang.gitee.io/blog/categories/java/"/>
+      <category term="java" scheme="http://da_jie_liang.gitee.io/categories/java/"/>
     
     
-      <category term="内部类" scheme="http://da_jie_liang.gitee.io/blog/tags/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
+      <category term="内部类" scheme="http://da_jie_liang.gitee.io/tags/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
     
-      <category term="基础" scheme="http://da_jie_liang.gitee.io/blog/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="基础" scheme="http://da_jie_liang.gitee.io/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>多线程之线程死锁</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/</id>
     <published>2020-04-19T05:30:45.000Z</published>
     <updated>2020-04-19T08:37:37.075Z</updated>
     
@@ -96,19 +96,19 @@
     </summary>
     
     
-      <category term="java" scheme="http://da_jie_liang.gitee.io/blog/categories/java/"/>
+      <category term="java" scheme="http://da_jie_liang.gitee.io/categories/java/"/>
     
     
-      <category term="多线程" scheme="http://da_jie_liang.gitee.io/blog/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="多线程" scheme="http://da_jie_liang.gitee.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
-      <category term="基础" scheme="http://da_jie_liang.gitee.io/blog/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="基础" scheme="http://da_jie_liang.gitee.io/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>向上转型和向下转型</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
     <published>2020-04-19T05:30:45.000Z</published>
     <updated>2020-04-19T08:40:31.920Z</updated>
     
@@ -125,19 +125,19 @@
     </summary>
     
     
-      <category term="多态" scheme="http://da_jie_liang.gitee.io/blog/categories/%E5%A4%9A%E6%80%81/"/>
+      <category term="多态" scheme="http://da_jie_liang.gitee.io/categories/%E5%A4%9A%E6%80%81/"/>
     
     
-      <category term="java" scheme="http://da_jie_liang.gitee.io/blog/tags/java/"/>
+      <category term="java" scheme="http://da_jie_liang.gitee.io/tags/java/"/>
     
-      <category term="基础" scheme="http://da_jie_liang.gitee.io/blog/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="基础" scheme="http://da_jie_liang.gitee.io/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>设计模式之单例模式</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/</id>
     <published>2020-04-19T05:30:45.000Z</published>
     <updated>2020-04-19T08:32:51.733Z</updated>
     
@@ -154,19 +154,19 @@
     </summary>
     
     
-      <category term="设计模式" scheme="http://da_jie_liang.gitee.io/blog/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://da_jie_liang.gitee.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="设计模式" scheme="http://da_jie_liang.gitee.io/blog/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://da_jie_liang.gitee.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
-      <category term="单例模式" scheme="http://da_jie_liang.gitee.io/blog/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+      <category term="单例模式" scheme="http://da_jie_liang.gitee.io/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>Linux下的安装部署fastdfs</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/17/linux-an-zhuang-fastdfs/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/17/linux-an-zhuang-fastdfs/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/17/linux-an-zhuang-fastdfs/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/17/linux-an-zhuang-fastdfs/</id>
     <published>2020-04-17T05:30:45.000Z</published>
     <updated>2020-04-17T03:36:28.327Z</updated>
     
@@ -183,19 +183,19 @@
     </summary>
     
     
-      <category term="linux" scheme="http://da_jie_liang.gitee.io/blog/categories/linux/"/>
+      <category term="linux" scheme="http://da_jie_liang.gitee.io/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://da_jie_liang.gitee.io/blog/tags/linux/"/>
+      <category term="linux" scheme="http://da_jie_liang.gitee.io/tags/linux/"/>
     
-      <category term="fastdfs" scheme="http://da_jie_liang.gitee.io/blog/tags/fastdfs/"/>
+      <category term="fastdfs" scheme="http://da_jie_liang.gitee.io/tags/fastdfs/"/>
     
   </entry>
   
   <entry>
     <title>Redis简介及常用命令</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/14/redis-jian-jie-ji-chang-yong-ming-ling/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/14/redis-jian-jie-ji-chang-yong-ming-ling/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/14/redis-jian-jie-ji-chang-yong-ming-ling/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/14/redis-jian-jie-ji-chang-yong-ming-ling/</id>
     <published>2020-04-14T05:30:45.000Z</published>
     <updated>2020-04-14T04:51:34.778Z</updated>
     
@@ -212,17 +212,17 @@
     </summary>
     
     
-      <category term="Redis" scheme="http://da_jie_liang.gitee.io/blog/categories/Redis/"/>
+      <category term="Redis" scheme="http://da_jie_liang.gitee.io/categories/Redis/"/>
     
     
-      <category term="Redis" scheme="http://da_jie_liang.gitee.io/blog/tags/Redis/"/>
+      <category term="Redis" scheme="http://da_jie_liang.gitee.io/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>Redis的安装</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/13/linux-an-zhuang-redis/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/13/linux-an-zhuang-redis/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/13/linux-an-zhuang-redis/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/13/linux-an-zhuang-redis/</id>
     <published>2020-04-13T05:30:45.000Z</published>
     <updated>2020-04-13T05:51:15.885Z</updated>
     
@@ -239,19 +239,19 @@
     </summary>
     
     
-      <category term="Redis" scheme="http://da_jie_liang.gitee.io/blog/categories/Redis/"/>
+      <category term="Redis" scheme="http://da_jie_liang.gitee.io/categories/Redis/"/>
     
     
-      <category term="linux" scheme="http://da_jie_liang.gitee.io/blog/tags/linux/"/>
+      <category term="linux" scheme="http://da_jie_liang.gitee.io/tags/linux/"/>
     
-      <category term="Redis" scheme="http://da_jie_liang.gitee.io/blog/tags/Redis/"/>
+      <category term="Redis" scheme="http://da_jie_liang.gitee.io/tags/Redis/"/>
     
   </entry>
   
   <entry>
     <title>docker的安装</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/10/docker-de-an-zhuang/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/10/docker-de-an-zhuang/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/10/docker-de-an-zhuang/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/10/docker-de-an-zhuang/</id>
     <published>2020-04-10T03:30:45.000Z</published>
     <updated>2020-04-10T04:35:06.975Z</updated>
     
@@ -268,21 +268,21 @@
     </summary>
     
     
-      <category term="linux" scheme="http://da_jie_liang.gitee.io/blog/categories/linux/"/>
+      <category term="linux" scheme="http://da_jie_liang.gitee.io/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://da_jie_liang.gitee.io/blog/tags/linux/"/>
+      <category term="linux" scheme="http://da_jie_liang.gitee.io/tags/linux/"/>
     
-      <category term="docker" scheme="http://da_jie_liang.gitee.io/blog/tags/docker/"/>
+      <category term="docker" scheme="http://da_jie_liang.gitee.io/tags/docker/"/>
     
-      <category term="容器" scheme="http://da_jie_liang.gitee.io/blog/tags/%E5%AE%B9%E5%99%A8/"/>
+      <category term="容器" scheme="http://da_jie_liang.gitee.io/tags/%E5%AE%B9%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>linux下安装nginx</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/09/linux-xia-an-zhuang-nginx/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/09/linux-xia-an-zhuang-nginx/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/09/linux-xia-an-zhuang-nginx/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/09/linux-xia-an-zhuang-nginx/</id>
     <published>2020-04-09T03:30:45.000Z</published>
     <updated>2020-04-09T03:59:41.453Z</updated>
     
@@ -299,19 +299,19 @@
     </summary>
     
     
-      <category term="linux" scheme="http://da_jie_liang.gitee.io/blog/categories/linux/"/>
+      <category term="linux" scheme="http://da_jie_liang.gitee.io/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://da_jie_liang.gitee.io/blog/tags/linux/"/>
+      <category term="linux" scheme="http://da_jie_liang.gitee.io/tags/linux/"/>
     
-      <category term="nginx" scheme="http://da_jie_liang.gitee.io/blog/tags/nginx/"/>
+      <category term="nginx" scheme="http://da_jie_liang.gitee.io/tags/nginx/"/>
     
   </entry>
   
   <entry>
     <title>linux下安装mysql 5.7</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/08/linux-xia-an-zhuang-mysql5.7/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/08/linux-xia-an-zhuang-mysql5.7/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/08/linux-xia-an-zhuang-mysql5.7/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/08/linux-xia-an-zhuang-mysql5.7/</id>
     <published>2020-04-08T08:30:45.000Z</published>
     <updated>2020-04-08T08:34:18.265Z</updated>
     
@@ -328,19 +328,19 @@
     </summary>
     
     
-      <category term="linux" scheme="http://da_jie_liang.gitee.io/blog/categories/linux/"/>
+      <category term="linux" scheme="http://da_jie_liang.gitee.io/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://da_jie_liang.gitee.io/blog/tags/linux/"/>
+      <category term="linux" scheme="http://da_jie_liang.gitee.io/tags/linux/"/>
     
-      <category term="mysql" scheme="http://da_jie_liang.gitee.io/blog/tags/mysql/"/>
+      <category term="mysql" scheme="http://da_jie_liang.gitee.io/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>linux下安装tomcat</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/08/linux-xia-an-zhuang-tomcat/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/08/linux-xia-an-zhuang-tomcat/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/08/linux-xia-an-zhuang-tomcat/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/08/linux-xia-an-zhuang-tomcat/</id>
     <published>2020-04-08T06:30:45.000Z</published>
     <updated>2020-04-08T05:56:59.869Z</updated>
     
@@ -358,19 +358,19 @@
     </summary>
     
     
-      <category term="linux" scheme="http://da_jie_liang.gitee.io/blog/categories/linux/"/>
+      <category term="linux" scheme="http://da_jie_liang.gitee.io/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://da_jie_liang.gitee.io/blog/tags/linux/"/>
+      <category term="linux" scheme="http://da_jie_liang.gitee.io/tags/linux/"/>
     
-      <category term="安装tomcat" scheme="http://da_jie_liang.gitee.io/blog/tags/%E5%AE%89%E8%A3%85tomcat/"/>
+      <category term="安装tomcat" scheme="http://da_jie_liang.gitee.io/tags/%E5%AE%89%E8%A3%85tomcat/"/>
     
   </entry>
   
   <entry>
     <title>vm安装centos7</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/07/vm-zhong-an-zhuang-centos7/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/07/vm-zhong-an-zhuang-centos7/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/07/vm-zhong-an-zhuang-centos7/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/07/vm-zhong-an-zhuang-centos7/</id>
     <published>2020-04-07T01:30:45.000Z</published>
     <updated>2020-04-07T01:27:57.709Z</updated>
     
@@ -387,19 +387,19 @@
     </summary>
     
     
-      <category term="linux" scheme="http://da_jie_liang.gitee.io/blog/categories/linux/"/>
+      <category term="linux" scheme="http://da_jie_liang.gitee.io/categories/linux/"/>
     
     
-      <category term="linux" scheme="http://da_jie_liang.gitee.io/blog/tags/linux/"/>
+      <category term="linux" scheme="http://da_jie_liang.gitee.io/tags/linux/"/>
     
-      <category term="虚拟机" scheme="http://da_jie_liang.gitee.io/blog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="http://da_jie_liang.gitee.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>mybatis-plus代码生成器</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/</id>
     <published>2020-04-06T09:30:45.000Z</published>
     <updated>2020-04-06T09:19:33.304Z</updated>
     
@@ -416,19 +416,19 @@
     </summary>
     
     
-      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/blog/categories/mybatisplus/"/>
+      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/categories/mybatisplus/"/>
     
     
-      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/blog/tags/mybatisplus/"/>
+      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/tags/mybatisplus/"/>
     
-      <category term="代码生成器" scheme="http://da_jie_liang.gitee.io/blog/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/"/>
+      <category term="代码生成器" scheme="http://da_jie_liang.gitee.io/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>springboot集成mybatis-plus</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/06/springboot-ji-cheng-mybatisplus/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/06/springboot-ji-cheng-mybatisplus/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/06/springboot-ji-cheng-mybatisplus/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/06/springboot-ji-cheng-mybatisplus/</id>
     <published>2020-04-06T08:30:45.000Z</published>
     <updated>2020-04-06T09:37:31.335Z</updated>
     
@@ -445,21 +445,21 @@
     </summary>
     
     
-      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/blog/categories/mybatisplus/"/>
+      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/categories/mybatisplus/"/>
     
     
-      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/blog/tags/mybatisplus/"/>
+      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/tags/mybatisplus/"/>
     
-      <category term="springboot" scheme="http://da_jie_liang.gitee.io/blog/tags/springboot/"/>
+      <category term="springboot" scheme="http://da_jie_liang.gitee.io/tags/springboot/"/>
     
-      <category term="整合" scheme="http://da_jie_liang.gitee.io/blog/tags/%E6%95%B4%E5%90%88/"/>
+      <category term="整合" scheme="http://da_jie_liang.gitee.io/tags/%E6%95%B4%E5%90%88/"/>
     
   </entry>
   
   <entry>
     <title>spring集成mybatis-plus</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/06/spring-ji-cheng-mybatisplus/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/06/spring-ji-cheng-mybatisplus/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/06/spring-ji-cheng-mybatisplus/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/06/spring-ji-cheng-mybatisplus/</id>
     <published>2020-04-06T02:30:45.000Z</published>
     <updated>2020-04-06T04:47:16.520Z</updated>
     
@@ -476,21 +476,21 @@
     </summary>
     
     
-      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/blog/categories/mybatisplus/"/>
+      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/categories/mybatisplus/"/>
     
     
-      <category term="spring" scheme="http://da_jie_liang.gitee.io/blog/tags/spring/"/>
+      <category term="spring" scheme="http://da_jie_liang.gitee.io/tags/spring/"/>
     
-      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/blog/tags/mybatisplus/"/>
+      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/tags/mybatisplus/"/>
     
-      <category term="整合" scheme="http://da_jie_liang.gitee.io/blog/tags/%E6%95%B4%E5%90%88/"/>
+      <category term="整合" scheme="http://da_jie_liang.gitee.io/tags/%E6%95%B4%E5%90%88/"/>
     
   </entry>
   
   <entry>
     <title>mybatis-plus简介</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/04/06/mybatis-plus-jian-jie/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/04/06/mybatis-plus-jian-jie/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/04/06/mybatis-plus-jian-jie/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/06/mybatis-plus-jian-jie/</id>
     <published>2020-04-06T00:30:45.000Z</published>
     <updated>2020-04-06T01:13:11.890Z</updated>
     
@@ -507,19 +507,19 @@
     </summary>
     
     
-      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/blog/categories/mybatisplus/"/>
+      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/categories/mybatisplus/"/>
     
     
-      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/blog/tags/mybatisplus/"/>
+      <category term="mybatisplus" scheme="http://da_jie_liang.gitee.io/tags/mybatisplus/"/>
     
-      <category term="mybatis" scheme="http://da_jie_liang.gitee.io/blog/tags/mybatis/"/>
+      <category term="mybatis" scheme="http://da_jie_liang.gitee.io/tags/mybatis/"/>
     
   </entry>
   
   <entry>
     <title>DateTimeFormat和JsonFormat 注解</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/03/26/qian-hou-duan-shi-jian-lei-xing-zhuan-huan/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/03/26/qian-hou-duan-shi-jian-lei-xing-zhuan-huan/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/03/26/qian-hou-duan-shi-jian-lei-xing-zhuan-huan/"/>
+    <id>http://da_jie_liang.gitee.io/2020/03/26/qian-hou-duan-shi-jian-lei-xing-zhuan-huan/</id>
     <published>2020-03-26T13:30:45.000Z</published>
     <updated>2020-03-26T11:31:15.454Z</updated>
     
@@ -536,21 +536,21 @@
     </summary>
     
     
-      <category term="时间转换" scheme="http://da_jie_liang.gitee.io/blog/categories/%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2/"/>
+      <category term="时间转换" scheme="http://da_jie_liang.gitee.io/categories/%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2/"/>
     
     
-      <category term="spring" scheme="http://da_jie_liang.gitee.io/blog/tags/spring/"/>
+      <category term="spring" scheme="http://da_jie_liang.gitee.io/tags/spring/"/>
     
-      <category term="注解" scheme="http://da_jie_liang.gitee.io/blog/tags/%E6%B3%A8%E8%A7%A3/"/>
+      <category term="注解" scheme="http://da_jie_liang.gitee.io/tags/%E6%B3%A8%E8%A7%A3/"/>
     
-      <category term="json" scheme="http://da_jie_liang.gitee.io/blog/tags/json/"/>
+      <category term="json" scheme="http://da_jie_liang.gitee.io/tags/json/"/>
     
   </entry>
   
   <entry>
     <title>ssm的整合</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/03/10/ssm-zheng-he/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/03/10/ssm-zheng-he/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/03/10/ssm-zheng-he/"/>
+    <id>http://da_jie_liang.gitee.io/2020/03/10/ssm-zheng-he/</id>
     <published>2020-03-10T13:30:45.000Z</published>
     <updated>2020-04-15T12:47:17.091Z</updated>
     
@@ -567,21 +567,21 @@
     </summary>
     
     
-      <category term="ssm" scheme="http://da_jie_liang.gitee.io/blog/categories/ssm/"/>
+      <category term="ssm" scheme="http://da_jie_liang.gitee.io/categories/ssm/"/>
     
     
-      <category term="spring" scheme="http://da_jie_liang.gitee.io/blog/tags/spring/"/>
+      <category term="spring" scheme="http://da_jie_liang.gitee.io/tags/spring/"/>
     
-      <category term="mybatis" scheme="http://da_jie_liang.gitee.io/blog/tags/mybatis/"/>
+      <category term="mybatis" scheme="http://da_jie_liang.gitee.io/tags/mybatis/"/>
     
-      <category term="springmvc" scheme="http://da_jie_liang.gitee.io/blog/tags/springmvc/"/>
+      <category term="springmvc" scheme="http://da_jie_liang.gitee.io/tags/springmvc/"/>
     
   </entry>
   
   <entry>
     <title>springMvc的异常处理和拦截器</title>
-    <link href="http://da_jie_liang.gitee.io/blog/2020/03/09/springmvc-de-yi-chang-chu-li/"/>
-    <id>http://da_jie_liang.gitee.io/blog/2020/03/09/springmvc-de-yi-chang-chu-li/</id>
+    <link href="http://da_jie_liang.gitee.io/2020/03/09/springmvc-de-yi-chang-chu-li/"/>
+    <id>http://da_jie_liang.gitee.io/2020/03/09/springmvc-de-yi-chang-chu-li/</id>
     <published>2020-03-09T13:30:45.000Z</published>
     <updated>2020-03-09T13:37:37.452Z</updated>
     
@@ -598,12 +598,12 @@
     </summary>
     
     
-      <category term="SpringMvc" scheme="http://da_jie_liang.gitee.io/blog/categories/SpringMvc/"/>
+      <category term="SpringMvc" scheme="http://da_jie_liang.gitee.io/categories/SpringMvc/"/>
     
     
-      <category term="springmvc" scheme="http://da_jie_liang.gitee.io/blog/tags/springmvc/"/>
+      <category term="springmvc" scheme="http://da_jie_liang.gitee.io/tags/springmvc/"/>
     
-      <category term="异常处理" scheme="http://da_jie_liang.gitee.io/blog/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+      <category term="异常处理" scheme="http://da_jie_liang.gitee.io/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
