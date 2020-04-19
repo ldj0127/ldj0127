@@ -1541,8 +1541,8 @@ log4j<span class="token punctuation">.</span>appender<span class="token punctuat
         <category>mybatisplus</category>
       </categories>
       <tags>
-        <tag>mybatis</tag>
         <tag>mybatisplus</tag>
+        <tag>mybatis</tag>
       </tags>
   </entry>
   <entry>
@@ -3183,8 +3183,8 @@ String cookieValue<span class="token punctuation">)</span><span class="token pun
         <category>mybatis</category>
       </categories>
       <tags>
-        <tag>持久层框架</tag>
         <tag>mybatis</tag>
+        <tag>持久层框架</tag>
         <tag>多表查询</tag>
       </tags>
   </entry>
@@ -3349,8 +3349,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>配置</tag>
-        <tag>持久层框架</tag>
         <tag>mybatis</tag>
+        <tag>持久层框架</tag>
       </tags>
   </entry>
   <entry>
@@ -3498,8 +3498,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>配置</tag>
-        <tag>持久层框架</tag>
         <tag>mybatis</tag>
+        <tag>持久层框架</tag>
       </tags>
   </entry>
   <entry>
@@ -3777,8 +3777,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>spring</tag>
-        <tag>注解</tag>
         <tag>IOC</tag>
+        <tag>注解</tag>
       </tags>
   </entry>
   <entry>
@@ -3966,8 +3966,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>java</category>
       </categories>
       <tags>
-        <tag>StringBuffer</tag>
         <tag>字符串</tag>
+        <tag>StringBuffer</tag>
         <tag>StringBuiler</tag>
       </tags>
   </entry>
@@ -3987,8 +3987,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>java</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>String</tag>
+        <tag>字符串</tag>
         <tag>常用方法</tag>
       </tags>
   </entry>
@@ -4010,8 +4010,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>spring</category>
       </categories>
       <tags>
-        <tag>框架</tag>
         <tag>spring</tag>
+        <tag>框架</tag>
         <tag>spring的概述</tag>
       </tags>
   </entry>
@@ -4056,8 +4056,8 @@ scope=&quot;prototype&quot; init-method=&quot;init&quot; destroy-method=&quot;de
         <category>spring</category>
       </categories>
       <tags>
-        <tag>框架</tag>
         <tag>spring</tag>
+        <tag>框架</tag>
         <tag>spring的使用</tag>
       </tags>
   </entry>
@@ -5278,8 +5278,8 @@ show crate database 数据库名称</code></pre><h3 id="修改数据库编码"><
         <category>编程工具</category>
       </categories>
       <tags>
-        <tag>后端</tag>
         <tag>java</tag>
+        <tag>后端</tag>
         <tag>eclipse</tag>
       </tags>
   </entry>
@@ -5547,8 +5547,8 @@ show crate database 数据库名称</code></pre><h3 id="修改数据库编码"><
         <category>反射</category>
       </categories>
       <tags>
-        <tag>后端</tag>
         <tag>java</tag>
+        <tag>后端</tag>
       </tags>
   </entry>
 </search>
