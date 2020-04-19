@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dajienihao.cn/"/>
-  <updated>2020-04-17T03:36:28.327Z</updated>
+  <updated>2020-04-19T08:37:43.026Z</updated>
   <id>http://dajienihao.cn/</id>
   
   <author>
@@ -15,6 +15,153 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java中的同步代码块和同步方法</title>
+    <link href="http://dajienihao.cn/2020/04/19/java-zhong-de-tong-bu-dai-ma-kuai-tong-bu-fang-fa/"/>
+    <id>http://dajienihao.cn/2020/04/19/java-zhong-de-tong-bu-dai-ma-kuai-tong-bu-fang-fa/</id>
+    <published>2020-04-19T05:30:45.000Z</published>
+    <updated>2020-04-19T08:37:43.026Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;多线程容易出现问题的原因&quot;&gt;&lt;a href=&quot;#多线程容易出现问题的原因&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="多线程" scheme="http://dajienihao.cn/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+    
+      <category term="synchronized" scheme="http://dajienihao.cn/tags/synchronized/"/>
+    
+      <category term="多线程" scheme="http://dajienihao.cn/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="锁" scheme="http://dajienihao.cn/tags/%E9%94%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>内部类</title>
+    <link href="http://dajienihao.cn/2020/04/19/nei-bu-lei/"/>
+    <id>http://dajienihao.cn/2020/04/19/nei-bu-lei/</id>
+    <published>2020-04-19T05:30:45.000Z</published>
+    <updated>2020-04-19T08:27:59.713Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;内部类详解&quot;&gt;&lt;a href=&quot;#内部类详解&quot; class=&quot;headerlink&quot; title=&quot;内部类详解&quot;&gt;&lt;/a&gt;内部类详解&lt;/h1&gt;&lt;h2 id=&quot;成员内部类-普通内部类&quot;&gt;&lt;a href=&quot;#成员内部类-普通内部类&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://dajienihao.cn/categories/java/"/>
+    
+    
+      <category term="内部类" scheme="http://dajienihao.cn/tags/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
+    
+      <category term="基础" scheme="http://dajienihao.cn/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多线程之线程死锁</title>
+    <link href="http://dajienihao.cn/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/"/>
+    <id>http://dajienihao.cn/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/</id>
+    <published>2020-04-19T05:30:45.000Z</published>
+    <updated>2020-04-19T08:37:37.075Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;死锁讲解&quot;&gt;&lt;a href=&quot;#死锁讲解&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://dajienihao.cn/categories/java/"/>
+    
+    
+      <category term="多线程" scheme="http://dajienihao.cn/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="基础" scheme="http://dajienihao.cn/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>向上转型和向下转型</title>
+    <link href="http://dajienihao.cn/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
+    <id>http://dajienihao.cn/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
+    <published>2020-04-19T05:30:45.000Z</published>
+    <updated>2020-04-19T08:40:31.920Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;向上转型与向下转型&quot;&gt;&lt;a href=&quot;#向上转型与向下转型&quot; class=&quot;headerlink&quot; title=&quot;向上转型与向下转型&quot;&gt;&lt;/a&gt;向上转型与向下转型&lt;/h1&gt;&lt;h2 id=&quot;向上转型&quot;&gt;&lt;a href=&quot;#向上转型&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="多态" scheme="http://dajienihao.cn/categories/%E5%A4%9A%E6%80%81/"/>
+    
+    
+      <category term="java" scheme="http://dajienihao.cn/tags/java/"/>
+    
+      <category term="基础" scheme="http://dajienihao.cn/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之单例模式</title>
+    <link href="http://dajienihao.cn/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/"/>
+    <id>http://dajienihao.cn/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/</id>
+    <published>2020-04-19T05:30:45.000Z</published>
+    <updated>2020-04-19T08:32:51.733Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;单例模式&quot;&gt;&lt;a href=&quot;#单例模式&quot; class=&quot;headerlink&quot; title=&quot;单例模式&quot;&gt;&lt;/a&gt;单例模式&lt;/h2&gt;&lt;p&gt;单例模式（Singleton Pattern）是 Java
+        
+      
+    
+    </summary>
+    
+    
+      <category term="设计模式" scheme="http://dajienihao.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="http://dajienihao.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="单例模式" scheme="http://dajienihao.cn/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux下的安装部署fastdfs</title>
@@ -457,157 +604,6 @@
       <category term="springmvc" scheme="http://dajienihao.cn/tags/springmvc/"/>
     
       <category term="异常处理" scheme="http://dajienihao.cn/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>springMvc静态资源和文件上传</title>
-    <link href="http://dajienihao.cn/2020/03/09/springmvc-jing-tai-zi-yuan-he-wen-jian-shang-chuan/"/>
-    <id>http://dajienihao.cn/2020/03/09/springmvc-jing-tai-zi-yuan-he-wen-jian-shang-chuan/</id>
-    <published>2020-03-09T03:30:45.000Z</published>
-    <updated>2020-03-09T05:30:59.015Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;静态资源配置&quot;&gt;&lt;a href=&quot;#静态资源配置&quot; class=&quot;headerlink&quot; title=&quot;静态资源配置&quot;&gt;&lt;/a&gt;静态资源配置&lt;/h2&gt;&lt;p&gt;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="SpringMvc" scheme="http://dajienihao.cn/categories/SpringMvc/"/>
-    
-    
-      <category term="springmvc" scheme="http://dajienihao.cn/tags/springmvc/"/>
-    
-      <category term="静态资源" scheme="http://dajienihao.cn/tags/%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/"/>
-    
-      <category term="文件上传" scheme="http://dajienihao.cn/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>idea快捷键</title>
-    <link href="http://dajienihao.cn/2020/03/09/idea-kuai-jie-jian/"/>
-    <id>http://dajienihao.cn/2020/03/09/idea-kuai-jie-jian/</id>
-    <published>2020-03-09T03:24:45.000Z</published>
-    <updated>2020-03-09T02:58:11.360Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;编辑快捷键&quot;&gt;&lt;a href=&quot;#编辑快捷键&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="idea" scheme="http://dajienihao.cn/categories/idea/"/>
-    
-    
-      <category term="快捷键" scheme="http://dajienihao.cn/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    
-      <category term="idea" scheme="http://dajienihao.cn/tags/idea/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>springMvc请求参数的绑定</title>
-    <link href="http://dajienihao.cn/2020/03/07/springmvc-can-shu-bang-ding/"/>
-    <id>http://dajienihao.cn/2020/03/07/springmvc-can-shu-bang-ding/</id>
-    <published>2020-03-07T11:24:45.000Z</published>
-    <updated>2020-03-07T10:49:43.345Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;请求参数的绑定&quot;&gt;&lt;a href=&quot;#请求参数的绑定&quot; class=&quot;headerlink&quot; title=&quot;请求参数的绑定&quot;&gt;&lt;/a&gt;请求参数的绑定&lt;/h1&gt;&lt;h2 id=&quot;请求参数的绑定说明&quot;&gt;&lt;a href=&quot;#请求参数的绑定说明&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="SpringMvc" scheme="http://dajienihao.cn/categories/SpringMvc/"/>
-    
-    
-      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
-    
-      <category term="mvc" scheme="http://dajienihao.cn/tags/mvc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>springMvc常用注解</title>
-    <link href="http://dajienihao.cn/2020/03/07/springmvc-chang-yong-zhu-jie/"/>
-    <id>http://dajienihao.cn/2020/03/07/springmvc-chang-yong-zhu-jie/</id>
-    <published>2020-03-07T11:24:45.000Z</published>
-    <updated>2020-03-07T13:03:35.234Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;RequestMapping&quot;&gt;&lt;a href=&quot;#RequestMapping&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="SpringMvc" scheme="http://dajienihao.cn/categories/SpringMvc/"/>
-    
-    
-      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
-    
-      <category term="mvc" scheme="http://dajienihao.cn/tags/mvc/"/>
-    
-      <category term="注解" scheme="http://dajienihao.cn/tags/%E6%B3%A8%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>springMvc入门配置</title>
-    <link href="http://dajienihao.cn/2020/03/07/springmvc-de-ji-chu-pei-zhi/"/>
-    <id>http://dajienihao.cn/2020/03/07/springmvc-de-ji-chu-pei-zhi/</id>
-    <published>2020-03-07T10:24:45.000Z</published>
-    <updated>2020-03-07T09:49:05.699Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;SpringMVC的入门配置&quot;&gt;&lt;a href=&quot;#SpringMVC的入门配置&quot; class=&quot;headerlink&quot; title=&quot;SpringMVC的入门配置&quot;&gt;&lt;/a&gt;SpringMVC的入门配置&lt;/h1&gt;&lt;h2 id=&quot;springMvc是什么&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="SpringMvc" scheme="http://dajienihao.cn/categories/SpringMvc/"/>
-    
-    
-      <category term="spring" scheme="http://dajienihao.cn/tags/spring/"/>
-    
-      <category term="mvc" scheme="http://dajienihao.cn/tags/mvc/"/>
-    
-      <category term="配置" scheme="http://dajienihao.cn/tags/%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
