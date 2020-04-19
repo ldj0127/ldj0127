@@ -31,7 +31,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/blog/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -39,7 +39,7 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
-                <a href="/" class="waves-effect waves-light">
+                <a href="/blog/" class="waves-effect waves-light">
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
@@ -405,15 +405,15 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/spring/">
+                            <a href="/blog/tags/spring/">
                                 <span class="chip bg-color">spring</span>
                             </a>
                         
-                            <a href="/tags/mvc/">
+                            <a href="/blog/tags/mvc/">
                                 <span class="chip bg-color">mvc</span>
                             </a>
                         
-                            <a href="/tags/%E9%85%8D%E7%BD%AE/">
+                            <a href="/blog/tags/%E9%85%8D%E7%BD%AE/">
                                 <span class="chip bg-color">配置</span>
                             </a>
                         
@@ -425,7 +425,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/SpringMvc/" class="post-category">
+                            <a href="/blog/categories/SpringMvc/" class="post-category">
                                 SpringMvc
                             </a>
                         
@@ -602,7 +602,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://da_jie_liang.gitee.io/2020/03/07/springmvc-de-ji-chu-pei-zhi/">http://da_jie_liang.gitee.io/2020/03/07/springmvc-de-ji-chu-pei-zhi/</a>
+                    <a href="http://da_jie_liang.gitee.io/blog/2020/03/07/springmvc-de-ji-chu-pei-zhi/">http://da_jie_liang.gitee.io/blog/2020/03/07/springmvc-de-ji-chu-pei-zhi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -640,15 +640,15 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/spring/">
+                                <a href="/blog/tags/spring/">
                                     <span class="chip bg-color">spring</span>
                                 </a>
                             
-                                <a href="/tags/mvc/">
+                                <a href="/blog/tags/mvc/">
                                     <span class="chip bg-color">mvc</span>
                                 </a>
                             
-                                <a href="/tags/%E9%85%8D%E7%BD%AE/">
+                                <a href="/blog/tags/%E9%85%8D%E7%BD%AE/">
                                     <span class="chip bg-color">配置</span>
                                 </a>
                             
@@ -820,21 +820,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/03/07/springmvc-can-shu-bang-ding/">
+                <a href="/blog/2020/03/07/springmvc-chang-yong-zhu-jie/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/220219-1566050539d2a9.jpg" class="responsive-img" alt="springMvc请求参数的绑定">
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/201722-1556626642c749.jpg" class="responsive-img" alt="springMvc常用注解">
                         
-                        <span class="card-title">springMvc请求参数的绑定</span>
+                        <span class="card-title">springMvc常用注解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            请求参数的绑定请求参数的绑定说明绑定机制
-表单提交的数据都是k=v格式的 username=haha&amp;password=123
-SpringMVC的参数绑定过程是把表单提交的请求参数，作为控制器中方法的参数进行绑定的
-要求：提交表单
+                            RequestMappingRequestMapping注解的作用是建立请求URL和处理方法之间的对应关系
+控制器代码:
+/**
+ * RequestMapping 注解出现的位置
+ */
+@Controller
+@RequestMappi
                         
                     </div>
                     <div class="publish-info">
@@ -845,7 +848,7 @@ SpringMVC的参数绑定过程是把表单提交的请求参数，作为控制�
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/SpringMvc/" class="post-category">
+                            <a href="/blog/categories/SpringMvc/" class="post-category">
                                     SpringMvc
                                 </a>
                             
@@ -856,12 +859,16 @@ SpringMVC的参数绑定过程是把表单提交的请求参数，作为控制�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/spring/">
+                    <a href="/blog/tags/spring/">
                         <span class="chip bg-color">spring</span>
                     </a>
                     
-                    <a href="/tags/mvc/">
+                    <a href="/blog/tags/mvc/">
                         <span class="chip bg-color">mvc</span>
+                    </a>
+                    
+                    <a href="/blog/tags/%E6%B3%A8%E8%A7%A3/">
+                        <span class="chip bg-color">注解</span>
                     </a>
                     
                 </div>
@@ -875,18 +882,18 @@ SpringMVC的参数绑定过程是把表单提交的请求参数，作为控制�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/04/mybatis-bu-tong-fang-shi-de-duo-biao-cha-xun/">
+                <a href="/blog/2020/03/04/mybatis-zhong-de-dong-tai-sql/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/183201-15420187218258.jpg" class="responsive-img" alt="mybatis不同方式的多表查询">
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/180443-1523786683938c.jpg" class="responsive-img" alt="mybatis中动态sql">
                         
-                        <span class="card-title">mybatis不同方式的多表查询</span>
+                        <span class="card-title">mybatis中动态sql</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mybatis的多表查询假如我们有一个员工表和员工所在部门表，那么员工表的部门ID外键部门表的部门ID，那么在mybatis这样的持久层框架中，它是在底层自动的对数据库数据进行封装成对应的实体类对象，那如何在展示到浏览器端时，展示员工信息时
+                            动态 SQLMyBatis 的强大特性之一便是它的动态 SQL。如果你有使用 JDBC 或其它类似框架的经验，你就能体会到根据不同条件拼接 SQL 语句的痛苦。例如拼接时要确保不能忘记添加必要的空格，还要注意去掉列表最后一个列名的逗号。利用
                         
                     </div>
                     <div class="publish-info">
@@ -897,7 +904,7 @@ SpringMVC的参数绑定过程是把表单提交的请求参数，作为控制�
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/mybatis/" class="post-category">
+                            <a href="/blog/categories/mybatis/" class="post-category">
                                     mybatis
                                 </a>
                             
@@ -908,16 +915,16 @@ SpringMVC的参数绑定过程是把表单提交的请求参数，作为控制�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/mybatis/">
-                        <span class="chip bg-color">mybatis</span>
+                    <a href="/blog/tags/%E9%85%8D%E7%BD%AE/">
+                        <span class="chip bg-color">配置</span>
                     </a>
                     
-                    <a href="/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/">
+                    <a href="/blog/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/">
                         <span class="chip bg-color">持久层框架</span>
                     </a>
                     
-                    <a href="/tags/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/">
-                        <span class="chip bg-color">多表查询</span>
+                    <a href="/blog/tags/mybatis/">
+                        <span class="chip bg-color">mybatis</span>
                     </a>
                     
                 </div>
@@ -1195,7 +1202,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/blog/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
 </div>
@@ -1220,7 +1227,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/blog/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->
@@ -1328,6 +1335,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":170,"height":340},"mobile":{"show":false},"log":false});</script></body>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/blog/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":170,"height":340},"mobile":{"show":false},"log":false});</script></body>
 
 </html>

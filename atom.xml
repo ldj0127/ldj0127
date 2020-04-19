@@ -3,7 +3,7 @@
   <title>L</title>
   
   <subtitle>不忘初心，方得始终</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://da_jie_liang.gitee.io/"/>
   <updated>2020-04-19T08:37:43.026Z</updated>
@@ -48,11 +48,11 @@
   </entry>
   
   <entry>
-    <title>内部类</title>
-    <link href="http://da_jie_liang.gitee.io/2020/04/19/nei-bu-lei/"/>
-    <id>http://da_jie_liang.gitee.io/2020/04/19/nei-bu-lei/</id>
+    <title>向上转型和向下转型</title>
+    <link href="http://da_jie_liang.gitee.io/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
     <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-04-19T08:27:59.713Z</updated>
+    <updated>2020-04-19T08:40:31.920Z</updated>
     
     <summary type="html">
     
@@ -60,17 +60,17 @@
       
         
         
-          &lt;h1 id=&quot;内部类详解&quot;&gt;&lt;a href=&quot;#内部类详解&quot; class=&quot;headerlink&quot; title=&quot;内部类详解&quot;&gt;&lt;/a&gt;内部类详解&lt;/h1&gt;&lt;h2 id=&quot;成员内部类-普通内部类&quot;&gt;&lt;a href=&quot;#成员内部类-普通内部类&quot;
+          &lt;h1 id=&quot;向上转型与向下转型&quot;&gt;&lt;a href=&quot;#向上转型与向下转型&quot; class=&quot;headerlink&quot; title=&quot;向上转型与向下转型&quot;&gt;&lt;/a&gt;向上转型与向下转型&lt;/h1&gt;&lt;h2 id=&quot;向上转型&quot;&gt;&lt;a href=&quot;#向上转型&quot;
         
       
     
     </summary>
     
     
-      <category term="java" scheme="http://da_jie_liang.gitee.io/categories/java/"/>
+      <category term="多态" scheme="http://da_jie_liang.gitee.io/categories/%E5%A4%9A%E6%80%81/"/>
     
     
-      <category term="内部类" scheme="http://da_jie_liang.gitee.io/tags/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
+      <category term="java" scheme="http://da_jie_liang.gitee.io/tags/java/"/>
     
       <category term="基础" scheme="http://da_jie_liang.gitee.io/tags/%E5%9F%BA%E7%A1%80/"/>
     
@@ -106,11 +106,11 @@
   </entry>
   
   <entry>
-    <title>向上转型和向下转型</title>
-    <link href="http://da_jie_liang.gitee.io/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
-    <id>http://da_jie_liang.gitee.io/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
+    <title>内部类</title>
+    <link href="http://da_jie_liang.gitee.io/2020/04/19/nei-bu-lei/"/>
+    <id>http://da_jie_liang.gitee.io/2020/04/19/nei-bu-lei/</id>
     <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-04-19T08:40:31.920Z</updated>
+    <updated>2020-04-19T08:27:59.713Z</updated>
     
     <summary type="html">
     
@@ -118,19 +118,19 @@
       
         
         
-          &lt;h1 id=&quot;向上转型与向下转型&quot;&gt;&lt;a href=&quot;#向上转型与向下转型&quot; class=&quot;headerlink&quot; title=&quot;向上转型与向下转型&quot;&gt;&lt;/a&gt;向上转型与向下转型&lt;/h1&gt;&lt;h2 id=&quot;向上转型&quot;&gt;&lt;a href=&quot;#向上转型&quot;
+          &lt;h1 id=&quot;内部类详解&quot;&gt;&lt;a href=&quot;#内部类详解&quot; class=&quot;headerlink&quot; title=&quot;内部类详解&quot;&gt;&lt;/a&gt;内部类详解&lt;/h1&gt;&lt;h2 id=&quot;成员内部类-普通内部类&quot;&gt;&lt;a href=&quot;#成员内部类-普通内部类&quot;
         
       
     
     </summary>
     
     
-      <category term="多态" scheme="http://da_jie_liang.gitee.io/categories/%E5%A4%9A%E6%80%81/"/>
+      <category term="java" scheme="http://da_jie_liang.gitee.io/categories/java/"/>
     
-    
-      <category term="java" scheme="http://da_jie_liang.gitee.io/tags/java/"/>
     
       <category term="基础" scheme="http://da_jie_liang.gitee.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="内部类" scheme="http://da_jie_liang.gitee.io/tags/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
     
   </entry>
   
