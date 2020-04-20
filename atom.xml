@@ -77,35 +77,6 @@
   </entry>
   
   <entry>
-    <title>向上转型和向下转型</title>
-    <link href="https://da_jie_liang.gitee.io/blog/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
-    <id>https://da_jie_liang.gitee.io/blog/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
-    <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-04-19T08:40:31.920Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;向上转型与向下转型&quot;&gt;&lt;a href=&quot;#向上转型与向下转型&quot; class=&quot;headerlink&quot; title=&quot;向上转型与向下转型&quot;&gt;&lt;/a&gt;向上转型与向下转型&lt;/h1&gt;&lt;h2 id=&quot;向上转型&quot;&gt;&lt;a href=&quot;#向上转型&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="多态" scheme="https://da_jie_liang.gitee.io/blog/categories/%E5%A4%9A%E6%80%81/"/>
-    
-    
-      <category term="java" scheme="https://da_jie_liang.gitee.io/blog/tags/java/"/>
-    
-      <category term="基础" scheme="https://da_jie_liang.gitee.io/blog/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
     <title>多线程之线程死锁</title>
     <link href="https://da_jie_liang.gitee.io/blog/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/"/>
     <id>https://da_jie_liang.gitee.io/blog/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/</id>
@@ -129,6 +100,35 @@
     
     
       <category term="多线程" scheme="https://da_jie_liang.gitee.io/blog/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="基础" scheme="https://da_jie_liang.gitee.io/blog/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>向上转型和向下转型</title>
+    <link href="https://da_jie_liang.gitee.io/blog/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
+    <id>https://da_jie_liang.gitee.io/blog/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
+    <published>2020-04-19T05:30:45.000Z</published>
+    <updated>2020-04-19T08:40:31.920Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;向上转型与向下转型&quot;&gt;&lt;a href=&quot;#向上转型与向下转型&quot; class=&quot;headerlink&quot; title=&quot;向上转型与向下转型&quot;&gt;&lt;/a&gt;向上转型与向下转型&lt;/h1&gt;&lt;h2 id=&quot;向上转型&quot;&gt;&lt;a href=&quot;#向上转型&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="多态" scheme="https://da_jie_liang.gitee.io/blog/categories/%E5%A4%9A%E6%80%81/"/>
+    
+    
+      <category term="java" scheme="https://da_jie_liang.gitee.io/blog/tags/java/"/>
     
       <category term="基础" scheme="https://da_jie_liang.gitee.io/blog/tags/%E5%9F%BA%E7%A1%80/"/>
     
