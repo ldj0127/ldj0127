@@ -77,35 +77,6 @@
   </entry>
   
   <entry>
-    <title>多线程之线程死锁</title>
-    <link href="http://yoursite.com/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/"/>
-    <id>http://yoursite.com/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/</id>
-    <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-04-19T08:37:37.075Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;死锁讲解&quot;&gt;&lt;a href=&quot;#死锁讲解&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="多线程" scheme="http://yoursite.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
     <title>向上转型和向下转型</title>
     <link href="http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
     <id>http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
@@ -129,6 +100,35 @@
     
     
       <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多线程之线程死锁</title>
+    <link href="http://yoursite.com/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/"/>
+    <id>http://yoursite.com/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/</id>
+    <published>2020-04-19T05:30:45.000Z</published>
+    <updated>2020-04-19T08:37:37.075Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;死锁讲解&quot;&gt;&lt;a href=&quot;#死锁讲解&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="多线程" scheme="http://yoursite.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
       <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
     
