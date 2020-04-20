@@ -3966,8 +3966,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>java</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>StringBuffer</tag>
+        <tag>字符串</tag>
         <tag>StringBuiler</tag>
       </tags>
   </entry>
@@ -3987,8 +3987,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>java</category>
       </categories>
       <tags>
-        <tag>String</tag>
         <tag>字符串</tag>
+        <tag>String</tag>
         <tag>常用方法</tag>
       </tags>
   </entry>
@@ -4010,8 +4010,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>spring</category>
       </categories>
       <tags>
-        <tag>框架</tag>
         <tag>spring</tag>
+        <tag>框架</tag>
         <tag>spring的概述</tag>
       </tags>
   </entry>
@@ -4056,8 +4056,8 @@ scope=&quot;prototype&quot; init-method=&quot;init&quot; destroy-method=&quot;de
         <category>spring</category>
       </categories>
       <tags>
-        <tag>框架</tag>
         <tag>spring</tag>
+        <tag>框架</tag>
         <tag>spring的使用</tag>
       </tags>
   </entry>
