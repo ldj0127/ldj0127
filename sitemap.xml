@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/01/18/maven-xue-xi-bi-ji/</loc>
+    
+    <lastmod>2020-04-21T09:28:13.295Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/04/21/java-ji-he-de-xuan-ze/</loc>
+    
+    <lastmod>2020-04-21T09:16:16.367Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</loc>
     
     <lastmod>2020-04-19T08:40:31.920Z</lastmod>
@@ -271,13 +285,6 @@
     <loc>http://yoursite.com/2020/02/21/spring-gai-shu/</loc>
     
     <lastmod>2020-02-21T13:12:59.806Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/01/18/maven-xue-xi-bi-ji/</loc>
-    
-    <lastmod>2020-02-21T12:47:24.746Z</lastmod>
     
   </url>
   
