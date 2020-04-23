@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-21T09:16:16.367Z</updated>
+  <updated>2020-04-23T10:29:21.775Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java8新特性</title>
+    <link href="http://yoursite.com/2020/04/23/java8-xin-te-xing/"/>
+    <id>http://yoursite.com/2020/04/23/java8-xin-te-xing/</id>
+    <published>2020-04-23T10:24:45.000Z</published>
+    <updated>2020-04-23T10:29:21.775Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;接口新特性&quot;&gt;&lt;a href=&quot;#接口新特性&quot; class=&quot;headerlink&quot; title=&quot;接口新特性&quot;&gt;&lt;/a&gt;接口新特性&lt;/h2&gt;&lt;h3 id=&quot;默认方法和静态方法&quot;&gt;&lt;a href=&quot;#默认方法和静态方法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="lambda" scheme="http://yoursite.com/tags/lambda/"/>
+    
+      <category term="stream" scheme="http://yoursite.com/tags/stream/"/>
+    
+      <category term="新特性" scheme="http://yoursite.com/tags/%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    
+  </entry>
   
   <entry>
     <title>java集合的选择</title>
@@ -575,37 +606,6 @@
       <category term="注解" scheme="http://yoursite.com/tags/%E6%B3%A8%E8%A7%A3/"/>
     
       <category term="json" scheme="http://yoursite.com/tags/json/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ssm的整合</title>
-    <link href="http://yoursite.com/2020/03/10/ssm-zheng-he/"/>
-    <id>http://yoursite.com/2020/03/10/ssm-zheng-he/</id>
-    <published>2020-03-10T13:30:45.000Z</published>
-    <updated>2020-04-15T12:47:17.091Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;搭建整合环境&quot;&gt;&lt;a href=&quot;#搭建整合环境&quot; class=&quot;headerlink&quot; title=&quot;搭建整合环境&quot;&gt;&lt;/a&gt;搭建整合环境&lt;/h2&gt;&lt;h3 id=&quot;1-创建maven工程&quot;&gt;&lt;a href=&quot;#1-创建maven工程&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="ssm" scheme="http://yoursite.com/categories/ssm/"/>
-    
-    
-      <category term="spring" scheme="http://yoursite.com/tags/spring/"/>
-    
-      <category term="mybatis" scheme="http://yoursite.com/tags/mybatis/"/>
-    
-      <category term="springmvc" scheme="http://yoursite.com/tags/springmvc/"/>
     
   </entry>
   

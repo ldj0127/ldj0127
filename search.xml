@@ -1,6 +1,389 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java8新特性</title>
+    <url>/2020/04/23/java8-xin-te-xing/</url>
+    <content><![CDATA[<h2 id="接口新特性"><a href="#接口新特性" class="headerlink" title="接口新特性"></a>接口新特性</h2><h3 id="默认方法和静态方法"><a href="#默认方法和静态方法" class="headerlink" title="默认方法和静态方法"></a>默认方法和静态方法</h3><p>在java8中（jdk 1.8 +） 接口中可以定义默认方法和静态方法。这种方法不需要实现类去实现，所以可以避免在接口中添加新方法后，需要修改所有实现类去实现新方法的问题。</p>
+<h4 id="默认方法"><a href="#默认方法" class="headerlink" title="默认方法"></a>默认方法</h4><p>默认方法是一种在接口内已经默认实现的方法，比如：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
+    <span class="token keyword">default</span> User <span class="token function">getUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"默认方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p><code>关键字使用default进行修饰</code>， 方法需要方法体。这样的方法所有的子类会默认实现（不用自己写），如果想要覆盖重写，也可以在实现类中覆盖重写。</p>
+<blockquote>
+<p>注意可能会出现一个类实现多个接口，并且接口内存在相同名称的默认方法的情况。</p>
+</blockquote>
+<h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>与一般类的静态方法用法相同</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">default</span> User <span class="token function">getUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"默认方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"静态方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>注意接口的静态方法不会被实现类继承</p>
+</blockquote>
+<h3 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>函数式接口在Java中是指：<strong>有且仅有一个抽象方法的接口。</strong><br>函数式接口，即适用于函数式编程场景的接口。而Java中的函数式编程体现就是<code>Lambda</code>，所以函数式接口就是可以适用于Lambda使用的接口。只有确保接口中有且仅有一个抽象方法，Java中的Lambda才能顺利地进行推导。</p>
+<h4 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h4><p>确保接口中有且只有一个抽象方法即可。</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@FunctionalInterface</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">MyFunctionalInterface</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//有且只有一个抽象方法</span>
+
+    <span class="token keyword">default</span> <span class="token keyword">void</span> <span class="token function">defaultMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"接口默认方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">staticMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"接口静态方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="FunctionalInterface注解"><a href="#FunctionalInterface注解" class="headerlink" title="@FunctionalInterface注解"></a>@FunctionalInterface注解</h4><p>有的注解是在编译期起作用，如<code>@Override</code>注解。而<code>@FunctionalInterface</code>也是在编译期起作用。该注解是java8专门为函数式接口引入的新的注解，作用于一个接口上。<br>一旦使用该注解来定义接口，编译期会强制检查该接口是否符合函数式接口的条件，不符合则会报错。需要注意的是：即使不使用该注解，只要满足函数式接口的定义，这就是一个函数式接口。</p>
+<h2 id="Lambda"><a href="#Lambda" class="headerlink" title="Lambda"></a>Lambda</h2><p>在面向对象的基础上，java8 通过Lambda表达式与方法引用等，为开发者打开了函数式编程的大门。Lambda表达式不是语法糖，而是新的语法。下面举个栗子：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">lambdaStudy1</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Runnable runnable<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span><span class="token number">10</span> <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>runnable<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span><span class="token number">10</span> <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"线程开启了"</span><span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>上面是普通写法，下面是lambda表达式写法。效果等同 。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>三要素：参数、箭头、代码<br>(参数类型 参数1, 参数类型 参数2….) -&gt; {代码}</p>
+<ol>
+<li>如果参数有多个，那么使用逗号分隔。如果参数没有，则留空</li>
+<li>箭头是固定写法</li>
+<li>大括号相当于方法体。</li>
+</ol>
+<blockquote>
+<p>使用Lambda表达式的必要前提：必须是函数式接口</p>
+</blockquote>
+<h3 id="Lambda-省略规则"><a href="#Lambda-省略规则" class="headerlink" title="Lambda 省略规则"></a>Lambda 省略规则</h3><ol>
+<li>参数类型可以省略。但是只能同时省略所有参数的类型，或者干脆都不省略。</li>
+<li>如果参数有且仅有一个，那么小括号可以省略。</li>
+<li>如果大括号内的语句有且仅有一条，那么无论是否有返回值，return、大括号、分号都可以省略</li>
+</ol>
+<h3 id="Lambda的延迟执行"><a href="#Lambda的延迟执行" class="headerlink" title="Lambda的延迟执行"></a>Lambda的延迟执行</h3><h4 id="性能浪费"><a href="#性能浪费" class="headerlink" title="性能浪费"></a>性能浪费</h4><p>有些场景的代码执行后，结果不一定会被使用，从而造成性能浪费。而Lambda表达式是延迟执行的，这正好可以作为解决方案，提升性能。<br>举个栗子：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">lambdaStudy2</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        String str1<span class="token operator">=</span><span class="token string">"Hello "</span> <span class="token punctuation">;</span>
+        String str2<span class="token operator">=</span><span class="token string">"World "</span> <span class="token punctuation">;</span>
+        String str3<span class="token operator">=</span><span class="token string">"Java "</span> <span class="token punctuation">;</span>
+        <span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> str1<span class="token operator">+</span>str2<span class="token operator">+</span>str3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">int</span> level<span class="token punctuation">,</span>String msg<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>level<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>这段代码存在问题：无论级别是否满足要求，作为 log 方法的第二个参数，三个字符串一定会首先被拼接并传入方法内，然后才会进行级别判断。如果级别不符合要求，那么字符串的拼接操作就白做了，存在性能浪费。</p>
+<h4 id="Lambda的优化写法"><a href="#Lambda的优化写法" class="headerlink" title="Lambda的优化写法"></a>Lambda的优化写法</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">lambdaStudy2</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        String str1<span class="token operator">=</span><span class="token string">"Hello "</span> <span class="token punctuation">;</span>
+        String str2<span class="token operator">=</span><span class="token string">"World "</span> <span class="token punctuation">;</span>
+        String str3<span class="token operator">=</span><span class="token string">"Java "</span> <span class="token punctuation">;</span>
+        <span class="token function">log2</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"lambda方法执行了"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> str1<span class="token operator">+</span>str2<span class="token operator">+</span>str3<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">log2</span><span class="token punctuation">(</span><span class="token keyword">int</span> level<span class="token punctuation">,</span> MessageBuilder messageBuilder<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>level<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>messageBuilder<span class="token punctuation">.</span><span class="token function">buildMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>这样一来，只有当满足条件的时候才会进行三个字符串的拼接。否则不会拼接。</p>
+<h3 id="使用Lambda作为参数和返回值"><a href="#使用Lambda作为参数和返回值" class="headerlink" title="使用Lambda作为参数和返回值"></a>使用Lambda作为参数和返回值</h3><p>如果抛开实现原理不说，Java中的Lambda表达式可以被当作是匿名内部类的替代品。如果方法的参数是一个函数式接口类型，那么就可以使用Lambda表达式进行替代。使用Lambda表达式作为方法参数，其实就是使用函数式接口作为方法参数。<br>类似地，如果一个方法的返回值类型是一个函数式接口，那么就可以直接返回一个Lambda表达式。当需要通过一个方法来获取一个 <code>java.util.Comparator</code> 接口类型的对象作为排序器时,就可以调该方法获取</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">lambdaStudy2</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Comparator<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">newComparator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> b<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> a<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String<span class="token punctuation">[</span><span class="token punctuation">]</span> array <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"abc"</span><span class="token punctuation">,</span> <span class="token string">"ab"</span><span class="token punctuation">,</span> <span class="token string">"abcd"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Arrays<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> <span class="token function">newComparator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h2><h3 id="冗余的Lambda场景"><a href="#冗余的Lambda场景" class="headerlink" title="冗余的Lambda场景"></a>冗余的Lambda场景</h3><p>在使用Lambda表达式的时候，我们实际上传递进去的代码就是一种解决方案：拿什么参数做什么操作。那么考虑一种情况：如果我们在Lambda中所指定的操作方案，已经有地方存在相同方案，那是否还有必要再写重复逻辑？<br>先看一个简单的函数式接口:</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FunctionRefTest</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span>x <span class="token operator">-</span><span class="token operator">></span> System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span>Consumer<span class="token operator">&lt;</span>String<span class="token operator">></span> consumer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        consumer<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>其中 printString 方法只管调用 Printable 接口的 print 方法，而并不管 print 方法的具体实现逻辑会将字符串打印到什么地方去。而 main 方法通过Lambda表达式指定了函数式接口 Printable 的具体操作方案为：拿到String（类型可推导，所以可省略）数据后，在控制台中输出它。 </p>
+<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>这段代码的问题在于，对字符串进行控制台打印输出的操作方案，明明已经有了现成的实现，那就是 System.out对象中的 println(String) 方法。既然Lambda希望做的事情就是调用println(String) 方法，那何必自己手动调用呢？<br>能否省去Lambda的语法格式（尽管它已经相当简洁）呢？只要“引用”过去就好了：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FunctionRefTest</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span>Consumer<span class="token operator">&lt;</span>String<span class="token operator">></span> consumer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        consumer<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>请注意其中的双冒号 :: 写法，这被称为“方法引用”，而双冒号是一种新的语法。</p>
+</blockquote>
+<h3 id="方法引用符"><a href="#方法引用符" class="headerlink" title="方法引用符"></a>方法引用符</h3><p>双冒号 :: 为引用运算符，而它所在的表达式被称为方法引用。如果Lambda要表达的函数方案已经存在于某个方法的实现中，那么则可以通过双冒号来引用该方法作为Lambda的替代者。<br><strong>语义分析</strong><br>例如上例中，System.out 对象中有一个重载的println(String) 方法恰好就是我们所需要的。那么对print方法的函数式接口参数，对比下面两种写法，完全等效： </p>
+<ul>
+<li>Lambda表达式写法： <code>s -&gt; System.out.println(s);</code></li>
+<li>方法引用写法： <code>System.out::println</code></li>
+</ul>
+<p>第一种语义是指：拿到参数之后经Lambda之手，继而传递给 System.out.println 方法去处理。<br>第二种等效写法的语义是指：直接让 System.out 中的 println 方法来取代Lambda。两种写法的执行效果完全一样，而第二种方法引用的写法复用了已有方案，更加简洁。 </p>
+<blockquote>
+<p>注:Lambda中传递的参数 一定是方法引用中的那个方法可以接收的类型,否则会抛出异常 </p>
+</blockquote>
+<p><strong>推导与省略</strong><br>如果使用Lambda，那么根据“可推导就是可省略”的原则，无需指定参数类型，也无需指定的重载形式——它们都将被自动推导。而如果使用方法引用，也是同样可以根据上下文进行推导。<br>函数式接口是Lambda的基础，而方法引用是Lambda的孪生兄弟。 </p>
+<h3 id="通过对象名引用成员方法"><a href="#通过对象名引用成员方法" class="headerlink" title="通过对象名引用成员方法"></a>通过对象名引用成员方法</h3><p>这是最常见的一种用法，与上例相同。如果一个类中已经存在了一个成员方法：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FunctionRefTest</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String userName <span class="token operator">=</span> <span class="token function">getUserName</span><span class="token punctuation">(</span>User<span class="token operator">:</span><span class="token operator">:</span>getName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>userName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> String <span class="token function">getUserName</span><span class="token punctuation">(</span>Function<span class="token operator">&lt;</span>User<span class="token punctuation">,</span> String<span class="token operator">></span> function<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        User user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> function<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="通过类名称引用静态方法"><a href="#通过类名称引用静态方法" class="headerlink" title="通过类名称引用静态方法"></a>通过类名称引用静态方法</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FunctionRefTest</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">method</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span>Math<span class="token operator">:</span><span class="token operator">:</span>abs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">,</span> Calcable lambda<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>lambda<span class="token punctuation">.</span><span class="token function">calc</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="通过this引用成员方法"><a href="#通过this引用成员方法" class="headerlink" title="通过this引用成员方法"></a>通过this引用成员方法</h3><p>this代表当前对象，如果需要引用的方法就是当前类中的成员方法，那么可以使用“this::成员方法”的格式来使用方法引用。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Husband</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">buyHouse</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"买套房子"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">marry</span><span class="token punctuation">(</span>Richable lambda<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        lambda<span class="token punctuation">.</span><span class="token function">buy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">beHappy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">marry</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"买套房子"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">beHappy2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">marry</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token operator">:</span><span class="token operator">:</span>buyHouse<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>开心方法 beHappy 调用了结婚方法 marry ，后者的参数为函数式接口 Richable ，所以需要一个Lambda表达式。但是如果这个Lambda表达式的内容已经在本类当中存在了，则可以对 Husband 丈夫类进行修改： </p>
+<h2 id="Stream流"><a href="#Stream流" class="headerlink" title="Stream流"></a>Stream流</h2><p>说到Stream便容易想到I/O Stream，而实际上，在Java 8中，得益于Lambda所带来的函数式编程，引入了一个全新的Stream概念，用于解决已有集合类库既有的弊端。<br>Stream流式操作性能比传统的For循环要低，就性能而言，传统的for循环最高。</p>
+<h3 id="传统集合的遍历代码"><a href="#传统集合的遍历代码" class="headerlink" title="传统集合的遍历代码"></a>传统集合的遍历代码</h3><p>几乎所有的集合（如 Collection 接口或 Map 接口等）都支持直接或间接的遍历操作。而当我们需要对集合中的元素进行操作的时候，除了必需的添加、删除、获取外，最典型的就是集合遍历。例如：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StreamTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            List<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张无忌"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"周芷若"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"赵敏"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张强"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张三丰"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>String name <span class="token operator">:</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="循环遍历的弊端"><a href="#循环遍历的弊端" class="headerlink" title="循环遍历的弊端"></a>循环遍历的弊端</h3><p>Java 8的Lambda让我们可以更加专注于做什么（What），而不是怎么做（How），这点此前已经结合内部类进行了对比说明。现在，我们仔细体会一下上例代码，可以发现：</p>
+<ul>
+<li>for循环的语法就是“怎么做” </li>
+<li>for循环的循环体才是“做什么”</li>
+</ul>
+<p>为什么使用循环？因为要进行遍历。但循环是遍历的唯一方式吗？遍历是指每一个元素逐一进行处理，而并不是从第一个到最后一个顺次处理的循环。前者是目的，后者是方式。<br>试想一下，如果希望对集合中的元素进行筛选过滤： </p>
+<ol>
+<li>将集合A根据条件一过滤为子集B； </li>
+<li>然后再根据条件二过滤为子集C。 </li>
+</ol>
+<p>那怎么办？在Java 8之前的做法可能为： </p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StreamTest</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        List<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张无忌"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"赵敏"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张三丰"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张楚岚"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"周芷若"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张飞"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> zhangList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>String s <span class="token operator">:</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"张"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                zhangList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        List<span class="token operator">&lt;</span>String<span class="token operator">></span> shortList<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>String s <span class="token operator">:</span> zhangList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                shortList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>String s <span class="token operator">:</span> shortList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>这段代码中含有三个循环，每一个作用不同： </p>
+<ol>
+<li>首先筛选所有姓张的人； </li>
+<li>然后筛选名字有三个字的人； </li>
+<li>最后进行对结果进行打印输出。 </li>
+</ol>
+<p>每当我们需要对集合中的元素进行操作的时候，总是需要进行循环、循环、再循环。这是理所当然的么？不是。循环是做事情的方式，而不是目的。另一方面，使用线性循环就意味着只能遍历一次。如果希望再次遍历，只能再使用另一个循环从头开始。<br>那，Lambda的衍生物Stream能给我们带来怎样更加优雅的写法呢？ </p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StreamTest</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        List<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张无忌"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"赵敏"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张三丰"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张楚岚"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"周芷若"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张飞"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>e<span class="token operator">-</span><span class="token operator">></span>e<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"张"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>e<span class="token operator">-</span><span class="token operator">></span>e<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">3</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>直接阅读代码的字面意思即可完美展示无关逻辑方式的语义：获取流、过滤姓张、过滤长度为3、逐一打印。代码中并没有体现使用线性循环或是其他任何算法进行遍历，我们真正要做的事情内容被更好地体现在代码中。</p>
+<h3 id="获取流"><a href="#获取流" class="headerlink" title="获取流"></a>获取流</h3><p><code>java.util.stream.Stream&lt;T&gt;</code> 是Java 8新加入的最常用的流接口。（这并不是一个函数式接口。）<br>获取一个流非常简单，有以下几种常用的方式： </p>
+<ul>
+<li>所有的 <code>Collection</code> 集合都可以通过 stream 默认方法获取流； </li>
+<li><code>Stream</code> 接口的静态方法 of 可以获取数组对应的流。<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StreamTest</span> <span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Test</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      HashSet<span class="token operator">&lt;</span>String<span class="token operator">></span> hashSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> hashMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      String<span class="token punctuation">[</span><span class="token punctuation">]</span> array<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"张无忌"</span><span class="token punctuation">,</span> <span class="token string">"张三丰"</span><span class="token punctuation">,</span><span class="token string">"张楚岚"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">//Collection接口实现类获取流</span>
+      Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> stream <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> stream1 <span class="token operator">=</span> hashSet<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">//Map接口实现类获取流</span>
+      Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> stream2 <span class="token operator">=</span> hashMap<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> stream3 <span class="token operator">=</span> hashMap<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">//通过数据获取流</span>
+      Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> stream4 <span class="token operator">=</span> Arrays<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><h4 id="逐一处理：forEach"><a href="#逐一处理：forEach" class="headerlink" title="逐一处理：forEach"></a>逐一处理：forEach</h4><p>虽然方法名字叫forEach，但是与for循环不同</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StreamTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> stream <span class="token operator">=</span> Stream<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"张无忌"</span><span class="token punctuation">,</span> <span class="token string">"张三丰"</span><span class="token punctuation">,</span> <span class="token string">"周芷若"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        stream<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>name <span class="token operator">-</span><span class="token operator">></span> System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="过滤：filter"><a href="#过滤：filter" class="headerlink" title="过滤：filter"></a>过滤：filter</h4><p>可以通过 filter 方法将一个流转换成另一个子集流</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StreamTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> original <span class="token operator">=</span> Stream<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"张无忌"</span><span class="token punctuation">,</span> <span class="token string">"张三丰"</span><span class="token punctuation">,</span> <span class="token string">"周芷若"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> result <span class="token operator">=</span> original<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>s <span class="token operator">-</span><span class="token operator">></span> s<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"张"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>在这里通过Lambda表达式来指定了筛选的条件：必须姓张。 </p>
+<h4 id="映射：map"><a href="#映射：map" class="headerlink" title="映射：map"></a>映射：map</h4><p>如果需要将流中的元素映射到另一个流中，可以使用 map 方法。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StreamTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> original <span class="token operator">=</span> Stream<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"10"</span><span class="token punctuation">,</span> <span class="token string">"12"</span><span class="token punctuation">,</span> <span class="token string">"18"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Stream<span class="token operator">&lt;</span>Integer<span class="token operator">></span> result <span class="token operator">=</span> original<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>str <span class="token operator">-</span><span class="token operator">></span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>这段代码中， map 方法的参数通过方法引用，将字符串类型转换成为了int类型（并自动装箱为 Integer 类对象）。 </p>
+<h4 id="统计个数：count"><a href="#统计个数：count" class="headerlink" title="统计个数：count"></a>统计个数：count</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StreamTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> original <span class="token operator">=</span> Stream<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"张无忌"</span><span class="token punctuation">,</span> <span class="token string">"张三丰"</span><span class="token punctuation">,</span> <span class="token string">"周芷若"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> result <span class="token operator">=</span> original<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>s <span class="token operator">-</span><span class="token operator">></span> s<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"张"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="取用前几个：limit"><a href="#取用前几个：limit" class="headerlink" title="取用前几个：limit"></a>取用前几个：limit</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StreamTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> original <span class="token operator">=</span> Stream<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"张无忌"</span><span class="token punctuation">,</span> <span class="token string">"张三丰"</span><span class="token punctuation">,</span> <span class="token string">"周芷若"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> result <span class="token operator">=</span> original<span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="跳过前几个：skip"><a href="#跳过前几个：skip" class="headerlink" title="跳过前几个：skip"></a>跳过前几个：skip</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StreamTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> original <span class="token operator">=</span> Stream<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"张无忌"</span><span class="token punctuation">,</span> <span class="token string">"张三丰"</span><span class="token punctuation">,</span> <span class="token string">"周芷若"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> result <span class="token operator">=</span> original<span class="token punctuation">.</span><span class="token function">skip</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="组合：concat"><a href="#组合：concat" class="headerlink" title="组合：concat"></a>组合：concat</h4><p>如果有两个流，希望合并成为一个流，那么可以使用 Stream 接口的静态方法concat</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StreamTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> streamA <span class="token operator">=</span> Stream<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"张无忌"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> streamB <span class="token operator">=</span> Stream<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"张翠山"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Stream<span class="token operator">&lt;</span>String<span class="token operator">></span> result <span class="token operator">=</span> Stream<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>streamA<span class="token punctuation">,</span> streamB<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="将流转成list-collect"><a href="#将流转成list-collect" class="headerlink" title="将流转成list:collect"></a>将流转成list:collect</h4><p>在返回数据的时候不可能返回一个流吧，所以我们可以用collect将流转换成list。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StreamTest</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test5</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        List<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张无忌"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"赵敏"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张三丰"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张楚岚"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"周芷若"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"张飞"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span>String<span class="token operator">></span> list1 <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>e <span class="token operator">-</span><span class="token operator">></span> e<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span>Collectors<span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list1<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>lambda</tag>
+        <tag>stream</tag>
+        <tag>新特性</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java集合的选择</title>
     <url>/2020/04/21/java-ji-he-de-xuan-ze/</url>
     <content><![CDATA[<h1 id="java中的集合介绍"><a href="#java中的集合介绍" class="headerlink" title="java中的集合介绍"></a>java中的集合介绍</h1><p><img src="http://qiniuyun.dajienihao.cn/image/0421/1.jpg" alt=""></p>
@@ -3094,6 +3477,138 @@ String cookieValue<span class="token punctuation">)</span><span class="token pun
       </tags>
   </entry>
   <entry>
+    <title>mybatis不同方式的多表查询</title>
+    <url>/2020/03/04/mybatis-bu-tong-fang-shi-de-duo-biao-cha-xun/</url>
+    <content><![CDATA[<h1 id="mybatis的多表查询"><a href="#mybatis的多表查询" class="headerlink" title="mybatis的多表查询"></a>mybatis的多表查询</h1><p>假如我们有一个员工表和员工所在部门表，那么员工表的部门ID外键部门表的部门ID，那么在mybatis这样的持久层框架中，它是在底层自动的对数据库数据进行封装成对应的实体类对象，那如何在展示到浏览器端时，展示员工信息时展示它的部门名称呢？</p>
+<h2 id="多对一查询"><a href="#多对一查询" class="headerlink" title="多对一查询"></a>多对一查询</h2><p>实体类型：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Emp</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> Integer empid<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String ename<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String esex<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Date ehiredate<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Double esal<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Dept dept<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dept</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">public</span> Integer deptid <span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String dname <span class="token punctuation">;</span> 
+    <span class="token keyword">public</span> String dloc <span class="token punctuation">;</span> 
+<span class="token punctuation">}</span></code></pre>
+<h3 id="使用配置方式"><a href="#使用配置方式" class="headerlink" title="使用配置方式"></a>使用配置方式</h3><p>EmpMapper.xml文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>resultMap id<span class="token operator">=</span><span class="token string">"BaseEmp"</span> type<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Emp"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"empid"</span> column<span class="token operator">=</span><span class="token string">"empid"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>id<span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ename"</span> column<span class="token operator">=</span><span class="token string">"ename"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esex"</span> column<span class="token operator">=</span><span class="token string">"esex"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ehiredate"</span> column<span class="token operator">=</span><span class="token string">"ehiredate"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esal"</span> column<span class="token operator">=</span><span class="token string">"esal"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
+        <span class="token operator">&lt;</span>association property<span class="token operator">=</span><span class="token string">"dept"</span> javaType<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Dept"</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"deptid"</span> column<span class="token operator">=</span><span class="token string">"deptid"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>id<span class="token operator">></span>
+            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dname"</span> column<span class="token operator">=</span><span class="token string">"dname"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
+            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dloc"</span> column<span class="token operator">=</span><span class="token string">"dloc"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>association<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>resultMap<span class="token operator">></span>
+<span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"queryAllEmp3"</span> resultMap<span class="token operator">=</span><span class="token string">"BaseEmp"</span><span class="token operator">></span>
+         select <span class="token operator">*</span> from emp inner join dept <span class="token function">using</span> <span class="token punctuation">(</span>deptid<span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
+<h3 id="使用注解方式"><a href="#使用注解方式" class="headerlink" title="使用注解方式"></a>使用注解方式</h3><h4 id="半注解方式"><a href="#半注解方式" class="headerlink" title="半注解方式"></a>半注解方式</h4><p>EmpMapper.xml文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>resultMap type<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Emp"</span> id<span class="token operator">=</span><span class="token string">"myEmp"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"eid"</span> column<span class="token operator">=</span><span class="token string">"eid"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ename"</span> column<span class="token operator">=</span><span class="token string">"ename"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esex"</span> column<span class="token operator">=</span><span class="token string">"esex"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"eaddress"</span> column<span class="token operator">=</span><span class="token string">"eaddress"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ehiredate"</span> column<span class="token operator">=</span><span class="token string">"ehiredate"</span> javaType<span class="token operator">=</span><span class="token string">"java.util.Date"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esal"</span> column<span class="token operator">=</span><span class="token string">"esal"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Double"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> javaType<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Dept"</span> 指emp里面dept属性的类型<span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>association property<span class="token operator">=</span><span class="token string">"dept"</span> javaType<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Dept"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"deptid"</span> column<span class="token operator">=</span><span class="token string">"deptid"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dname"</span> column<span class="token operator">=</span><span class="token string">"dname"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dloc"</span> column<span class="token operator">=</span><span class="token string">"dloc"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>association<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>resultMap<span class="token operator">></span></code></pre>
+<p>EmpMapper.java文件</p>
+<pre class=" language-java"><code class="language-java">    <span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from emp inner join dept using(deptid)"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@ResultMap</span><span class="token punctuation">(</span><span class="token string">"EmpMapper.myEmp"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Emp<span class="token operator">></span> <span class="token function">queryAllEmp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<p>注意：添加注解的类要添加到mybatis的配置中,不然不会处理注解。当从配置方式换成注解方式时，<code>namespace</code>不能再和Mapper.java的全类名对应。</p>
+</blockquote>
+<h4 id="全注解方式"><a href="#全注解方式" class="headerlink" title="全注解方式"></a>全注解方式</h4><p>EmpMapper.java文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from emp inner join dept using("</span>deptid"<span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Results</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"eid"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"eid"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"ename"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"ename"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"esex"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"esex"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"eaddress"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"eaddress"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"ehiredate"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"ehiredate"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"esal"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"esal"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Double<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property<span class="token operator">=</span><span class="token string">"dept"</span><span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token string">"deptid"</span><span class="token punctuation">,</span>javaType<span class="token operator">=</span>Dept<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>one<span class="token operator">=</span><span class="token annotation punctuation">@One</span><span class="token punctuation">(</span>select<span class="token operator">=</span><span class="token string">"com.ahdy.mapper.DeptMapper.queryDeptByDeptId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Emp<span class="token operator">></span> <span class="token function">queryAllEmp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+<p>DeptMapper.java文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*根据部门ID查询部门*/</span>
+<span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from sys_dept where deptid=#{value}"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> Dept <span class="token function">queryDeptByDeptId</span><span class="token punctuation">(</span>Integer deptid<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="一对多查询"><a href="#一对多查询" class="headerlink" title="一对多查询"></a>一对多查询</h2><p>实体类文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dept</span> 
+<span class="token punctuation">{</span> 
+    <span class="token keyword">public</span> Integer deptid <span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String dname <span class="token punctuation">;</span> 
+    <span class="token keyword">public</span> String dloc <span class="token punctuation">;</span> 
+    <span class="token keyword">public</span> Set<span class="token operator">&lt;</span>Emp<span class="token operator">></span> set<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Emp</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> Integer empid<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String ename<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String esex<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Date ehiredate<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Double esal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="使用配置方式-1"><a href="#使用配置方式-1" class="headerlink" title="使用配置方式"></a>使用配置方式</h3><p>Mapper文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>resultMap type<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Dept"</span> id<span class="token operator">=</span><span class="token string">"myDept"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"deptid"</span> column<span class="token operator">=</span><span class="token string">"deptid"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dname"</span> column<span class="token operator">=</span><span class="token string">"dname"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dloc"</span> column<span class="token operator">=</span><span class="token string">"dloc"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 里面有一个emps的  HashSet javaType指emps的类型 ofType指 HashSet 里面的元素类型<span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>collection property<span class="token operator">=</span><span class="token string">"emps"</span> javaType<span class="token operator">=</span><span class="token string">"java.util.HashSet"</span> ofType<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Emp"</span> <span class="token operator">></span>
+            <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"eid"</span> column<span class="token operator">=</span><span class="token string">"eid"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ename"</span> column<span class="token operator">=</span><span class="token string">"ename"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esex"</span> column<span class="token operator">=</span><span class="token string">"esex"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"eaddress"</span> column<span class="token operator">=</span><span class="token string">"eaddress"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ehiredate"</span> column<span class="token operator">=</span><span class="token string">"ehiredate"</span> javaType<span class="token operator">=</span><span class="token string">"java.util.Date"</span><span class="token operator">/</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esal"</span> column<span class="token operator">=</span><span class="token string">"esal"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Double"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>collection<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>resultMap<span class="token operator">></span>
+<span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"queryAllDept"</span> resultMap<span class="token operator">=</span><span class="token string">"myDept"</span><span class="token operator">></span>
+    select <span class="token operator">*</span> from dept inner join emp <span class="token function">using</span><span class="token punctuation">(</span>deptid<span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
+<blockquote>
+<p>注意：collection中javaType指emps的类型 ofType指 HashSet 里面的元素类型</p>
+</blockquote>
+<h3 id="使用注解方式-1"><a href="#使用注解方式-1" class="headerlink" title="使用注解方式"></a>使用注解方式</h3><p>DeptMapper.java文件</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from sys_dept "</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Results</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"deptid"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"deptid"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"dname"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"dname"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"dloc"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"dloc"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property<span class="token operator">=</span><span class="token string">"emps"</span><span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token string">"deptid"</span><span class="token punctuation">,</span>javaType<span class="token operator">=</span>Set<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+    many<span class="token operator">=</span><span class="token annotation punctuation">@Many</span><span class="token punctuation">(</span>select<span class="token operator">=</span><span class="token string">"com.sxt.dao.EmpMapper.queryEmpsByDeptId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Dept<span class="token operator">></span> <span class="token function">queryAllDept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>EmpMapper.java文件：</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*根据部门ID查询员工*/</span>
+<span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from sys_emp where deptid=#{value}"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> List<span class="token operator">&lt;</span>Emp<span class="token operator">></span> <span class="token function">queryEmpsByDeptId</span><span class="token punctuation">(</span>Integer deptid<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+]]></content>
+      <categories>
+        <category>mybatis</category>
+      </categories>
+      <tags>
+        <tag>mybatis</tag>
+        <tag>持久层框架</tag>
+        <tag>多表查询</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mybatis中动态sql</title>
     <url>/2020/03/04/mybatis-zhong-de-dong-tai-sql/</url>
     <content><![CDATA[<h2 id="动态-SQL"><a href="#动态-SQL" class="headerlink" title="动态 SQL"></a>动态 SQL</h2><p>MyBatis 的强大特性之一便是它的动态 SQL。如果你有使用 JDBC 或其它类似框架的经验，你就能体会到根据不同条件拼接 SQL 语句的痛苦。例如拼接时要确保不能忘记添加必要的空格，还要注意去掉列表最后一个列名的逗号。利用动态 SQL 这一特性可以彻底摆脱这种痛苦。</p>
@@ -3254,140 +3769,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>配置</tag>
-        <tag>持久层框架</tag>
         <tag>mybatis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mybatis不同方式的多表查询</title>
-    <url>/2020/03/04/mybatis-bu-tong-fang-shi-de-duo-biao-cha-xun/</url>
-    <content><![CDATA[<h1 id="mybatis的多表查询"><a href="#mybatis的多表查询" class="headerlink" title="mybatis的多表查询"></a>mybatis的多表查询</h1><p>假如我们有一个员工表和员工所在部门表，那么员工表的部门ID外键部门表的部门ID，那么在mybatis这样的持久层框架中，它是在底层自动的对数据库数据进行封装成对应的实体类对象，那如何在展示到浏览器端时，展示员工信息时展示它的部门名称呢？</p>
-<h2 id="多对一查询"><a href="#多对一查询" class="headerlink" title="多对一查询"></a>多对一查询</h2><p>实体类型：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Emp</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> Integer empid<span class="token punctuation">;</span>
-    <span class="token keyword">public</span> String ename<span class="token punctuation">;</span>
-    <span class="token keyword">public</span> String esex<span class="token punctuation">;</span>
-    <span class="token keyword">public</span> Date ehiredate<span class="token punctuation">;</span>
-    <span class="token keyword">public</span> Double esal<span class="token punctuation">;</span>
-    <span class="token keyword">public</span> Dept dept<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dept</span> <span class="token punctuation">{</span> 
-    <span class="token keyword">public</span> Integer deptid <span class="token punctuation">;</span>
-    <span class="token keyword">public</span> String dname <span class="token punctuation">;</span> 
-    <span class="token keyword">public</span> String dloc <span class="token punctuation">;</span> 
-<span class="token punctuation">}</span></code></pre>
-<h3 id="使用配置方式"><a href="#使用配置方式" class="headerlink" title="使用配置方式"></a>使用配置方式</h3><p>EmpMapper.xml文件：</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>resultMap id<span class="token operator">=</span><span class="token string">"BaseEmp"</span> type<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Emp"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"empid"</span> column<span class="token operator">=</span><span class="token string">"empid"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>id<span class="token operator">></span>
-        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ename"</span> column<span class="token operator">=</span><span class="token string">"ename"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
-        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esex"</span> column<span class="token operator">=</span><span class="token string">"esex"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
-        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ehiredate"</span> column<span class="token operator">=</span><span class="token string">"ehiredate"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
-        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esal"</span> column<span class="token operator">=</span><span class="token string">"esal"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
-        <span class="token operator">&lt;</span>association property<span class="token operator">=</span><span class="token string">"dept"</span> javaType<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Dept"</span><span class="token operator">></span>
-            <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"deptid"</span> column<span class="token operator">=</span><span class="token string">"deptid"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>id<span class="token operator">></span>
-            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dname"</span> column<span class="token operator">=</span><span class="token string">"dname"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
-            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dloc"</span> column<span class="token operator">=</span><span class="token string">"dloc"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>result<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>association<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>resultMap<span class="token operator">></span>
-<span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"queryAllEmp3"</span> resultMap<span class="token operator">=</span><span class="token string">"BaseEmp"</span><span class="token operator">></span>
-         select <span class="token operator">*</span> from emp inner join dept <span class="token function">using</span> <span class="token punctuation">(</span>deptid<span class="token punctuation">)</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
-<h3 id="使用注解方式"><a href="#使用注解方式" class="headerlink" title="使用注解方式"></a>使用注解方式</h3><h4 id="半注解方式"><a href="#半注解方式" class="headerlink" title="半注解方式"></a>半注解方式</h4><p>EmpMapper.xml文件：</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>resultMap type<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Emp"</span> id<span class="token operator">=</span><span class="token string">"myEmp"</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"eid"</span> column<span class="token operator">=</span><span class="token string">"eid"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ename"</span> column<span class="token operator">=</span><span class="token string">"ename"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esex"</span> column<span class="token operator">=</span><span class="token string">"esex"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"eaddress"</span> column<span class="token operator">=</span><span class="token string">"eaddress"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ehiredate"</span> column<span class="token operator">=</span><span class="token string">"ehiredate"</span> javaType<span class="token operator">=</span><span class="token string">"java.util.Date"</span><span class="token operator">/</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esal"</span> column<span class="token operator">=</span><span class="token string">"esal"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Double"</span><span class="token operator">/</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> javaType<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Dept"</span> 指emp里面dept属性的类型<span class="token operator">--</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>association property<span class="token operator">=</span><span class="token string">"dept"</span> javaType<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Dept"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"deptid"</span> column<span class="token operator">=</span><span class="token string">"deptid"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dname"</span> column<span class="token operator">=</span><span class="token string">"dname"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dloc"</span> column<span class="token operator">=</span><span class="token string">"dloc"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>association<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>resultMap<span class="token operator">></span></code></pre>
-<p>EmpMapper.java文件</p>
-<pre class=" language-java"><code class="language-java">    <span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from emp inner join dept using(deptid)"</span><span class="token punctuation">)</span>
-    <span class="token annotation punctuation">@ResultMap</span><span class="token punctuation">(</span><span class="token string">"EmpMapper.myEmp"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Emp<span class="token operator">></span> <span class="token function">queryAllEmp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<blockquote>
-<p>注意：添加注解的类要添加到mybatis的配置中,不然不会处理注解。当从配置方式换成注解方式时，<code>namespace</code>不能再和Mapper.java的全类名对应。</p>
-</blockquote>
-<h4 id="全注解方式"><a href="#全注解方式" class="headerlink" title="全注解方式"></a>全注解方式</h4><p>EmpMapper.java文件：</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from emp inner join dept using("</span>deptid"<span class="token punctuation">)</span>
-    <span class="token annotation punctuation">@Results</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"eid"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"eid"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"ename"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"ename"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"esex"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"esex"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"eaddress"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"eaddress"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"ehiredate"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"ehiredate"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"esal"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"esal"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Double<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property<span class="token operator">=</span><span class="token string">"dept"</span><span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token string">"deptid"</span><span class="token punctuation">,</span>javaType<span class="token operator">=</span>Dept<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>one<span class="token operator">=</span><span class="token annotation punctuation">@One</span><span class="token punctuation">(</span>select<span class="token operator">=</span><span class="token string">"com.ahdy.mapper.DeptMapper.queryDeptByDeptId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Emp<span class="token operator">></span> <span class="token function">queryAllEmp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
-<p>DeptMapper.java文件：</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*根据部门ID查询部门*/</span>
-<span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from sys_dept where deptid=#{value}"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> Dept <span class="token function">queryDeptByDeptId</span><span class="token punctuation">(</span>Integer deptid<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h2 id="一对多查询"><a href="#一对多查询" class="headerlink" title="一对多查询"></a>一对多查询</h2><p>实体类文件：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dept</span> 
-<span class="token punctuation">{</span> 
-    <span class="token keyword">public</span> Integer deptid <span class="token punctuation">;</span>
-    <span class="token keyword">public</span> String dname <span class="token punctuation">;</span> 
-    <span class="token keyword">public</span> String dloc <span class="token punctuation">;</span> 
-    <span class="token keyword">public</span> Set<span class="token operator">&lt;</span>Emp<span class="token operator">></span> set<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Emp</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> Integer empid<span class="token punctuation">;</span>
-    <span class="token keyword">public</span> String ename<span class="token punctuation">;</span>
-    <span class="token keyword">public</span> String esex<span class="token punctuation">;</span>
-    <span class="token keyword">public</span> Date ehiredate<span class="token punctuation">;</span>
-    <span class="token keyword">public</span> Double esal<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="使用配置方式-1"><a href="#使用配置方式-1" class="headerlink" title="使用配置方式"></a>使用配置方式</h3><p>Mapper文件：</p>
-<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>resultMap type<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Dept"</span> id<span class="token operator">=</span><span class="token string">"myDept"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"deptid"</span> column<span class="token operator">=</span><span class="token string">"deptid"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dname"</span> column<span class="token operator">=</span><span class="token string">"dname"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"dloc"</span> column<span class="token operator">=</span><span class="token string">"dloc"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 里面有一个emps的  HashSet javaType指emps的类型 ofType指 HashSet 里面的元素类型<span class="token operator">--</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>collection property<span class="token operator">=</span><span class="token string">"emps"</span> javaType<span class="token operator">=</span><span class="token string">"java.util.HashSet"</span> ofType<span class="token operator">=</span><span class="token string">"com.ahdy.domain.Emp"</span> <span class="token operator">></span>
-            <span class="token operator">&lt;</span>id property<span class="token operator">=</span><span class="token string">"eid"</span> column<span class="token operator">=</span><span class="token string">"eid"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
-            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ename"</span> column<span class="token operator">=</span><span class="token string">"ename"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
-            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esex"</span> column<span class="token operator">=</span><span class="token string">"esex"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Integer"</span><span class="token operator">/</span><span class="token operator">></span>
-            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"eaddress"</span> column<span class="token operator">=</span><span class="token string">"eaddress"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.String"</span><span class="token operator">/</span><span class="token operator">></span>
-            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"ehiredate"</span> column<span class="token operator">=</span><span class="token string">"ehiredate"</span> javaType<span class="token operator">=</span><span class="token string">"java.util.Date"</span><span class="token operator">/</span><span class="token operator">></span>
-            <span class="token operator">&lt;</span>result property<span class="token operator">=</span><span class="token string">"esal"</span> column<span class="token operator">=</span><span class="token string">"esal"</span> javaType<span class="token operator">=</span><span class="token string">"java.lang.Double"</span><span class="token operator">/</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>collection<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>resultMap<span class="token operator">></span>
-<span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"queryAllDept"</span> resultMap<span class="token operator">=</span><span class="token string">"myDept"</span><span class="token operator">></span>
-    select <span class="token operator">*</span> from dept inner join emp <span class="token function">using</span><span class="token punctuation">(</span>deptid<span class="token punctuation">)</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
-<blockquote>
-<p>注意：collection中javaType指emps的类型 ofType指 HashSet 里面的元素类型</p>
-</blockquote>
-<h3 id="使用注解方式-1"><a href="#使用注解方式-1" class="headerlink" title="使用注解方式"></a>使用注解方式</h3><p>DeptMapper.java文件</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from sys_dept "</span><span class="token punctuation">)</span>
-<span class="token annotation punctuation">@Results</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"deptid"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"deptid"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"dname"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"dname"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
-    <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property <span class="token operator">=</span> <span class="token string">"dloc"</span><span class="token punctuation">,</span> column <span class="token operator">=</span> <span class="token string">"dloc"</span><span class="token punctuation">,</span> javaType <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>property<span class="token operator">=</span><span class="token string">"emps"</span><span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token string">"deptid"</span><span class="token punctuation">,</span>javaType<span class="token operator">=</span>Set<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>
-    many<span class="token operator">=</span><span class="token annotation punctuation">@Many</span><span class="token punctuation">(</span>select<span class="token operator">=</span><span class="token string">"com.sxt.dao.EmpMapper.queryEmpsByDeptId"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Dept<span class="token operator">></span> <span class="token function">queryAllDept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>EmpMapper.java文件：</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*根据部门ID查询员工*/</span>
-<span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from sys_emp where deptid=#{value}"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> List<span class="token operator">&lt;</span>Emp<span class="token operator">></span> <span class="token function">queryEmpsByDeptId</span><span class="token punctuation">(</span>Integer deptid<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-]]></content>
-      <categories>
-        <category>mybatis</category>
-      </categories>
-      <tags>
         <tag>持久层框架</tag>
-        <tag>mybatis</tag>
-        <tag>多表查询</tag>
       </tags>
   </entry>
   <entry>
@@ -3535,8 +3918,8 @@ AND title like ‘someTitle’</code></pre>
       </categories>
       <tags>
         <tag>配置</tag>
-        <tag>持久层框架</tag>
         <tag>mybatis</tag>
+        <tag>持久层框架</tag>
       </tags>
   </entry>
   <entry>
@@ -4003,8 +4386,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>java</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>StringBuffer</tag>
+        <tag>字符串</tag>
         <tag>StringBuiler</tag>
       </tags>
   </entry>
@@ -4024,8 +4407,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>java</category>
       </categories>
       <tags>
-        <tag>String</tag>
         <tag>字符串</tag>
+        <tag>String</tag>
         <tag>常用方法</tag>
       </tags>
   </entry>
@@ -4047,8 +4430,8 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
         <category>spring</category>
       </categories>
       <tags>
-        <tag>框架</tag>
         <tag>spring</tag>
+        <tag>框架</tag>
         <tag>spring的概述</tag>
       </tags>
   </entry>
@@ -4093,8 +4476,8 @@ scope=&quot;prototype&quot; init-method=&quot;init&quot; destroy-method=&quot;de
         <category>spring</category>
       </categories>
       <tags>
-        <tag>框架</tag>
         <tag>spring</tag>
+        <tag>框架</tag>
         <tag>spring的使用</tag>
       </tags>
   </entry>
