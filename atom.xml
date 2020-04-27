@@ -110,35 +110,6 @@
   </entry>
   
   <entry>
-    <title>内部类</title>
-    <link href="http://yoursite.com/2020/04/19/nei-bu-lei/"/>
-    <id>http://yoursite.com/2020/04/19/nei-bu-lei/</id>
-    <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-04-19T08:27:59.713Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;内部类详解&quot;&gt;&lt;a href=&quot;#内部类详解&quot; class=&quot;headerlink&quot; title=&quot;内部类详解&quot;&gt;&lt;/a&gt;内部类详解&lt;/h1&gt;&lt;h2 id=&quot;成员内部类-普通内部类&quot;&gt;&lt;a href=&quot;#成员内部类-普通内部类&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-      <category term="内部类" scheme="http://yoursite.com/tags/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
     <title>向上转型和向下转型</title>
     <link href="http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
     <id>http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
@@ -164,6 +135,35 @@
       <category term="java" scheme="http://yoursite.com/tags/java/"/>
     
       <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>内部类</title>
+    <link href="http://yoursite.com/2020/04/19/nei-bu-lei/"/>
+    <id>http://yoursite.com/2020/04/19/nei-bu-lei/</id>
+    <published>2020-04-19T05:30:45.000Z</published>
+    <updated>2020-04-19T08:27:59.713Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;内部类详解&quot;&gt;&lt;a href=&quot;#内部类详解&quot; class=&quot;headerlink&quot; title=&quot;内部类详解&quot;&gt;&lt;/a&gt;内部类详解&lt;/h1&gt;&lt;h2 id=&quot;成员内部类-普通内部类&quot;&gt;&lt;a href=&quot;#成员内部类-普通内部类&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="内部类" scheme="http://yoursite.com/tags/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
     
   </entry>
   
