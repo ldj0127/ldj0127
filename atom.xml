@@ -110,35 +110,6 @@
   </entry>
   
   <entry>
-    <title>向上转型和向下转型</title>
-    <link href="http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
-    <id>http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
-    <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-04-19T08:40:31.920Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;向上转型与向下转型&quot;&gt;&lt;a href=&quot;#向上转型与向下转型&quot; class=&quot;headerlink&quot; title=&quot;向上转型与向下转型&quot;&gt;&lt;/a&gt;向上转型与向下转型&lt;/h1&gt;&lt;h2 id=&quot;向上转型&quot;&gt;&lt;a href=&quot;#向上转型&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="多态" scheme="http://yoursite.com/categories/%E5%A4%9A%E6%80%81/"/>
-    
-    
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
-      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
     <title>内部类</title>
     <link href="http://yoursite.com/2020/04/19/nei-bu-lei/"/>
     <id>http://yoursite.com/2020/04/19/nei-bu-lei/</id>
@@ -164,6 +135,35 @@
       <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
     
       <category term="内部类" scheme="http://yoursite.com/tags/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>向上转型和向下转型</title>
+    <link href="http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
+    <id>http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
+    <published>2020-04-19T05:30:45.000Z</published>
+    <updated>2020-04-19T08:40:31.920Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;向上转型与向下转型&quot;&gt;&lt;a href=&quot;#向上转型与向下转型&quot; class=&quot;headerlink&quot; title=&quot;向上转型与向下转型&quot;&gt;&lt;/a&gt;向上转型与向下转型&lt;/h1&gt;&lt;h2 id=&quot;向上转型&quot;&gt;&lt;a href=&quot;#向上转型&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="多态" scheme="http://yoursite.com/categories/%E5%A4%9A%E6%80%81/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -463,7 +463,7 @@
     <link href="http://yoursite.com/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/"/>
     <id>http://yoursite.com/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/</id>
     <published>2020-04-06T09:30:45.000Z</published>
-    <updated>2020-04-06T09:19:33.304Z</updated>
+    <updated>2020-04-27T14:22:39.197Z</updated>
     
     <summary type="html">
     

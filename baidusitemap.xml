@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/</loc>
+    <lastmod>2020-04-27</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2020/04/23/java8-xin-te-xing/</loc>
     <lastmod>2020-04-23</lastmod>
   </url>  <url>
@@ -53,9 +56,6 @@
     <lastmod>2020-04-07</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/04/06/springboot-ji-cheng-mybatisplus/</loc>
-    <lastmod>2020-04-06</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/</loc>
     <lastmod>2020-04-06</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/04/06/spring-ji-cheng-mybatisplus/</loc>

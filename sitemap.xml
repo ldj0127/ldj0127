@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/</loc>
+    
+    <lastmod>2020-04-27T14:22:39.197Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/23/java8-xin-te-xing/</loc>
     
     <lastmod>2020-04-23T10:29:21.775Z</lastmod>
@@ -124,13 +131,6 @@
     <loc>http://yoursite.com/2020/04/06/springboot-ji-cheng-mybatisplus/</loc>
     
     <lastmod>2020-04-06T09:37:31.335Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/</loc>
-    
-    <lastmod>2020-04-06T09:19:33.304Z</lastmod>
     
   </url>
   

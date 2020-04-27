@@ -440,12 +440,17 @@
                 </div>
                 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-04-27
+                </div>
+                
 
                 
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        326
+                        279
                     </div>
                     
 
@@ -472,6 +477,11 @@
     <span class="token operator">&lt;</span>groupId<span class="token operator">></span>com<span class="token punctuation">.</span>baomidou<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
     <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>mybatis<span class="token operator">-</span>plus<span class="token operator">-</span>generator<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
     <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">3.3</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token punctuation">.</span>tmp<span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+<span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+    <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>velocity<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+    <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>velocity<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+    <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">1.7</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span></code></pre>
 <h2 id="启动类"><a href="#启动类" class="headerlink" title="启动类"></a>启动类</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CodeGenerator</span> <span class="token punctuation">{</span>
 
@@ -495,10 +505,10 @@
     <span class="token punctuation">}</span>
 
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 代码生成器</span>
+
         AutoGenerator mpg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AutoGenerator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token comment" spellcheck="true">// 全局配置</span>
+
         GlobalConfig gc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GlobalConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         String projectPath <span class="token operator">=</span> System<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"user.dir"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         gc<span class="token punctuation">.</span><span class="token function">setOutputDir</span><span class="token punctuation">(</span>projectPath <span class="token operator">+</span> <span class="token string">"/src/main/java"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -507,15 +517,15 @@
         gc<span class="token punctuation">.</span><span class="token function">setServiceName</span><span class="token punctuation">(</span><span class="token string">"%sService"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         mpg<span class="token punctuation">.</span><span class="token function">setGlobalConfig</span><span class="token punctuation">(</span>gc<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token comment" spellcheck="true">// 数据源配置</span>
+
         DataSourceConfig dsc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataSourceConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         dsc<span class="token punctuation">.</span><span class="token function">setUrl</span><span class="token punctuation">(</span><span class="token string">"jdbc:mysql://127.0.0.1:3306/mybatisplus?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=true&amp;serverTimezone=UTC"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        dsc<span class="token punctuation">.</span><span class="token function">setDriverName</span><span class="token punctuation">(</span><span class="token string">"com.mysql.jdbc.Driver"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dsc<span class="token punctuation">.</span><span class="token function">setDriverName</span><span class="token punctuation">(</span><span class="token string">"com.mysql.cj.jdbc.Driver"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         dsc<span class="token punctuation">.</span><span class="token function">setUsername</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         dsc<span class="token punctuation">.</span><span class="token function">setPassword</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         mpg<span class="token punctuation">.</span><span class="token function">setDataSource</span><span class="token punctuation">(</span>dsc<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token comment" spellcheck="true">// 包配置</span>
+
         PackageConfig pc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PackageConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         pc<span class="token punctuation">.</span><span class="token function">setModuleName</span><span class="token punctuation">(</span><span class="token function">scanner</span><span class="token punctuation">(</span><span class="token string">"模块名"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         pc<span class="token punctuation">.</span><span class="token function">setParent</span><span class="token punctuation">(</span><span class="token string">"com.ahdy"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -524,28 +534,23 @@
         pc<span class="token punctuation">.</span><span class="token function">setService</span><span class="token punctuation">(</span><span class="token string">"service"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         pc<span class="token punctuation">.</span><span class="token function">setServiceImpl</span><span class="token punctuation">(</span><span class="token string">"service.impl"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         pc<span class="token punctuation">.</span><span class="token function">setEntity</span><span class="token punctuation">(</span><span class="token string">"domain"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        pc<span class="token punctuation">.</span><span class="token function">setXml</span><span class="token punctuation">(</span><span class="token string">"mapper.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        pc<span class="token punctuation">.</span><span class="token function">setXml</span><span class="token punctuation">(</span><span class="token string">"mapper.mapper"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         mpg<span class="token punctuation">.</span><span class="token function">setPackageInfo</span><span class="token punctuation">(</span>pc<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token comment" spellcheck="true">// 策略配置</span>
         StrategyConfig strategy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StrategyConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//设置表名和字段名的下划线改为驼峰命名规则</span>
+
         strategy<span class="token punctuation">.</span><span class="token function">setNaming</span><span class="token punctuation">(</span>NamingStrategy<span class="token punctuation">.</span>underline_to_camel<span class="token punctuation">)</span><span class="token punctuation">;</span>
         strategy<span class="token punctuation">.</span><span class="token function">setColumnNaming</span><span class="token punctuation">(</span>NamingStrategy<span class="token punctuation">.</span>underline_to_camel<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//是否启用lombok</span>
+
         strategy<span class="token punctuation">.</span><span class="token function">setEntityLombokModel</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//是否生成restController</span>
         strategy<span class="token punctuation">.</span><span class="token function">setRestControllerStyle</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//生成多表，不设置生成所有</span>
+
         strategy<span class="token punctuation">.</span><span class="token function">setInclude</span><span class="token punctuation">(</span><span class="token function">scanner</span><span class="token punctuation">(</span><span class="token string">"表名，多个英文逗号分割"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         strategy<span class="token punctuation">.</span><span class="token function">setControllerMappingHyphenStyle</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//表名前缀</span>
         strategy<span class="token punctuation">.</span><span class="token function">setTablePrefix</span><span class="token punctuation">(</span>pc<span class="token punctuation">.</span><span class="token function">getModuleName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"_"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         mpg<span class="token punctuation">.</span><span class="token function">setStrategy</span><span class="token punctuation">(</span>strategy<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        mpg<span class="token punctuation">.</span><span class="token function">setTemplateEngine</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FreemarkerTemplateEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         mpg<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-
 <span class="token punctuation">}</span></code></pre>
 
             </div>
