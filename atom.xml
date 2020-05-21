@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-23T10:29:21.775Z</updated>
+  <updated>2020-05-21T23:42:44.412Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux下安装jdk8</title>
+    <link href="http://yoursite.com/2020/05/22/linux-xia-an-zhuang-jdk8/"/>
+    <id>http://yoursite.com/2020/05/22/linux-xia-an-zhuang-jdk8/</id>
+    <published>2020-05-21T23:30:45.000Z</published>
+    <updated>2020-05-21T23:42:44.412Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;linux下安装jdk8&quot;&gt;&lt;a href=&quot;#linux下安装jdk8&quot; class=&quot;headerlink&quot; title=&quot;linux下安装jdk8&quot;&gt;&lt;/a&gt;linux下安装jdk8&lt;/h1&gt;&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="jdk" scheme="http://yoursite.com/tags/jdk/"/>
+    
+  </entry>
   
   <entry>
     <title>Java8新特性</title>
@@ -139,11 +170,11 @@
   </entry>
   
   <entry>
-    <title>向上转型和向下转型</title>
-    <link href="http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
-    <id>http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
+    <title>设计模式之单例模式</title>
+    <link href="http://yoursite.com/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/"/>
+    <id>http://yoursite.com/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/</id>
     <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-04-19T08:40:31.920Z</updated>
+    <updated>2020-04-19T08:32:51.733Z</updated>
     
     <summary type="html">
     
@@ -151,19 +182,19 @@
       
         
         
-          &lt;h1 id=&quot;向上转型与向下转型&quot;&gt;&lt;a href=&quot;#向上转型与向下转型&quot; class=&quot;headerlink&quot; title=&quot;向上转型与向下转型&quot;&gt;&lt;/a&gt;向上转型与向下转型&lt;/h1&gt;&lt;h2 id=&quot;向上转型&quot;&gt;&lt;a href=&quot;#向上转型&quot;
+          &lt;h2 id=&quot;单例模式&quot;&gt;&lt;a href=&quot;#单例模式&quot; class=&quot;headerlink&quot; title=&quot;单例模式&quot;&gt;&lt;/a&gt;单例模式&lt;/h2&gt;&lt;p&gt;单例模式（Singleton Pattern）是 Java
         
       
     
     </summary>
     
     
-      <category term="多态" scheme="http://yoursite.com/categories/%E5%A4%9A%E6%80%81/"/>
+      <category term="设计模式" scheme="http://yoursite.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+      <category term="设计模式" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
-      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="单例模式" scheme="http://yoursite.com/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -197,11 +228,11 @@
   </entry>
   
   <entry>
-    <title>设计模式之单例模式</title>
-    <link href="http://yoursite.com/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/"/>
-    <id>http://yoursite.com/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/</id>
+    <title>向上转型和向下转型</title>
+    <link href="http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
+    <id>http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
     <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-04-19T08:32:51.733Z</updated>
+    <updated>2020-04-19T08:40:31.920Z</updated>
     
     <summary type="html">
     
@@ -209,19 +240,19 @@
       
         
         
-          &lt;h2 id=&quot;单例模式&quot;&gt;&lt;a href=&quot;#单例模式&quot; class=&quot;headerlink&quot; title=&quot;单例模式&quot;&gt;&lt;/a&gt;单例模式&lt;/h2&gt;&lt;p&gt;单例模式（Singleton Pattern）是 Java
+          &lt;h1 id=&quot;向上转型与向下转型&quot;&gt;&lt;a href=&quot;#向上转型与向下转型&quot; class=&quot;headerlink&quot; title=&quot;向上转型与向下转型&quot;&gt;&lt;/a&gt;向上转型与向下转型&lt;/h1&gt;&lt;h2 id=&quot;向上转型&quot;&gt;&lt;a href=&quot;#向上转型&quot;
         
       
     
     </summary>
     
     
-      <category term="设计模式" scheme="http://yoursite.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="多态" scheme="http://yoursite.com/categories/%E5%A4%9A%E6%80%81/"/>
     
     
-      <category term="设计模式" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
     
-      <category term="单例模式" scheme="http://yoursite.com/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -375,7 +406,7 @@
     <link href="http://yoursite.com/2020/04/08/linux-xia-an-zhuang-mysql5.7/"/>
     <id>http://yoursite.com/2020/04/08/linux-xia-an-zhuang-mysql5.7/</id>
     <published>2020-04-08T08:30:45.000Z</published>
-    <updated>2020-04-08T08:34:18.265Z</updated>
+    <updated>2020-05-16T15:38:52.658Z</updated>
     
     <summary type="html">
     
@@ -575,37 +606,6 @@
       <category term="mybatisplus" scheme="http://yoursite.com/tags/mybatisplus/"/>
     
       <category term="mybatis" scheme="http://yoursite.com/tags/mybatis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DateTimeFormat和JsonFormat 注解</title>
-    <link href="http://yoursite.com/2020/03/26/qian-hou-duan-shi-jian-lei-xing-zhuan-huan/"/>
-    <id>http://yoursite.com/2020/03/26/qian-hou-duan-shi-jian-lei-xing-zhuan-huan/</id>
-    <published>2020-03-26T13:30:45.000Z</published>
-    <updated>2020-03-26T11:31:15.454Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;DateTimeFormat和-JsonFormat注解的使用&quot;&gt;&lt;a href=&quot;#DateTimeFormat和-JsonFormat注解的使用&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="时间转换" scheme="http://yoursite.com/categories/%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2/"/>
-    
-    
-      <category term="spring" scheme="http://yoursite.com/tags/spring/"/>
-    
-      <category term="注解" scheme="http://yoursite.com/tags/%E6%B3%A8%E8%A7%A3/"/>
-    
-      <category term="json" scheme="http://yoursite.com/tags/json/"/>
     
   </entry>
   

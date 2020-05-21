@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2020/05/22/linux-xia-an-zhuang-jdk8/</loc>
+    <lastmod>2020-05-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/04/08/linux-xia-an-zhuang-mysql5.7/</loc>
+    <lastmod>2020-05-16</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/</loc>
     <lastmod>2020-04-27</lastmod>
   </url>  <url>
@@ -45,9 +51,6 @@
   </url>  <url>
     <loc>http://yoursite.com/2020/04/09/linux-xia-an-zhuang-nginx/</loc>
     <lastmod>2020-04-09</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2020/04/08/linux-xia-an-zhuang-mysql5.7/</loc>
-    <lastmod>2020-04-08</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/04/08/linux-xia-an-zhuang-tomcat/</loc>
     <lastmod>2020-04-08</lastmod>
