@@ -441,6 +441,11 @@ SUN公司提供的一种数据库访问规则、规范, 由于数据库种类较
                 </div>
                 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-06-17
+                </div>
+                
 
                 
                     
@@ -497,11 +502,13 @@ SUN公司提供的一种数据库访问规则、规范, 由于数据库种类较
    //静态代码块 ---&gt; 类加载了，就执行。 java.sql.DriverManager.registerDriver(new Driver());
     最后形成以下代码即可。
     Class.forName(&quot;com.mysql.jdbc.Driver&quot;);    </code></pre><h3 id="3-使用properties配置文件"><a href="#3-使用properties配置文件" class="headerlink" title="3. 使用properties配置文件"></a>3. 使用properties配置文件</h3><ol>
-<li>在src底下声明一个文件 xxx.properties ，里面的内容吐下：<pre><code>   driverClass=com.mysql.jdbc.Driver
+<li><p>在src底下声明一个文件 xxx.properties ，里面的内容吐下：</p>
+<pre><code>   driverClass=com.mysql.jdbc.Driver
    url=jdbc:mysql://localhost/student
    name=root
    password=root</code></pre></li>
-<li>在工具类里面，使用静态代码块，读取属性<pre><code> static{
+<li><p>在工具类里面，使用静态代码块，读取属性</p>
+<pre><code> static{
      try {
          //1. 创建一个属性配置对象
          Properties properties = new Properties();
@@ -907,8 +914,8 @@ public void testQuery() {
 ③：A对C说，帮忙拿下快递
 ④：C然后拿了快递给A
 流程图
-//重定向写法： 重新定位方向 参数即跳转的位置
-response.send
+    //重定向写法： 重新定位方向 参数即跳转的位置
+    respo
                         
                     </div>
                     <div class="publish-info">
@@ -919,8 +926,8 @@ response.send
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                            <a href="/categories/http/" class="post-category">
+                                    http
                                 </a>
                             
                             
@@ -929,10 +936,6 @@ response.send
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
                     
                     <a href="/tags/http/">
                         <span class="chip bg-color">http</span>
@@ -982,16 +985,16 @@ response.send
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/%E9%A1%B9%E7%9B%AE/">
+                        <span class="chip bg-color">项目</span>
+                    </a>
+                    
                     <a href="/tags/%E5%AE%89%E5%8D%93/">
                         <span class="chip bg-color">安卓</span>
                     </a>
                     
                     <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/">
                         <span class="chip bg-color">自定义view</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">
-                        <span class="chip bg-color">项目实战</span>
                     </a>
                     
                 </div>
@@ -1178,7 +1181,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">60.5k</span>&nbsp;字
+                class="white-color">49.6k</span>&nbsp;字
             
             
             

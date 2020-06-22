@@ -15,8 +15,8 @@
 ③：A对C说，帮忙拿下快递
 ④：C然后拿了快递给A
 流程图
-//重定向写法： 重新定位方向 参数即跳转的位置
-response.send">
+    //重定向写法： 重新定位方向 参数即跳转的位置
+    respo">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -411,10 +411,6 @@ response.send">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
-                            </a>
-                        
                             <a href="/tags/http/">
                                 <span class="chip bg-color">http</span>
                             </a>
@@ -427,8 +423,8 @@ response.send">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                后端
+                            <a href="/categories/http/" class="post-category">
+                                http
                             </a>
                         
                     </div>
@@ -445,7 +441,7 @@ response.send">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-21
+                    2020-06-22
                 </div>
                 
 
@@ -453,7 +449,7 @@ response.send">
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        428
+                        424
                     </div>
                     
 
@@ -481,39 +477,29 @@ response.send">
 <p>③：A对C说，帮忙拿下快递</p>
 <p>④：C然后拿了快递给A</p>
 <h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0116/20180527154555552.png" alt=""></p>
-<pre><code>//重定向写法： 重新定位方向 参数即跳转的位置
-response.sendRedirect(&quot;login_success.html&quot;);</code></pre><ol>
-<li><p>地址上显示的是最后的那个资源的路径地址</p>
-</li>
-<li><p>请求次数最少有两次， 服务器在第一次请求后，会返回302 以及一个地址， 浏览器在根据这个地址，执行第二次访问。</p>
-</li>
-<li><p>可以跳转到任意路径。 不是自己的工程也可以跳。</p>
-</li>
-<li><p>效率稍微低一点， 执行两次请求。 </p>
-</li>
-<li><p>后续的请求，没法使用上一次的request存储的数据，或者 没法使用上一次的request对象，因为这是两次不同的请求。</p>
-</li>
-<li><p>重定向访问的可能是外部资源 需要加项目路径${pageContext.request.contextPath}</p>
-</li>
+<pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">//重定向写法： 重新定位方向 参数即跳转的位置</span>
+    response<span class="token punctuation">.</span><span class="token function">sendRedirect</span><span class="token punctuation">(</span><span class="token string">"login_success.html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<ol>
+<li>地址上显示的是最后的那个资源的路径地址</li>
+<li>请求次数最少有两次， 服务器在第一次请求后，会返回302 以及一个地址， 浏览器在根据这个地址，执行第二次访问。</li>
+<li>可以跳转到任意路径。 不是自己的工程也可以跳。</li>
+<li>效率稍微低一点， 执行两次请求。 </li>
+<li>后续的请求，没法使用上一次的request存储的数据，或者 没法使用上一次的request对象，因为这是两次不同的请求。</li>
+<li>重定向访问的可能是外部资源 需要加项目路径${pageContext.request.contextPath}</li>
 </ol>
 <h2 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h2><h3 id="现实生活的例子-1"><a href="#现实生活的例子-1" class="headerlink" title="现实生活的例子"></a>现实生活的例子</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0116/%E8%BD%AC%E5%8F%91.png" alt=""><br>①：A对B说，帮忙拿下快递</p>
 <p>②：第二步，B没有空，直接找让C帮A拿下快递</p>
 <p>③：C拿到了快递并返回给A</p>
-<pre><code>//请求转发的写法： 参数即跳转的位置
-request.getRequestDispatcher(&quot;login_success.html&quot;).forward(request, response);</code></pre><h3 id="流程图-1"><a href="#流程图-1" class="headerlink" title="流程图"></a>流程图</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0116/20180527171706259.png" alt=""></p>
+<pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">//请求转发的写法： 参数即跳转的位置</span>
+    request<span class="token punctuation">.</span><span class="token function">getRequestDispatcher</span><span class="token punctuation">(</span><span class="token string">"login_success.html"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="流程图-1"><a href="#流程图-1" class="headerlink" title="流程图"></a>流程图</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0116/20180527171706259.png" alt=""></p>
 <ol>
-<li><p>地址上显示的是请求servlet的地址。  返回200 ok</p>
-</li>
-<li><p>请求次数只有一次， 因为是服务器内部帮客户端执行了后续的工作。 </p>
-</li>
-<li><p>只能跳转自己项目的资源路径 。  </p>
-</li>
-<li><p>效率上稍微高一点，因为只执行一次请求。 </p>
-</li>
-<li><p>可以使用上一次的request对象。 </p>
-</li>
-<li><p>请求转发路径写内部枯井 无需加项目路径</p>
-</li>
+<li>地址上显示的是请求servlet的地址。  返回200 ok</li>
+<li>请求次数只有一次， 因为是服务器内部帮客户端执行了后续的工作。 </li>
+<li>只能跳转自己项目的资源路径 。  </li>
+<li>效率上稍微高一点，因为只执行一次请求。 </li>
+<li>可以使用上一次的request对象。 </li>
+<li>请求转发路径写内部枯井 无需加项目路径</li>
 </ol>
 
             </div>
@@ -577,10 +563,6 @@ request.getRequestDispatcher(&quot;login_success.html&quot;).forward(request, re
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
-                                </a>
                             
                                 <a href="/tags/http/">
                                     <span class="chip bg-color">http</span>
@@ -754,33 +736,31 @@ request.getRequestDispatcher(&quot;login_success.html&quot;).forward(request, re
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/18/maven-xue-xi-bi-ji/">
+                <a href="/2020/02/21/spring-zhong-chuang-jian-bean-de-san-chong-fang-shi/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/000043-157305604379c0.jpg" class="responsive-img" alt="Maven学习笔记">
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/095746-1475287066b546.jpg" class="responsive-img" alt="spring对bean的管理细节">
                         
-                        <span class="card-title">Maven学习笔记</span>
+                        <span class="card-title">spring对bean的管理细节</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1、目前掌握的技术
-2、目前的技术在开发中存在的问题[why]
-一个项目就是一个工程如果项目非常庞大，就不适合继续使用package来划分模块。最好是每一个模块对应一个项目，利于分工协作。借助于maven就可以将一个项目拆分成多个工程。
-项
+                            把对象的创建交给spring来管理spring对bean的管理细节
+创建bean的三种方式1.使用默认的构造器创建在spring的配置文件中使用bean标签，配以id和class属性之后，且没有其他属性和标签时。采用的就是默认构造函数创建b
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-18
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Maven/" class="post-category">
-                                    Maven
+                            <a href="/categories/spring/" class="post-category">
+                                    spring
                                 </a>
                             
                             
@@ -790,12 +770,12 @@ request.getRequestDispatcher(&quot;login_success.html&quot;).forward(request, re
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/spring/">
+                        <span class="chip bg-color">spring</span>
                     </a>
                     
-                    <a href="/tags/%E9%A1%B9%E7%9B%AE%E6%95%B4%E5%90%88/">
-                        <span class="chip bg-color">项目整合</span>
+                    <a href="/tags/bean/">
+                        <span class="chip bg-color">bean</span>
                     </a>
                     
                 </div>
@@ -1038,7 +1018,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">60.5k</span>&nbsp;字
+                class="white-color">49.6k</span>&nbsp;字
             
             
             

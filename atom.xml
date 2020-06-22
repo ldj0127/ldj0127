@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-21T23:42:44.412Z</updated>
+  <updated>2020-06-22T14:53:18.200Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,349 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Mongodb</title>
+    <link href="http://yoursite.com/2020/06/22/mongodb/"/>
+    <id>http://yoursite.com/2020/06/22/mongodb/</id>
+    <published>2020-06-22T10:24:45.000Z</published>
+    <updated>2020-06-22T14:53:18.200Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Mongodb&quot;&gt;&lt;a href=&quot;#Mongodb&quot; class=&quot;headerlink&quot; title=&quot;Mongodb&quot;&gt;&lt;/a&gt;Mongodb&lt;/h1&gt;&lt;h2 id=&quot;什么是MongoDB&quot;&gt;&lt;a href=&quot;#什么是MongoDB&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Mongodb" scheme="http://yoursite.com/categories/Mongodb/"/>
+    
+    
+      <category term="Mongodb" scheme="http://yoursite.com/tags/Mongodb/"/>
+    
+      <category term="NoSQL" scheme="http://yoursite.com/tags/NoSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Position</title>
+    <link href="http://yoursite.com/2020/06/22/position/"/>
+    <id>http://yoursite.com/2020/06/22/position/</id>
+    <published>2020-06-22T10:24:45.000Z</published>
+    <updated>2020-06-22T14:53:59.334Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Position&quot;&gt;&lt;a href=&quot;#Position&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="css" scheme="http://yoursite.com/categories/css/"/>
+    
+    
+      <category term="Position" scheme="http://yoursite.com/tags/Position/"/>
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>回调地狱</title>
+    <link href="http://yoursite.com/2020/06/22/promise/"/>
+    <id>http://yoursite.com/2020/06/22/promise/</id>
+    <published>2020-06-22T10:24:45.000Z</published>
+    <updated>2020-06-22T14:48:54.366Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;回调地狱&quot;&gt;&lt;a href=&quot;#回调地狱&quot; class=&quot;headerlink&quot; title=&quot;回调地狱&quot;&gt;&lt;/a&gt;回调地狱&lt;/h1&gt;&lt;p&gt;一个函数的执行，需要依赖于另一个函数的执行调用。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="es6" scheme="http://yoursite.com/categories/es6/"/>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+      <category term="Promise" scheme="http://yoursite.com/tags/Promise/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker安装及常用镜像</title>
+    <link href="http://yoursite.com/2020/06/22/docker-zhi-zuo/"/>
+    <id>http://yoursite.com/2020/06/22/docker-zhi-zuo/</id>
+    <published>2020-06-22T10:24:45.000Z</published>
+    <updated>2020-06-22T14:51:34.410Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Docker搭建&quot;&gt;&lt;a href=&quot;#Docker搭建&quot; class=&quot;headerlink&quot; title=&quot;Docker搭建&quot;&gt;&lt;/a&gt;Docker搭建&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;yum -y install gcc
+yum -y install
+        
+      
+    
+    </summary>
+    
+    
+      <category term="docker" scheme="http://yoursite.com/categories/docker/"/>
+    
+    
+      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>flex布局</title>
+    <link href="http://yoursite.com/2020/06/22/flex-bu-ju/"/>
+    <id>http://yoursite.com/2020/06/22/flex-bu-ju/</id>
+    <published>2020-06-22T10:24:45.000Z</published>
+    <updated>2020-06-22T14:47:36.935Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;什么是flex布局&quot;&gt;&lt;a href=&quot;#什么是flex布局&quot; class=&quot;headerlink&quot; title=&quot;什么是flex布局&quot;&gt;&lt;/a&gt;什么是flex布局&lt;/h1&gt;&lt;p&gt;Flex是Flexioble
+        
+      
+    
+    </summary>
+    
+    
+      <category term="css" scheme="http://yoursite.com/categories/css/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+      <category term="flex" scheme="http://yoursite.com/tags/flex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>悲观锁与乐观锁</title>
+    <link href="http://yoursite.com/2020/06/22/le-guan-suo-yu-bei-guan-suo/"/>
+    <id>http://yoursite.com/2020/06/22/le-guan-suo-yu-bei-guan-suo/</id>
+    <published>2020-06-22T10:24:45.000Z</published>
+    <updated>2020-06-22T14:52:19.582Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;何谓悲观锁与乐观锁&quot;&gt;&lt;a href=&quot;#何谓悲观锁与乐观锁&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="锁" scheme="http://yoursite.com/categories/%E9%94%81/"/>
+    
+    
+      <category term="锁" scheme="http://yoursite.com/tags/%E9%94%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前后分离的好处</title>
+    <link href="http://yoursite.com/2020/06/22/qian-hou-duan-fen-chi/"/>
+    <id>http://yoursite.com/2020/06/22/qian-hou-duan-fen-chi/</id>
+    <published>2020-06-22T10:24:45.000Z</published>
+    <updated>2020-06-22T14:50:05.776Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前后端分离的好处&quot;&gt;&lt;a href=&quot;#前后端分离的好处&quot; class=&quot;headerlink&quot; title=&quot;前后端分离的好处&quot;&gt;&lt;/a&gt;前后端分离的好处&lt;/h2&gt;&lt;h3 id=&quot;前端后端完全解耦&quot;&gt;&lt;a href=&quot;#前端后端完全解耦&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前后分离" scheme="http://yoursite.com/categories/%E5%89%8D%E5%90%8E%E5%88%86%E7%A6%BB/"/>
+    
+    
+      <category term="项目" scheme="http://yoursite.com/tags/%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>npm i报错</title>
+    <link href="http://yoursite.com/2020/06/22/npm-i-shi-bao-cuo/"/>
+    <id>http://yoursite.com/2020/06/22/npm-i-shi-bao-cuo/</id>
+    <published>2020-06-22T10:20:45.000Z</published>
+    <updated>2020-06-22T14:47:18.923Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;#输入npm i报错&lt;br&gt;&lt;a href=&quot;mailto:node-sass@4.13.0&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;node-sass@4.13.0&lt;/a&gt; postinstall:’node scripts/build.js’
+        
+      
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="http://yoursite.com/categories/vue/"/>
+    
+    
+      <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue中插件的使用</title>
+    <link href="http://yoursite.com/2020/06/22/vue-cha-jian-an-zhuang/"/>
+    <id>http://yoursite.com/2020/06/22/vue-cha-jian-an-zhuang/</id>
+    <published>2020-06-22T09:24:45.000Z</published>
+    <updated>2020-06-22T14:44:08.851Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;vue-aplayer&quot;&gt;&lt;a href=&quot;#vue-aplayer&quot; class=&quot;headerlink&quot; title=&quot;vue-aplayer&quot;&gt;&lt;/a&gt;vue-aplayer&lt;/h2&gt;&lt;p&gt;在main.js中引入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import
+        
+      
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="http://yoursite.com/categories/vue/"/>
+    
+    
+      <category term="插件" scheme="http://yoursite.com/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java反射基础</title>
+    <link href="http://yoursite.com/2020/06/22/java-ji-chu-fan-she/"/>
+    <id>http://yoursite.com/2020/06/22/java-ji-chu-fan-she/</id>
+    <published>2020-06-22T09:03:27.000Z</published>
+    <updated>2020-06-22T09:39:01.131Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;h3 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot; class=&quot;headerlink&quot; title=&quot;1.
+        
+      
+    
+    </summary>
+    
+    
+      <category term="反射" scheme="http://yoursite.com/categories/%E5%8F%8D%E5%B0%84/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="后端" scheme="http://yoursite.com/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Data、String和sql.Timestamp之间的互相转换</title>
+    <link href="http://yoursite.com/2020/06/22/java-zhong-data-string-he-sql.timestamp-zhi-jian-de-hu-xiang-zhuan-huan/"/>
+    <id>http://yoursite.com/2020/06/22/java-zhong-data-string-he-sql.timestamp-zhi-jian-de-hu-xiang-zhuan-huan/</id>
+    <published>2020-06-22T08:24:45.000Z</published>
+    <updated>2020-06-22T09:46:38.214Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JAVA中Date、Timestamp和String之间的互相转换&quot;&gt;&lt;a href=&quot;#JAVA中Date、Timestamp和String之间的互相转换&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具类" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    
+    
+      <category term="工具类" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>鼠标滚轮事件</title>
+    <link href="http://yoursite.com/2020/06/22/shu-biao-gun-lun-shi-jian/"/>
+    <id>http://yoursite.com/2020/06/22/shu-biao-gun-lun-shi-jian/</id>
+    <published>2020-06-22T08:24:45.000Z</published>
+    <updated>2020-06-22T14:42:26.467Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;鼠标滚轮事件&quot;&gt;&lt;a href=&quot;#鼠标滚轮事件&quot; class=&quot;headerlink&quot; title=&quot;鼠标滚轮事件&quot;&gt;&lt;/a&gt;鼠标滚轮事件&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;// 给页面绑定滑轮滚动事件
+if (document.addEventListener)
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/categories/js/"/>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
     <title>linux下安装jdk8</title>
     <link href="http://yoursite.com/2020/05/22/linux-xia-an-zhuang-jdk8/"/>
     <id>http://yoursite.com/2020/05/22/linux-xia-an-zhuang-jdk8/</id>
     <published>2020-05-21T23:30:45.000Z</published>
-    <updated>2020-05-21T23:42:44.412Z</updated>
+    <updated>2020-06-22T14:32:36.900Z</updated>
     
     <summary type="html">
     
@@ -41,8 +379,6 @@
     
       <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
     
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
       <category term="jdk" scheme="http://yoursite.com/tags/jdk/"/>
     
   </entry>
@@ -52,7 +388,7 @@
     <link href="http://yoursite.com/2020/04/23/java8-xin-te-xing/"/>
     <id>http://yoursite.com/2020/04/23/java8-xin-te-xing/</id>
     <published>2020-04-23T10:24:45.000Z</published>
-    <updated>2020-04-23T10:29:21.775Z</updated>
+    <updated>2020-06-22T14:30:57.513Z</updated>
     
     <summary type="html">
     
@@ -74,38 +410,7 @@
     
       <category term="stream" scheme="http://yoursite.com/tags/stream/"/>
     
-      <category term="新特性" scheme="http://yoursite.com/tags/%E6%96%B0%E7%89%B9%E6%80%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java集合的选择</title>
-    <link href="http://yoursite.com/2020/04/21/java-ji-he-de-xuan-ze/"/>
-    <id>http://yoursite.com/2020/04/21/java-ji-he-de-xuan-ze/</id>
-    <published>2020-04-21T05:30:45.000Z</published>
-    <updated>2020-04-21T09:16:16.367Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;java中的集合介绍&quot;&gt;&lt;a href=&quot;#java中的集合介绍&quot; class=&quot;headerlink&quot; title=&quot;java中的集合介绍&quot;&gt;&lt;/a&gt;java中的集合介绍&lt;/h1&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="集合" scheme="http://yoursite.com/categories/%E9%9B%86%E5%90%88/"/>
-    
-    
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
-      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-      <category term="集合" scheme="http://yoursite.com/tags/%E9%9B%86%E5%90%88/"/>
+      <category term="java8新特性" scheme="http://yoursite.com/tags/java8%E6%96%B0%E7%89%B9%E6%80%A7/"/>
     
   </entry>
   
@@ -114,7 +419,7 @@
     <link href="http://yoursite.com/2020/04/19/java-zhong-de-tong-bu-dai-ma-kuai-tong-bu-fang-fa/"/>
     <id>http://yoursite.com/2020/04/19/java-zhong-de-tong-bu-dai-ma-kuai-tong-bu-fang-fa/</id>
     <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-04-19T08:37:43.026Z</updated>
+    <updated>2020-06-22T14:29:57.804Z</updated>
     
     <summary type="html">
     
@@ -129,23 +434,23 @@
     </summary>
     
     
-      <category term="多线程" scheme="http://yoursite.com/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="synchronized" scheme="http://yoursite.com/categories/synchronized/"/>
     
     
       <category term="synchronized" scheme="http://yoursite.com/tags/synchronized/"/>
     
-      <category term="多线程" scheme="http://yoursite.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="线程" scheme="http://yoursite.com/tags/%E7%BA%BF%E7%A8%8B/"/>
     
       <category term="锁" scheme="http://yoursite.com/tags/%E9%94%81/"/>
     
   </entry>
   
   <entry>
-    <title>内部类</title>
+    <title>java内部类详解</title>
     <link href="http://yoursite.com/2020/04/19/nei-bu-lei/"/>
     <id>http://yoursite.com/2020/04/19/nei-bu-lei/</id>
     <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-04-19T08:27:59.713Z</updated>
+    <updated>2020-06-22T14:28:49.188Z</updated>
     
     <summary type="html">
     
@@ -163,9 +468,65 @@
       <category term="java" scheme="http://yoursite.com/categories/java/"/>
     
     
-      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
     
       <category term="内部类" scheme="http://yoursite.com/tags/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>向上转型和向下转型</title>
+    <link href="http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
+    <id>http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
+    <published>2020-04-19T05:30:45.000Z</published>
+    <updated>2020-06-22T14:30:40.313Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;向上转型与向下转型&quot;&gt;&lt;a href=&quot;#向上转型与向下转型&quot; class=&quot;headerlink&quot; title=&quot;向上转型与向下转型&quot;&gt;&lt;/a&gt;向上转型与向下转型&lt;/h1&gt;&lt;h2 id=&quot;向上转型&quot;&gt;&lt;a href=&quot;#向上转型&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="多态" scheme="http://yoursite.com/categories/%E5%A4%9A%E6%80%81/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多线程之线程死锁</title>
+    <link href="http://yoursite.com/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/"/>
+    <id>http://yoursite.com/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/</id>
+    <published>2020-04-19T05:30:45.000Z</published>
+    <updated>2020-06-22T14:29:27.132Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;死锁讲解&quot;&gt;&lt;a href=&quot;#死锁讲解&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="线程" scheme="http://yoursite.com/tags/%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
     
   </entry>
   
@@ -174,7 +535,7 @@
     <link href="http://yoursite.com/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/"/>
     <id>http://yoursite.com/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/</id>
     <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-04-19T08:32:51.733Z</updated>
+    <updated>2020-06-22T14:29:02.260Z</updated>
     
     <summary type="html">
     
@@ -199,69 +560,11 @@
   </entry>
   
   <entry>
-    <title>多线程之线程死锁</title>
-    <link href="http://yoursite.com/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/"/>
-    <id>http://yoursite.com/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/</id>
-    <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-04-19T08:37:37.075Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;死锁讲解&quot;&gt;&lt;a href=&quot;#死锁讲解&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="多线程" scheme="http://yoursite.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>向上转型和向下转型</title>
-    <link href="http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
-    <id>http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
-    <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-04-19T08:40:31.920Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;向上转型与向下转型&quot;&gt;&lt;a href=&quot;#向上转型与向下转型&quot; class=&quot;headerlink&quot; title=&quot;向上转型与向下转型&quot;&gt;&lt;/a&gt;向上转型与向下转型&lt;/h1&gt;&lt;h2 id=&quot;向上转型&quot;&gt;&lt;a href=&quot;#向上转型&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="多态" scheme="http://yoursite.com/categories/%E5%A4%9A%E6%80%81/"/>
-    
-    
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
-      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Linux下的安装部署fastdfs</title>
     <link href="http://yoursite.com/2020/04/17/linux-an-zhuang-fastdfs/"/>
     <id>http://yoursite.com/2020/04/17/linux-an-zhuang-fastdfs/</id>
     <published>2020-04-17T05:30:45.000Z</published>
-    <updated>2020-04-17T03:36:28.327Z</updated>
+    <updated>2020-06-22T14:28:10.461Z</updated>
     
     <summary type="html">
     
@@ -282,330 +585,6 @@
       <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
     
       <category term="fastdfs" scheme="http://yoursite.com/tags/fastdfs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Redis简介及常用命令</title>
-    <link href="http://yoursite.com/2020/04/14/redis-jian-jie-ji-chang-yong-ming-ling/"/>
-    <id>http://yoursite.com/2020/04/14/redis-jian-jie-ji-chang-yong-ming-ling/</id>
-    <published>2020-04-14T05:30:45.000Z</published>
-    <updated>2020-04-14T04:51:34.778Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;1-Redis简介&quot;&gt;&lt;a href=&quot;#1-Redis简介&quot; class=&quot;headerlink&quot; title=&quot;1. Redis简介&quot;&gt;&lt;/a&gt;1. Redis简介&lt;/h2&gt;&lt;h3 id=&quot;1-1-Redis简介&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Redis" scheme="http://yoursite.com/categories/Redis/"/>
-    
-    
-      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Redis的安装</title>
-    <link href="http://yoursite.com/2020/04/13/linux-an-zhuang-redis/"/>
-    <id>http://yoursite.com/2020/04/13/linux-an-zhuang-redis/</id>
-    <published>2020-04-13T05:30:45.000Z</published>
-    <updated>2020-04-13T05:51:15.885Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;1-下载&quot;&gt;&lt;a href=&quot;#1-下载&quot; class=&quot;headerlink&quot; title=&quot;1.下载&quot;&gt;&lt;/a&gt;1.下载&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://redis.io/&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Redis" scheme="http://yoursite.com/categories/Redis/"/>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker的安装</title>
-    <link href="http://yoursite.com/2020/04/10/docker-de-an-zhuang/"/>
-    <id>http://yoursite.com/2020/04/10/docker-de-an-zhuang/</id>
-    <published>2020-04-10T03:30:45.000Z</published>
-    <updated>2020-04-10T04:35:06.975Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;1-Docker-下载&quot;&gt;&lt;a href=&quot;#1-Docker-下载&quot; class=&quot;headerlink&quot; title=&quot;1.Docker 下载&quot;&gt;&lt;/a&gt;1.Docker 下载&lt;/h2&gt;&lt;p&gt;官网 &lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
-    
-      <category term="容器" scheme="http://yoursite.com/tags/%E5%AE%B9%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux下安装nginx</title>
-    <link href="http://yoursite.com/2020/04/09/linux-xia-an-zhuang-nginx/"/>
-    <id>http://yoursite.com/2020/04/09/linux-xia-an-zhuang-nginx/</id>
-    <published>2020-04-09T03:30:45.000Z</published>
-    <updated>2020-04-09T03:59:41.453Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;1-下载&quot;&gt;&lt;a href=&quot;#1-下载&quot; class=&quot;headerlink&quot; title=&quot;1.下载&quot;&gt;&lt;/a&gt;1.下载&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://nginx.org/en/download.html&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-      <category term="nginx" scheme="http://yoursite.com/tags/nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux下安装mysql 5.7</title>
-    <link href="http://yoursite.com/2020/04/08/linux-xia-an-zhuang-mysql5.7/"/>
-    <id>http://yoursite.com/2020/04/08/linux-xia-an-zhuang-mysql5.7/</id>
-    <published>2020-04-08T08:30:45.000Z</published>
-    <updated>2020-05-16T15:38:52.658Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://dev.mysql.com/downloads/mysql/&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux下安装tomcat</title>
-    <link href="http://yoursite.com/2020/04/08/linux-xia-an-zhuang-tomcat/"/>
-    <id>http://yoursite.com/2020/04/08/linux-xia-an-zhuang-tomcat/</id>
-    <published>2020-04-08T06:30:45.000Z</published>
-    <updated>2020-04-08T05:56:59.869Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;jdk的安装&quot;&gt;&lt;a href=&quot;#jdk的安装&quot; class=&quot;headerlink&quot; title=&quot;jdk的安装&quot;&gt;&lt;/a&gt;jdk的安装&lt;/h2&gt;&lt;p&gt;这一步就不说了 现在centos7里jdk是安装好了的&lt;/p&gt;
-&lt;h2 id=&quot;下载tomcat&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-      <category term="安装tomcat" scheme="http://yoursite.com/tags/%E5%AE%89%E8%A3%85tomcat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vm安装centos7</title>
-    <link href="http://yoursite.com/2020/04/07/vm-zhong-an-zhuang-centos7/"/>
-    <id>http://yoursite.com/2020/04/07/vm-zhong-an-zhuang-centos7/</id>
-    <published>2020-04-07T01:30:45.000Z</published>
-    <updated>2020-04-07T01:27:57.709Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;linux的安装&quot;&gt;&lt;a href=&quot;#linux的安装&quot; class=&quot;headerlink&quot; title=&quot;linux的安装&quot;&gt;&lt;/a&gt;linux的安装&lt;/h1&gt;&lt;h2 id=&quot;1-安装vmware&quot;&gt;&lt;a href=&quot;#1-安装vmware&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-      <category term="虚拟机" scheme="http://yoursite.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mybatis-plus代码生成器</title>
-    <link href="http://yoursite.com/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/"/>
-    <id>http://yoursite.com/2020/04/06/mybatis-plus-dai-ma-sheng-cheng-qi/</id>
-    <published>2020-04-06T09:30:45.000Z</published>
-    <updated>2020-04-27T14:22:39.197Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;添加依赖&quot;&gt;&lt;a href=&quot;#添加依赖&quot; class=&quot;headerlink&quot; title=&quot;添加依赖&quot;&gt;&lt;/a&gt;添加依赖&lt;/h2&gt;&lt;pre class=&quot; language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-    
-      <category term="mybatisplus" scheme="http://yoursite.com/categories/mybatisplus/"/>
-    
-    
-      <category term="mybatisplus" scheme="http://yoursite.com/tags/mybatisplus/"/>
-    
-      <category term="代码生成器" scheme="http://yoursite.com/tags/%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>springboot集成mybatis-plus</title>
-    <link href="http://yoursite.com/2020/04/06/springboot-ji-cheng-mybatisplus/"/>
-    <id>http://yoursite.com/2020/04/06/springboot-ji-cheng-mybatisplus/</id>
-    <published>2020-04-06T08:30:45.000Z</published>
-    <updated>2020-04-06T09:37:31.335Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;添加依赖&quot;&gt;&lt;a href=&quot;#添加依赖&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="mybatisplus" scheme="http://yoursite.com/categories/mybatisplus/"/>
-    
-    
-      <category term="mybatisplus" scheme="http://yoursite.com/tags/mybatisplus/"/>
-    
-      <category term="springboot" scheme="http://yoursite.com/tags/springboot/"/>
-    
-      <category term="整合" scheme="http://yoursite.com/tags/%E6%95%B4%E5%90%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>spring集成mybatis-plus</title>
-    <link href="http://yoursite.com/2020/04/06/spring-ji-cheng-mybatisplus/"/>
-    <id>http://yoursite.com/2020/04/06/spring-ji-cheng-mybatisplus/</id>
-    <published>2020-04-06T02:30:45.000Z</published>
-    <updated>2020-04-06T04:47:16.520Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;加入依赖&quot;&gt;&lt;a href=&quot;#加入依赖&quot; class=&quot;headerlink&quot; title=&quot;加入依赖&quot;&gt;&lt;/a&gt;加入依赖&lt;/h3&gt;&lt;pre class=&quot; language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-    
-      <category term="mybatisplus" scheme="http://yoursite.com/categories/mybatisplus/"/>
-    
-    
-      <category term="spring" scheme="http://yoursite.com/tags/spring/"/>
-    
-      <category term="mybatisplus" scheme="http://yoursite.com/tags/mybatisplus/"/>
-    
-      <category term="整合" scheme="http://yoursite.com/tags/%E6%95%B4%E5%90%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mybatis-plus简介</title>
-    <link href="http://yoursite.com/2020/04/06/mybatis-plus-jian-jie/"/>
-    <id>http://yoursite.com/2020/04/06/mybatis-plus-jian-jie/</id>
-    <published>2020-04-06T00:30:45.000Z</published>
-    <updated>2020-04-06T01:13:11.890Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;mybatis-plus&quot;&gt;&lt;a href=&quot;#mybatis-plus&quot; class=&quot;headerlink&quot; title=&quot;mybatis-plus&quot;&gt;&lt;/a&gt;mybatis-plus&lt;/h2&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="mybatisplus" scheme="http://yoursite.com/categories/mybatisplus/"/>
-    
-    
-      <category term="mybatisplus" scheme="http://yoursite.com/tags/mybatisplus/"/>
-    
-      <category term="mybatis" scheme="http://yoursite.com/tags/mybatis/"/>
     
   </entry>
   

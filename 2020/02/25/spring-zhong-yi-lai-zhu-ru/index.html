@@ -444,7 +444,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-26
+                    2020-06-22
                 </div>
                 
 
@@ -511,14 +511,14 @@
 <h3 id="3-注解方式注入"><a href="#3-注解方式注入" class="headerlink" title="3.注解方式注入"></a>3.注解方式注入</h3><blockquote>
 <p>他们的作用和在xml配置文件中的bean标签中写一个标签的作用是一样的</p>
 </blockquote>
-<h4 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>
+<h4 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h4><pre class=" language-java"><code class="language-java">    <span class="token annotation punctuation">@Autowired</span>
     <span class="token keyword">private</span> AccountStudentImpl account<span class="token punctuation">;</span>
 
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         account<span class="token punctuation">.</span><span class="token function">getStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span></code></pre>
 <p><strong>作用</strong>：自动按照类型注入。只要容器中有唯一的一个 bean 对象类型和要注入的变量类型匹配，就可以注入成功。<br>如果ioc容器中没有任何 bean 的类型和要注入的变量类型匹配，则报错。<br><strong>Ioc容器中有多个类型匹配时</strong>：使用要注入的对象变量名称作为 bean 的 id，在 spring 容器查找，找到了也可以注入成功。找不到就报错。<br><strong>出现位置</strong>：可以是变量上，也可以是方法上。</p>
-<h4 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>
+<h4 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h4><pre class=" language-java"><code class="language-java">  <span class="token annotation punctuation">@Autowired</span>
   <span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"account"</span><span class="token punctuation">)</span>
   <span class="token keyword">private</span> AccountStudentImpl account<span class="token punctuation">;</span>
 
@@ -526,7 +526,7 @@
       account<span class="token punctuation">.</span><span class="token function">getStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span></code></pre>
 <p><strong>作用</strong>：在按照类中注入的基础之上再按照名称注入。它在给类成员注入时不能单独使用必需和<code>@Autowire</code>一起使用。但是在给方法参数注入时可以独立使用。<br>属性：<strong>value</strong>：用于指定注入bean的id。</p>
-<h4 id="Resource"><a href="#Resource" class="headerlink" title="@Resource"></a>@Resource</h4><pre class=" language-java"><code class="language-java"> <span class="token annotation punctuation">@Resource</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"accountStudent"</span><span class="token punctuation">)</span>
+<h4 id="Resource"><a href="#Resource" class="headerlink" title="@Resource"></a>@Resource</h4><pre class=" language-java"><code class="language-java">    <span class="token annotation punctuation">@Resource</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"accountStudent"</span><span class="token punctuation">)</span>
     <span class="token keyword">private</span> AccountStudentImpl account<span class="token punctuation">;</span>
 
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -536,7 +536,7 @@
 <blockquote>
 <p>以上三个注入都只能注入其他bean类型的数据，而基本类型和String类型无法使用上述注解实现。另外，集合类型的注入只能通过XML来实现。</p>
 </blockquote>
-<h4 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h4><pre class=" language-java"><code class="language-java"> <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"yang"</span><span class="token punctuation">)</span>
+<h4 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h4><pre class=" language-java"><code class="language-java">    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"yang"</span><span class="token punctuation">)</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"18"</span><span class="token punctuation">)</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span></code></pre>
@@ -821,16 +821,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/spring/">
-                        <span class="chip bg-color">spring</span>
-                    </a>
-                    
                     <a href="/tags/IOC/">
                         <span class="chip bg-color">IOC</span>
                     </a>
                     
                     <a href="/tags/%E6%B3%A8%E8%A7%A3/">
                         <span class="chip bg-color">注解</span>
+                    </a>
+                    
+                    <a href="/tags/spring/">
+                        <span class="chip bg-color">spring</span>
                     </a>
                     
                 </div>
@@ -877,16 +877,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
+                    <a href="/tags/String/">
+                        <span class="chip bg-color">String</span>
                     </a>
                     
-                    <a href="/tags/StringBuffer/">
-                        <span class="chip bg-color">StringBuffer</span>
-                    </a>
-                    
-                    <a href="/tags/StringBuiler/">
-                        <span class="chip bg-color">StringBuiler</span>
+                    <a href="/tags/JDK/">
+                        <span class="chip bg-color">JDK</span>
                     </a>
                     
                 </div>
@@ -1073,7 +1069,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">60.5k</span>&nbsp;字
+                class="white-color">49.6k</span>&nbsp;字
             
             
             

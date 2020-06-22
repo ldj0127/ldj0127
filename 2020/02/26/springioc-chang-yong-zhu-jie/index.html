@@ -407,16 +407,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/spring/">
-                                <span class="chip bg-color">spring</span>
-                            </a>
-                        
                             <a href="/tags/IOC/">
                                 <span class="chip bg-color">IOC</span>
                             </a>
                         
                             <a href="/tags/%E6%B3%A8%E8%A7%A3/">
                                 <span class="chip bg-color">注解</span>
+                            </a>
+                        
+                            <a href="/tags/spring/">
+                                <span class="chip bg-color">spring</span>
                             </a>
                         
                     </div>
@@ -442,6 +442,11 @@
                     2020-02-26
                 </div>
                 
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-06-22
+                </div>
                 
 
                 
@@ -476,9 +481,11 @@
 <p>他们的作用和在XML配置文件中编写一个标签实现的功能是一样的</p>
 </blockquote>
 <h4 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h4><p><strong>作用</strong>：用于把当前类对象存入spring容器中<br>属性：<strong>value</strong>：用于指定bean的id。当我们不写时，它的默认值是当前类名，且首字母改小写。</p>
-<h4 id="Controller-Service-Repository"><a href="#Controller-Service-Repository" class="headerlink" title="@Controller @Service @Repository"></a>@Controller @Service @Repository</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>：一般用在表现
-<span class="token annotation punctuation">@Service</span>：一般用在业务层
-<span class="token annotation punctuation">@Repository</span>：一般用在持久层</code></pre>
+<h4 id="Controller-Service-Repository"><a href="#Controller-Service-Repository" class="headerlink" title="@Controller @Service @Repository"></a>@Controller @Service @Repository</h4><ul>
+<li>@Controller：一般用在表现</li>
+<li>@Service：一般用在业务层</li>
+<li>@Repository：一般用在持久层</li>
+</ul>
 <p>以上三个注解他们的作用和属性与Component是一模一样。<br>他们三个是spring框架为我们提供明确的三层使用的注解，使我们的三层对象更加清晰</p>
 <ul>
 <li>XML配置方式<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>默认无参构造方式<span class="token operator">--</span><span class="token operator">></span>
@@ -497,19 +504,19 @@
 <span class="token comment" spellcheck="true">//@Service //业务层</span>
 <span class="token comment" spellcheck="true">//@Repository //持久层</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
-<h3 id="数据注入"><a href="#数据注入" class="headerlink" title="数据注入"></a>数据注入</h3></li>
+</li>
 </ul>
-<blockquote>
+<h3 id="数据注入"><a href="#数据注入" class="headerlink" title="数据注入"></a>数据注入</h3><blockquote>
 <p>他们的作用和在xml配置文件中的bean标签中写一个标签的作用是一样的</p>
 </blockquote>
-<h4 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>
+<h4 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h4><pre class=" language-java"><code class="language-java">    <span class="token annotation punctuation">@Autowired</span>
     <span class="token keyword">private</span> AccountStudentImpl account<span class="token punctuation">;</span>
 
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         account<span class="token punctuation">.</span><span class="token function">getStudent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span></code></pre>
 <p><strong>作用</strong>：自动按照类型注入。只要容器中有唯一的一个 bean 对象类型和要注入的变量类型匹配，就可以注入成功。<br>如果ioc容器中没有任何 bean 的类型和要注入的变量类型匹配，则报错。<br><strong>Ioc容器中有多个类型匹配时</strong>：使用要注入的对象变量名称作为 bean 的 id，在 spring 容器查找，找到了也可以注入成功。找不到就报错。<br><strong>出现位置</strong>：可以是变量上，也可以是方法上。</p>
-<h4 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>
+<h4 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h4><pre class=" language-java"><code class="language-java">  <span class="token annotation punctuation">@Autowired</span>
   <span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"account"</span><span class="token punctuation">)</span>
   <span class="token keyword">private</span> AccountStudentImpl account<span class="token punctuation">;</span>
 
@@ -620,16 +627,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/spring/">
-                                    <span class="chip bg-color">spring</span>
-                                </a>
-                            
                                 <a href="/tags/IOC/">
                                     <span class="chip bg-color">IOC</span>
                                 </a>
                             
                                 <a href="/tags/%E6%B3%A8%E8%A7%A3/">
                                     <span class="chip bg-color">注解</span>
+                                </a>
+                            
+                                <a href="/tags/spring/">
+                                    <span class="chip bg-color">spring</span>
                                 </a>
                             
                         </div>
@@ -838,12 +845,12 @@ public class SpringConfiguration {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/spring/">
-                        <span class="chip bg-color">spring</span>
-                    </a>
-                    
                     <a href="/tags/%E6%B3%A8%E8%A7%A3/">
                         <span class="chip bg-color">注解</span>
+                    </a>
+                    
+                    <a href="/tags/spring/">
+                        <span class="chip bg-color">spring</span>
                     </a>
                     
                 </div>
@@ -1087,7 +1094,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">60.5k</span>&nbsp;字
+                class="white-color">49.6k</span>&nbsp;字
             
             
             

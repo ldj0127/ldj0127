@@ -11,12 +11,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="spring对bean的管理细节, L">
     <meta name="description" content="把对象的创建交给spring来管理spring对bean的管理细节
-
-创建bean的三种方式
-bean对象的作用范围
-bean对象的生命周期
-
-创建bean的三种方式1.使用默认的构造器创建在spring的配置文件中使用bean标签，配以i">
+创建bean的三种方式1.使用默认的构造器创建在spring的配置文件中使用bean标签，配以id和class属性之后，且没有其他属性和标签时。采用的就是默认构造函数创建b">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -415,12 +410,8 @@ bean对象的生命周期
                                 <span class="chip bg-color">spring</span>
                             </a>
                         
-                            <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                                <span class="chip bg-color">框架</span>
-                            </a>
-                        
-                            <a href="/tags/spring%E7%9A%84%E4%BD%BF%E7%94%A8/">
-                                <span class="chip bg-color">spring的使用</span>
+                            <a href="/tags/bean/">
+                                <span class="chip bg-color">bean</span>
                             </a>
                         
                     </div>
@@ -447,12 +438,17 @@ bean对象的生命周期
                 </div>
                 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-06-22
+                </div>
+                
 
                 
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        589
+                        517
                     </div>
                     
 
@@ -476,24 +472,22 @@ bean对象的生命周期
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="把对象的创建交给spring来管理"><a href="#把对象的创建交给spring来管理" class="headerlink" title="把对象的创建交给spring来管理"></a>把对象的创建交给spring来管理</h1><p>spring对bean的管理细节</p>
-<ol>
-<li>创建bean的三种方式</li>
-<li>bean对象的作用范围</li>
-<li>bean对象的生命周期</li>
-</ol>
-<h2 id="创建bean的三种方式"><a href="#创建bean的三种方式" class="headerlink" title="创建bean的三种方式"></a>创建bean的三种方式</h2><h3 id="1-使用默认的构造器创建"><a href="#1-使用默认的构造器创建" class="headerlink" title="1.使用默认的构造器创建"></a>1.使用默认的构造器创建</h3><p>在spring的配置文件中使用bean标签，配以id和class属性之后，且没有其他属性和标签时。采用的就是默认构造函数创建bean对象，此时如果类中没有默认构造函数，则对象无法创建。<br> <code>&lt;bean id=&quot;accountService&quot; class=&quot;com.itheima.service.impl.AccountServiceImpl&quot;&gt;&lt;/bean&gt;</code></p>
-<h3 id="2-使用普通工厂中的方法创建"><a href="#2-使用普通工厂中的方法创建" class="headerlink" title="2.使用普通工厂中的方法创建"></a>2.使用普通工厂中的方法创建</h3><p>使用普通工厂中的方法创建对象（使用某个类中的方法创建对象，并存入spring容器）<br><code>&lt;bean id=&quot;instanceFactory&quot; class=&quot;com.itheima.factory.InstanceFactory&quot;&gt;&lt;/bean&gt;</code><br><code>&lt;bean id=&quot;accountService&quot; factory-bean=&quot;instanceFactory&quot; factory-method=&quot;getAccountService&quot;&gt;&lt;/bean&gt;</code></p>
-<h3 id="3-使用工厂中的静态方法创建"><a href="#3-使用工厂中的静态方法创建" class="headerlink" title="3.使用工厂中的静态方法创建"></a>3.使用工厂中的静态方法创建</h3><p>使用工厂中的静态方法创建对象（使用某个类中的静态方法创建对象，并存入spring容器)<br><code>&lt;bean id=&quot;accountService&quot; class=&quot;com.itheima.factory.StaticFactory&quot; factory-method=&quot;getAccountService&quot;&gt;&lt;/bean&gt;</code></p>
+<h2 id="创建bean的三种方式"><a href="#创建bean的三种方式" class="headerlink" title="创建bean的三种方式"></a>创建bean的三种方式</h2><h3 id="1-使用默认的构造器创建"><a href="#1-使用默认的构造器创建" class="headerlink" title="1.使用默认的构造器创建"></a>1.使用默认的构造器创建</h3><p>在spring的配置文件中使用bean标签，配以id和class属性之后，且没有其他属性和标签时。采用的就是默认构造函数创建bean对象，此时如果类中没有默认构造函数，则对象无法创建。</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"accountService"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.itheima.service.impl.AccountServiceImpl"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span></code></pre>
+<h3 id="2-使用普通工厂中的方法创建"><a href="#2-使用普通工厂中的方法创建" class="headerlink" title="2.使用普通工厂中的方法创建"></a>2.使用普通工厂中的方法创建</h3><p>使用普通工厂中的方法创建对象（使用某个类中的方法创建对象，并存入spring容器）</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"instanceFactory"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.itheima.factory.InstanceFactory"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span>
+<span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"accountService"</span> factory<span class="token operator">-</span>bean<span class="token operator">=</span><span class="token string">"instanceFactory"</span> factory<span class="token operator">-</span>method<span class="token operator">=</span><span class="token string">"getAccountService"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span></code></pre>
+<h3 id="3-使用工厂中的静态方法创建"><a href="#3-使用工厂中的静态方法创建" class="headerlink" title="3.使用工厂中的静态方法创建"></a>3.使用工厂中的静态方法创建</h3><p>使用工厂中的静态方法创建对象（使用某个类中的静态方法创建对象，并存入spring容器)</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"accountService"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.itheima.factory.StaticFactory"</span> factory<span class="token operator">-</span>method<span class="token operator">=</span><span class="token string">"getAccountService"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span></code></pre>
 <h2 id="bean的作用范围"><a href="#bean的作用范围" class="headerlink" title="bean的作用范围"></a>bean的作用范围</h2><p><strong>bean标签的scope属性</strong>：</p>
 <ul>
-<li>作用：用于指定bean的作用范围</li>
-<li>取值： 常用的就是单例的和多例的</li>
+<li><p>作用：用于指定bean的作用范围</p>
+</li>
+<li><p>取值： 常用的就是单例的和多例的</p>
+<p>  singleton：单例的（默认值）<br>  prototype：多例的<br>  request：作用于web应用的请求范围<br>  session：作用于web应用的会话范围<br>  global-session：作用于集群环境的会话范围（全局会话范围），当不是集群环境时，它就是session</p>
+</li>
 </ul>
-<pre><code>singleton：单例的（默认值）
-prototype：多例的
-request：作用于web应用的请求范围
-session：作用于web应用的会话范围
-global-session：作用于集群环境的会话范围（全局会话范围），当不是集群环境时，它就是session</code></pre><p><code>&lt;bean id=&quot;accountService&quot; class=&quot;com.itheima.service.impl.AccountServiceImpl&quot; scope=&quot;prototype&quot;&gt;&lt;/bean&gt;</code></p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"accountService"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.itheima.service.impl.AccountServiceImpl"</span> scope<span class="token operator">=</span><span class="token string">"prototype"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span></code></pre>
 <h2 id="bean的生命周期"><a href="#bean的生命周期" class="headerlink" title="bean的生命周期"></a>bean的生命周期</h2><p><strong>单例对象</strong></p>
 <ul>
 <li>出生：当容器创建时对象出生</li>
@@ -505,9 +499,10 @@ global-session：作用于集群环境的会话范围（全局会话范围），
 <ul>
 <li>出生：当我们使用对象时spring框架为我们创建</li>
 <li>活着：对象只要是在使用过程中就一直活着。</li>
-<li>死亡：当对象长时间不用，且没有别的对象引用时，由Java的垃圾回收器回收<br><code>&lt;bean id=&quot;accountService&quot; class=&quot;com.itheima.service.impl.AccountServiceImpl&quot;
-scope=&quot;prototype&quot; init-method=&quot;init&quot; destroy-method=&quot;destroy&quot;&gt;&lt;/bean&gt;</code></li>
+<li>死亡：当对象长时间不用，且没有别的对象引用时，由Java的垃圾回收器回收</li>
 </ul>
+<pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span>bean id<span class="token operator">=</span><span class="token string">"accountService"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"com.itheima.service.impl.AccountServiceImpl"</span>
+scope<span class="token operator">=</span><span class="token string">"prototype"</span> init<span class="token operator">-</span>method<span class="token operator">=</span><span class="token string">"init"</span> destroy<span class="token operator">-</span>method<span class="token operator">=</span><span class="token string">"destroy"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>bean<span class="token operator">></span></code></pre>
 
             </div>
             <hr/>
@@ -575,12 +570,8 @@ scope=&quot;prototype&quot; init-method=&quot;init&quot; destroy-method=&quot;de
                                     <span class="chip bg-color">spring</span>
                                 </a>
                             
-                                <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                                    <span class="chip bg-color">框架</span>
-                                </a>
-                            
-                                <a href="/tags/spring%E7%9A%84%E4%BD%BF%E7%94%A8/">
-                                    <span class="chip bg-color">spring的使用</span>
+                                <a href="/tags/bean/">
+                                    <span class="chip bg-color">bean</span>
                                 </a>
                             
                         </div>
@@ -751,30 +742,30 @@ scope=&quot;prototype&quot; init-method=&quot;init&quot; destroy-method=&quot;de
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/21/spring-gai-shu/">
+                <a href="/2020/02/22/string-stringbuffer-he-stringbuilder-de-qu-bie/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/095842-1567389522806f.jpg" class="responsive-img" alt="spring的概述">
+                        <img src="http://qiniuyun.dajienihao.cn/101024-1562983824e324.jpg" class="responsive-img" alt="String、StringBuffer和StringBuilder的区别">
                         
-                        <span class="card-title">spring的概述</span>
+                        <span class="card-title">String、StringBuffer和StringBuilder的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Spring 概述1.spring是什么Spring 是分层的 Java SE/EE 应用 full-stack 轻量级开源框架，以 IoC（Inverse Of Control：反转控制）和 AOP（Aspect Oriented Pro
+                            String,StringBuffer,StringBuilder三者的使用方法和区别在java中，我们常常用到String类型来操作字符串，但是用来操作字符串变量的不仅仅只有String类型，还有StringBuilder和StringB
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-22
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/spring/" class="post-category">
-                                    spring
+                            <a href="/categories/java/" class="post-category">
+                                    java
                                 </a>
                             
                             
@@ -784,16 +775,12 @@ scope=&quot;prototype&quot; init-method=&quot;init&quot; destroy-method=&quot;de
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/spring/">
-                        <span class="chip bg-color">spring</span>
+                    <a href="/tags/String/">
+                        <span class="chip bg-color">String</span>
                     </a>
                     
-                    <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                        <span class="chip bg-color">框架</span>
-                    </a>
-                    
-                    <a href="/tags/spring%E7%9A%84%E6%A6%82%E8%BF%B0/">
-                        <span class="chip bg-color">spring的概述</span>
+                    <a href="/tags/JDK/">
+                        <span class="chip bg-color">JDK</span>
                     </a>
                     
                 </div>
@@ -807,39 +794,36 @@ scope=&quot;prototype&quot; init-method=&quot;init&quot; destroy-method=&quot;de
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/15/shi-yong-mybatis-de-you-dian/">
+                <a href="/2020/01/16/qing-qiu-zhuan-fa-he-chong-ding-xiang-de-qu-bie/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/095559-15614277592283.jpg" class="responsive-img" alt="为什么要使用mybatis">
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/192524-15326043240a4f.jpg" class="responsive-img" alt="请求转发和重定向的区别">
                         
-                        <span class="card-title">为什么要使用mybatis</span>
+                        <span class="card-title">请求转发和重定向的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            #为什么要使用mybatis
-Mybatis是一个半自动化持久层框架
-JDBC
-
-sql夹在java代码块中，耦合度高导致硬编码内伤
-维护不易且实际开发需求中sql是有变化的，频繁修改情况多见
-
-Hibernate和JPA
-
-长难复杂Sql
+                            请求转发和重定向的区别重定向现实生活的例子①：A对B说，帮忙拿下快递
+②：B对A说，没有空，你找下C吧
+③：A对C说，帮忙拿下快递
+④：C然后拿了快递给A
+流程图
+    //重定向写法： 重新定位方向 参数即跳转的位置
+    respo
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    持久层框架
+                            <a href="/categories/http/" class="post-category">
+                                    http
                                 </a>
                             
                             
@@ -849,16 +833,8 @@ Hibernate和JPA
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                        <span class="chip bg-color">框架</span>
-                    </a>
-                    
-                    <a href="/tags/mybatis/">
-                        <span class="chip bg-color">mybatis</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/http/">
+                        <span class="chip bg-color">http</span>
                     </a>
                     
                 </div>
@@ -1045,7 +1021,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">60.5k</span>&nbsp;字
+                class="white-color">49.6k</span>&nbsp;字
             
             
             

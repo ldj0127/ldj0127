@@ -405,16 +405,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                <span class="chip bg-color">字符串</span>
+                            <a href="/tags/String/">
+                                <span class="chip bg-color">String</span>
                             </a>
                         
-                            <a href="/tags/StringBuffer/">
-                                <span class="chip bg-color">StringBuffer</span>
-                            </a>
-                        
-                            <a href="/tags/StringBuiler/">
-                                <span class="chip bg-color">StringBuiler</span>
+                            <a href="/tags/JDK/">
+                                <span class="chip bg-color">JDK</span>
                             </a>
                         
                     </div>
@@ -441,12 +437,17 @@
                 </div>
                 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-06-22
+                </div>
+                
 
                 
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.9k
+                        1.8k
                     </div>
                     
 
@@ -472,94 +473,108 @@
                 <h1 id="String-StringBuffer-StringBuilder三者的使用方法和区别"><a href="#String-StringBuffer-StringBuilder三者的使用方法和区别" class="headerlink" title="String,StringBuffer,StringBuilder三者的使用方法和区别"></a>String,StringBuffer,StringBuilder三者的使用方法和区别</h1><p>在java中，我们常常用到String类型来操作字符串，但是用来操作字符串变量的不仅仅只有String类型，还有StringBuilder和StringBuffer类型，尽管我们平时使用String类型比较多，但是在实际的开发中，这三种类型完全是三足鼎立的局面，根据不同的使用场景，我们要使用不同的类型，在很多情况下，使用StringBuilder和StringBuffer比使用String类型更快，还会有其它优点。</p>
 <h2 id="三者的使用"><a href="#三者的使用" class="headerlink" title="三者的使用"></a>三者的使用</h2><p>我们先来了解一下StringBuilder和StringBuffer的简单用法，至于String的用法，我们就不再赘述了，上一篇文章已将String类的方法详细的介绍了，因为StringBuffer和StringBuilder的方法基本上都一样，所以我们共同介绍它们的方法</p>
 <h3 id="toString-方法"><a href="#toString-方法" class="headerlink" title="toString()方法"></a>toString()方法</h3><p>将StringBuffer，StringBuilder对象转换为String字符串，常用在需要输出的时候，因为StringBuffer和StringBuilder的对象不能直接输出，例如：</p>
-<pre><code>StringBuffer s1 = new StringBuffer();
-s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class="headerlink" title="append()方法"></a>append()方法</h3><p>用于在字符串的后面追加字符串，当StringBuffer,StringBuilder中没有字符串的时候也可以append()，可以用来初始化，例如：</p>
-<pre><code>public static void main(String[] args)
-    {
-        StringBuffer s1 = new StringBuffer().append(&quot;bbb&quot;);
-        s1.append(&quot;aaa&quot;);
-        System.out.println(s1.toString());
-    }</code></pre><p>运行结果：<code>bbbaaa</code></p>
+<pre class=" language-java"><code class="language-java">    StringBuffer s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="append-方法"><a href="#append-方法" class="headerlink" title="append()方法"></a>append()方法</h3><p>用于在字符串的后面追加字符串，当StringBuffer,StringBuilder中没有字符串的时候也可以append()，可以用来初始化，例如：</p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            StringBuffer s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+<p>运行结果：<code>bbbaaa</code></p>
 <h3 id="charaAt-方法"><a href="#charaAt-方法" class="headerlink" title="charaAt()方法"></a>charaAt()方法</h3><p>返回指定索引位置的字符，索引从0开始，例如：</p>
-<pre><code>public static void main(String[] args)
-    {
-        StringBuffer s1 = new StringBuffer().append(&quot;bbb&quot;);
-        s1.append(&quot;aaa&quot;);
-        System.out.print(s1.toString());
-        System.out.print(s1.charAt(3));
-    }</code></pre><p>运行结果：<code>bbbaaa</code>,<code>a</code></p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            StringBuffer s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+<p>运行结果：<code>bbbaaa</code>,<code>a</code></p>
 <h3 id="deleteCharAt-方法"><a href="#deleteCharAt-方法" class="headerlink" title="deleteCharAt()方法"></a>deleteCharAt()方法</h3><p>删除指定索引位置的字符，例如：</p>
-<pre><code>public static void main(String[] args)
-    {
-        StringBuffer s1 = new StringBuffer().append(&quot;bbb&quot;);
-        s1.append(&quot;aaa&quot;);
-        System.out.print(s1.toString());
-        s1.deleteCharAt(3);
-        System.out.print(s1.toString());
-    }</code></pre><p>结果：<code>bbbaaa</code>,<code>bbbaa</code></p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            StringBuffer s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s1<span class="token punctuation">.</span><span class="token function">deleteCharAt</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+<p>结果：<code>bbbaaa</code>,<code>bbbaa</code></p>
 <h3 id="delete-方法"><a href="#delete-方法" class="headerlink" title="delete()方法"></a>delete()方法</h3><p>删除从开始索引到结束索引的字符串，例如：</p>
-<pre><code>public static void main(String[] args)
-    {
-        StringBuffer s1 = new StringBuffer().append(&quot;bbb&quot;);
-        s1.append(&quot;aaa&quot;);
-        System.out.print(s1.toString());
-        s1.delete(2,4);
-        System.out.print(s1.toString());
-    }</code></pre><p>结果：<code>bbbaaa</code>,<code>bbaa</code></p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            StringBuffer s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s1<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+<p>结果：<code>bbbaaa</code>,<code>bbaa</code></p>
 <h3 id="insert-方法"><a href="#insert-方法" class="headerlink" title="insert()方法"></a>insert()方法</h3><p>在指定索引位置之前插入字符串，例如：</p>
-<pre><code>public static void main(String[] args)
-    {
-        StringBuffer s1 = new StringBuffer().append(&quot;bbb&quot;);
-        s1.append(&quot;aaa&quot;);
-        System.out.print(s1.toString());
-        s1.insert(2,&quot;cc&quot;);
-        System.out.print(s1.toString());
-    }</code></pre><p>结果：<code>bbbaaa</code>,<code>bbccbaaa</code></p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            StringBuffer s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s1<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">"cc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+<p>结果：<code>bbbaaa</code>,<code>bbccbaaa</code></p>
 <h3 id="indexOf-方法"><a href="#indexOf-方法" class="headerlink" title="indexOf()方法"></a>indexOf()方法</h3><p>返回指定字符串的开始字符索引位置，还可以从某个字符索引位置开始向后匹配，没有找到匹配的就会返回-1,例如：</p>
-<pre><code>public static void main(String[] args)
-    {
-        StringBuffer s1 = new StringBuffer().append(&quot;bbb&quot;);
-        s1.append(&quot;aaa&quot;);
-        System.out.print(s1.toString());
-        System.out.print(s1.indexOf(&quot;ba&quot;));
-        System.out.print(s1.indexOf(&quot;ba&quot;,2));
-        System.out.print(s1.indexOf(&quot;mn&quot;));
-    }</code></pre><p>结果：<code>bbbaaa</code>,<code>2</code>,<code>2</code>,<code>-1</code></p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            StringBuffer s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"ba"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"ba"</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"mn"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+<p>结果：<code>bbbaaa</code>,<code>2</code>,<code>2</code>,<code>-1</code></p>
 <h3 id="lastIndexOf-方法"><a href="#lastIndexOf-方法" class="headerlink" title="lastIndexOf()方法"></a>lastIndexOf()方法</h3><p>和indexOf()的用法一样，只不过是从后往前匹配，也支持从指定索引开始从后往前去匹配，例如：</p>
-<pre><code> public static void main(String[] args)
-    {
-        StringBuffer s1 = new StringBuffer().append(&quot;bbb&quot;);
-        s1.append(&quot;aaa&quot;);
-        System.out.print(s1.toString());
-        System.out.print(s1.lastIndexOf(&quot;b&quot;,5));
-    }</code></pre><p>结果：<code>bbbaaa</code>,<code>2</code></p>
+<pre class=" language-java"><code class="language-java">     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            StringBuffer s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+<p>结果：<code>bbbaaa</code>,<code>2</code></p>
 <h3 id="reverse-方法"><a href="#reverse-方法" class="headerlink" title="reverse()方法"></a>reverse()方法</h3><p>反转字符串，例如：</p>
-<pre><code>public static void main(String[] args)
-    {
-        StringBuffer s1 = new StringBuffer().append(&quot;bbb&quot;);
-        s1.append(&quot;aaa&quot;);
-        System.out.println(s1.toString());
-        System.out.println(s1.reverse()); 
-    }</code></pre><p>结果：<code>bbbaaa</code>,<code>aaabbb</code></p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            StringBuffer s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span></code></pre>
+<p>结果：<code>bbbaaa</code>,<code>aaabbb</code></p>
 <h3 id="length-方法"><a href="#length-方法" class="headerlink" title="length()方法"></a>length()方法</h3><p>返回字符串的长度，例如：</p>
-<pre><code>public static void main(String[] args)
-{
-    StringBuffer s1 = new StringBuffer().append(&quot;bbb&quot;);
-    s1.append(&quot;aaa&quot;);
-    System.out.println(s1.toString());
-    System.out.println(s1.length());
-}</code></pre><p>结果：<code>bbbaaa</code>,<code>6</code></p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        StringBuffer s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"bbb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>结果：<code>bbbaaa</code>,<code>6</code></p>
 <h2 id="三者的区别"><a href="#三者的区别" class="headerlink" title="三者的区别"></a>三者的区别</h2><p>重头戏来了，前面的部分相信你即使没有在StringBuffer/StringBuilder中用过，也在别的类中用过，那么，这三个类型到底有什么区别呢？怎么选择它们的应用场景呢？</p>
-<h3 id="首先，从性能、速度方面来说："><a href="#首先，从性能、速度方面来说：" class="headerlink" title="首先，从性能、速度方面来说："></a>首先，从性能、速度方面来说：</h3><pre><code>Stringbuilder-&gt;Stringbuffer-&gt;String</code></pre><p>String 类型和 StringBuffer 类型的主要性能区别其实在于 String 是不可变的对象, 因此在每次对 String 类型进行改变的时候其实都等同于生成了一个新的 String 对象，然后将指针指向新的 String 对象，所以经常改变内容的字符串最好不要用 String ，因为每次生成对象都会对系统性能产生影响，特别当内存中无引用对象多了以后， JVM 的 GC 就会开始工作，那速度是一定会相当慢的。<br>而如果是使用 StringBuffer 类则结果就不一样了，每次结果都会对 StringBuffer 对象本身进行操作，而不是生成新的对象，再改变对象引用。所以在一般情况下我们推荐使用 StringBuffer ，特别是字符串对象经常改变的情况下。而在某些特别情况下， String 对象的字符串拼接其实是被 JVM 解释成了 StringBuffer 对象的拼接，所以这些时候 String 对象的速度并不会比 StringBuffer 对象慢，而特别是以下的字符串对象生成中， String 效率是远要比 StringBuffer 快的。</p>
-<h3 id="线程安全的区别"><a href="#线程安全的区别" class="headerlink" title="线程安全的区别"></a>线程安全的区别</h3><h4 id="在大部分情况下StringBuffer-gt-String"><a href="#在大部分情况下StringBuffer-gt-String" class="headerlink" title="在大部分情况下StringBuffer&gt;String"></a>在大部分情况下StringBuffer&gt;String</h4><p><strong>StringBuffer</strong><br>Java.lang.StringBuffer线程安全的可变字符序列。一个类似于 String 的字符串缓冲区，但不能修改。虽然在任意时间点上它都包含某种特定的字符序列，但通过某些方法调用可以改变该序列的长度和内容。<br>可将字符串缓冲区安全地用于多个线程。可以在必要时对这些方法进行同步，因此任意特定实例上的所有操作就好像是以串行顺序发生的，该顺序与所涉及的每个线程进行的方法调用顺序一致。<br>StringBuffer 上的主要操作是 append 和 insert 方法，可重载这些方法，以接受任意类型的数据。每个方法都能有效地将给定的数据转换成字符串，然后将该字符串的字符追加或插入到字符串缓冲区中。append 方法始终将这些字符添加到缓冲区的末端；而 insert 方法则在指定的点添加字符。</p>
+<h3 id="首先，从性能、速度方面来说："><a href="#首先，从性能、速度方面来说：" class="headerlink" title="首先，从性能、速度方面来说："></a>首先，从性能、速度方面来说：</h3><blockquote>
+<p>Stringbuilder-&gt;Stringbuffer-&gt;String</p>
+</blockquote>
+<p>String 类型和 <code>StringBuffer</code> 类型的主要性能区别其实在于 String 是不可变的对象, 因此在每次对 String 类型进行改变的时候其实都等同于生成了一个新的 String 对象，然后将指针指向新的 String 对象，所以经常改变内容的字符串最好不要用 String ，因为每次生成对象都会对系统性能产生影响，特别当内存中无引用对象多了以后， JVM 的 GC 就会开始工作，那速度是一定会相当慢的。<br>而如果是使用 <code>StringBuffer</code> 类则结果就不一样了，每次结果都会对 <code>StringBuffer</code> 对象本身进行操作，而不是生成新的对象，再改变对象引用。所以在一般情况下我们推荐使用 <code>StringBuffer</code> ，特别是字符串对象经常改变的情况下。而在某些特别情况下， String 对象的字符串拼接其实是被 JVM 解释成了 <code>StringBuffer</code> 对象的拼接，所以这些时候 String 对象的速度并不会比 StringBuffer 对象慢，而特别是以下的字符串对象生成中， String 效率是远要比 <code>StringBuffer</code> 快的。</p>
+<h3 id="线程安全的区别"><a href="#线程安全的区别" class="headerlink" title="线程安全的区别"></a>线程安全的区别</h3><h4 id="在大部分情况下StringBuffer-gt-String"><a href="#在大部分情况下StringBuffer-gt-String" class="headerlink" title="在大部分情况下StringBuffer&gt;String"></a>在大部分情况下StringBuffer&gt;String</h4><p><code>Java.lang.StringBuffer</code>线程安全的可变字符序列。一个类似于 String 的字符串缓冲区，但不能修改。虽然在任意时间点上它都包含某种特定的字符序列，但通过某些方法调用可以改变该序列的长度和内容。<br>可将字符串缓冲区安全地用于多个线程。可以在必要时对这些方法进行同步，因此任意特定实例上的所有操作就好像是以串行顺序发生的，该顺序与所涉及的每个线程进行的方法调用顺序一致。</p>
+<p><code>StringBuffer</code> 上的主要操作是 append 和 insert 方法，可重载这些方法，以接受任意类型的数据。每个方法都能有效地将给定的数据转换成字符串，然后将该字符串的字符追加或插入到字符串缓冲区中。append 方法始终将这些字符添加到缓冲区的末端；而 insert 方法则在指定的点添加字符。</p>
 <blockquote>
 <p>例如，如果 z 引用一个当前内容是“start”的字符串缓冲区对象，则此方法调用 z.append(“le”) 会使字符串缓冲区包含“startle”，而 z.insert(4, “le”) 将更改字符串缓冲区，使之包含“starlet”。</p>
 </blockquote>
-<h4 id="在大部分情况下StringBuilder-gt-StringBuffer"><a href="#在大部分情况下StringBuilder-gt-StringBuffer" class="headerlink" title="在大部分情况下StringBuilder&gt;StringBuffer"></a>在大部分情况下StringBuilder&gt;StringBuffer</h4><p><strong>java.lang.StringBuilde</strong><br>java.lang.StringBuilder一个可变的字符序列是5.0新增的。此类提供一个与 StringBuffer 兼容的 API，但不保证同步。该类被设计用作 StringBuffer 的一个简易替换，用在字符串缓冲区被单个线程使用的时候（这种情况很普遍）。如果可能，建议优先采用该类，因为在大多数实现中，它比 StringBuffer 要快。两者的方法基本相同。</p>
-<h2 id="三者使用的总结"><a href="#三者使用的总结" class="headerlink" title="三者使用的总结"></a>三者使用的总结</h2><p>StringBuilder与StringBuffer二者的区别主要是在运行速度和线程安全这两方面。</p>
+<h4 id="在大部分情况下StringBuilder-gt-StringBuffer"><a href="#在大部分情况下StringBuilder-gt-StringBuffer" class="headerlink" title="在大部分情况下StringBuilder&gt;StringBuffer"></a>在大部分情况下StringBuilder&gt;StringBuffer</h4><p><code>java.lang.StringBuilder</code>一个可变的字符序列是5.0新增的。此类提供一个与 StringBuffer 兼容的 API，但不保证同步。该类被设计用作 StringBuffer 的一个简易替换，用在字符串缓冲区被单个线程使用的时候（这种情况很普遍）。如果可能，建议优先采用该类，因为在大多数实现中，它比 StringBuffer 要快。两者的方法基本相同。</p>
+<h2 id="三者使用的总结"><a href="#三者使用的总结" class="headerlink" title="三者使用的总结"></a>三者使用的总结</h2><p><code>StringBuilder</code>与<code>StringBuffer</code>二者的区别主要是在运行速度和线程安全这两方面。</p>
 <ol>
 <li>StringBuffer与StringBuilder中的方法和功能完全是等价的</li>
-<li>只是StringBuffer 中的方法大都采用了 synchronized 关键字进行修饰，因此是线程安全的，而StringBuilder没有这个修饰，可以被认为是线程不安全的</li>
+<li>只是StringBuffer 中的方法大都采用了 <code>synchronized</code> 关键字进行修饰，因此是线程安全的，而StringBuilder没有这个修饰，可以被认为是线程不安全的</li>
 <li>在单线程程序下，StringBuilder效率更快，因为它不需要加锁，不具备多线程安全而StringBuffer则每次都需要判断锁，效率相对更低。</li>
 </ol>
 <blockquote>
@@ -628,16 +643,12 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                    <span class="chip bg-color">字符串</span>
+                                <a href="/tags/String/">
+                                    <span class="chip bg-color">String</span>
                                 </a>
                             
-                                <a href="/tags/StringBuffer/">
-                                    <span class="chip bg-color">StringBuffer</span>
-                                </a>
-                            
-                                <a href="/tags/StringBuiler/">
-                                    <span class="chip bg-color">StringBuiler</span>
+                                <a href="/tags/JDK/">
+                                    <span class="chip bg-color">JDK</span>
                                 </a>
                             
                         </div>
@@ -865,30 +876,31 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/22/string-lei-xing-xiang-jie/">
+                <a href="/2020/02/21/spring-zhong-chuang-jian-bean-de-san-chong-fang-shi/">
                     <div class="card-image">
                         
-                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/100402-15673898427056.jpg" class="responsive-img" alt="String类型详解">
+                        <img src="http://qiniuyun.dajienihao.cn/image/jpg/background/095746-1475287066b546.jpg" class="responsive-img" alt="spring对bean的管理细节">
                         
-                        <span class="card-title">String类型详解</span>
+                        <span class="card-title">spring对bean的管理细节</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            String字符串字符串是常量；它们的值在创建之后不能改变。字符串缓冲区支持可变的字符串。因为 String 对象是不可变的，所以可以共享它们。例如： String str=&quot;abc&quot;;我们想把字符串中的c改成d发现是无
+                            把对象的创建交给spring来管理spring对bean的管理细节
+创建bean的三种方式1.使用默认的构造器创建在spring的配置文件中使用bean标签，配以id和class属性之后，且没有其他属性和标签时。采用的就是默认构造函数创建b
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java/" class="post-category">
-                                    java
+                            <a href="/categories/spring/" class="post-category">
+                                    spring
                                 </a>
                             
                             
@@ -898,16 +910,12 @@ s1.toString();</code></pre><h3 id="append-方法"><a href="#append-方法" class
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/String/">
-                        <span class="chip bg-color">String</span>
+                    <a href="/tags/spring/">
+                        <span class="chip bg-color">spring</span>
                     </a>
                     
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
-                        <span class="chip bg-color">常用方法</span>
+                    <a href="/tags/bean/">
+                        <span class="chip bg-color">bean</span>
                     </a>
                     
                 </div>
@@ -1094,7 +1102,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">60.5k</span>&nbsp;字
+                class="white-color">49.6k</span>&nbsp;字
             
             
             

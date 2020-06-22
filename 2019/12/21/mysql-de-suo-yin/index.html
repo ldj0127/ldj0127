@@ -409,8 +409,8 @@
                                 <span class="chip bg-color">mysql</span>
                             </a>
                         
-                            <a href="/tags/%E8%A1%A8%E7%9A%84%E7%B4%A2%E5%BC%95/">
-                                <span class="chip bg-color">表的索引</span>
+                            <a href="/tags/%E7%B4%A2%E5%BC%95/">
+                                <span class="chip bg-color">索引</span>
                             </a>
                         
                     </div>
@@ -439,7 +439,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-21
+                    2020-06-22
                 </div>
                 
 
@@ -500,48 +500,57 @@
 <li>ASC和DESC：可选参数，其中ASC表示升序排列，DESC表示降序排列。</li>
 </ol>
 <p>为了帮助读者更好地了解如何在创建表的时候创建索引，接下来，通过具体的案例，分别对MySQL的六种索引类型进行详解，具体如下：</p>
-<h4 id="2-1-1-创建普通索引"><a href="#2-1-1-创建普通索引" class="headerlink" title="2.1.1 创建普通索引"></a>2.1.1 创建普通索引</h4><pre><code>create table t1(id int，
-                name varchar(20),
-                score float,
-                INDEX (name)
-);</code></pre><h4 id="2-1-2-创建唯一性索引"><a href="#2-1-2-创建唯一性索引" class="headerlink" title="2.1.2 创建唯一性索引"></a>2.1.2 创建唯一性索引</h4><pre><code>create table t2(id int not null,
-                name varchar(20) not null,
-                score float,
-                unique index unique_id(id Asc)
-);</code></pre><h4 id="2-1-3-创建全文索引"><a href="#2-1-3-创建全文索引" class="headerlink" title="2.1.3 创建全文索引"></a>2.1.3 创建全文索引</h4><pre><code>create table t3(id int not null,
-                name varchar(20) not null,
-                score float,
-                fulltext index fulltext_name(name)
-)engine=myisam;</code></pre><h4 id="2-1-4-创建单列索引"><a href="#2-1-4-创建单列索引" class="headerlink" title="2.1.4 创建单列索引"></a>2.1.4 创建单列索引</h4><pre><code>create table t4(id int not null,
-                name varchar(20) not null,
-                score float,
-                index single_name(name(20))
-);</code></pre><h4 id="2-1-5-创建多列索引"><a href="#2-1-5-创建多列索引" class="headerlink" title="2.1.5 创建多列索引"></a>2.1.5 创建多列索引</h4><pre><code>create table t5(id int not null,
-                name varchar(20) not null,
-                score float,
-                index multi(name(20),id)
-);</code></pre><h4 id="2-1-6-创建空间索引"><a href="#2-1-6-创建空间索引" class="headerlink" title="2.1.6 创建空间索引"></a>2.1.6 创建空间索引</h4><pre><code>create table t6(id int,
-                space GEOMETRY not null,
-                SPATIAL index sp(space）
-)engine=myisam；</code></pre><h3 id="2-2-创建使用create-index语句在已存在的表上创建索引"><a href="#2-2-创建使用create-index语句在已存在的表上创建索引" class="headerlink" title="2.2 创建使用create index语句在已存在的表上创建索引"></a>2.2 创建使用create index语句在已存在的表上创建索引</h3><p>若想在一个已经存在的表上创建索引，可以使用<code>create index语句，create index</code>语句创建索引的具体语法格式如下所示：</p>
-<pre><code>create [UNIQUE|FULLTEXT|SPATIAL] index 索引名
-on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中<code>UNIUE、FULLTEXT和SPATIAL</code>都是可选参数，分别用于表示唯一性索引、全文索引和空间索引；index用于指明字段为索引。<br>为了便于学习如何使用<code>create index</code>语句在已经存在的表创建索引，接下来创建一个book表，该表中没有任何的索引，创建book表的sql语句如下所示：</p>
-<pre><code>create table book(
-                bookid int not null,
-                bookname varchar(255) not null,
-                authors varchar(255) not null,
-                info varchar(255) null,
-                comment varchar(255) null,
-                publicyear year not null
-);</code></pre><h4 id="2-2-1-创建普通索引"><a href="#2-2-1-创建普通索引" class="headerlink" title="2.2.1 创建普通索引"></a>2.2.1 创建普通索引</h4><p><code>create index index_id on book (bookid);</code></p>
+<h4 id="2-1-1-创建普通索引"><a href="#2-1-1-创建普通索引" class="headerlink" title="2.1.1 创建普通索引"></a>2.1.1 创建普通索引</h4><pre class=" language-java"><code class="language-java">    create table <span class="token function">t1</span><span class="token punctuation">(</span>id <span class="token keyword">int</span>，
+                    name <span class="token function">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                    score <span class="token keyword">float</span><span class="token punctuation">,</span>
+                    <span class="token function">INDEX</span> <span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="2-1-2-创建唯一性索引"><a href="#2-1-2-创建唯一性索引" class="headerlink" title="2.1.2 创建唯一性索引"></a>2.1.2 创建唯一性索引</h4><pre class=" language-java"><code class="language-java">    create table <span class="token function">t2</span><span class="token punctuation">(</span>id <span class="token keyword">int</span> not null<span class="token punctuation">,</span>
+                    name <span class="token function">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> not null<span class="token punctuation">,</span>
+                    score <span class="token keyword">float</span><span class="token punctuation">,</span>
+                    unique index <span class="token function">unique_id</span><span class="token punctuation">(</span>id Asc<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="2-1-3-创建全文索引"><a href="#2-1-3-创建全文索引" class="headerlink" title="2.1.3 创建全文索引"></a>2.1.3 创建全文索引</h4><pre class=" language-java"><code class="language-java">    create table <span class="token function">t3</span><span class="token punctuation">(</span>id <span class="token keyword">int</span> not null<span class="token punctuation">,</span>
+                    name <span class="token function">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> not null<span class="token punctuation">,</span>
+                    score <span class="token keyword">float</span><span class="token punctuation">,</span>
+                    fulltext index <span class="token function">fulltext_name</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>engine<span class="token operator">=</span>myisam<span class="token punctuation">;</span></code></pre>
+<h4 id="2-1-4-创建单列索引"><a href="#2-1-4-创建单列索引" class="headerlink" title="2.1.4 创建单列索引"></a>2.1.4 创建单列索引</h4><pre class=" language-java"><code class="language-java">    create table <span class="token function">t4</span><span class="token punctuation">(</span>id <span class="token keyword">int</span> not null<span class="token punctuation">,</span>
+                    name <span class="token function">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> not null<span class="token punctuation">,</span>
+                    score <span class="token keyword">float</span><span class="token punctuation">,</span>
+                    index <span class="token function">single_name</span><span class="token punctuation">(</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="2-1-5-创建多列索引"><a href="#2-1-5-创建多列索引" class="headerlink" title="2.1.5 创建多列索引"></a>2.1.5 创建多列索引</h4><pre class=" language-java"><code class="language-java">    create table <span class="token function">t5</span><span class="token punctuation">(</span>id <span class="token keyword">int</span> not null<span class="token punctuation">,</span>
+                    name <span class="token function">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> not null<span class="token punctuation">,</span>
+                    score <span class="token keyword">float</span><span class="token punctuation">,</span>
+                    index <span class="token function">multi</span><span class="token punctuation">(</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>id<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="2-1-6-创建空间索引"><a href="#2-1-6-创建空间索引" class="headerlink" title="2.1.6 创建空间索引"></a>2.1.6 创建空间索引</h4><pre class=" language-java"><code class="language-java">    create table <span class="token function">t6</span><span class="token punctuation">(</span>id <span class="token keyword">int</span><span class="token punctuation">,</span>
+                    space GEOMETRY not null<span class="token punctuation">,</span>
+                    SPATIAL index <span class="token function">sp</span><span class="token punctuation">(</span>space）
+    <span class="token punctuation">)</span>engine<span class="token operator">=</span>myisam；</code></pre>
+<h3 id="2-2-创建使用create-index语句在已存在的表上创建索引"><a href="#2-2-创建使用create-index语句在已存在的表上创建索引" class="headerlink" title="2.2 创建使用create index语句在已存在的表上创建索引"></a>2.2 创建使用create index语句在已存在的表上创建索引</h3><p>若想在一个已经存在的表上创建索引，可以使用<code>create index语句，create index</code>语句创建索引的具体语法格式如下所示：</p>
+<pre class=" language-java"><code class="language-java">    create <span class="token punctuation">[</span>UNIQUE<span class="token operator">|</span>FULLTEXT<span class="token operator">|</span>SPATIAL<span class="token punctuation">]</span> index 索引名
+    on 表名 （字段名 <span class="token punctuation">[</span><span class="token punctuation">(</span>长度<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>ASC<span class="token operator">|</span>DESC<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>在上述语法中<code>UNIUE、FULLTEXT和SPATIAL</code>都是可选参数，分别用于表示唯一性索引、全文索引和空间索引；index用于指明字段为索引。<br>为了便于学习如何使用<code>create index</code>语句在已经存在的表创建索引，接下来创建一个book表，该表中没有任何的索引，创建book表的sql语句如下所示：</p>
+<pre class=" language-java"><code class="language-java">    create table <span class="token function">book</span><span class="token punctuation">(</span>
+                    bookid <span class="token keyword">int</span> not null<span class="token punctuation">,</span>
+                    bookname <span class="token function">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> not null<span class="token punctuation">,</span>
+                    authors <span class="token function">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> not null<span class="token punctuation">,</span>
+                    info <span class="token function">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> null<span class="token punctuation">,</span>
+                    comment <span class="token function">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> null<span class="token punctuation">,</span>
+                    publicyear year not null
+    <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="2-2-1-创建普通索引"><a href="#2-2-1-创建普通索引" class="headerlink" title="2.2.1 创建普通索引"></a>2.2.1 创建普通索引</h4><p><code>create index index_id on book (bookid);</code></p>
 <h4 id="2-2-2-创建唯一性索引"><a href="#2-2-2-创建唯一性索引" class="headerlink" title="2.2.2 创建唯一性索引"></a>2.2.2 创建唯一性索引</h4><p><code>create unique index uniqueidx on book (bookid);</code></p>
 <h4 id="2-2-3-创建单列索引"><a href="#2-2-3-创建单列索引" class="headerlink" title="2.2.3 创建单列索引"></a>2.2.3 创建单列索引</h4><p><code>create index singleidx on book(comment);</code></p>
 <h4 id="2-2-4-创建多列索引"><a href="#2-2-4-创建多列索引" class="headerlink" title="2.2.4 创建多列索引"></a>2.2.4 创建多列索引</h4><p><code>create index mulitidx on book(authors(20),info(20));</code></p>
 <h4 id="2-2-5-创建全文索引"><a href="#2-2-5-创建全文索引" class="headerlink" title="2.2.5 创建全文索引"></a>2.2.5 创建全文索引</h4><p><code>create fulltext index fulltextidx on book(info);</code></p>
 <h4 id="2-2-6-创建空间索引"><a href="#2-2-6-创建空间索引" class="headerlink" title="2.2.6 创建空间索引"></a>2.2.6 创建空间索引</h4><p><code>create SPATIAL index spatidx on t7(g);</code></p>
 <h3 id="2-3-使用alter-table-语句在已经存在的表上创建索引"><a href="#2-3-使用alter-table-语句在已经存在的表上创建索引" class="headerlink" title="2.3 使用alter table 语句在已经存在的表上创建索引"></a>2.3 使用alter table 语句在已经存在的表上创建索引</h3><p>在已经存在的表上创建索引，除了可以使用<code>create index</code>语句外，还可以使用<code>alter table</code>语句。使用<code>alter table</code>语句创建索引的语法格式如下所示：</p>
-<pre><code>alter table 表名 add [UNIQUE|FULLTEXT|SPATIAL] index
-                索引名 （字段名 [(长度)] [ASC|DESC])</code></pre><p>在上述语法中<code>UNIUE、FULLTEXT和SPATIAL</code>都是可选参数，分别用于表示唯一性索引、全文索引和空间索引；add表示像表中添加字段。<br>接下类同样以book表为例，对不同类型的索引进行详解。</p>
+<pre class=" language-java"><code class="language-java">    alter table 表名 add <span class="token punctuation">[</span>UNIQUE<span class="token operator">|</span>FULLTEXT<span class="token operator">|</span>SPATIAL<span class="token punctuation">]</span> index
+                    索引名 （字段名 <span class="token punctuation">[</span><span class="token punctuation">(</span>长度<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>ASC<span class="token operator">|</span>DESC<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>在上述语法中<code>UNIUE、FULLTEXT和SPATIAL</code>都是可选参数，分别用于表示唯一性索引、全文索引和空间索引；add表示像表中添加字段。<br>接下类同样以book表为例，对不同类型的索引进行详解。</p>
 <h4 id="2-3-1-创建普通索引"><a href="#2-3-1-创建普通索引" class="headerlink" title="2.3.1 创建普通索引"></a>2.3.1 创建普通索引</h4><p><code>alter table book add index index_id(bookid);</code></p>
 <h4 id="2-3-2-创建唯一性索引"><a href="#2-3-2-创建唯一性索引" class="headerlink" title="2.3.2 创建唯一性索引"></a>2.3.2 创建唯一性索引</h4><p><code>alter table book add unique uniqueidx(bookid);</code></p>
 <h4 id="2-3-3-创建单列索引"><a href="#2-3-3-创建单列索引" class="headerlink" title="2.3.3 创建单列索引"></a>2.3.3 创建单列索引</h4><p><code>alter table book add index singleidx (comment(50));</code></p>
@@ -618,8 +627,8 @@ on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中
                                     <span class="chip bg-color">mysql</span>
                                 </a>
                             
-                                <a href="/tags/%E8%A1%A8%E7%9A%84%E7%B4%A2%E5%BC%95/">
-                                    <span class="chip bg-color">表的索引</span>
+                                <a href="/tags/%E7%B4%A2%E5%BC%95/">
+                                    <span class="chip bg-color">索引</span>
                                 </a>
                             
                         </div>
@@ -823,16 +832,16 @@ on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/%E9%A1%B9%E7%9B%AE/">
+                        <span class="chip bg-color">项目</span>
+                    </a>
+                    
                     <a href="/tags/%E5%AE%89%E5%8D%93/">
                         <span class="chip bg-color">安卓</span>
                     </a>
                     
                     <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/">
                         <span class="chip bg-color">自定义view</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">
-                        <span class="chip bg-color">项目实战</span>
                     </a>
                     
                 </div>
@@ -858,8 +867,9 @@ on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中
                     <div class="summary block-with-text">
                         
                             表的约束为了防止数据表中插入错误的数据，在mysql中定义了一些维护数据库完整性的规则，即表的约束。
-主键约束单字段主键单字段主键指的是由一个字段构成的主键，其基本语法格式如下所示:字段名 数据类型 primary key；
- mysql-
+主键约束单字段主键单字段主键指的是由一个字段构成的主键，其基本语法格式如下所示:
+字段名 数据类型 primary key；
+mysql-
                         
                     </div>
                     <div class="publish-info">
@@ -885,8 +895,8 @@ on 表名 （字段名 [(长度)] [ASC|DESC]);</code></pre><p>在上述语法中
                         <span class="chip bg-color">mysql</span>
                     </a>
                     
-                    <a href="/tags/%E8%A1%A8%E7%9A%84%E7%BA%A6%E6%9D%9F/">
-                        <span class="chip bg-color">表的约束</span>
+                    <a href="/tags/%E7%BA%A6%E6%9D%9F/">
+                        <span class="chip bg-color">约束</span>
                     </a>
                     
                 </div>
@@ -1073,7 +1083,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">60.5k</span>&nbsp;字
+                class="white-color">49.6k</span>&nbsp;字
             
             
             
