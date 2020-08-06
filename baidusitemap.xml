@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2020/08/06/zookeeper-dan-ji-ban-de-shi-yong/</loc>
+    <lastmod>2020-08-06</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/08/06/zookeeper-de-an-zhuang/</loc>
+    <lastmod>2020-08-06</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/08/06/dubbo-de-an-zhuang/</loc>
+    <lastmod>2020-08-06</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/08/06/activemq-de-an-zhuang/</loc>
+    <lastmod>2020-08-06</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/08/06/mycat-de-an-zhuang/</loc>
+    <lastmod>2020-08-06</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2020/06/22/position/</loc>
     <lastmod>2020-06-22</lastmod>
   </url>  <url>

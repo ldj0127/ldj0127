@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-22T14:53:18.200Z</updated>
+  <updated>2020-08-06T10:06:48.930Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,151 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ActiveMq的安装</title>
+    <link href="http://yoursite.com/2020/08/06/activemq-de-an-zhuang/"/>
+    <id>http://yoursite.com/2020/08/06/activemq-de-an-zhuang/</id>
+    <published>2020-08-06T10:24:45.000Z</published>
+    <updated>2020-08-06T10:06:48.930Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;ActiveMq的安装&quot;&gt;&lt;a href=&quot;#ActiveMq的安装&quot; class=&quot;headerlink&quot; title=&quot;ActiveMq的安装&quot;&gt;&lt;/a&gt;ActiveMq的安装&lt;/h1&gt;&lt;h2 id=&quot;windows下安装&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Mq" scheme="http://yoursite.com/categories/Mq/"/>
+    
+    
+      <category term="ActiveMq" scheme="http://yoursite.com/tags/ActiveMq/"/>
+    
+      <category term="Mq" scheme="http://yoursite.com/tags/Mq/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Dubbo的安装</title>
+    <link href="http://yoursite.com/2020/08/06/dubbo-de-an-zhuang/"/>
+    <id>http://yoursite.com/2020/08/06/dubbo-de-an-zhuang/</id>
+    <published>2020-08-06T10:24:45.000Z</published>
+    <updated>2020-08-06T10:07:36.243Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;dubbo的安装&quot;&gt;&lt;a href=&quot;#dubbo的安装&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Dubbo" scheme="http://yoursite.com/categories/Dubbo/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+      <category term="Dubbo" scheme="http://yoursite.com/tags/Dubbo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mycat的安装</title>
+    <link href="http://yoursite.com/2020/08/06/mycat-de-an-zhuang/"/>
+    <id>http://yoursite.com/2020/08/06/mycat-de-an-zhuang/</id>
+    <published>2020-08-06T10:24:45.000Z</published>
+    <updated>2020-08-06T10:04:06.862Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot; class=&quot;headerlink&quot; title=&quot;1.前言&quot;&gt;&lt;/a&gt;1.前言&lt;/h2&gt;&lt;p&gt;使用mycat要安装JDK.不会的去看Linux里面的安装JDK的知识点，这是不再做说明。也可以直接使用&lt;code&gt;yum
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Mycat" scheme="http://yoursite.com/categories/Mycat/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+      <category term="Mycat" scheme="http://yoursite.com/tags/Mycat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Zookeeper单机版的使用</title>
+    <link href="http://yoursite.com/2020/08/06/zookeeper-dan-ji-ban-de-shi-yong/"/>
+    <id>http://yoursite.com/2020/08/06/zookeeper-dan-ji-ban-de-shi-yong/</id>
+    <published>2020-08-06T10:24:45.000Z</published>
+    <updated>2020-08-06T10:09:02.119Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;zookeeper单机版的使用&quot;&gt;&lt;a href=&quot;#zookeeper单机版的使用&quot; class=&quot;headerlink&quot; title=&quot;zookeeper单机版的使用&quot;&gt;&lt;/a&gt;zookeeper单机版的使用&lt;/h1&gt;&lt;p&gt;通过
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Zookeeper" scheme="http://yoursite.com/categories/Zookeeper/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+      <category term="Zookeeper" scheme="http://yoursite.com/tags/Zookeeper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Zookeeper的安装</title>
+    <link href="http://yoursite.com/2020/08/06/zookeeper-de-an-zhuang/"/>
+    <id>http://yoursite.com/2020/08/06/zookeeper-de-an-zhuang/</id>
+    <published>2020-08-06T10:24:45.000Z</published>
+    <updated>2020-08-06T10:08:27.071Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Zookeeper的安装及配置&quot;&gt;&lt;a href=&quot;#Zookeeper的安装及配置&quot; class=&quot;headerlink&quot; title=&quot;Zookeeper的安装及配置&quot;&gt;&lt;/a&gt;Zookeeper的安装及配置&lt;/h1&gt;&lt;h2 id=&quot;下载解压&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Zookeeper" scheme="http://yoursite.com/categories/Zookeeper/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+      <category term="Zookeeper" scheme="http://yoursite.com/tags/Zookeeper/"/>
+    
+  </entry>
   
   <entry>
     <title>Mongodb</title>
@@ -162,33 +307,6 @@ yum -y install
   </entry>
   
   <entry>
-    <title>悲观锁与乐观锁</title>
-    <link href="http://yoursite.com/2020/06/22/le-guan-suo-yu-bei-guan-suo/"/>
-    <id>http://yoursite.com/2020/06/22/le-guan-suo-yu-bei-guan-suo/</id>
-    <published>2020-06-22T10:24:45.000Z</published>
-    <updated>2020-06-22T14:52:19.582Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;何谓悲观锁与乐观锁&quot;&gt;&lt;a href=&quot;#何谓悲观锁与乐观锁&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="锁" scheme="http://yoursite.com/categories/%E9%94%81/"/>
-    
-    
-      <category term="锁" scheme="http://yoursite.com/tags/%E9%94%81/"/>
-    
-  </entry>
-  
-  <entry>
     <title>前后分离的好处</title>
     <link href="http://yoursite.com/2020/06/22/qian-hou-duan-fen-chi/"/>
     <id>http://yoursite.com/2020/06/22/qian-hou-duan-fen-chi/</id>
@@ -212,6 +330,33 @@ yum -y install
     
     
       <category term="项目" scheme="http://yoursite.com/tags/%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>悲观锁与乐观锁</title>
+    <link href="http://yoursite.com/2020/06/22/le-guan-suo-yu-bei-guan-suo/"/>
+    <id>http://yoursite.com/2020/06/22/le-guan-suo-yu-bei-guan-suo/</id>
+    <published>2020-06-22T10:24:45.000Z</published>
+    <updated>2020-06-22T14:52:19.582Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;何谓悲观锁与乐观锁&quot;&gt;&lt;a href=&quot;#何谓悲观锁与乐观锁&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="锁" scheme="http://yoursite.com/categories/%E9%94%81/"/>
+    
+    
+      <category term="锁" scheme="http://yoursite.com/tags/%E9%94%81/"/>
     
   </entry>
   
@@ -442,149 +587,6 @@ if (document.addEventListener)
       <category term="线程" scheme="http://yoursite.com/tags/%E7%BA%BF%E7%A8%8B/"/>
     
       <category term="锁" scheme="http://yoursite.com/tags/%E9%94%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java内部类详解</title>
-    <link href="http://yoursite.com/2020/04/19/nei-bu-lei/"/>
-    <id>http://yoursite.com/2020/04/19/nei-bu-lei/</id>
-    <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-06-22T14:28:49.188Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;内部类详解&quot;&gt;&lt;a href=&quot;#内部类详解&quot; class=&quot;headerlink&quot; title=&quot;内部类详解&quot;&gt;&lt;/a&gt;内部类详解&lt;/h1&gt;&lt;h2 id=&quot;成员内部类-普通内部类&quot;&gt;&lt;a href=&quot;#成员内部类-普通内部类&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
-      <category term="内部类" scheme="http://yoursite.com/tags/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>向上转型和向下转型</title>
-    <link href="http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/"/>
-    <id>http://yoursite.com/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</id>
-    <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-06-22T14:30:40.313Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;向上转型与向下转型&quot;&gt;&lt;a href=&quot;#向上转型与向下转型&quot; class=&quot;headerlink&quot; title=&quot;向上转型与向下转型&quot;&gt;&lt;/a&gt;向上转型与向下转型&lt;/h1&gt;&lt;h2 id=&quot;向上转型&quot;&gt;&lt;a href=&quot;#向上转型&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="多态" scheme="http://yoursite.com/categories/%E5%A4%9A%E6%80%81/"/>
-    
-    
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>多线程之线程死锁</title>
-    <link href="http://yoursite.com/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/"/>
-    <id>http://yoursite.com/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/</id>
-    <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-06-22T14:29:27.132Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;死锁讲解&quot;&gt;&lt;a href=&quot;#死锁讲解&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="线程" scheme="http://yoursite.com/tags/%E7%BA%BF%E7%A8%8B/"/>
-    
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之单例模式</title>
-    <link href="http://yoursite.com/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/"/>
-    <id>http://yoursite.com/2020/04/19/she-ji-mo-shi-zhi-dan-li-mo-shi/</id>
-    <published>2020-04-19T05:30:45.000Z</published>
-    <updated>2020-06-22T14:29:02.260Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;单例模式&quot;&gt;&lt;a href=&quot;#单例模式&quot; class=&quot;headerlink&quot; title=&quot;单例模式&quot;&gt;&lt;/a&gt;单例模式&lt;/h2&gt;&lt;p&gt;单例模式（Singleton Pattern）是 Java
-        
-      
-    
-    </summary>
-    
-    
-      <category term="设计模式" scheme="http://yoursite.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-      <category term="设计模式" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="单例模式" scheme="http://yoursite.com/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux下的安装部署fastdfs</title>
-    <link href="http://yoursite.com/2020/04/17/linux-an-zhuang-fastdfs/"/>
-    <id>http://yoursite.com/2020/04/17/linux-an-zhuang-fastdfs/</id>
-    <published>2020-04-17T05:30:45.000Z</published>
-    <updated>2020-06-22T14:28:10.461Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Linux下的安装部署fastdfs&quot;&gt;&lt;a href=&quot;#Linux下的安装部署fastdfs&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-      <category term="fastdfs" scheme="http://yoursite.com/tags/fastdfs/"/>
     
   </entry>
   
