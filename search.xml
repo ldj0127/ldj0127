@@ -44,32 +44,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Dubbo的安装</title>
-    <url>/2020/08/06/dubbo-de-an-zhuang/</url>
-    <content><![CDATA[<h1 id="dubbo的安装"><a href="#dubbo的安装" class="headerlink" title="dubbo的安装"></a>dubbo的安装</h1><p><strong>前提</strong>：配置JAVA的环境变量<br>安装并启动zookeeper(在上一篇中说了zookeeper的安装)</p>
-<h2 id="dubbo环境搭建-windows"><a href="#dubbo环境搭建-windows" class="headerlink" title="dubbo环境搭建(windows)"></a>dubbo环境搭建(windows)</h2><h3 id="1-下载dubbo-admin"><a href="#1-下载dubbo-admin" class="headerlink" title="1.下载dubbo-admin"></a>1.下载dubbo-admin</h3><p><a href="https://github.com/apache/dubbo-admin/tree/master" target="_blank" rel="noopener">下载地址</a></p>
-<h3 id="2-解压包说明dubbo-admi"><a href="#2-解压包说明dubbo-admi" class="headerlink" title="2.解压包说明dubbo-admi"></a>2.解压包说明dubbo-admi</h3><ul>
-<li>Dubbo-admin dubbo的服务治理项目</li>
-<li>Dubbo-monitor-simple 这个监控项目</li>
-<li>Dubbo-registry-simple 自己的注册中心，一般我们使用zk</li>
-</ul>
-<h3 id="3-进入dubbo-admin修改配置"><a href="#3-进入dubbo-admin修改配置" class="headerlink" title="3.进入dubbo-admin修改配置"></a>3.进入dubbo-admin修改配置</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0624/1.png" alt="使用默认配置即可，特殊需求可改"></p>
-<h3 id="4-进入dubbo-admin目录打包"><a href="#4-进入dubbo-admin目录打包" class="headerlink" title="4.进入dubbo-admin目录打包"></a>4.进入dubbo-admin目录打包</h3><p><code>mvn package</code><br><img src="http://qiniuyun.dajienihao.cn/image/0624/2.png" alt="打包成功"></p>
-<h3 id="5-进入target的目录运行jar"><a href="#5-进入target的目录运行jar" class="headerlink" title="5.进入target的目录运行jar"></a>5.进入target的目录运行jar</h3><p><code>java -jar dubbo-admin-0.0.1-SNAPSHOT.jar</code><br><img src="http://qiniuyun.dajienihao.cn/image/0624/3.png" alt="运行成功"></p>
-<h3 id="6-访问"><a href="#6-访问" class="headerlink" title="6.访问"></a>6.访问</h3><p>浏览器访问<a href="http://127.0.0.1:7001/" target="_blank" rel="noopener">http://127.0.0.1:7001/</a><br><img src="http://qiniuyun.dajienihao.cn/image/0624/4.png" alt="安装成功"></p>
-<h2 id="dubbo环境搭建-linux"><a href="#dubbo环境搭建-linux" class="headerlink" title="dubbo环境搭建(linux)"></a>dubbo环境搭建(linux)</h2><h3 id="1-上传jar包到linux"><a href="#1-上传jar包到linux" class="headerlink" title="1.上传jar包到linux"></a>1.上传jar包到linux</h3><p><code>mkdir /usr/local/dubbo-admin</code></p>
-<h3 id="2-运行dubbo-admin-jar"><a href="#2-运行dubbo-admin-jar" class="headerlink" title="2.运行dubbo-admin.jar"></a>2.运行dubbo-admin.jar</h3><p><code>java -jar dubbo-admin-0.0.1-SNAPSHOT.jar</code></p>
-<h3 id="3-放行阿里云7001的端口"><a href="#3-放行阿里云7001的端口" class="headerlink" title="3.放行阿里云7001的端口"></a>3.放行阿里云7001的端口</h3><h3 id="4-访问"><a href="#4-访问" class="headerlink" title="4.访问"></a>4.访问</h3><p>浏览器访问<a href="http://39.105.180.4:7001/" target="_blank" rel="noopener">http://39.105.180.4:7001/</a><br><img src="http://qiniuyun.dajienihao.cn/image/0624/4.png" alt="安装成功"></p>
-]]></content>
-      <categories>
-        <category>Dubbo</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Dubbo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Mycat的安装</title>
     <url>/2020/08/06/mycat-de-an-zhuang/</url>
     <content><![CDATA[<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>使用mycat要安装JDK.不会的去看Linux里面的安装JDK的知识点，这是不再做说明。也可以直接使用<code>yum install java-1.7.0-openjdk</code>因为mycat 基于jdk1.7开发的，所已最好安装jdk1.7的版本</p>
@@ -116,46 +90,29 @@
       </tags>
   </entry>
   <entry>
-    <title>Zookeeper单机版的使用</title>
-    <url>/2020/08/06/zookeeper-dan-ji-ban-de-shi-yong/</url>
-    <content><![CDATA[<h1 id="zookeeper单机版的使用"><a href="#zookeeper单机版的使用" class="headerlink" title="zookeeper单机版的使用"></a>zookeeper单机版的使用</h1><p>通过 <code>./zkCli.sh</code> 进入客户端后，就可以使用命令来操作zookeeper了。<br>quit退出客户端</p>
-<h2 id="1-创建节点"><a href="#1-创建节点" class="headerlink" title="1.创建节点"></a>1.创建节点</h2><h3 id="创建节点"><a href="#创建节点" class="headerlink" title="创建节点"></a>创建节点</h3><p><strong>语法</strong><br><code>create [-s] [-e] path data acl</code></p>
-<ul>
-<li>其中-s表示顺序节点，-e表示临时节点。默认情况下，创建的是持久节点。</li>
-<li>path是节点路径，data是节点数据，acl是用来进行权限控制的。</li>
+    <title>Dubbo的安装</title>
+    <url>/2020/08/06/dubbo-de-an-zhuang/</url>
+    <content><![CDATA[<h1 id="dubbo的安装"><a href="#dubbo的安装" class="headerlink" title="dubbo的安装"></a>dubbo的安装</h1><p><strong>前提</strong>：配置JAVA的环境变量<br>安装并启动zookeeper(在上一篇中说了zookeeper的安装)</p>
+<h2 id="dubbo环境搭建-windows"><a href="#dubbo环境搭建-windows" class="headerlink" title="dubbo环境搭建(windows)"></a>dubbo环境搭建(windows)</h2><h3 id="1-下载dubbo-admin"><a href="#1-下载dubbo-admin" class="headerlink" title="1.下载dubbo-admin"></a>1.下载dubbo-admin</h3><p><a href="https://github.com/apache/dubbo-admin/tree/master" target="_blank" rel="noopener">下载地址</a></p>
+<h3 id="2-解压包说明dubbo-admi"><a href="#2-解压包说明dubbo-admi" class="headerlink" title="2.解压包说明dubbo-admi"></a>2.解压包说明dubbo-admi</h3><ul>
+<li>Dubbo-admin dubbo的服务治理项目</li>
+<li>Dubbo-monitor-simple 这个监控项目</li>
+<li>Dubbo-registry-simple 自己的注册中心，一般我们使用zk</li>
 </ul>
-<p><strong>案例</strong></p>
-<ul>
-<li><code>create /sanguo  luoguanzhong</code>  创建一个持久节点目录为/sanguo    值为  luoguanzhong</li>
-<li><code>create -s /shuihu  shinaian</code>  创建一个持久顺序节点目录为/shuihu  值为  shinaian</li>
-<li><code>create -e /xiyou  wuchengren</code>  创建一个临时节点目录为/xiyou  值为  wuchengren </li>
-<li><code>create -e -s /honglou  caoxueqing</code>  创建一个临时顺序节点目录为/honglou  值为 caoxueqing   </li>
-</ul>
-<h3 id="列出节点"><a href="#列出节点" class="headerlink" title="列出节点"></a>列出节点</h3><p><code>ls path</code></p>
-<h2 id="2-查看节点内容"><a href="#2-查看节点内容" class="headerlink" title="2.查看节点内容"></a>2.查看节点内容</h2><p><code>get  /path</code><br><img src="http://qiniuyun.dajienihao.cn/image/0623/1.png" alt=""></p>
-<ul>
-<li>ctime 创建时间</li>
-<li>mtime 修改时间</li>
-<li>dataversion  数据修改的次数</li>
-<li>dataLength 长度</li>
-<li>numChildren=3它的子节点的个数</li>
-</ul>
-<h3 id="3-查看子节点"><a href="#3-查看子节点" class="headerlink" title="3.查看子节点"></a>3.查看子节点</h3><p><code>get /path</code></p>
-<h3 id="4-更新节点内容"><a href="#4-更新节点内容" class="headerlink" title="4.更新节点内容"></a>4.更新节点内容</h3><p><code>Set /path data</code></p>
-<h3 id="5-删除节点"><a href="#5-删除节点" class="headerlink" title="5.删除节点"></a>5.删除节点</h3><p><code>rmr /path</code></p>
-<h3 id="6-节点监控"><a href="#6-节点监控" class="headerlink" title="6.节点监控"></a>6.节点监控</h3><p>再启动一个shell,使用客户端连接<br><strong>操作步骤</strong></p>
-<ol>
-<li>在右边的窗口创建一个节点</li>
-<li>在左边的窗口连接服务器并监控/sanguo节点</li>
-<li>修改右边窗口的值，发现左边的发生了变化</li>
-</ol>
+<h3 id="3-进入dubbo-admin修改配置"><a href="#3-进入dubbo-admin修改配置" class="headerlink" title="3.进入dubbo-admin修改配置"></a>3.进入dubbo-admin修改配置</h3><p><img src="http://qiniuyun.dajienihao.cn/image/0624/1.png" alt="使用默认配置即可，特殊需求可改"></p>
+<h3 id="4-进入dubbo-admin目录打包"><a href="#4-进入dubbo-admin目录打包" class="headerlink" title="4.进入dubbo-admin目录打包"></a>4.进入dubbo-admin目录打包</h3><p><code>mvn package</code><br><img src="http://qiniuyun.dajienihao.cn/image/0624/2.png" alt="打包成功"></p>
+<h3 id="5-进入target的目录运行jar"><a href="#5-进入target的目录运行jar" class="headerlink" title="5.进入target的目录运行jar"></a>5.进入target的目录运行jar</h3><p><code>java -jar dubbo-admin-0.0.1-SNAPSHOT.jar</code><br><img src="http://qiniuyun.dajienihao.cn/image/0624/3.png" alt="运行成功"></p>
+<h3 id="6-访问"><a href="#6-访问" class="headerlink" title="6.访问"></a>6.访问</h3><p>浏览器访问<a href="http://127.0.0.1:7001/" target="_blank" rel="noopener">http://127.0.0.1:7001/</a><br><img src="http://qiniuyun.dajienihao.cn/image/0624/4.png" alt="安装成功"></p>
+<h2 id="dubbo环境搭建-linux"><a href="#dubbo环境搭建-linux" class="headerlink" title="dubbo环境搭建(linux)"></a>dubbo环境搭建(linux)</h2><h3 id="1-上传jar包到linux"><a href="#1-上传jar包到linux" class="headerlink" title="1.上传jar包到linux"></a>1.上传jar包到linux</h3><p><code>mkdir /usr/local/dubbo-admin</code></p>
+<h3 id="2-运行dubbo-admin-jar"><a href="#2-运行dubbo-admin-jar" class="headerlink" title="2.运行dubbo-admin.jar"></a>2.运行dubbo-admin.jar</h3><p><code>java -jar dubbo-admin-0.0.1-SNAPSHOT.jar</code></p>
+<h3 id="3-放行阿里云7001的端口"><a href="#3-放行阿里云7001的端口" class="headerlink" title="3.放行阿里云7001的端口"></a>3.放行阿里云7001的端口</h3><h3 id="4-访问"><a href="#4-访问" class="headerlink" title="4.访问"></a>4.访问</h3><p>浏览器访问<a href="http://39.105.180.4:7001/" target="_blank" rel="noopener">http://39.105.180.4:7001/</a><br><img src="http://qiniuyun.dajienihao.cn/image/0624/4.png" alt="安装成功"></p>
 ]]></content>
       <categories>
-        <category>Zookeeper</category>
+        <category>Dubbo</category>
       </categories>
       <tags>
         <tag>Linux</tag>
-        <tag>Zookeeper</tag>
+        <tag>Dubbo</tag>
       </tags>
   </entry>
   <entry>
@@ -196,66 +153,46 @@
       </tags>
   </entry>
   <entry>
-    <title>Mongodb</title>
-    <url>/2020/06/22/mongodb/</url>
-    <content><![CDATA[<h1 id="Mongodb"><a href="#Mongodb" class="headerlink" title="Mongodb"></a>Mongodb</h1><h2 id="什么是MongoDB"><a href="#什么是MongoDB" class="headerlink" title="什么是MongoDB"></a>什么是MongoDB</h2><p>MongoDB 是一个跨平台的，面向文档的数据库（<code>solr、Elasticsearch</code>），是当前 NoSQL 数据库产品中最热门的一种。它介于关系数据库和非关系数据库之间，是非关系数据库当中功能最丰富，最像关系数据库的产品。它支持的数据结构非常松散，是类似 JSON 的 BSON 格式，因此可以存储比较复杂的数据类型。比如表中表</p>
-<h2 id="MongoDB特点"><a href="#MongoDB特点" class="headerlink" title="MongoDB特点"></a>MongoDB特点</h2><p>MongoDB 最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。它是一个面向集合的,模式自由的文档型数据库。具体特点总结如下： </p>
+    <title>Zookeeper单机版的使用</title>
+    <url>/2020/08/06/zookeeper-dan-ji-ban-de-shi-yong/</url>
+    <content><![CDATA[<h1 id="zookeeper单机版的使用"><a href="#zookeeper单机版的使用" class="headerlink" title="zookeeper单机版的使用"></a>zookeeper单机版的使用</h1><p>通过 <code>./zkCli.sh</code> 进入客户端后，就可以使用命令来操作zookeeper了。<br>quit退出客户端</p>
+<h2 id="1-创建节点"><a href="#1-创建节点" class="headerlink" title="1.创建节点"></a>1.创建节点</h2><h3 id="创建节点"><a href="#创建节点" class="headerlink" title="创建节点"></a>创建节点</h3><p><strong>语法</strong><br><code>create [-s] [-e] path data acl</code></p>
+<ul>
+<li>其中-s表示顺序节点，-e表示临时节点。默认情况下，创建的是持久节点。</li>
+<li>path是节点路径，data是节点数据，acl是用来进行权限控制的。</li>
+</ul>
+<p><strong>案例</strong></p>
+<ul>
+<li><code>create /sanguo  luoguanzhong</code>  创建一个持久节点目录为/sanguo    值为  luoguanzhong</li>
+<li><code>create -s /shuihu  shinaian</code>  创建一个持久顺序节点目录为/shuihu  值为  shinaian</li>
+<li><code>create -e /xiyou  wuchengren</code>  创建一个临时节点目录为/xiyou  值为  wuchengren </li>
+<li><code>create -e -s /honglou  caoxueqing</code>  创建一个临时顺序节点目录为/honglou  值为 caoxueqing   </li>
+</ul>
+<h3 id="列出节点"><a href="#列出节点" class="headerlink" title="列出节点"></a>列出节点</h3><p><code>ls path</code></p>
+<h2 id="2-查看节点内容"><a href="#2-查看节点内容" class="headerlink" title="2.查看节点内容"></a>2.查看节点内容</h2><p><code>get  /path</code><br><img src="http://qiniuyun.dajienihao.cn/image/0623/1.png" alt=""></p>
+<ul>
+<li>ctime 创建时间</li>
+<li>mtime 修改时间</li>
+<li>dataversion  数据修改的次数</li>
+<li>dataLength 长度</li>
+<li>numChildren=3它的子节点的个数</li>
+</ul>
+<h3 id="3-查看子节点"><a href="#3-查看子节点" class="headerlink" title="3.查看子节点"></a>3.查看子节点</h3><p><code>get /path</code></p>
+<h3 id="4-更新节点内容"><a href="#4-更新节点内容" class="headerlink" title="4.更新节点内容"></a>4.更新节点内容</h3><p><code>Set /path data</code></p>
+<h3 id="5-删除节点"><a href="#5-删除节点" class="headerlink" title="5.删除节点"></a>5.删除节点</h3><p><code>rmr /path</code></p>
+<h3 id="6-节点监控"><a href="#6-节点监控" class="headerlink" title="6.节点监控"></a>6.节点监控</h3><p>再启动一个shell,使用客户端连接<br><strong>操作步骤</strong></p>
 <ol>
-<li>面向集合存储，易于存储对象类型的数据 </li>
-<li>模式自由 </li>
-<li>支持动态查询 </li>
-<li>支持完全索引，包含内部对象 </li>
-<li>支持复制和故障恢复 </li>
-<li>使用高效的二进制数据存储，包括大型对象（如视频等） </li>
-<li>自动处理碎片，以支持云计算层次的扩展性 </li>
-<li>支持 Python，PHP，Ruby，Java，C，C#，Javascript，Perl 及 C++语言的驱动程序，社区中也提供了对 Erlang 及.NET 等平台的驱动程序 </li>
-<li>文件存储格式为 BSON（一种 JSON 的扩展） </li>
+<li>在右边的窗口创建一个节点</li>
+<li>在左边的窗口连接服务器并监控/sanguo节点</li>
+<li>修改右边窗口的值，发现左边的发生了变化</li>
 </ol>
-<h2 id="MongoDB体系结构"><a href="#MongoDB体系结构" class="headerlink" title="MongoDB体系结构"></a>MongoDB体系结构</h2><p>MongoDB 的逻辑结构是一种层次结构。主要由：文档(document)、集合(collection)、数据库(database)这三部分组成的。逻辑结构是面向用户的，用户使用 MongoDB 开发应用程序使用的就是逻辑结构。</p>
-<ol>
-<li>MongoDB 的文档（document），相当于关系数据库中的一行记录。 </li>
-<li>多个文档组成一个集合（collection），相当于关系数据库的表。 </li>
-<li>多个集合（collection），逻辑上组织在一起，就是数据库（database）。 </li>
-<li>一个 MongoDB 实例支持多个数据库（database）</li>
-</ol>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><ol>
-<li>null：用于表示空值或者不存在的字段，{“x”:null} </li>
-<li>布尔型：布尔类型有两个值true和false，{“x”:true} </li>
-<li>数值：mongo默认使用64为浮点型数值。{“x”：3.14}或{“x”：3}。对于整型值，可以使用NumberInt（4字节符号整数）或NumberLong（8字节符号整数）， {“x”:NumberInt(“3”)}{“x”:NumberLong(“3”)} </li>
-<li>字符串：UTF-8字符串都可以表示为字符串类型的数据，{“x”：“呵呵”} </li>
-<li>日期：日期被存储为自新纪元依赖经过的毫秒数，不存储时区，{“x”:new Date()} </li>
-<li>正则表达式：查询时，使用正则表达式作为限定条件，语法与JavaScript的正则表达式相同，{“x”:/[abc]/} </li>
-<li>数组：数据列表或数据集可以表示为数组，{“x”： [“a“，“b”,”c”]} </li>
-<li>内嵌文档：文档可以嵌套其他文档，被嵌套的文档作为值来处理，{“x”:{“y”:3 }} ，表中表</li>
-<li>对象Id：对象id是一个12字节的字符串，是文档的唯一标识，{“_id”: objectId() } </li>
-<li>二进制数据：二进制数据是一个任意字节的字符串。它不能直接在shell中使用。如果要将非utf-字符保存到数据库中，二进制数据是唯一的方式。 </li>
-<li>代码：查询和文档中可以包括任何JavaScript代码，{“x”:function(){/…/}}</li>
-</ol>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="选择和创建数据库"><a href="#选择和创建数据库" class="headerlink" title="选择和创建数据库"></a>选择和创建数据库</h3><p>选择和创建数据库的语法格式：<br><code>use 数据库名称</code> 如果数据库不存在则自动创建 </p>
-<h3 id="插入与查询文档"><a href="#插入与查询文档" class="headerlink" title="插入与查询文档"></a>插入与查询文档</h3><p>插入文档的语法格式：<br><code>db.集合名称.insert({BSON格式的数据})</code></p>
-<p>查询集合的语法格式：<br><code>db.集合名称.find()</code></p>
-<p>查询用户id是233的数据<br><code>db.集合名称.find({userId: ‘233’})</code></p>
-<p>只查询一条<br><code>db.集合名称.findOne({userId: ‘233’})</code></p>
-<p>返回指定条数的记录<br><code>db.集合名称.find().limit(3)</code></p>
-<h3 id="修改与删除文档"><a href="#修改与删除文档" class="headerlink" title="修改与删除文档"></a>修改与删除文档</h3><p>修改文档的语法结构：<br><code>db.集合名称.update(条件,修改后的数据)</code></p>
-<p>如果我们想修改_id为1的记录，名称为张三，输入以下语句：<br><code>db.集合名称.update({_Id:ObjectId(1)}, {name:’张三’})</code></p>
-<p>执行后，我们会发现，这条文档除了name字段其它字段都不见了，为了解决这个问题，<br>我们需要使用修改器$set来实现，命令如下：<br><code>db.集合名称.update({_Id:ObjectId(1)}, {$set:{name:’张三’}})</code></p>
-<h3 id="删除文档的语法结构："><a href="#删除文档的语法结构：" class="headerlink" title="删除文档的语法结构："></a>删除文档的语法结构：</h3><p><code>db.集合名称.remove(条件)</code></p>
-<p>以下语句可以将数据全部删除，请慎用<br><code>db.集合名称.remove({})</code></p>
-<h3 id="统计条数"><a href="#统计条数" class="headerlink" title="统计条数"></a>统计条数</h3><p>统计记录条件使用count()方法<br><code>db.集合名称.count()</code><br><code>db.集合名称.count(条件)</code>  </p>
-<h3 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h3><p>MongoDB的模糊查询是通过正则表达式的方式实现的。格式为：<br><code>/字符串/</code></p>
-<p>比如标题中包含java的帖子<br><code>db.集合名称.find(title:/java/)</code></p>
-<p>比如查询以“张”开头的名字<br><code>db.集合名称.find(name: /^张/)</code></p>
-<h3 id="大于-小于-不等于-包含-不包含"><a href="#大于-小于-不等于-包含-不包含" class="headerlink" title="大于 小于 不等于 包含 不包含"></a>大于 小于 不等于 包含 不包含</h3><p>大于：$gt，小于$lt，大于等于$gte，小于等于$lte，不等于$ne，包含$in，不包含$nin<br>查询阅读数大于10的帖子<br><code>db.集合名称.find({readNum:{$gt:10}})</code></p>
-<p>查询评论集合中userid字段不包含1013和1014的文档<br><code>db.集合名称.find({userId: {$nin:[‘1013’, ‘1014’]}})</code></p>
-<h3 id="条件连接"><a href="#条件连接" class="headerlink" title="条件连接"></a>条件连接</h3><p>我们如果需要查询同时满足两个以上条件，需要使用$and操作符将条件进行关联。（相当于SQL的and）格式为：<br><code>$and:[ { },{ },{ } ]</code><br>示例：查询帖子集合中readNum大于等于1000 并且小于2000的文档<br><code>db.集合名称.find( {$and: [ {readNum:{$gte:1000}}, {readNum:{$lte: 2000}} ]} )</code><br>如果两个以上条件之间是或者的关系，我们使用$or 用法和and相同<br><code>$or:[ { },{ },{ } ]</code><br>列值增长<br>如果我们想实现对某列值在原有值的基础上进行增加或减少，可以使用$inc运算符来实现<br><code>db.集合名称.update({_id:1}, {$inc:{readNum:NumberInt(2)}})</code> </p>
 ]]></content>
       <categories>
-        <category>Mongodb</category>
+        <category>Zookeeper</category>
       </categories>
       <tags>
-        <tag>Mongodb</tag>
-        <tag>NoSQL</tag>
+        <tag>Linux</tag>
+        <tag>Zookeeper</tag>
       </tags>
   </entry>
   <entry>
@@ -340,6 +277,69 @@
       <tags>
         <tag>js</tag>
         <tag>Promise</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mongodb</title>
+    <url>/2020/06/22/mongodb/</url>
+    <content><![CDATA[<h1 id="Mongodb"><a href="#Mongodb" class="headerlink" title="Mongodb"></a>Mongodb</h1><h2 id="什么是MongoDB"><a href="#什么是MongoDB" class="headerlink" title="什么是MongoDB"></a>什么是MongoDB</h2><p>MongoDB 是一个跨平台的，面向文档的数据库（<code>solr、Elasticsearch</code>），是当前 NoSQL 数据库产品中最热门的一种。它介于关系数据库和非关系数据库之间，是非关系数据库当中功能最丰富，最像关系数据库的产品。它支持的数据结构非常松散，是类似 JSON 的 BSON 格式，因此可以存储比较复杂的数据类型。比如表中表</p>
+<h2 id="MongoDB特点"><a href="#MongoDB特点" class="headerlink" title="MongoDB特点"></a>MongoDB特点</h2><p>MongoDB 最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。它是一个面向集合的,模式自由的文档型数据库。具体特点总结如下： </p>
+<ol>
+<li>面向集合存储，易于存储对象类型的数据 </li>
+<li>模式自由 </li>
+<li>支持动态查询 </li>
+<li>支持完全索引，包含内部对象 </li>
+<li>支持复制和故障恢复 </li>
+<li>使用高效的二进制数据存储，包括大型对象（如视频等） </li>
+<li>自动处理碎片，以支持云计算层次的扩展性 </li>
+<li>支持 Python，PHP，Ruby，Java，C，C#，Javascript，Perl 及 C++语言的驱动程序，社区中也提供了对 Erlang 及.NET 等平台的驱动程序 </li>
+<li>文件存储格式为 BSON（一种 JSON 的扩展） </li>
+</ol>
+<h2 id="MongoDB体系结构"><a href="#MongoDB体系结构" class="headerlink" title="MongoDB体系结构"></a>MongoDB体系结构</h2><p>MongoDB 的逻辑结构是一种层次结构。主要由：文档(document)、集合(collection)、数据库(database)这三部分组成的。逻辑结构是面向用户的，用户使用 MongoDB 开发应用程序使用的就是逻辑结构。</p>
+<ol>
+<li>MongoDB 的文档（document），相当于关系数据库中的一行记录。 </li>
+<li>多个文档组成一个集合（collection），相当于关系数据库的表。 </li>
+<li>多个集合（collection），逻辑上组织在一起，就是数据库（database）。 </li>
+<li>一个 MongoDB 实例支持多个数据库（database）</li>
+</ol>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><ol>
+<li>null：用于表示空值或者不存在的字段，{“x”:null} </li>
+<li>布尔型：布尔类型有两个值true和false，{“x”:true} </li>
+<li>数值：mongo默认使用64为浮点型数值。{“x”：3.14}或{“x”：3}。对于整型值，可以使用NumberInt（4字节符号整数）或NumberLong（8字节符号整数）， {“x”:NumberInt(“3”)}{“x”:NumberLong(“3”)} </li>
+<li>字符串：UTF-8字符串都可以表示为字符串类型的数据，{“x”：“呵呵”} </li>
+<li>日期：日期被存储为自新纪元依赖经过的毫秒数，不存储时区，{“x”:new Date()} </li>
+<li>正则表达式：查询时，使用正则表达式作为限定条件，语法与JavaScript的正则表达式相同，{“x”:/[abc]/} </li>
+<li>数组：数据列表或数据集可以表示为数组，{“x”： [“a“，“b”,”c”]} </li>
+<li>内嵌文档：文档可以嵌套其他文档，被嵌套的文档作为值来处理，{“x”:{“y”:3 }} ，表中表</li>
+<li>对象Id：对象id是一个12字节的字符串，是文档的唯一标识，{“_id”: objectId() } </li>
+<li>二进制数据：二进制数据是一个任意字节的字符串。它不能直接在shell中使用。如果要将非utf-字符保存到数据库中，二进制数据是唯一的方式。 </li>
+<li>代码：查询和文档中可以包括任何JavaScript代码，{“x”:function(){/…/}}</li>
+</ol>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="选择和创建数据库"><a href="#选择和创建数据库" class="headerlink" title="选择和创建数据库"></a>选择和创建数据库</h3><p>选择和创建数据库的语法格式：<br><code>use 数据库名称</code> 如果数据库不存在则自动创建 </p>
+<h3 id="插入与查询文档"><a href="#插入与查询文档" class="headerlink" title="插入与查询文档"></a>插入与查询文档</h3><p>插入文档的语法格式：<br><code>db.集合名称.insert({BSON格式的数据})</code></p>
+<p>查询集合的语法格式：<br><code>db.集合名称.find()</code></p>
+<p>查询用户id是233的数据<br><code>db.集合名称.find({userId: ‘233’})</code></p>
+<p>只查询一条<br><code>db.集合名称.findOne({userId: ‘233’})</code></p>
+<p>返回指定条数的记录<br><code>db.集合名称.find().limit(3)</code></p>
+<h3 id="修改与删除文档"><a href="#修改与删除文档" class="headerlink" title="修改与删除文档"></a>修改与删除文档</h3><p>修改文档的语法结构：<br><code>db.集合名称.update(条件,修改后的数据)</code></p>
+<p>如果我们想修改_id为1的记录，名称为张三，输入以下语句：<br><code>db.集合名称.update({_Id:ObjectId(1)}, {name:’张三’})</code></p>
+<p>执行后，我们会发现，这条文档除了name字段其它字段都不见了，为了解决这个问题，<br>我们需要使用修改器$set来实现，命令如下：<br><code>db.集合名称.update({_Id:ObjectId(1)}, {$set:{name:’张三’}})</code></p>
+<h3 id="删除文档的语法结构："><a href="#删除文档的语法结构：" class="headerlink" title="删除文档的语法结构："></a>删除文档的语法结构：</h3><p><code>db.集合名称.remove(条件)</code></p>
+<p>以下语句可以将数据全部删除，请慎用<br><code>db.集合名称.remove({})</code></p>
+<h3 id="统计条数"><a href="#统计条数" class="headerlink" title="统计条数"></a>统计条数</h3><p>统计记录条件使用count()方法<br><code>db.集合名称.count()</code><br><code>db.集合名称.count(条件)</code>  </p>
+<h3 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h3><p>MongoDB的模糊查询是通过正则表达式的方式实现的。格式为：<br><code>/字符串/</code></p>
+<p>比如标题中包含java的帖子<br><code>db.集合名称.find(title:/java/)</code></p>
+<p>比如查询以“张”开头的名字<br><code>db.集合名称.find(name: /^张/)</code></p>
+<h3 id="大于-小于-不等于-包含-不包含"><a href="#大于-小于-不等于-包含-不包含" class="headerlink" title="大于 小于 不等于 包含 不包含"></a>大于 小于 不等于 包含 不包含</h3><p>大于：$gt，小于$lt，大于等于$gte，小于等于$lte，不等于$ne，包含$in，不包含$nin<br>查询阅读数大于10的帖子<br><code>db.集合名称.find({readNum:{$gt:10}})</code></p>
+<p>查询评论集合中userid字段不包含1013和1014的文档<br><code>db.集合名称.find({userId: {$nin:[‘1013’, ‘1014’]}})</code></p>
+<h3 id="条件连接"><a href="#条件连接" class="headerlink" title="条件连接"></a>条件连接</h3><p>我们如果需要查询同时满足两个以上条件，需要使用$and操作符将条件进行关联。（相当于SQL的and）格式为：<br><code>$and:[ { },{ },{ } ]</code><br>示例：查询帖子集合中readNum大于等于1000 并且小于2000的文档<br><code>db.集合名称.find( {$and: [ {readNum:{$gte:1000}}, {readNum:{$lte: 2000}} ]} )</code><br>如果两个以上条件之间是或者的关系，我们使用$or 用法和and相同<br><code>$or:[ { },{ },{ } ]</code><br>列值增长<br>如果我们想实现对某列值在原有值的基础上进行增加或减少，可以使用$inc运算符来实现<br><code>db.集合名称.update({_id:1}, {$inc:{readNum:NumberInt(2)}})</code> </p>
+]]></content>
+      <categories>
+        <category>Mongodb</category>
+      </categories>
+      <tags>
+        <tag>Mongodb</tag>
+        <tag>NoSQL</tag>
       </tags>
   </entry>
   <entry>
@@ -1740,157 +1740,6 @@ watchScroll(e) {
       </tags>
   </entry>
   <entry>
-    <title>向上转型和向下转型</title>
-    <url>/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</url>
-    <content><![CDATA[<h1 id="向上转型与向下转型"><a href="#向上转型与向下转型" class="headerlink" title="向上转型与向下转型"></a>向上转型与向下转型</h1><h2 id="向上转型"><a href="#向上转型" class="headerlink" title="向上转型"></a>向上转型</h2><p>子类引用的对象转换为父类类型称为向上转型。通俗地说就是是将子类对象转为父类对象。此处父类对象可以是接口。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"animal eatting..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span>
-
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我吃鱼"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span>
-
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我吃骨头"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我会跑"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//向上转型</span>
-        Animal animal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        animal<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        animal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        animal<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">//结果:</span>
-<span class="token comment" spellcheck="true">//我吃鱼</span>
-<span class="token comment" spellcheck="true">//我吃骨头</span></code></pre>
-<p>这就是向上转型，<code>Animal animal = new Cat();</code>将子类对象Cat转化为父类对象Animal。这个时候animal这个引用调用的方法是子类方法。</p>
-<h3 id="转型过程中需要注意的问题"><a href="#转型过程中需要注意的问题" class="headerlink" title="转型过程中需要注意的问题:"></a>转型过程中需要注意的问题:</h3><ul>
-<li>向上转型时，子类特有的方法会丢失。比如上面Dog类中定义的run方法，当animal引用指向Dog类实例时是访问不到run方法的，animal.run()会报错。</li>
-<li>子类引用不能指向父类对象。Cat c = (Cat)new Animal()这样是不行的。</li>
-</ul>
-<h3 id="向上转型的好处"><a href="#向上转型的好处" class="headerlink" title="向上转型的好处"></a>向上转型的好处</h3><ul>
-<li>减少重复代码，使代码变得简洁。</li>
-<li>提高系统扩展性。</li>
-</ul>
-<p>举个栗子，比如我现在有很多种类的动物，要喂它们吃东西。如果不用向上转型，那我需要这样写：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span>Cat c<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    c<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span>Dog d<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    d<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token function">eat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">eat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>那如果我使用向上转型呢？我只需要这样写：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span>Animal a<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    a<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token function">eat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">eat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>恩，搞定了。代码是不是简洁了许多？而且这个时候，如果我又有一种新的动物加进来，我只需要实现它自己的类，让他继承Animal就可以了，而不需要为它单独写一个eat方法。是不是提高了扩展性？</p>
-<h2 id="向下转型"><a href="#向下转型" class="headerlink" title="向下转型"></a>向下转型</h2><p>与向上转型相对应的就是向下转型了。向下转型是把父类对象转为子类对象。(请注意！这里是有坑的。)<br>还是先来一个例子：</p>
-<pre><code>//还是上面的animal和cat dog
-Animal a = new Cat();
-Cat c = ((Cat) a);
-c.eat();//输出  我吃鱼
-
-Dog d = ((Dog) a);
-d.eat();// 报错 
-
-Animal a1 = new Animal();
-Cat c1 = ((Cat) a1);
-c1.eat();// 报错 </code></pre><p>为什么第一段代码不报错呢？相比你也知道了，因为a本身就是Cat对象，所以它理所当然的可以向下转型为Cat，也理所当然的不能转为Dog，你见过一条狗突然就变成一只猫这种操蛋现象？<br>而a1为Animal对象，它也不能被向下转型为任何子类对象。比如你去考古，发现了一个新生物，知道它是一种动物，但是你不能直接说，啊，它是猫，或者说它是狗</p>
-<h3 id="向下转型注意事项"><a href="#向下转型注意事项" class="headerlink" title="向下转型注意事项"></a>向下转型注意事项</h3><ul>
-<li>向下转型的前提是父类对象指向的是子类对象（也就是说，在向下转型之前，它得先向上转型）</li>
-<li>向下转型只能转型为本类对象（猫是不能变成狗的）。<blockquote>
-<p>大概你会说，我特么有病啊，我先向上转型再向下转型？？</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="向下转型的好处"><a href="#向下转型的好处" class="headerlink" title="向下转型的好处"></a>向下转型的好处</h3><p>我们回到上面的问题：喂动物吃饭，吃了饭做点什么呢？不同的动物肯定做不同的事，怎么做呢？</p>
-<pre class=" language-java"><code class="language-java">
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span>Animal a<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>a <span class="token keyword">instanceof</span> <span class="token class-name">Dog</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
-        Dog d <span class="token operator">=</span> <span class="token punctuation">(</span>Dog<span class="token punctuation">)</span>a<span class="token punctuation">;</span>
-        d<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        d<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//狗有一个跑的方法      </span>
-    <span class="token punctuation">}</span> 
-    <span class="token keyword">if</span><span class="token punctuation">(</span>a <span class="token keyword">instanceof</span> <span class="token class-name">Cat</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
-        Cat c <span class="token operator">=</span> <span class="token punctuation">(</span>Cat<span class="token punctuation">)</span>a<span class="token punctuation">;</span>
-        c<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我也想跑，但是不会"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//猫会抱怨    </span>
-    <span class="token punctuation">}</span> 
-    a<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//其他动物只会吃</span>
-<span class="token punctuation">}</span>
-
-<span class="token function">eat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">eat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>现在，你懂了么？这就是向下转型的简单应用，可能举得例子不恰当，但是也可以说明一些问题。</p>
-<h2 id="多说一点"><a href="#多说一点" class="headerlink" title="多说一点"></a>多说一点</h2><p>当父类对象引用变量引用子类对象时，被引用对象的类型决定了调用谁的成员方法，引用变量类型决定可调用的方法。如果子类中没有覆盖该方法，那么会去父类中寻找。<br>举个栗子：</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">X</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span>Y y<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"x and y"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"only x"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Y</span> <span class="token keyword">extends</span> <span class="token class-name">X</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span>Y y<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"y and y"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span><span class="token punctuation">{</span>
-
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">class</span> <span class="token class-name">main</span><span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        X x <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Y</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        x<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Y</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        x<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">//结果</span>
-<span class="token comment" spellcheck="true">//y and y</span>
-<span class="token comment" spellcheck="true">//only x</span></code></pre>
-<p>Y继承了X，覆盖了X中的show（Y y)方法，但是没有覆盖show（）方法。<br>这个时候，引用类型为X的x指向的对象为Y，这个时候，调用的方法由Y决定，会先从Y中寻找。执行x.show(new Y());，该方法在Y中定义了，所以执行的是Y里面的方法；<br>但是执行x.show();的时候，有的人会说，Y中没有这个方法啊？它好像是去父类中找该方法了，因为调用了X中的方法。<br>事实上，Y类中是有show（）方法的，这个方法继承自X，只不过没有覆盖该方法，所以没有在Y中明确写出来而已，看起来像是调用了X中的方法，实际上调用的还是Y中的</p>
-<blockquote>
-<p>这个时候再看上面那句难理解的话就不难理解了吧。X是引用变量类型，它决定哪些方法可以调用；show（）和show(Y y)可以调用，而show(int i)不可以调用。Y是被引用对象的类型，它决定了调用谁的方法：调用y的方法。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>多态</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>多线程之线程死锁</title>
     <url>/2020/04/19/duo-xian-cheng-zhi-xian-cheng-si-suo/</url>
     <content><![CDATA[<h2 id="死锁讲解"><a href="#死锁讲解" class="headerlink" title="死锁讲解"></a>死锁讲解</h2><p>在Java中使用多线程，就会有可能导致死锁问题。死锁会让程序一直卡住，不再程序往下执行。我们只能通过中止并重启的方式来让程序重新执行。<br>这是我们非常不愿意看到的一种现象，我们要尽可能避免死锁的情况发生！造成死锁的原因可以概括成三句话：</p>
@@ -2072,6 +1921,157 @@ c1.eat();// 报错 </code></pre><p>为什么第一段代码不报错呢？相比
       <tags>
         <tag>设计模式</tag>
         <tag>单例模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>向上转型和向下转型</title>
+    <url>/2020/04/19/xiang-shang-zhuan-xing-he-xiang-xia-zhuan-xing/</url>
+    <content><![CDATA[<h1 id="向上转型与向下转型"><a href="#向上转型与向下转型" class="headerlink" title="向上转型与向下转型"></a>向上转型与向下转型</h1><h2 id="向上转型"><a href="#向上转型" class="headerlink" title="向上转型"></a>向上转型</h2><p>子类引用的对象转换为父类类型称为向上转型。通俗地说就是是将子类对象转为父类对象。此处父类对象可以是接口。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"animal eatting..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我吃鱼"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我吃骨头"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我会跑"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//向上转型</span>
+        Animal animal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        animal<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        animal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        animal<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//结果:</span>
+<span class="token comment" spellcheck="true">//我吃鱼</span>
+<span class="token comment" spellcheck="true">//我吃骨头</span></code></pre>
+<p>这就是向上转型，<code>Animal animal = new Cat();</code>将子类对象Cat转化为父类对象Animal。这个时候animal这个引用调用的方法是子类方法。</p>
+<h3 id="转型过程中需要注意的问题"><a href="#转型过程中需要注意的问题" class="headerlink" title="转型过程中需要注意的问题:"></a>转型过程中需要注意的问题:</h3><ul>
+<li>向上转型时，子类特有的方法会丢失。比如上面Dog类中定义的run方法，当animal引用指向Dog类实例时是访问不到run方法的，animal.run()会报错。</li>
+<li>子类引用不能指向父类对象。Cat c = (Cat)new Animal()这样是不行的。</li>
+</ul>
+<h3 id="向上转型的好处"><a href="#向上转型的好处" class="headerlink" title="向上转型的好处"></a>向上转型的好处</h3><ul>
+<li>减少重复代码，使代码变得简洁。</li>
+<li>提高系统扩展性。</li>
+</ul>
+<p>举个栗子，比如我现在有很多种类的动物，要喂它们吃东西。如果不用向上转型，那我需要这样写：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span>Cat c<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    c<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span>Dog d<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    d<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">eat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">eat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>那如果我使用向上转型呢？我只需要这样写：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span>Animal a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    a<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">eat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">eat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>恩，搞定了。代码是不是简洁了许多？而且这个时候，如果我又有一种新的动物加进来，我只需要实现它自己的类，让他继承Animal就可以了，而不需要为它单独写一个eat方法。是不是提高了扩展性？</p>
+<h2 id="向下转型"><a href="#向下转型" class="headerlink" title="向下转型"></a>向下转型</h2><p>与向上转型相对应的就是向下转型了。向下转型是把父类对象转为子类对象。(请注意！这里是有坑的。)<br>还是先来一个例子：</p>
+<pre><code>//还是上面的animal和cat dog
+Animal a = new Cat();
+Cat c = ((Cat) a);
+c.eat();//输出  我吃鱼
+
+Dog d = ((Dog) a);
+d.eat();// 报错 
+
+Animal a1 = new Animal();
+Cat c1 = ((Cat) a1);
+c1.eat();// 报错 </code></pre><p>为什么第一段代码不报错呢？相比你也知道了，因为a本身就是Cat对象，所以它理所当然的可以向下转型为Cat，也理所当然的不能转为Dog，你见过一条狗突然就变成一只猫这种操蛋现象？<br>而a1为Animal对象，它也不能被向下转型为任何子类对象。比如你去考古，发现了一个新生物，知道它是一种动物，但是你不能直接说，啊，它是猫，或者说它是狗</p>
+<h3 id="向下转型注意事项"><a href="#向下转型注意事项" class="headerlink" title="向下转型注意事项"></a>向下转型注意事项</h3><ul>
+<li>向下转型的前提是父类对象指向的是子类对象（也就是说，在向下转型之前，它得先向上转型）</li>
+<li>向下转型只能转型为本类对象（猫是不能变成狗的）。<blockquote>
+<p>大概你会说，我特么有病啊，我先向上转型再向下转型？？</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="向下转型的好处"><a href="#向下转型的好处" class="headerlink" title="向下转型的好处"></a>向下转型的好处</h3><p>我们回到上面的问题：喂动物吃饭，吃了饭做点什么呢？不同的动物肯定做不同的事，怎么做呢？</p>
+<pre class=" language-java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span>Animal a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>a <span class="token keyword">instanceof</span> <span class="token class-name">Dog</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+        Dog d <span class="token operator">=</span> <span class="token punctuation">(</span>Dog<span class="token punctuation">)</span>a<span class="token punctuation">;</span>
+        d<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        d<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//狗有一个跑的方法      </span>
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">if</span><span class="token punctuation">(</span>a <span class="token keyword">instanceof</span> <span class="token class-name">Cat</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+        Cat c <span class="token operator">=</span> <span class="token punctuation">(</span>Cat<span class="token punctuation">)</span>a<span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我也想跑，但是不会"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//猫会抱怨    </span>
+    <span class="token punctuation">}</span> 
+    a<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//其他动物只会吃</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">eat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">eat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>现在，你懂了么？这就是向下转型的简单应用，可能举得例子不恰当，但是也可以说明一些问题。</p>
+<h2 id="多说一点"><a href="#多说一点" class="headerlink" title="多说一点"></a>多说一点</h2><p>当父类对象引用变量引用子类对象时，被引用对象的类型决定了调用谁的成员方法，引用变量类型决定可调用的方法。如果子类中没有覆盖该方法，那么会去父类中寻找。<br>举个栗子：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">X</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span>Y y<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"x and y"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"only x"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Y</span> <span class="token keyword">extends</span> <span class="token class-name">X</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span>Y y<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"y and y"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">main</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        X x <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Y</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        x<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Y</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        x<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//结果</span>
+<span class="token comment" spellcheck="true">//y and y</span>
+<span class="token comment" spellcheck="true">//only x</span></code></pre>
+<p>Y继承了X，覆盖了X中的show（Y y)方法，但是没有覆盖show（）方法。<br>这个时候，引用类型为X的x指向的对象为Y，这个时候，调用的方法由Y决定，会先从Y中寻找。执行x.show(new Y());，该方法在Y中定义了，所以执行的是Y里面的方法；<br>但是执行x.show();的时候，有的人会说，Y中没有这个方法啊？它好像是去父类中找该方法了，因为调用了X中的方法。<br>事实上，Y类中是有show（）方法的，这个方法继承自X，只不过没有覆盖该方法，所以没有在Y中明确写出来而已，看起来像是调用了X中的方法，实际上调用的还是Y中的</p>
+<blockquote>
+<p>这个时候再看上面那句难理解的话就不难理解了吧。X是引用变量类型，它决定哪些方法可以调用；show（）和show(Y y)可以调用，而show(int i)不可以调用。Y是被引用对象的类型，它决定了调用谁的方法：调用y的方法。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>多态</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -2406,8 +2406,8 @@ zunionstore rank:last_week 7 rank:20150323 rank:20150324 rank:20150325 weights 1
         <category>linux</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>docker</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -4159,8 +4159,8 @@ AND title like ‘someTitle’</code></pre>
         <category>spring</category>
       </categories>
       <tags>
-        <tag>注解</tag>
         <tag>spring</tag>
+        <tag>注解</tag>
       </tags>
   </entry>
   <entry>
@@ -4259,9 +4259,9 @@ AND title like ‘someTitle’</code></pre>
         <category>spring</category>
       </categories>
       <tags>
-        <tag>IOC</tag>
-        <tag>注解</tag>
         <tag>spring</tag>
+        <tag>注解</tag>
+        <tag>IOC</tag>
       </tags>
   </entry>
   <entry>
@@ -4340,9 +4340,9 @@ AND title like ‘someTitle’</code></pre>
         <category>spring</category>
       </categories>
       <tags>
-        <tag>spring</tag>
         <tag>依赖注入</tag>
         <tag>DI</tag>
+        <tag>spring</tag>
       </tags>
   </entry>
   <entry>
